@@ -36,8 +36,8 @@ p{margin:0}
 .ring{width:47px;height:47px;border:2px solid #20262d;border-radius:50%;background:#2670c52e;display:grid;place-items:center}
 .dot{width:14px;height:14px;background:#2670c5;border:3px solid white;border-radius:50%;box-shadow:0 0 0 1px #2670c5}
 .my-label{padding:5px 6px;background:#fff;border:1px solid var(--ink);border-radius:5px;font-size:10px;font-weight:700;margin-left:-2px;white-space:nowrap}
-.tips{margin-top:25px}
-.tip-card{min-height:80px;border:1px solid var(--ink);border-radius:16px;background:var(--card);display:flex;gap:13px;padding:16px;margin-bottom:12px}
+.tips{margin:25px -12px 0;padding:12px;border-radius:24px;background:#fcf8fb}
+.tip-card{min-height:80px;border:0;border-radius:16px;background:#f6e4ef;display:flex;gap:13px;padding:16px;margin-bottom:12px}
 .tip-card svg{width:22px;height:22px;flex:none;fill:none;stroke:#1f6b8e;stroke-width:2}
 .tip-card strong{font-size:15px;display:block;margin-bottom:5px}
 .tip-card p{font-size:14px;color:var(--muted);line-height:1.4}
