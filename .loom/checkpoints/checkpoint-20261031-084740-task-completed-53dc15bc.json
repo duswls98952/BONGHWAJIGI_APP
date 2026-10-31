@@ -1,0 +1,19 @@
+{
+  "id": "checkpoint-20261031-084740-task-completed-53dc15bc",
+  "created_at": "2026-10-31T08:47:40+00:00",
+  "reason": "Task completed: 홈 로고와 지도 제목 사이 간격 축소",
+  "summary": "홈 로고와 지도 제목 사이 간격 축소 -> DONE @ HeoNey_dev/981c0327c189",
+  "job_id": "job-20261031-081911-png-html-28b089bf",
+  "task_id": "task-20261031-084710-task-c9b1d117",
+  "commit_sha": "981c0327c1890b3eef679adbf4b16ca131155b72",
+  "branch_name": "HeoNey_dev",
+  "dirty": true,
+  "staged_files": [],
+  "modified_files": [
+    ".loom/job-runs/job-run-20261031-084712-job-20261031-081911-png-html-28b089bf-154cc6c5/job-run.json",
+    ".loom/task-definitions/task-def-20261031-084710-task-def-343f05d1/task-definition.json"
+  ],
+  "untracked_files": [],
+  "snapshot_captured_at": "2026-10-31T08:47:40+00:00",
+  "rollback_strategy": "revert-or-branch"
+}

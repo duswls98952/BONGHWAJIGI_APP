@@ -1,0 +1,19 @@
+{
+  "id": "checkpoint-20261031-082326-task-completed-png-html-23f787af",
+  "created_at": "2026-10-31T08:23:26+00:00",
+  "reason": "Task completed: 다섯 PNG의 모바일 HTML 시안 구현과 웹 확인",
+  "summary": "다섯 PNG의 모바일 HTML 시안 구현과 웹 확인 -> DONE @ HeoNey_dev/74ef4e2a880b",
+  "job_id": "job-20261031-081911-png-html-28b089bf",
+  "task_id": "task-20261031-081915-png-html-8eebd7b6",
+  "commit_sha": "74ef4e2a880bcec829687a3f5d261746bce9af55",
+  "branch_name": "HeoNey_dev",
+  "dirty": true,
+  "staged_files": [],
+  "modified_files": [
+    ".loom/job-runs/job-run-20261031-081917-job-20261031-081911-png-html-28b089bf-4d1cdd80/job-run.json",
+    ".loom/task-definitions/task-def-20261031-081915-png-html-f04b946e/task-definition.json"
+  ],
+  "untracked_files": [],
+  "snapshot_captured_at": "2026-10-31T08:23:26+00:00",
+  "rollback_strategy": "revert-or-branch"
+}

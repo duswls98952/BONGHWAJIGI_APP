@@ -1,0 +1,19 @@
+{
+  "id": "checkpoint-20261031-084510-task-completed-614afb21",
+  "created_at": "2026-10-31T08:45:10+00:00",
+  "reason": "Task completed: 홈 지도 아래 위치 표시 배치",
+  "summary": "홈 지도 아래 위치 표시 배치 -> DONE @ HeoNey_dev/ca0203fe1e30",
+  "job_id": "job-20261031-081911-png-html-28b089bf",
+  "task_id": "task-20261031-084432-task-4a91855a",
+  "commit_sha": "ca0203fe1e30ef0e734839933c097a96054be8e7",
+  "branch_name": "HeoNey_dev",
+  "dirty": true,
+  "staged_files": [],
+  "modified_files": [
+    ".loom/job-runs/job-run-20261031-084433-job-20261031-081911-png-html-28b089bf-3f7db456/job-run.json",
+    ".loom/task-definitions/task-def-20261031-084432-task-def-df5b07b5/task-definition.json"
+  ],
+  "untracked_files": [],
+  "snapshot_captured_at": "2026-10-31T08:45:10+00:00",
+  "rollback_strategy": "revert-or-branch"
+}

@@ -1,0 +1,5 @@
+[2026-10-31T08:44:33+00:00] agent=codex task=task-20261031-084432-task-4a91855a Foreground task session started.
+[2026-10-31] 홈 주소 행을 우리 동네는 지금? 지도 아래로 이동. GPS 문구와 조회 반경 버튼 및 관련 CSS 제거.
+[2026-10-31] 검증: Python HTML 파서 검사 PASS — 제목 → 지도 → 주소 행 순서, 홈 GPS와 조회 반경 없음.
+[2026-10-31] 검증: Safari에서 주소 행의 지도 아래 배치와 제거 항목 확인. git diff --check 통과.
+[2026-10-31T08:45:10+00:00] agent=foreground task=task-20261031-084432-task-4a91855a Foreground task session completed.

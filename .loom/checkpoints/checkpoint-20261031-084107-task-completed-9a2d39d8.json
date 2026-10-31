@@ -1,0 +1,19 @@
+{
+  "id": "checkpoint-20261031-084107-task-completed-9a2d39d8",
+  "created_at": "2026-10-31T08:41:07+00:00",
+  "reason": "Task completed: 프로필에서 메인 홈으로 돌아가기 추가",
+  "summary": "프로필에서 메인 홈으로 돌아가기 추가 -> DONE @ HeoNey_dev/c0f5fc38b21b",
+  "job_id": "job-20261031-081911-png-html-28b089bf",
+  "task_id": "task-20261031-083852-task-796d8790",
+  "commit_sha": "c0f5fc38b21bc77aaedc15ccf651ba5be148403c",
+  "branch_name": "HeoNey_dev",
+  "dirty": true,
+  "staged_files": [],
+  "modified_files": [
+    ".loom/job-runs/job-run-20261031-083854-job-20261031-081911-png-html-28b089bf-2ee42678/job-run.json",
+    ".loom/task-definitions/task-def-20261031-083852-task-def-5de94578/task-definition.json"
+  ],
+  "untracked_files": [],
+  "snapshot_captured_at": "2026-10-31T08:41:07+00:00",
+  "rollback_strategy": "revert-or-branch"
+}

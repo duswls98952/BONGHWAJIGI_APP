@@ -1,0 +1,19 @@
+{
+  "id": "checkpoint-20261031-095540-task-completed-edde1d36",
+  "created_at": "2026-10-31T09:55:40+00:00",
+  "reason": "Task completed: 긴급 지도와 홍수 행동수칙 시안 수정",
+  "summary": "긴급 지도와 홍수 행동수칙 시안 수정 -> DONE @ HeoNey_dev/af42d7f3841e",
+  "job_id": "job-20261031-081911-png-html-28b089bf",
+  "task_id": "task-20261031-095423-task-c7afad54",
+  "commit_sha": "af42d7f3841e2b41a432243032503fc8eab0bc3d",
+  "branch_name": "HeoNey_dev",
+  "dirty": true,
+  "staged_files": [],
+  "modified_files": [
+    ".loom/job-runs/job-run-20261031-095424-job-20261031-081911-png-html-28b089bf-9214f93c/job-run.json",
+    ".loom/task-definitions/task-def-20261031-095423-task-def-4280314f/task-definition.json"
+  ],
+  "untracked_files": [],
+  "snapshot_captured_at": "2026-10-31T09:55:40+00:00",
+  "rollback_strategy": "revert-or-branch"
+}

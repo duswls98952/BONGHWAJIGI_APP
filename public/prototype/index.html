@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>봉화 지기 모바일 화면 시안</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <svg class="symbols" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <symbol id="settings" viewBox="0 0 24 24"><path d="M10 2h4l.6 2.2 1.8.8 2-.9 2.8 2.8-.9 2 .8 1.8L23 11v4l-2.2.6-.8 1.8.9 2-2.8 2.8-2-.9-1.8.8L14 23h-4l-.6-2.2-1.8-.8-2 .9-2.8-2.8.9-2-.8-1.8L1 15v-4l2.2-.6.8-1.8-.9-2 2.8-2.8 2 .9 1.8-.8z"/><circle cx="12" cy="13" r="3"/></symbol>
+    <symbol id="pin" viewBox="0 0 24 24"><path d="M12 22s7-6 7-12a7 7 0 0 0-14 0c0 6 7 12 7 12z"/><circle cx="12" cy="10" r="2.5"/></symbol>
+    <symbol id="chevron" viewBox="0 0 24 24"><path d="m5 9 7 7 7-7"/></symbol>
+    <symbol id="back" viewBox="0 0 24 24"><path d="m15 4-8 8 8 8"/></symbol>
+    <symbol id="sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 1v3m0 16v3M1 12h3m16 0h3M4.2 4.2l2.1 2.1m11.4 11.4 2.1 2.1M19.8 4.2l-2.1 2.1M6.3 17.7l-2.1 2.1"/></symbol>
+    <symbol id="cloud" viewBox="0 0 24 24"><path d="M4 16a5 5 0 0 1 1-9 7 7 0 0 1 13 2 4 4 0 0 1 1 7H4Zm4 3h8m-7 3h6"/></symbol>
+    <symbol id="bag" viewBox="0 0 24 24"><path d="M5 8h14v13H5zM9 8V6a3 3 0 0 1 6 0v2M9 12h6m-3-3v6"/></symbol>
+    <symbol id="checklist" viewBox="0 0 24 24"><path d="M4 4h16v16H4zM8 12l3 3 5-6"/></symbol>
+    <symbol id="rain" viewBox="0 0 24 24"><path d="M4 16a5 5 0 0 1 1-9 7 7 0 0 1 13 2 4 4 0 0 1 1 7H4Zm3 2-1 3m6-3-1 3m6-3-1 3"/></symbol>
+    <symbol id="fire" viewBox="0 0 24 24"><path d="M12 2c1 4-2 5-2 8 2 0 3-1 4-3 5 5 6 9 3 13-3 4-11 4-13-2-2-5 1-9 8-16z"/></symbol>
+    <!-- Triangle Alert pictogram adapted from Lucide; see LUCIDE-LICENSE.txt. -->
+    <symbol id="warning" viewBox="0 0 24 24"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3"/><path d="M12 9v4"/><circle cx="12" cy="17" r="1.4" fill="currentColor" stroke="none"/></symbol>
+    <symbol id="book" viewBox="0 0 24 24"><path d="M12 5c-3-2-6-2-9-1v15c3-1 6-1 9 1 3-2 6-2 9-1V4c-3-1-6-1-9 1zm0 0v15"/></symbol>
+    <symbol id="route" viewBox="0 0 24 24"><rect x="3" y="4" width="7" height="5" rx="2"/><rect x="14" y="15" width="7" height="5" rx="2"/><path d="M7 9v5h10v1m0-10h4m-2-2v4"/></symbol>
+    <symbol id="call" viewBox="0 0 24 24"><path d="M6 2 3 5c-1 2 1 7 5 11s9 6 11 5l3-3-5-5-3 3c-3-1-5-3-6-6l3-3-5-5z"/></symbol>
+    <symbol id="flood" viewBox="0 0 24 24"><path d="M2 7c2 2 4 2 6 0s4-2 6 0 4 2 8 0M2 13c2 2 4 2 6 0s4-2 6 0 4 2 8 0M2 19c2 2 4 2 6 0s4-2 6 0 4 2 8 0"/></symbol>
+    <symbol id="cube" viewBox="0 0 24 24"><path d="m12 2 9 5v10l-9 5-9-5V7l9-5zm0 10 9-5M12 12 3 7m9 5v10"/></symbol>
+    <symbol id="signal" viewBox="0 0 24 16"><path d="M2 12v2m5-5v5m5-8v8m5-11v11" stroke="currentColor" stroke-width="3" stroke-linecap="round"/></symbol>
+    <symbol id="wifi" viewBox="0 0 24 16"><path d="M2 5c5.5-4.5 14.5-4.5 20 0M6 9c3.3-2.7 8.7-2.7 12 0m-8 4c1.2-1 2.8-1 4 0" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></symbol>
+  </svg>
+
+  <div class="phone">
+    <section class="screen" id="home" data-screen>
+      <div class="statusbar"><span>9:41</span><span class="device-icons"><svg><use href="#signal"/></svg><svg><use href="#wifi"/></svg><span class="battery"></span></span></div>
+      <header class="topbar home-topbar"><h1>봉화 지기</h1><a class="home-profile-link" href="#profile">프로필</a></header>
+      <main class="content home-content">
+        <section class="home-map-block" aria-label="지도와 현재 위치"><div class="map home-map"><img src="map.svg" alt="구로동 주변 지도 예시"><div class="my-location"><span class="ring"><span class="dot"></span></span><span class="my-label">내 위치</span></div></div><div class="location-line"><svg><use href="#pin"/></svg><strong>서울특별시 구로구 구로동</strong></div></section>
+        <section class="tips"><h2 class="home-section-title">오늘의 행동요령</h2><div class="tip-card"><svg><use href="#sun"/></svg><div><strong>건조한 날씨 · 산불 주의</strong><p>야외에서 불씨를 방치하지 마세요.</p></div></div><div class="tip-card"><svg><use href="#cloud"/></svg><div><strong>짙은 안개 · 시야 확보 주의</strong><p>운전 시 감속하고 안전거리를 유지하세요.</p></div></div></section>
+        <section class="preparation"><h2 class="home-section-title">나의 사전준비</h2><div class="tip-card"><svg aria-hidden="true"><use href="#bag"/></svg><div><strong>비상가방 준비</strong><p>생수와 손전등을 챙겨두세요.</p></div></div><div class="tip-card"><svg aria-hidden="true"><use href="#checklist"/></svg><div><strong>이동 보조기구 점검</strong><p>평소 사용하는 보조기구의 상태를 확인하고, 전동 기기라면 충전해두세요.</p></div></div></section>
+        <section class="nearby"><h2 class="home-section-title">주변 재난 사항</h2><div class="feed"><div class="feed-row"><span class="feed-icon"><svg><use href="#rain"/></svg></span><div class="feed-text"><div><strong>○○구 ○○동 침수 발생</strong><span class="active-badge">진행 중</span></div><p>10.31 08:20 · 도로 일부 침수</p></div></div><div class="feed-row"><span class="feed-icon"><svg><use href="#fire"/></svg></span><div class="feed-text"><div><strong>○○구 △△동 화재 발생</strong><span class="ended">종료</span></div><p>10.25 14:30 · 화재 진화 완료</p></div></div><div class="feed-row"><span class="feed-icon"><svg><use href="#warning"/></svg></span><div class="feed-text"><div><strong>○○구 □□동 지반 침하</strong><span class="ended">종료</span></div><p>09.18 11:10 · 안전 조치 완료</p></div></div></div></section>
+      </main>
+    </section>
+
+    <section class="screen" id="emergency" data-screen hidden>
+      <div class="statusbar"><span>9:41</span><span class="device-icons"><svg><use href="#signal"/></svg><svg><use href="#wifi"/></svg><span class="battery"></span></span></div>
+      <main class="content emergency-content">
+        <div class="alert"><span class="alert-main"><svg aria-hidden="true"><use href="#warning"/></svg><strong>홍수 대피 명령 발령</strong></span></div>
+        <section class="affected"><h2 class="home-section-title">재난 영향 지역</h2><div class="map hazard-map"><img src="map.svg" alt="재난 영향 지역과 내 위치가 표시된 지도 예시"><div class="hazard-shape"></div><div class="my-location"><span class="ring"><span class="dot"></span></span><span class="my-label">내 위치</span></div></div></section>
+        <section class="voice"><h2 class="home-section-title">실시간 음성 대화</h2><div class="waveform" aria-label="음성 대화 파형"><i style="--h:7px"></i><i style="--h:13px"></i><i style="--h:20px"></i><i style="--h:15px"></i><i style="--h:30px"></i><i style="--h:38px"></i><i style="--h:25px"></i><i style="--h:33px"></i><i style="--h:19px"></i><i style="--h:27px"></i><i style="--h:13px"></i><i style="--h:17px"></i><i style="--h:9px"></i><i style="--h:5px"></i></div><div class="utterance">“지금 계신 곳에 물이 들어오고 있나요?”</div></section>
+        <section class="status"><h2 class="home-section-title">내 현재 상태</h2><div class="tags"><span>계단 이동 어려움</span><span>혼자 있음</span><span>위치 확인됨</span></div></section>
+        <section class="personal"><h2 class="home-section-title">맞춤 행동요령</h2><ol class="steps"><li><span>1</span><div><strong>침수된 공간을 피하세요.</strong><p>지하 공간이나 물이 차오른 도로로 이동하지 마세요.</p></div></li><li><span>2</span><div><strong>무리하게 이동하지 마세요.</strong><p>안전하게 이동하기 어렵다면 침수되지 않은 안전한 위치에서 구조를 요청하세요.</p></div></li><li><span>3</span><div><strong>119에 현재 상황을 알리세요.</strong><p>현재 위치와 이동이 어려운 상황을 함께 전달하세요.</p></div></li></ol></section>
+      </main>
+      <nav class="action-bar" aria-label="긴급 행동"><a class="action basic" href="#rules"><svg><use href="#book"/></svg><span>기본 수칙</span></a><a class="action route" href="#route"><svg><use href="#route"/></svg><span>대피로</span></a><button class="action call" type="button"><svg><use href="#call"/></svg><span>119 신고</span></button></nav>
+    </section>
+
+    <section class="screen" id="route" data-screen hidden>
+      <div class="statusbar"><span>9:41</span><span class="device-icons"><svg><use href="#signal"/></svg><svg><use href="#wifi"/></svg><span class="battery"></span></span></div>
+      <header class="topbar"><a class="icon-link" href="#emergency" aria-label="긴급 대응으로 돌아가기"><svg><use href="#back"/></svg></a><h1>3D 대피로</h1></header>
+      <main class="content route-content"><span class="route-label">임시 화면 · 제공 지역 전용</span><div class="route-placeholder"><svg><use href="#cube"/></svg><h2>3D 대피로 목업 준비 중</h2><p>지도와 모델이 들어갈 영역이에요.<br>실제 건물과 경로는 아직 표시하지 않아요.</p></div><p class="route-foot">대피 경로 확인을 위한 기본 구조예요.<br>현재는 경로 안내를 제공하지 않아요.</p></main>
+      <div class="bottom-indicator"></div>
+    </section>
+
+    <section class="screen" id="profile" data-screen hidden>
+      <div class="statusbar"><span>9:41</span><span class="device-icons"><svg><use href="#signal"/></svg><svg><use href="#wifi"/></svg><span class="battery"></span></span></div>
+      <header class="topbar profile-topbar"><a class="icon-link" href="#home" aria-label="메인 홈으로 돌아가기"><svg><use href="#back"/></svg></a><h1>프로필</h1></header>
+      <main class="content profile-content">
+        <section class="profile-card"><h2>기본 정보</h2><div class="field"><label for="nickname">이름 또는 호칭</label><input id="nickname" value="김지기"></div><div class="field"><span class="field-label">연령대</span><div class="choices" data-choice-group><button type="button">19세 이하</button><button type="button">20–39세</button><button type="button">40–59세</button><button class="selected" type="button">60세 이상</button></div></div></section>
+        <section class="profile-card"><h2>이동과 의사소통</h2><div class="field"><span class="field-label">이동 능력</span><div class="choices" data-choice-group><button type="button">독립 보행</button><button class="selected" type="button">보조기구 사용</button><button type="button">도움 필요</button></div></div><div class="field"><span class="field-label">계단 이용 가능 여부</span><div class="choices" data-choice-group><button type="button">가능</button><button class="selected" type="button">어려움</button><button type="button">불가능</button></div></div><div class="field"><span class="field-label">선호 안내</span><div class="choices" data-choice-group><button type="button">음성</button><button type="button">문자</button><button class="selected" type="button">모두</button></div></div><div class="field"><span class="field-label">시각 지원 필요 여부</span><div class="choices" data-choice-group><button class="selected" type="button">필요 없음</button><button type="button">필요함</button></div></div><div class="field"><span class="field-label">청각 지원 필요 여부</span><div class="choices" data-choice-group><button class="selected" type="button">필요 없음</button><button type="button">필요함</button></div></div><div class="field"><span class="field-label">함께 대피할 보호 대상</span><div class="choices" data-choice-group><button class="selected" type="button">없음</button><button type="button">어린이</button><button type="button">고령자</button><button type="button">반려동물</button><button type="button">기타</button></div></div></section>
+        <section class="profile-card"><h2>건강 및 의료 특이사항 · 선택</h2><div class="field"><input aria-label="건강 및 의료 특이사항" value="등록하지 않음"><p class="field-help">민감정보예요. 안내에 필요한 내용만 선택적으로 입력해요.</p></div><div class="field"><label for="contact">긴급 연락처</label><input id="contact" value="김보호 · 010-0000-0000"><p class="field-help">연락처 예시 · 실제 발신 기능 없음</p></div><div class="field"><label for="place">주요 생활 장소</label><input id="place" value="집 · 서울 구로구 구로동"></div><div class="field"><label for="floor">건물 층수</label><input id="floor" value="지상 3층"></div></section>
+      </main>
+      <div class="bottom-indicator"></div>
+    </section>
+
+    <section class="screen" id="rules" data-screen hidden>
+      <div class="statusbar"><span>9:41</span><span class="device-icons"><svg><use href="#signal"/></svg><svg><use href="#wifi"/></svg><span class="battery"></span></span></div>
+      <header class="topbar profile-topbar"><a class="icon-link" href="#emergency" aria-label="긴급 대응으로 돌아가기"><svg><use href="#back"/></svg></a><h1>홍수 행동수칙</h1></header>
+      <main class="content rules-content"><div class="rules-head"><span><svg><use href="#flood"/></svg></span><h2>홍수 대비 기본수칙</h2></div><ol class="steps rules-steps"><li><span>1</span><div><strong>기상과 대피 정보를 확인하세요.</strong><p>재난문자와 지역의 대피 안내를 확인하고, 주변 사람에게 상황을 알려요.</p></div></li><li><span>2</span><div><strong>침수 위험이 없는 곳으로 대피하세요.</strong><p>안내된 안전한 경로를 확인해요. 물이 찬 길을 건너거나 무리하게 이동하지 않아요.</p></div></li><li><span>3</span><div><strong>위험하면 구조를 요청하세요.</strong><p>안전한 위치에서 119에 현재 위치와 상황을 알리고, 구조 안내를 따라요.</p></div></li></ol><div class="avoid"><strong>이런 행동과 장소는 피하세요</strong><p>· 지하차도 · 지하 공간 · 하천 주변 접근<br>· 물이 흐르는 도로를 걷거나 운전하기<br>· 젖은 전기설비나 전선 만지기</p></div></main>
+      <div class="bottom-indicator"></div>
+    </section>
+  </div>
+</body>
+</html>

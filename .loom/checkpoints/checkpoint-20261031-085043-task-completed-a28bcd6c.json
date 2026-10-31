@@ -1,0 +1,19 @@
+{
+  "id": "checkpoint-20261031-085043-task-completed-a28bcd6c",
+  "created_at": "2026-10-31T08:50:43+00:00",
+  "reason": "Task completed: 홈 로고 확대와 안전정보 제목 변경",
+  "summary": "홈 로고 확대와 안전정보 제목 변경 -> DONE @ HeoNey_dev/2b15a2873d82",
+  "job_id": "job-20261031-081911-png-html-28b089bf",
+  "task_id": "task-20261031-085013-task-119aef93",
+  "commit_sha": "2b15a2873d824330c3ed967bb33357a03d1a9b64",
+  "branch_name": "HeoNey_dev",
+  "dirty": true,
+  "staged_files": [],
+  "modified_files": [
+    ".loom/job-runs/job-run-20261031-085014-job-20261031-081911-png-html-28b089bf-fa5c18b9/job-run.json",
+    ".loom/task-definitions/task-def-20261031-085013-task-def-7d949cd3/task-definition.json"
+  ],
+  "untracked_files": [],
+  "snapshot_captured_at": "2026-10-31T08:50:43+00:00",
+  "rollback_strategy": "revert-or-branch"
+}
