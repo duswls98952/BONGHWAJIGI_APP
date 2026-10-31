@@ -1,10 +1,10 @@
 {
-  "status": "RUNNING",
-  "agent": "codex",
+  "status": "DONE",
+  "agent": "foreground",
   "mode": "foreground",
   "execution_surface": "foreground",
   "task_run_id": "task-run-20261031-081917-task-def-20261031-081915-png-html-f04b946e-309e52a7",
-  "generated_at": "2026-10-31T08:19:17+00:00",
+  "generated_at": "2026-10-31T08:23:26+00:00",
   "artifacts": [
     ".loom/tasks/task-20261031-081915-png-html-8eebd7b6/prompt.md",
     ".loom/tasks/task-20261031-081915-png-html-8eebd7b6/context.md",
@@ -34,13 +34,7 @@
       ".loom/tasks/task-20261031-081915-png-html-8eebd7b6/agent-events.jsonl",
       ".loom/tasks/task-20261031-081915-png-html-8eebd7b6/artifacts.json"
     ],
-    "work_products": [
-      "public/prototype/index.html",
-      "public/prototype/style.css",
-      "public/prototype/app.js",
-      "public/prototype/map.svg",
-      "docs/07-validation.md"
-    ]
+    "work_products": []
   },
   "contract_snapshot": {
     "schema_version": 1,
