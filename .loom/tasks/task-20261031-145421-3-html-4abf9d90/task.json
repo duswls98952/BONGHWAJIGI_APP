@@ -1,0 +1,32 @@
+{
+  "id": "task-20261031-145421-3-html-4abf9d90",
+  "job_id": "job-20261031-081911-png-html-28b089bf",
+  "title": "내정보 저장 버튼과 산불 3단계 HTML 목업 구현",
+  "description": "승인된 계획에 따라 HTML 프로토타입 내정보 하단에 시안용 저장 버튼을 추가하고 산불 긴급 대응 경고·대피·위급 3단계의 색상/원형 배지를 별도 해시로 제공한다. 홍수 문구와 기본 수칙을 산불 시연 내용으로 교체한다.",
+  "status": "RUNNING",
+  "created_at": "2026-10-31T14:54:21+00:00",
+  "updated_at": "2026-10-31T14:54:23+00:00",
+  "order_index": 64,
+  "assigned_agent": "codex",
+  "depends_on": [],
+  "expected_output": "public/prototype/index.html, public/prototype/style.css, public/prototype/app.js 및 Loom 작업 기록",
+  "done_condition": "내정보 저장 버튼은 실제 저장 없이 안내를 표시하고, 3개 해시와 기존 emergency 해시가 올바른 단계 목업을 열며, 산불 문구·기본 수칙·돌아가기 단계 유지·동작 감소·모바일 배치가 확인된다.",
+  "in_scope": "public/prototype HTML/CSS/JS, 관련 확인 및 Loom 기록",
+  "out_of_scope": "Expo 앱/API/서버 저장, 실제 경보/119, 별도 3D 화면, 원격 푸시",
+  "validation_hint": "npm run check, npm run export:web 또는 HTML 직접 확인, 세 단계/저장/돌아가기/동작 감소 확인, git diff --check, loom validate --strict",
+  "required_docs": [],
+  "memory_refs": [],
+  "document_outputs": [],
+  "document_output_exceptions": [],
+  "run_attempts": 0,
+  "last_error": "",
+  "commit_refs": [
+    "76addb1673e5f9b2c20b5fc74e292831a79b9681"
+  ],
+  "branch_name": "HeoNey_dev",
+  "git_dirty": true,
+  "git_snapshot_captured_at": "2026-10-31T14:54:23+00:00",
+  "artifacts": [],
+  "source_proposal_id": "",
+  "source_prompt": ""
+}

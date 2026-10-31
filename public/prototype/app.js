@@ -1,9 +1,27 @@
 let loadingTimer;
+let lastEmergencyHash = '#emergency';
+
+const emergencyStages = {
+  emergency: { key: 'critical', label: '위급' },
+  'emergency-warning': { key: 'warning', label: '경고' },
+  'emergency-evacuation': { key: 'evacuation', label: '대피' },
+  'emergency-critical': { key: 'critical', label: '위급' },
+};
 
 function showScreen() {
   const hash = location.hash.slice(1);
   const name = hash || 'loading';
-  const selected = document.getElementById(name) ? name : 'home';
+  const stage = Object.hasOwn(emergencyStages, name) ? emergencyStages[name] : undefined;
+  const selected = stage ? 'emergency' : document.getElementById(name) ? name : 'home';
+  if (stage) {
+    const emergencyScreen = document.getElementById('emergency');
+    emergencyScreen.dataset.stage = stage.key;
+    emergencyScreen.querySelector('[data-stage-badge]').textContent = stage.label;
+    lastEmergencyHash = `#${name}`;
+  }
+  document.querySelectorAll('[data-emergency-return]').forEach((link) => {
+    link.href = lastEmergencyHash;
+  });
   document.querySelectorAll('[data-screen]').forEach((screen) => {
     screen.hidden = screen.id !== selected;
   });
@@ -56,6 +74,10 @@ document.querySelectorAll('[data-detail-toggle]').forEach((button) => {
     button.setAttribute('aria-expanded', String(!expanded));
     detail.hidden = expanded;
   });
+});
+
+document.querySelector('[data-profile-save]').addEventListener('click', () => {
+  document.querySelector('[data-profile-save-notice]').hidden = false;
 });
 
 window.addEventListener('hashchange', showScreen);
