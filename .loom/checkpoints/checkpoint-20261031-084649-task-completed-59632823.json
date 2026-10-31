@@ -1,0 +1,19 @@
+{
+  "id": "checkpoint-20261031-084649-task-completed-59632823",
+  "created_at": "2026-10-31T08:46:49+00:00",
+  "reason": "Task completed: 홈 봉화 지기 제목 크기 확대",
+  "summary": "홈 봉화 지기 제목 크기 확대 -> DONE @ HeoNey_dev/321540116a79",
+  "job_id": "job-20261031-081911-png-html-28b089bf",
+  "task_id": "task-20261031-084619-task-52674aa0",
+  "commit_sha": "321540116a791d500ea381b6a6612e25633f7801",
+  "branch_name": "HeoNey_dev",
+  "dirty": true,
+  "staged_files": [],
+  "modified_files": [
+    ".loom/job-runs/job-run-20261031-084621-job-20261031-081911-png-html-28b089bf-3a524d10/job-run.json",
+    ".loom/task-definitions/task-def-20261031-084619-task-def-91bf217e/task-definition.json"
+  ],
+  "untracked_files": [],
+  "snapshot_captured_at": "2026-10-31T08:46:49+00:00",
+  "rollback_strategy": "revert-or-branch"
+}

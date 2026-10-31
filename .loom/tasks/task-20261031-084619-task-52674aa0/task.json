@@ -3,11 +3,11 @@
   "job_id": "job-20261031-081911-png-html-28b089bf",
   "title": "홈 봉화 지기 제목 크기 확대",
   "description": "HTML 홈 상단의 봉화 지기 제목 글자 크기를 현재 23px보다 조금 키운다.",
-  "status": "RUNNING",
+  "status": "DONE",
   "created_at": "2026-10-31T08:46:19+00:00",
-  "updated_at": "2026-10-31T08:46:21+00:00",
+  "updated_at": "2026-10-31T08:46:49+00:00",
   "order_index": 8,
-  "assigned_agent": "codex",
+  "assigned_agent": "foreground",
   "depends_on": [],
   "expected_output": "더 크게 보이는 홈 제목",
   "done_condition": "홈 헤더 제목의 CSS 글자 크기가 커지고 프로필 링크와 충돌 없이 표시된다.",
@@ -21,12 +21,24 @@
   "run_attempts": 0,
   "last_error": "",
   "commit_refs": [
-    "d56c7bc21de50b568806c563310f75cfa9c225e2"
+    "d56c7bc21de50b568806c563310f75cfa9c225e2",
+    "321540116a791d500ea381b6a6612e25633f7801"
   ],
   "branch_name": "HeoNey_dev",
   "git_dirty": true,
-  "git_snapshot_captured_at": "2026-10-31T08:46:21+00:00",
-  "artifacts": [],
+  "git_snapshot_captured_at": "2026-10-31T08:46:49+00:00",
+  "artifacts": [
+    ".loom/tasks/task-20261031-084619-task-52674aa0/agent-events.jsonl",
+    ".loom/tasks/task-20261031-084619-task-52674aa0/artifacts.json",
+    ".loom/tasks/task-20261031-084619-task-52674aa0/context.md",
+    ".loom/tasks/task-20261031-084619-task-52674aa0/decision.md",
+    ".loom/tasks/task-20261031-084619-task-52674aa0/git-snapshot.json",
+    ".loom/tasks/task-20261031-084619-task-52674aa0/logs.txt",
+    ".loom/tasks/task-20261031-084619-task-52674aa0/previous-results.md",
+    ".loom/tasks/task-20261031-084619-task-52674aa0/prompt.md",
+    ".loom/tasks/task-20261031-084619-task-52674aa0/result.md",
+    ".loom/tasks/task-20261031-084619-task-52674aa0/troubleshooting.md"
+  ],
   "source_proposal_id": "",
   "source_prompt": ""
 }
