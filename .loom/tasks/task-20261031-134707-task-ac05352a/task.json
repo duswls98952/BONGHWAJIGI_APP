@@ -3,9 +3,9 @@
   "job_id": "job-20261031-081911-png-html-28b089bf",
   "title": "홈 프로필 위치·색과 상단 배경 조정",
   "description": "HTML 시안 홈 상단에서 톱니와 프로필 버튼을 조금 아래로 배치하고 두 요소를 지기 글자와 같은 진회색으로 표시한다. 상단 푸른 배경과 지도까지 이어지는 그라데이션을 더 옅은 회청색으로 조정한다.",
-  "status": "RUNNING",
+  "status": "DONE",
   "created_at": "2026-10-31T13:47:07+00:00",
-  "updated_at": "2026-10-31T13:47:10+00:00",
+  "updated_at": "2026-10-31T13:47:59+00:00",
   "order_index": 50,
   "assigned_agent": "codex",
   "depends_on": [],
@@ -21,12 +21,24 @@
   "run_attempts": 0,
   "last_error": "",
   "commit_refs": [
-    "833f2422a29ac96d2f3217bd8e4c1ca8ff719ecb"
+    "833f2422a29ac96d2f3217bd8e4c1ca8ff719ecb",
+    "413cbcb7ada050380a32af9729b0a14228e4d72a"
   ],
   "branch_name": "HeoNey_dev",
   "git_dirty": true,
-  "git_snapshot_captured_at": "2026-10-31T13:47:10+00:00",
-  "artifacts": [],
+  "git_snapshot_captured_at": "2026-10-31T13:47:59+00:00",
+  "artifacts": [
+    ".loom/tasks/task-20261031-134707-task-ac05352a/agent-events.jsonl",
+    ".loom/tasks/task-20261031-134707-task-ac05352a/artifacts.json",
+    ".loom/tasks/task-20261031-134707-task-ac05352a/context.md",
+    ".loom/tasks/task-20261031-134707-task-ac05352a/decision.md",
+    ".loom/tasks/task-20261031-134707-task-ac05352a/git-snapshot.json",
+    ".loom/tasks/task-20261031-134707-task-ac05352a/logs.txt",
+    ".loom/tasks/task-20261031-134707-task-ac05352a/previous-results.md",
+    ".loom/tasks/task-20261031-134707-task-ac05352a/prompt.md",
+    ".loom/tasks/task-20261031-134707-task-ac05352a/result.md",
+    ".loom/tasks/task-20261031-134707-task-ac05352a/troubleshooting.md"
+  ],
   "source_proposal_id": "",
   "source_prompt": ""
 }
