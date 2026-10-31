@@ -16,7 +16,7 @@ function showScreen() {
   if (stage) {
     const emergencyScreen = document.getElementById('emergency');
     emergencyScreen.dataset.stage = stage.key;
-    emergencyScreen.querySelector('[data-stage-badge]').textContent = stage.label;
+    emergencyScreen.querySelector('[data-alert-title]').textContent = `${stage.label} 산불 발생`;
     lastEmergencyHash = `#${name}`;
   }
   document.querySelectorAll('[data-emergency-return]').forEach((link) => {
