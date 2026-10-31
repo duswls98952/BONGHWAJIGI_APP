@@ -3,3 +3,4 @@ Changed loading font-size from clamp(64px,18vw,76px) to clamp(58px,16vw,68px).
 Captured Chrome #loading at 1s; wordmark remained centered and colored.
 npm run check: passed (typecheck, 14 tests, docs link check).
 git diff --check: passed.
+[2026-10-31T14:02:03+00:00] agent=codex task=task-20261031-140125-task-52fed795 로딩 글씨 크기 약 10% 축소, Chrome 캡처와 npm check 검증 완료
