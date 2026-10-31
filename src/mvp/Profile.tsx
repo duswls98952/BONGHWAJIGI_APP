@@ -16,7 +16,7 @@ function ProfileBody(){
   const [draft,setDraft]=useState(emptyProfile),[base,setBase]=useState(0),[dirty,setDirty]=useState(false);
   const [busy,setBusy]=useState(false),[message,setMessage]=useState('');
   useEffect(()=>{if(runtime.profile&&!dirty){setDraft({...emptyProfile(),...runtime.profile.data.profile});setBase(runtime.profile.data.revision);}},[runtime.profile?.data.revision,dirty]);
-  async function perform(action:()=>Promise<void>,success:string){setBusy(true);setMessage('');try{await action();setMessage(success);}catch(error){setMessage(error instanceof Error&&/[가-힣]/.test(error.message)?error.message:userMessage(error));}finally{setBusy(false);}}
+  async function perform(action:()=>Promise<void>,success:string){setBusy(true);setMessage('서버에 반영하고 있어요…');console.info('[mvp] profile action started');try{await action();setMessage(success);console.info('[mvp] profile action completed');}catch(error){setMessage(error instanceof Error&&/[가-힣]/.test(error.message)?error.message:userMessage(error));console.warn('[mvp] profile action failed',error instanceof Error?error.name:'unknown');}finally{setBusy(false);}}
   const demoAvailable=runtime.home?.meta.mode==='simulation'&&settings.mode==='live'&&settings.demoLatitude!==''&&settings.demoLongitude!==''&&Number.isFinite(Number(settings.demoLatitude))&&Number.isFinite(Number(settings.demoLongitude));
   return <Page title="내정보">
     <ProfileForm value={draft} onChange={value=>{setDraft(value);setDirty(true);}}/>
@@ -35,7 +35,8 @@ function ProfileBody(){
     </Card>
     {demoAvailable&&<Card title="합성 시연 위치">
       <Body small muted>산불 시나리오 지역의 합성 위치로 서버 연결을 확인해요. 휴대폰 GPS를 사용하지 않으며 위치는 5분 동안 유효해요.</Body>
-      <Button secondary title="시연 위치로 안내 확인" disabled={busy} onPress={()=>void perform(async()=>{const result=await mvpApi.sendLocation({fix_id:newId(),installation_id:await installationId(),latitude:Number(settings.demoLatitude),longitude:Number(settings.demoLongitude),accuracy_m:10,captured_at:new Date().toISOString()});runtime.requireInput('location',result.data.input_revision);await runtime.refresh();},'합성 시연 위치를 보냈어요. 홈에서 시연 산불을 선택해 주세요.')}/>
+      <Button secondary title={busy?'시연 위치를 전송하고 있어요…':'시연 위치로 안내 확인'} disabled={busy} onPress={()=>void perform(async()=>{const result=await mvpApi.sendLocation({fix_id:newId(),installation_id:await installationId(),latitude:Number(settings.demoLatitude),longitude:Number(settings.demoLongitude),accuracy_m:10,captured_at:new Date().toISOString()});runtime.requireInput('location',result.data.input_revision);await runtime.refresh();},'합성 시연 위치를 보냈어요. 홈에서 시연 산불을 선택해 주세요.')}/>
+      {!!message&&<View accessibilityLiveRegion="polite" style={s.notice}><Body>{message}</Body></View>}
     </Card>}
     <Card title="내 정보 관리">
       <Button secondary title="프로필 삭제" disabled={busy} onPress={()=>Alert.alert('프로필 삭제','서버에 저장한 내 사전 정보와 선택 의료 메모를 삭제할까요?',[{text:'취소',style:'cancel'},{text:'삭제',style:'destructive',onPress:()=>void perform(async()=>{await runtime.deleteProfile();setDirty(false);},'프로필을 삭제했어요.')}])}/>

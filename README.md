@@ -39,3 +39,5 @@ Firebase와 지도 Client ID는 준비 전입니다. 실제 원격 푸시·지�
 - [문서 안내](docs/README.md)
 
 서명 키와 서비스 비밀값은 Git과 앱 공개 환경변수에 넣지 않습니다. 개발·실단말·APK 배포 검증을 구분해 기록합니다. Codex 작업은 [AGENTS.md](AGENTS.md)를 따릅니다.
+
+실제 휴대폰 설치와 사설 HTTPS 접속·APK 재빌드는 [Android 배포 문서](docs/10-android-delivery.md)를 따릅니다.

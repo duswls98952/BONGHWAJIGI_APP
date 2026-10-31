@@ -1,0 +1,3 @@
+[2026-10-31T17:08:32+00:00] agent=foreground task=task-20261031-170037-android-https-apk-eab2688e Foreground task session started.
+
+2026-11-01 KST: HTTPS 서명 APK 설치·온보딩·재실행 성공. 미러링 창 오류와 예상치 않은 화면 전환이 반복되어 단말 직접 터치 결과를 서버 DB와 대조했다. 사용자가 단계 갱신 문제 및 위치 버튼 무반응을 보고했고, 서버 location 미저장을 확인하여 완료 보류. 위치 버튼 바로 아래 처리 결과와 개인정보 없는 동작 로그를 추가하여 재검증 중.

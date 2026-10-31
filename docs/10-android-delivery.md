@@ -1,0 +1,80 @@
+# Android 내부 배포 및 실서버 검증
+
+2026-11-01 KST. Loom `task-20261031-170037-android-https-apk-eab2688e`.
+
+## 배포물
+
+- APK: `artifacts/apk/bonghwajigi-0.2.0-private-arm64.apk` (Git에는 바이너리·서명키를 포함하지 않음).
+- 앱: `com.bonghwajigi.app`, versionName `0.2.0`, versionCode `2`, Android arm64.
+- 최종 SHA256: `47974fdb379b2c51ebeaed25e76757669833b06fbe2eb2cfe20dd62554601d00`.
+- 고유 내부 release 서명, non-debuggable, JS/Hermes 번들 내장. Metro·Expo Go 없이 실행한다.
+- [빌드·서명·권한 검사 결과](validation/android-build.json).
+- 마지막 빌드는 내부 배포용 `--no-minify`를 사용했다. 코드 축소만 끄며 서명·TLS·앱 인증은 유지한다.
+
+연결한 Samsung SM-G996N(Android 15)에 `adb install -r`로 설치하고 실행했다. 업데이트 설치에서도 기존 시연 계정을 유지했다. Play Store 공개 배포나 iOS 배포는 포함하지 않는다.
+
+## 접속 조건
+
+API 주소는 `https://inno-server-011.tail2dac17.ts.net`이다. 휴대폰에서 같은 Tailnet에 연결해야 한다. 일반 인터넷에서 공개 접속하는 주소가 아니다.
+
+사용자가 승인한 두 기기(Mac `100.109.205.75`, 휴대폰 `100.83.238.120`)에서 일반 서버 `100.116.5.9`의 TCP 443으로만 접근을 추가했다. Tailscale Serve가 서버 loopback API로 전달하고 앱 세션 인증을 유지한다. Funnel이나 DB 공개 포트는 추가하지 않았다. 이 APK는 USB 포트 전달을 사용하지 않는다.
+
+서버는 실제 API/DB/큐를 사용하지만 데이터 모드는 `simulation`이다. 앱의 LIVE는 서버와 실제 통신한다는 뜻이며 재난 실운영 전환을 뜻하지 않는다. 합성 시나리오 `mobile-demo` / `mobile-fire`는 원격 서버의 별도 시연 입력이다.
+
+## 휴대폰에서 시연하기
+
+1. Tailscale을 켜고 봉화지기 앱을 연다. 최초 실행에서 합성 정보로 시연 동의·프로필을 저장한다.
+2. 기본 비교 프로필은 독립 보행·계단 가능이다. 이름·연락처·건강 메모 등 실제 개인정보는 시연에 필요하지 않다.
+3. 내정보 아래 `합성 시연 위치 → 시연 위치로 안내 확인`을 누른다. GPS 대신 합성 좌표 `36.4, 129.35`를 보낸다. 좌표는 5분 후 만료되므로 필요할 때 다시 누른다.
+4. 홈의 공식 경보 또는 주변 시연 산불을 열어 공식 원문과 개인 안내를 확인한다.
+5. 기본 조건에서는 경고(1단계), `지금 계단 이용이 어려워요`를 선택하고 상태를 저장하면 대피(2단계), `빠져나가기 어려워요`를 선택하고 저장하면 위급(3단계)으로 평가되는 시나리오다. 단계는 서버가 결정한다.
+6. `이 안내 음성으로 읽기`로 최신 검토 문장을 읽는다. 끄고 다시 켜면 같은 안내를 재생할 수 있다.
+7. 119 버튼은 사용자가 수정할 초안과 연락 준비 화면이다. 시연에서 실제 전화·문자 전송을 실행하지 않는다.
+
+새 상태를 저장한 직후에는 서버가 해당 입력 버전을 반영할 때까지 이전 행동 안내를 보류한다. 화면을 벗어나거나 앱이 백그라운드로 가면 TTS를 중단하며 복귀 시 최신 자료를 재조회한다. 위급 표시가 자동 신고 완료를 의미하지 않는다.
+
+## 검증 결과
+
+| 대상 | 결과 |
+| --- | --- |
+| TypeScript·앱 회귀·문서 | `npm run check` 통과, 40개 테스트 |
+| Web / Android JS | 양쪽 export 성공, 최종 native 빌드에서 변경된 Hermes 번들 재생성 |
+| Android native | release 빌드 성공, 서명·arm64·내장 JS·non-debuggable 검사 통과 |
+| 권한·통신 설정 | 평문 통신 false, loopback 예외 없음, 직접 통화/SMS·저장소·오버레이 권한 없음 |
+| 서명 실패 경로 | 서명키 환경 없이 release dry-run은 의도대로 실패, debug 키 대체 없음 |
+| 일반 서버 | 93개 테스트, HTTPS 등록·세션·프로필·위치·공식 경보·3단계·cursor·로그아웃 검증 |
+| 실제 Samsung | 설치, 합성 프로필 저장, 세션 발급, 공식 원문, 수칙·사전준비, 강제 종료 후 세션 복원·재접속 확인 |
+| 단말 단계별 갱신 | 최종 확인 진행 중. API 검증 결과와 구분한다 |
+| TTS 실제 소리 | 단말 청취 확인 진행 중. hook·코드 존재만으로 성공 처리하지 않는다 |
+
+[실제 단말 홈 화면](validation/android-home.png)은 실서버의 합성 경보를 표시한 증거다. 웹 mock 화면 증거와 구분한다. 미러링 자동 조작 중 화면 전환과 창 캡처 오류가 반복되어 추가 단말 검증은 사용자 직접 터치 결과와 서버 저장 결과를 대조한다.
+
+## 현재 미제공 또는 미검증
+
+- Firebase 미준비: 원격 푸시 연결 코드·모의 발송은 있으며 실제 기기 푸시 수신은 미검증. 전경 갱신과 앱 복귀 재조회는 별도다.
+- 네이버 지도 Client ID 미준비: 실제 도로 지도 대신 명시된 2D 도식. 실제 대피 경로는 서버 `unavailable`이다.
+- 실제 XGBoost 추론은 사용자 요청에 따라 연결 제외. 확률은 unavailable/null로 유지한다.
+- 실제 GPS·OS 위치 권한·백그라운드 위치·절전/잠금 수신·iOS는 이번 합성 단말 검증에 포함하지 않았다. 현재 빌드는 백그라운드 위치를 기본 비활성화한다.
+- 내부 시연 등록은 정식 본인인증·공개 서비스 약관 확정·계정 탈퇴 기능을 대신하지 않는다.
+
+## 같은 APK 재빌드
+
+Node 24, JDK 21, Android SDK/NDK와 Gradle 캐시를 준비한 뒤 다음을 실행한다. 아래 임시 도구 경로는 이번 Mac의 검증 환경이다.
+
+```sh
+env PATH=/private/tmp/bonghwajigi-node24/node_modules/node/bin:$PATH \
+  ANDROID_HOME=/private/tmp/bonghwa-android-sdk \
+  ANDROID_SDK_ROOT=/private/tmp/bonghwa-android-sdk \
+  GRADLE_USER_HOME=/private/tmp/bonghwa-gradle \
+  EXPO_PUBLIC_DEMO_LATITUDE=36.4 EXPO_PUBLIC_DEMO_LONGITUDE=129.35 \
+  node scripts/build-apk.mjs --no-minify \
+  --api-url https://inno-server-011.tail2dac17.ts.net
+```
+
+스크립트는 네이티브 설정이 달라지면 재생성하고, 같으면 Gradle 입력 검증을 거쳐 캐시를 사용한다. API URL·모드·시연 좌표 변경도 번들을 다시 만든다. 환경의 `.env`를 자동 로드하지 않는다.
+
+서명 파일은 `.local-private/android-signing/release.p12`와 `store-password.txt`에만 있다(디렉터리700, 파일600). 동일 키를 보존해야 기존 앱 위에 업데이트할 수 있다. Git·앱·문서에 비밀번호를 포함하지 않는다. 정식 배포 전에 팀이 이 두 파일의 비공개 백업과 관리자를 정해야 한다.
+
+## 저장소 배포 연결
+
+서버 저장소는 `apps/mobile`에 앱 원격을 서브모듈로 고정한다. 일반 서버 Python 이미지 빌드에는 앱 소스를 넣지 않는다. 서버 저장소의 `docs/V2/delivery/mobile-submodule-deployment.md`가 초기화·고정 커밋 검증 절차의 정본이다. 최종 커밋과 원격 동기화 결과는 Loom 결과에 기록한다.
