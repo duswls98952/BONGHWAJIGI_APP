@@ -1,0 +1,32 @@
+{
+  "id": "task-20261031-084710-task-c9b1d117",
+  "job_id": "job-20261031-081911-png-html-28b089bf",
+  "title": "홈 로고와 지도 제목 사이 간격 축소",
+  "description": "HTML 홈 화면에서 봉화 지기 헤더와 우리 동네는 지금? 제목 사이의 위쪽 여백을 조금 줄인다.",
+  "status": "RUNNING",
+  "created_at": "2026-10-31T08:47:10+00:00",
+  "updated_at": "2026-10-31T08:47:12+00:00",
+  "order_index": 9,
+  "assigned_agent": "codex",
+  "depends_on": [],
+  "expected_output": "로고 아래 간격이 줄어든 홈 화면",
+  "done_condition": "home-map-block의 상단 간격이 기존 26px보다 작고 다른 섹션 및 프로필 링크는 그대로 표시된다.",
+  "in_scope": "public/prototype/style.css의 홈 지도 섹션 간격과 검증 기록",
+  "out_of_scope": "다른 화면 및 문구 변경",
+  "validation_hint": "CSS 값 검사와 Safari 화면 배치 확인",
+  "required_docs": [],
+  "memory_refs": [],
+  "document_outputs": [],
+  "document_output_exceptions": [],
+  "run_attempts": 0,
+  "last_error": "",
+  "commit_refs": [
+    "9dac101bf27b9ce18defbc4fd5b91788f3f071e5"
+  ],
+  "branch_name": "HeoNey_dev",
+  "git_dirty": true,
+  "git_snapshot_captured_at": "2026-10-31T08:47:12+00:00",
+  "artifacts": [],
+  "source_proposal_id": "",
+  "source_prompt": ""
+}
