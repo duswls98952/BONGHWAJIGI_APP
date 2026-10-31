@@ -1,0 +1,19 @@
+{
+  "id": "checkpoint-20261031-074114-task-completed-expo-api-codex-8a77df56",
+  "created_at": "2026-10-31T07:41:14+00:00",
+  "reason": "Task completed: Expo 앱 실행 틀과 실시간 API 연동 및 Codex 개발 지침 작성",
+  "summary": "Expo 앱 실행 틀과 실시간 API 연동 및 Codex 개발 지침 작성 -> DONE @ develop/d32e9637fa9c",
+  "job_id": "job-20261031-071424-mvp-codex-b12fa0a4",
+  "task_id": "task-20261031-071443-expo-api-codex-3e7f4e33",
+  "commit_sha": "d32e9637fa9c29be19235d6c8e00249abbfd5668",
+  "branch_name": "develop",
+  "dirty": true,
+  "staged_files": [],
+  "modified_files": [
+    ".loom/job-runs/job-run-20261031-071519-job-20261031-071424-mvp-codex-b12fa0a4-49666aa9/job-run.json",
+    ".loom/task-definitions/task-def-20261031-071443-expo-api-codex-d06462c4/task-definition.json"
+  ],
+  "untracked_files": [],
+  "snapshot_captured_at": "2026-10-31T07:41:14+00:00",
+  "rollback_strategy": "revert-or-branch"
+}

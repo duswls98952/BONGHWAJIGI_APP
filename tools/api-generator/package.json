@@ -1,0 +1,9 @@
+{
+  "name": "bonghwajigi-api-generator",
+  "private": true,
+  "version": "0.1.0",
+  "dependencies": {
+    "openapi-typescript": "7.13.0",
+    "typescript": "5.9.3"
+  }
+}

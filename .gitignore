@@ -1,0 +1,17 @@
+node_modules/
+.expo/
+dist/
+web-build/
+android/
+ios/
+.env
+.env.*
+!.env.example
+*.tsbuildinfo
+.DS_Store
+*.jks
+*.keystore
+*.p12
+*.mobileprovision
+google-services.json
+GoogleService-Info.plist
