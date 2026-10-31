@@ -3,9 +3,9 @@
   "job_id": "job-20261031-081911-png-html-28b089bf",
   "title": "홈 정적 태극색 로고와 시작 로딩 화면 추가",
   "description": "PNG 기반 모바일 HTML 시안에서 홈 봉화 지기 글자는 태극의 빨강·파랑이 섞인 정적 채움으로 바꾸고, 첫 실행 시 흰 배경 중앙의 더 큰 봉화 지기 글자 안에서만 색이 일렁이는 로딩 화면을 추가한다. 시안은 잠시 후 기존 홈으로 넘어가고 해시로 직접 진입한 화면은 유지한다.",
-  "status": "RUNNING",
+  "status": "DONE",
   "created_at": "2026-10-31T13:32:23+00:00",
-  "updated_at": "2026-10-31T13:32:26+00:00",
+  "updated_at": "2026-10-31T13:35:21+00:00",
   "order_index": 46,
   "assigned_agent": "codex",
   "depends_on": [],
@@ -21,12 +21,24 @@
   "run_attempts": 0,
   "last_error": "",
   "commit_refs": [
-    "d162e293397f3102a0021526b989b8202bc09f0c"
+    "d162e293397f3102a0021526b989b8202bc09f0c",
+    "e2fdbe9f45a824241398f1f8a5874f5464042e6d"
   ],
   "branch_name": "HeoNey_dev",
   "git_dirty": true,
-  "git_snapshot_captured_at": "2026-10-31T13:32:26+00:00",
-  "artifacts": [],
+  "git_snapshot_captured_at": "2026-10-31T13:35:21+00:00",
+  "artifacts": [
+    ".loom/tasks/task-20261031-133223-task-2cde740e/agent-events.jsonl",
+    ".loom/tasks/task-20261031-133223-task-2cde740e/artifacts.json",
+    ".loom/tasks/task-20261031-133223-task-2cde740e/context.md",
+    ".loom/tasks/task-20261031-133223-task-2cde740e/decision.md",
+    ".loom/tasks/task-20261031-133223-task-2cde740e/git-snapshot.json",
+    ".loom/tasks/task-20261031-133223-task-2cde740e/logs.txt",
+    ".loom/tasks/task-20261031-133223-task-2cde740e/previous-results.md",
+    ".loom/tasks/task-20261031-133223-task-2cde740e/prompt.md",
+    ".loom/tasks/task-20261031-133223-task-2cde740e/result.md",
+    ".loom/tasks/task-20261031-133223-task-2cde740e/troubleshooting.md"
+  ],
   "source_proposal_id": "",
   "source_prompt": ""
 }
