@@ -1,0 +1,34 @@
+{
+  "id": "task-def-20261031-193008-task-def-09518467",
+  "job_definition_id": "job-20261031-152248-apk-cf438185",
+  "title": "지역 행동요령·공통 개인 준비 카드와 촬영용 앱 흐름 연결",
+  "description": "사용자가 촬영 계획 기반 실파이프라인 검증과 함께 시연 문구 제거, 위치·기상에 따른 오늘의 행동요령, 공통 1칸/개인 1칸 사전준비, A/B 음성 확인 흐름을 앱에 적용하라고 직접 지시했다.",
+  "created_at": "2026-10-31T19:30:08+00:00",
+  "updated_at": "2026-10-31T20:12:10+00:00",
+  "order_index": 6,
+  "legacy_task_id": "task-20261031-193008-task-33cb114d",
+  "depends_on": [],
+  "expected_output": "서버 근거 기반 홈 카드와 A/B 상태 확인 화면, 시연 문구 정리, 타입·회귀·웹/Android 검증과 새 APK·문서",
+  "done_condition": "홈 카드가 정책 대신 지역 환경 및 공통/개인 준비 계약을 표시하고 화면에 시연 문구가 남지 않는다. 출처와 만료·미검증 경로 의미는 보존하며 A/B 상태 질문을 확인 후 반영한다. 실제 API/단말에서 검증 가능한 APK를 설치한다.",
+  "in_scope": "홈 API·카드; 사용자 문구·시연 문구 정리; A/B 현재 상태·질문·경로 화면; Android 빌드·설치; 검증문서/Loom/원격",
+  "out_of_scope": "실제 GPS 공유·119연락; Firebase; 실제 예측; 3D; 실제 안전 경로 보장; 서버 모델 학습 변경",
+  "validation_hint": "npm run check, 웹 UI, OpenAPI 타입 일치, release APK 설치, 실서버 A/B 정책·알림·홈카드 검증, Loom strict",
+  "required_docs": [
+    "docs/01-start-here.md",
+    "docs/02-api-integration.md",
+    "docs/03-realtime-background.md",
+    "docs/04-map-tts.md",
+    "docs/05-codex-workflow.md"
+  ],
+  "memory_refs": [],
+  "document_outputs": [
+    "docs/13-location-guidance-scenarios.md"
+  ],
+  "document_output_exceptions": [],
+  "default_agent": "foreground",
+  "context_policy_id": "",
+  "executor_policy_id": "",
+  "review_policy": "",
+  "source_proposal_id": "",
+  "source_prompt": ""
+}

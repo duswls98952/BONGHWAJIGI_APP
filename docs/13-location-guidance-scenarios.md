@@ -26,6 +26,12 @@
 
 ## 검증
 
-타입 검사와 78개 앱 테스트, 문서 링크 검사를 통과했다. 서버 실모델 파이프라인과 새 APK 검증 결과는 완료 후 이 절에 기록한다. 기존 0.3.1의 실제 한국어 음성 인식 검증은 [음성 수정 기록](12-demo-polish-voice-route.md)에 보존한다.
+타입 검사와 78개 앱 테스트, 문서 링크 검사를 통과했다. 실제 일반 서버·GPU의 새 A/B 파이프라인 완주를 확인했다. 기존 0.3.1의 실제 한국어 음성 인식 검증은 [음성 수정 기록](12-demo-polish-voice-route.md)에 보존한다.
 
 웹에서 A 아이 동반 확인·통제 경로 숨김, B 혼자 이동 확인·상태 태그·참고 경로를 확인했다. 초기 AppState 미확정과 A/B 모의 전환에서 상태 revision이 역행하던 문제를 수정했다. `npm run export:web`도 통과했다.
+
+Android 0.4.0 / versionCode 6을 2분20초에 빌드해 기존 삼성 SM-G996N에 업데이트 설치했다. 기존 내부 서명·LIVE Tailnet·네이버 지도·embedded JS·non-debuggable을 확인했다. POST_NOTIFICATIONS와 RECORD_AUDIO는 모두 기존 허용 상태를 유지한다. 소스는 `74b4b65b95e2a59c2bc91518c2f677b11ce47b2c`, APK SHA256은 `7b7f44d5f39de3c540e14bae65ea17f1cea907fcde39aa3336ec747376a4fec7`이다. 빌드 보고서의 dirty는 미완료 Loom 기록이며 앱 실행 소스는 커밋에 포함했다. [빌드 보고서](validation/android-filming-build.json).
+
+사용자가 잠금을 푼 뒤 실제 단말에서 네이버 지도·A 위치, 건조 산림 행동요령, 자료 기준일, 공통 비상가방 카드와 어린이 준비 제목을 CUA로 확인했다. [실기기 홈](validation/android-filming-home.png). 새 경보 배너를 실제 단말에서 확인했고 사용자는 알림음1회·위급3단계·아이 질문까지 확인했다. 전체 A/B 음성 촬영은 이후 순서로 진행한다.
+
+최종 서버 `67933ce`는 141개 검사와 실모델 A/B 전체 재생을 통과했다. 긴급 경보 API는 Qwen 통합 전에 약1.6초에 노출됐다. Qwen 통합은160토큰·6.634초이며, 인터넷 검색은 실행됐으나 결과0건으로 저장 공식자료5건을 사용했다. [서버 상세 결과](https://github.com/develsvai/BONGHWAJIGI/blob/develop/docs/V2/delivery/filming-scenario-pipeline.md), [휴대폰 경보 배너](validation/android-filming-alert.png), [기기 검증 기록](validation/android-filming-verification.json).

@@ -24,3 +24,9 @@
 
 - Task: `task-20261031-182848-task-6374db8a`
 - Tags: `android`, `speech`, `verification`
+## 2026-10-31T20:12:09+00:00
+
+0.4.0 지역행동요령·공통/개인준비·A/B확인상태·전경알림 구현과 실폰설치완료. 78tests/웹/Android검증,사용자가알림음1회·위급3·아이질문확인. 상세 docs/13-location-guidance-scenarios.md.
+
+- Task: `task-20261031-193008-task-33cb114d`
+- Tags: `filming`, `android`

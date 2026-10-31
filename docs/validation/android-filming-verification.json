@@ -1,0 +1,26 @@
+{
+  "version": "0.4.0",
+  "version_code": 6,
+  "device": "Samsung SM-G996N",
+  "android": 15,
+  "install": "success",
+  "microphone_permission": "granted",
+  "notification_permission": "granted",
+  "actual_gps_used": false,
+  "actual_119_used": false,
+  "remote_fcm_verified": false,
+  "native_whole_flow": "Home and initial alert verified; full A/B spoken filming follows separately",
+  "web_fixture_A": "home, initial question, explicit child confirmation, updated actions, blocked route verified",
+  "web_fixture_B": "preparation, initial question, explicit alone/can_move confirmation, updated actions, reference route verified",
+  "automated_app_tests": 78,
+  "web_export": "passed",
+  "screenshot_limit": "Native home checked after user unlocked; whole spoken flow still pending user walkthrough.",
+  "native_home": "CUA confirmed Naver tiles, shared synthetic A location, dry-forest caution, original 2025-03-26 source date, common bag card and child preparation title",
+  "native_alert_banner": "CUA verified after real urgent queue input",
+  "user_confirmed": [
+    "one notification sound",
+    "critical level 3",
+    "child accompaniment initial question"
+  ],
+  "server_pipeline": "fresh A/B actual embedding, Qwen integration, dialogue confirmation, policy and routes passed"
+}
