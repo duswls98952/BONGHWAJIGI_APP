@@ -3,9 +3,9 @@
   "job_id": "job-20261031-111646-api-8f1ccab9",
   "title": "최신 화면 기준 API 매칭과 사전준비 공백 기록",
   "description": "모바일 API 매칭 리스트를 현재 홈·긴급 대응·프로필·기본 수칙 기획과 맞추고, 사전준비 개인 추천을 제공할 API·프로필 필드 공백과 주변 재난 3개월·최대 3건 규칙의 계약 차이를 서버 인계 문서에 기록한다. 문서의 끊어진 참조를 현재 저장소 문서로 정리한다.",
-  "status": "RUNNING",
+  "status": "DONE",
   "created_at": "2026-10-31T11:16:51+00:00",
-  "updated_at": "2026-10-31T11:16:52+00:00",
+  "updated_at": "2026-10-31T11:18:40+00:00",
   "order_index": 1,
   "assigned_agent": "codex",
   "depends_on": [],
@@ -21,12 +21,24 @@
   "run_attempts": 0,
   "last_error": "",
   "commit_refs": [
-    "07c249b0e5b292135041c2580cee99aaced2e2dc"
+    "07c249b0e5b292135041c2580cee99aaced2e2dc",
+    "c91b79a3c083aa696febc50d124bf7e136075a01"
   ],
   "branch_name": "HeoNey_dev",
   "git_dirty": true,
-  "git_snapshot_captured_at": "2026-10-31T11:16:52+00:00",
-  "artifacts": [],
+  "git_snapshot_captured_at": "2026-10-31T11:18:40+00:00",
+  "artifacts": [
+    ".loom/tasks/task-20261031-111651-api-9e9b2e02/agent-events.jsonl",
+    ".loom/tasks/task-20261031-111651-api-9e9b2e02/artifacts.json",
+    ".loom/tasks/task-20261031-111651-api-9e9b2e02/context.md",
+    ".loom/tasks/task-20261031-111651-api-9e9b2e02/decision.md",
+    ".loom/tasks/task-20261031-111651-api-9e9b2e02/git-snapshot.json",
+    ".loom/tasks/task-20261031-111651-api-9e9b2e02/logs.txt",
+    ".loom/tasks/task-20261031-111651-api-9e9b2e02/previous-results.md",
+    ".loom/tasks/task-20261031-111651-api-9e9b2e02/prompt.md",
+    ".loom/tasks/task-20261031-111651-api-9e9b2e02/result.md",
+    ".loom/tasks/task-20261031-111651-api-9e9b2e02/troubleshooting.md"
+  ],
   "source_proposal_id": "",
   "source_prompt": ""
 }

@@ -1,0 +1,19 @@
+{
+  "id": "checkpoint-20261031-111840-task-completed-api-ae8f7757",
+  "created_at": "2026-10-31T11:18:40+00:00",
+  "reason": "Task completed: 최신 화면 기준 API 매칭과 사전준비 공백 기록",
+  "summary": "최신 화면 기준 API 매칭과 사전준비 공백 기록 -> DONE @ HeoNey_dev/c91b79a3c083",
+  "job_id": "job-20261031-111646-api-8f1ccab9",
+  "task_id": "task-20261031-111651-api-9e9b2e02",
+  "commit_sha": "c91b79a3c083aa696febc50d124bf7e136075a01",
+  "branch_name": "HeoNey_dev",
+  "dirty": true,
+  "staged_files": [],
+  "modified_files": [
+    ".loom/job-runs/job-run-20261031-111652-job-20261031-111646-api-8f1ccab9-dd56f86e/job-run.json",
+    ".loom/task-definitions/task-def-20261031-111651-api-74a2ae33/task-definition.json"
+  ],
+  "untracked_files": [],
+  "snapshot_captured_at": "2026-10-31T11:18:40+00:00",
+  "rollback_strategy": "revert-or-branch"
+}
