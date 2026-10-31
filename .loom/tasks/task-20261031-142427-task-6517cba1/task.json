@@ -3,9 +3,9 @@
   "job_id": "job-20261031-081911-png-html-28b089bf",
   "title": "첫 설정 화면 문구와 전체 동의 카드 간격 수정",
   "description": "첫 설정 화면에서 전체 동의 상세 설명과 화살표를 제거하고 카드 높이를 줄인다. 상단 문구를 나의 상태를 미리 설정하세요로 바꾸고 보조 문구를 없앤다. 하단 시안 안내 문구를 제거하고 홈 화면 보기 버튼을 저장으로 바꾼다. 정적 시안이라는 실제 동작 경계는 문서에 유지한다.",
-  "status": "RUNNING",
+  "status": "DONE",
   "created_at": "2026-10-31T14:24:27+00:00",
-  "updated_at": "2026-10-31T14:24:29+00:00",
+  "updated_at": "2026-10-31T14:25:42+00:00",
   "order_index": 57,
   "assigned_agent": "codex",
   "depends_on": [],
@@ -21,12 +21,24 @@
   "run_attempts": 0,
   "last_error": "",
   "commit_refs": [
-    "c433ec0e3c94bc03b6ef23e83a3a6d2ea6a49d55"
+    "c433ec0e3c94bc03b6ef23e83a3a6d2ea6a49d55",
+    "de9f37fbb2ff184c7642597d043550d194f93116"
   ],
   "branch_name": "HeoNey_dev",
   "git_dirty": true,
-  "git_snapshot_captured_at": "2026-10-31T14:24:29+00:00",
-  "artifacts": [],
+  "git_snapshot_captured_at": "2026-10-31T14:25:42+00:00",
+  "artifacts": [
+    ".loom/tasks/task-20261031-142427-task-6517cba1/agent-events.jsonl",
+    ".loom/tasks/task-20261031-142427-task-6517cba1/artifacts.json",
+    ".loom/tasks/task-20261031-142427-task-6517cba1/context.md",
+    ".loom/tasks/task-20261031-142427-task-6517cba1/decision.md",
+    ".loom/tasks/task-20261031-142427-task-6517cba1/git-snapshot.json",
+    ".loom/tasks/task-20261031-142427-task-6517cba1/logs.txt",
+    ".loom/tasks/task-20261031-142427-task-6517cba1/previous-results.md",
+    ".loom/tasks/task-20261031-142427-task-6517cba1/prompt.md",
+    ".loom/tasks/task-20261031-142427-task-6517cba1/result.md",
+    ".loom/tasks/task-20261031-142427-task-6517cba1/troubleshooting.md"
+  ],
   "source_proposal_id": "",
   "source_prompt": ""
 }
