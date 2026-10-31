@@ -1,0 +1,32 @@
+{
+  "id": "task-20261031-085500-task-c1e2fefb",
+  "job_id": "job-20261031-081911-png-html-28b089bf",
+  "title": "긴급 경보 문구 확대와 위험 아이콘 복원",
+  "description": "긴급 대응 기본 HTML 화면의 홍수 대피 명령 발령 문구를 심각 표시와 같은 크기로 키우고 원본 PNG의 삼각형 느낌표 아이콘을 문구 왼쪽에 확실히 표시하며 문구를 왼쪽 정렬한다.",
+  "status": "RUNNING",
+  "created_at": "2026-10-31T08:55:00+00:00",
+  "updated_at": "2026-10-31T08:55:02+00:00",
+  "order_index": 13,
+  "assigned_agent": "codex",
+  "depends_on": [],
+  "expected_output": "원본 PNG와 요청에 맞는 긴급 경보 배너",
+  "done_condition": "홍수 대피 명령 발령과 심각의 글자 크기가 같고 삼각형 느낌표가 문구 바로 왼쪽에 표시되며 경보 배너의 왼쪽에 정렬된다.",
+  "in_scope": "public/prototype/index.html, public/prototype/style.css의 긴급 경보 배너와 검증 기록",
+  "out_of_scope": "다른 화면, 경보 문구·등급 데이터, API, 지도 변경",
+  "validation_hint": "HTML/CSS 검사와 Safari 긴급 화면 시각 확인",
+  "required_docs": [],
+  "memory_refs": [],
+  "document_outputs": [],
+  "document_output_exceptions": [],
+  "run_attempts": 0,
+  "last_error": "",
+  "commit_refs": [
+    "63f46aa0ced93b33fdc72b5ad2c5f706965a053a"
+  ],
+  "branch_name": "HeoNey_dev",
+  "git_dirty": true,
+  "git_snapshot_captured_at": "2026-10-31T08:55:02+00:00",
+  "artifacts": [],
+  "source_proposal_id": "",
+  "source_prompt": ""
+}
