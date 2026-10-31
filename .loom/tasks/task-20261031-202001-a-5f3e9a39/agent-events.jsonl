@@ -1,1 +1,2 @@
 {"id": "event-ec8f372df2e0", "type": "foreground_session_started", "message": "Foreground task session started.", "created_at": "2026-10-31T20:20:13+00:00", "agent": "foreground", "task_id": "task-20261031-202001-a-5f3e9a39"}
+{"id": "event-c94212ef1c0e", "type": "foreground_session_done", "message": "A 실제 단말 원본·확인본·알림음 보충 영상과 검증 문서 완료. 본편/보충 음성 범위를 명시하고 사용자·서버·전체 디코드 검증을 마쳤다.", "created_at": "2026-10-31T20:40:29+00:00", "agent": "foreground", "task_id": "task-20261031-202001-a-5f3e9a39"}
