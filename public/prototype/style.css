@@ -32,7 +32,8 @@ h2{font-size:20px;line-height:1.3;letter-spacing:-.7px;margin:0 0 15px;font-weig
 p{margin:0}
 .location-line{display:flex;align-items:center;gap:7px;margin:12px 0 0;font-size:15px}
 .location-line svg{width:19px;height:19px;fill:none;stroke:var(--blue);stroke-width:2}
-.home-map-block{margin-top:14px}
+.home-map-block{margin-top:14px;position:relative;isolation:isolate}
+.home-map-block:before{content:"";position:absolute;top:-14px;right:-16px;bottom:20px;left:-16px;z-index:-1;background:linear-gradient(to bottom,#edf3f6,rgba(237,243,246,0))}
 .map{position:relative;overflow:hidden;border-radius:16px;background:#e9eeeb;isolation:isolate}
 .map img{display:block;width:100%;height:100%;object-fit:cover}
 .home-map{height:184px}
