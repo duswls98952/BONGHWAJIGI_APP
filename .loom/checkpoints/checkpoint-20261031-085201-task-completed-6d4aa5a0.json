@@ -1,0 +1,19 @@
+{
+  "id": "checkpoint-20261031-085201-task-completed-6d4aa5a0",
+  "created_at": "2026-10-31T08:52:01+00:00",
+  "reason": "Task completed: 프로필 미선택 태그 글씨 진하게 조정",
+  "summary": "프로필 미선택 태그 글씨 진하게 조정 -> DONE @ HeoNey_dev/a591dcdcce26",
+  "job_id": "job-20261031-081911-png-html-28b089bf",
+  "task_id": "task-20261031-085125-task-94e6d425",
+  "commit_sha": "a591dcdcce269b832af4795b1c5220abb2eb7fe5",
+  "branch_name": "HeoNey_dev",
+  "dirty": true,
+  "staged_files": [],
+  "modified_files": [
+    ".loom/job-runs/job-run-20261031-085127-job-20261031-081911-png-html-28b089bf-7d6dd609/job-run.json",
+    ".loom/task-definitions/task-def-20261031-085125-task-def-d515690d/task-definition.json"
+  ],
+  "untracked_files": [],
+  "snapshot_captured_at": "2026-10-31T08:52:01+00:00",
+  "rollback_strategy": "revert-or-branch"
+}

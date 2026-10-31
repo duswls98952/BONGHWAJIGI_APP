@@ -3,11 +3,11 @@
   "job_id": "job-20261031-081911-png-html-28b089bf",
   "title": "프로필 미선택 태그 글씨 진하게 조정",
   "description": "HTML 프로필 화면에서 선택되지 않은 선택 태그의 글씨색을 더 진하게 하고 가독성을 높인다.",
-  "status": "RUNNING",
+  "status": "DONE",
   "created_at": "2026-10-31T08:51:25+00:00",
-  "updated_at": "2026-10-31T08:51:27+00:00",
+  "updated_at": "2026-10-31T08:52:01+00:00",
   "order_index": 12,
-  "assigned_agent": "codex",
+  "assigned_agent": "foreground",
   "depends_on": [],
   "expected_output": "읽기 쉬운 미선택 프로필 태그",
   "done_condition": "미선택 태그가 기존 #65707c보다 진한 색을 사용하고 선택 태그의 구분 스타일은 유지된다.",
@@ -21,12 +21,24 @@
   "run_attempts": 0,
   "last_error": "",
   "commit_refs": [
-    "530e90fd666ead0b0c11303c2b8943dd5105c148"
+    "530e90fd666ead0b0c11303c2b8943dd5105c148",
+    "a591dcdcce269b832af4795b1c5220abb2eb7fe5"
   ],
   "branch_name": "HeoNey_dev",
   "git_dirty": true,
-  "git_snapshot_captured_at": "2026-10-31T08:51:27+00:00",
-  "artifacts": [],
+  "git_snapshot_captured_at": "2026-10-31T08:52:01+00:00",
+  "artifacts": [
+    ".loom/tasks/task-20261031-085125-task-94e6d425/agent-events.jsonl",
+    ".loom/tasks/task-20261031-085125-task-94e6d425/artifacts.json",
+    ".loom/tasks/task-20261031-085125-task-94e6d425/context.md",
+    ".loom/tasks/task-20261031-085125-task-94e6d425/decision.md",
+    ".loom/tasks/task-20261031-085125-task-94e6d425/git-snapshot.json",
+    ".loom/tasks/task-20261031-085125-task-94e6d425/logs.txt",
+    ".loom/tasks/task-20261031-085125-task-94e6d425/previous-results.md",
+    ".loom/tasks/task-20261031-085125-task-94e6d425/prompt.md",
+    ".loom/tasks/task-20261031-085125-task-94e6d425/result.md",
+    ".loom/tasks/task-20261031-085125-task-94e6d425/troubleshooting.md"
+  ],
   "source_proposal_id": "",
   "source_prompt": ""
 }
