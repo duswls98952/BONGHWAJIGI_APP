@@ -1,0 +1,19 @@
+{
+  "id": "checkpoint-20261031-094518-task-completed-5bf72a5b",
+  "created_at": "2026-10-31T09:45:18+00:00",
+  "reason": "Task completed: 긴급 대응 섹션 간격을 홈 기준으로 통일",
+  "summary": "긴급 대응 섹션 간격을 홈 기준으로 통일 -> DONE @ HeoNey_dev/f6405301aef4",
+  "job_id": "job-20261031-081911-png-html-28b089bf",
+  "task_id": "task-20261031-094417-task-aa621590",
+  "commit_sha": "f6405301aef4a6067169e322156d1813b92ab358",
+  "branch_name": "HeoNey_dev",
+  "dirty": true,
+  "staged_files": [],
+  "modified_files": [
+    ".loom/job-runs/job-run-20261031-094420-job-20261031-081911-png-html-28b089bf-13e4d377/job-run.json",
+    ".loom/task-definitions/task-def-20261031-094417-task-def-235d5503/task-definition.json"
+  ],
+  "untracked_files": [],
+  "snapshot_captured_at": "2026-10-31T09:45:18+00:00",
+  "rollback_strategy": "revert-or-branch"
+}
