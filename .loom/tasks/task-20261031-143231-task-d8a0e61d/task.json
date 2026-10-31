@@ -3,9 +3,9 @@
   "job_id": "job-20261031-081911-png-html-28b089bf",
   "title": "홈 버튼과 정보 화면의 프로필 문구 변경",
   "description": "HTML 시안에서 홈 상단의 프로필 버튼 문구와 해당 화면 제목을 내정보로 바꾼다. 화면 이동과 입력 항목은 유지하고 README와 모바일 화면 기획서의 사용자에게 보이는 명칭을 맞춘다.",
-  "status": "RUNNING",
+  "status": "DONE",
   "created_at": "2026-10-31T14:32:31+00:00",
-  "updated_at": "2026-10-31T14:32:33+00:00",
+  "updated_at": "2026-10-31T14:33:32+00:00",
   "order_index": 62,
   "assigned_agent": "codex",
   "depends_on": [],
@@ -21,12 +21,24 @@
   "run_attempts": 0,
   "last_error": "",
   "commit_refs": [
-    "f16c1dbd76137da96db23d48a36ce74a65a127f5"
+    "f16c1dbd76137da96db23d48a36ce74a65a127f5",
+    "bd447bed332cbf523ffd1647707349e20456b5ae"
   ],
   "branch_name": "HeoNey_dev",
   "git_dirty": true,
-  "git_snapshot_captured_at": "2026-10-31T14:32:33+00:00",
-  "artifacts": [],
+  "git_snapshot_captured_at": "2026-10-31T14:33:32+00:00",
+  "artifacts": [
+    ".loom/tasks/task-20261031-143231-task-d8a0e61d/agent-events.jsonl",
+    ".loom/tasks/task-20261031-143231-task-d8a0e61d/artifacts.json",
+    ".loom/tasks/task-20261031-143231-task-d8a0e61d/context.md",
+    ".loom/tasks/task-20261031-143231-task-d8a0e61d/decision.md",
+    ".loom/tasks/task-20261031-143231-task-d8a0e61d/git-snapshot.json",
+    ".loom/tasks/task-20261031-143231-task-d8a0e61d/logs.txt",
+    ".loom/tasks/task-20261031-143231-task-d8a0e61d/previous-results.md",
+    ".loom/tasks/task-20261031-143231-task-d8a0e61d/prompt.md",
+    ".loom/tasks/task-20261031-143231-task-d8a0e61d/result.md",
+    ".loom/tasks/task-20261031-143231-task-d8a0e61d/troubleshooting.md"
+  ],
   "source_proposal_id": "",
   "source_prompt": ""
 }
