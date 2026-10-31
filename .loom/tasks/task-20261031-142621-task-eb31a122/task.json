@@ -3,9 +3,9 @@
   "job_id": "job-20261031-081911-png-html-28b089bf",
   "title": "첫 설정 동의 체크박스와 항목 간격 축소",
   "description": "첫 설정 화면의 전체 동의 체크박스와 감싸는 카드의 세로 높이를 줄이고, 두 필수·두 선택 항목 사이의 세로 간격을 좁힌다. 문구와 선택 동작은 유지한다.",
-  "status": "RUNNING",
+  "status": "DONE",
   "created_at": "2026-10-31T14:26:21+00:00",
-  "updated_at": "2026-10-31T14:26:23+00:00",
+  "updated_at": "2026-10-31T14:27:11+00:00",
   "order_index": 58,
   "assigned_agent": "codex",
   "depends_on": [],
@@ -21,12 +21,24 @@
   "run_attempts": 0,
   "last_error": "",
   "commit_refs": [
-    "84f927409fdf0e80118d36452ff82aa9c6383e08"
+    "84f927409fdf0e80118d36452ff82aa9c6383e08",
+    "c2fabb4bd46354289055a8c86f8058fb994cc7b7"
   ],
   "branch_name": "HeoNey_dev",
   "git_dirty": true,
-  "git_snapshot_captured_at": "2026-10-31T14:26:23+00:00",
-  "artifacts": [],
+  "git_snapshot_captured_at": "2026-10-31T14:27:11+00:00",
+  "artifacts": [
+    ".loom/tasks/task-20261031-142621-task-eb31a122/agent-events.jsonl",
+    ".loom/tasks/task-20261031-142621-task-eb31a122/artifacts.json",
+    ".loom/tasks/task-20261031-142621-task-eb31a122/context.md",
+    ".loom/tasks/task-20261031-142621-task-eb31a122/decision.md",
+    ".loom/tasks/task-20261031-142621-task-eb31a122/git-snapshot.json",
+    ".loom/tasks/task-20261031-142621-task-eb31a122/logs.txt",
+    ".loom/tasks/task-20261031-142621-task-eb31a122/previous-results.md",
+    ".loom/tasks/task-20261031-142621-task-eb31a122/prompt.md",
+    ".loom/tasks/task-20261031-142621-task-eb31a122/result.md",
+    ".loom/tasks/task-20261031-142621-task-eb31a122/troubleshooting.md"
+  ],
   "source_proposal_id": "",
   "source_prompt": ""
 }
