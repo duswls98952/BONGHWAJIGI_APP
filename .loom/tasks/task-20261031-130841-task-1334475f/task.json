@@ -3,9 +3,9 @@
   "job_id": "job-20261031-081911-png-html-28b089bf",
   "title": "긴급 경보 배경을 상태바까지 확장",
   "description": "긴급 대응 HTML 시안의 경보 빨간 배경을 좌우 여백 없이 화면 상단 시간·배터리 상태바까지 이어 붙인다. 빨간 테두리를 제거하고 경보 제목 글씨를 키운다.",
-  "status": "RUNNING",
+  "status": "DONE",
   "created_at": "2026-10-31T13:08:41+00:00",
-  "updated_at": "2026-10-31T13:08:42+00:00",
+  "updated_at": "2026-10-31T13:09:43+00:00",
   "order_index": 39,
   "assigned_agent": "codex",
   "depends_on": [],
@@ -21,12 +21,24 @@
   "run_attempts": 0,
   "last_error": "",
   "commit_refs": [
-    "e5f51ec6b2946f7ec75c837bbe2299db9c737d40"
+    "e5f51ec6b2946f7ec75c837bbe2299db9c737d40",
+    "98829cb4fdc872fa79d9852b2dde47bbc218eda1"
   ],
   "branch_name": "HeoNey_dev",
   "git_dirty": true,
-  "git_snapshot_captured_at": "2026-10-31T13:08:42+00:00",
-  "artifacts": [],
+  "git_snapshot_captured_at": "2026-10-31T13:09:43+00:00",
+  "artifacts": [
+    ".loom/tasks/task-20261031-130841-task-1334475f/agent-events.jsonl",
+    ".loom/tasks/task-20261031-130841-task-1334475f/artifacts.json",
+    ".loom/tasks/task-20261031-130841-task-1334475f/context.md",
+    ".loom/tasks/task-20261031-130841-task-1334475f/decision.md",
+    ".loom/tasks/task-20261031-130841-task-1334475f/git-snapshot.json",
+    ".loom/tasks/task-20261031-130841-task-1334475f/logs.txt",
+    ".loom/tasks/task-20261031-130841-task-1334475f/previous-results.md",
+    ".loom/tasks/task-20261031-130841-task-1334475f/prompt.md",
+    ".loom/tasks/task-20261031-130841-task-1334475f/result.md",
+    ".loom/tasks/task-20261031-130841-task-1334475f/troubleshooting.md"
+  ],
   "source_proposal_id": "",
   "source_prompt": ""
 }

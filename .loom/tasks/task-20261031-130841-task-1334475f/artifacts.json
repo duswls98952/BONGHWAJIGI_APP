@@ -1,10 +1,10 @@
 {
-  "status": "RUNNING",
+  "status": "DONE",
   "agent": "codex",
   "mode": "foreground",
   "execution_surface": "foreground",
   "task_run_id": "task-run-20261031-130842-task-def-20261031-130841-task-def-bad5fd92-2e6d913f",
-  "generated_at": "2026-10-31T13:08:42+00:00",
+  "generated_at": "2026-10-31T13:09:43+00:00",
   "artifacts": [
     ".loom/tasks/task-20261031-130841-task-1334475f/prompt.md",
     ".loom/tasks/task-20261031-130841-task-1334475f/context.md",
@@ -34,11 +34,7 @@
       ".loom/tasks/task-20261031-130841-task-1334475f/agent-events.jsonl",
       ".loom/tasks/task-20261031-130841-task-1334475f/artifacts.json"
     ],
-    "work_products": [
-      "public/prototype/index.html",
-      "public/prototype/style.css",
-      "docs/HeoNey/봉화지기_모바일_화면_기획서.md"
-    ]
+    "work_products": []
   },
   "contract_snapshot": {
     "schema_version": 1,
