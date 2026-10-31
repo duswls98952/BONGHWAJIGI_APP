@@ -1,3 +1,4 @@
 [2026-10-31T11:27:21+00:00] agent=codex task=task-20261031-112719-readme-ui-535e3de3 Foreground task session started.
 [2026-10-31T11:28:41.650Z] agent=codex README.md 및 docs/README.md를 UI 중심으로 수정하고 HTML 시안·기획서와 대조함.
 [2026-10-31T11:28:41.650Z] agent=codex npm run check 통과(테스트 14개, 문서 링크 검사), git diff --check 통과.
+[2026-10-31T11:28:59+00:00] agent=codex task=task-20261031-112719-readme-ui-535e3de3 README를 모바일 UI 중심으로 정리하고 문서 및 검증 완료

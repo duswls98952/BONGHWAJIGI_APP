@@ -1,10 +1,10 @@
 {
-  "status": "RUNNING",
+  "status": "DONE",
   "agent": "codex",
   "mode": "foreground",
   "execution_surface": "foreground",
   "task_run_id": "task-run-20261031-112721-task-def-20261031-112719-readme-ui-8d98434c-cd4d64b8",
-  "generated_at": "2026-10-31T11:27:21+00:00",
+  "generated_at": "2026-10-31T11:28:59+00:00",
   "artifacts": [
     ".loom/tasks/task-20261031-112719-readme-ui-535e3de3/prompt.md",
     ".loom/tasks/task-20261031-112719-readme-ui-535e3de3/context.md",
@@ -15,9 +15,7 @@
     ".loom/tasks/task-20261031-112719-readme-ui-535e3de3/troubleshooting.md",
     ".loom/tasks/task-20261031-112719-readme-ui-535e3de3/logs.txt",
     ".loom/tasks/task-20261031-112719-readme-ui-535e3de3/agent-events.jsonl",
-    ".loom/tasks/task-20261031-112719-readme-ui-535e3de3/artifacts.json",
-    "README.md",
-    "docs/README.md"
+    ".loom/tasks/task-20261031-112719-readme-ui-535e3de3/artifacts.json"
   ],
   "artifact_groups": {
     "user_outputs": [
@@ -36,10 +34,7 @@
       ".loom/tasks/task-20261031-112719-readme-ui-535e3de3/agent-events.jsonl",
       ".loom/tasks/task-20261031-112719-readme-ui-535e3de3/artifacts.json"
     ],
-    "work_products": [
-      "README.md",
-      "docs/README.md"
-    ]
+    "work_products": []
   },
   "contract_snapshot": {
     "schema_version": 1,

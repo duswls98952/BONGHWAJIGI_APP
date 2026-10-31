@@ -1,0 +1,19 @@
+{
+  "id": "checkpoint-20261031-112859-task-completed-readme-ui-021ddf62",
+  "created_at": "2026-10-31T11:28:59+00:00",
+  "reason": "Task completed: README를 모바일 UI 중심으로 정리",
+  "summary": "README를 모바일 UI 중심으로 정리 -> DONE @ HeoNey_dev/70dd290fd526",
+  "job_id": "job-20261031-081911-png-html-28b089bf",
+  "task_id": "task-20261031-112719-readme-ui-535e3de3",
+  "commit_sha": "70dd290fd52694d8c328401d05daa4d19d8c5489",
+  "branch_name": "HeoNey_dev",
+  "dirty": true,
+  "staged_files": [],
+  "modified_files": [
+    ".loom/job-runs/job-run-20261031-112721-job-20261031-081911-png-html-28b089bf-a0eda050/job-run.json",
+    ".loom/task-definitions/task-def-20261031-112719-readme-ui-8d98434c/task-definition.json"
+  ],
+  "untracked_files": [],
+  "snapshot_captured_at": "2026-10-31T11:28:59+00:00",
+  "rollback_strategy": "revert-or-branch"
+}
