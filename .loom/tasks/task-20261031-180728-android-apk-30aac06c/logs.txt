@@ -6,3 +6,4 @@
 2026-11-01 KST: docs/11 최신 지도 APK 정본과 빌드/QA JSON·화면 증거 작성. Client ID 추적파일 노출0건, 로컬 설정 mode600 확인.
 [2026-10-31T18:28:20+00:00] agent=foreground task=task-20261031-180728-android-apk-30aac06c Android0.2.1 실제 네이버 지도와 위치·영역 표시 검증, 앱 ced2446 push 및 메인 ad0d34d 서브모듈 재귀 clone 확인 완료
 [2026-10-31T18:30:23+00:00] agent=foreground task=task-20261031-180728-android-apk-30aac06c Foreground task session started.
+[2026-10-31T18:30:38+00:00] agent=foreground task=task-20261031-180728-android-apk-30aac06c npm run check 45 tests, native release/실기기 지도·마커·영역 및 원격 recursive clone 검증 완료
