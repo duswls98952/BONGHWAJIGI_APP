@@ -3,9 +3,9 @@
   "job_id": "job-20261031-081911-png-html-28b089bf",
   "title": "첫 설정 로고 적용과 위치정보 필수 표시",
   "description": "첫 설정 화면의 재난 대비용 상태설정 제목을 홈에서 사용한 봉화지기 로고로 교체하고 가운데 배치한다. 개인위치정보 이용 항목을 선택에서 필수로 바꾸며 모바일 화면 기획서의 항목 구분도 맞춘다.",
-  "status": "RUNNING",
+  "status": "DONE",
   "created_at": "2026-10-31T14:28:57+00:00",
-  "updated_at": "2026-10-31T14:28:59+00:00",
+  "updated_at": "2026-10-31T14:29:44+00:00",
   "order_index": 60,
   "assigned_agent": "codex",
   "depends_on": [],
@@ -21,12 +21,24 @@
   "run_attempts": 0,
   "last_error": "",
   "commit_refs": [
-    "7938ab7332cb83b582d6c320e9960aa06404614d"
+    "7938ab7332cb83b582d6c320e9960aa06404614d",
+    "04e7a63481eff976395bd88700467c5c1b08d602"
   ],
   "branch_name": "HeoNey_dev",
   "git_dirty": true,
-  "git_snapshot_captured_at": "2026-10-31T14:28:59+00:00",
-  "artifacts": [],
+  "git_snapshot_captured_at": "2026-10-31T14:29:44+00:00",
+  "artifacts": [
+    ".loom/tasks/task-20261031-142857-task-4eae0b0e/agent-events.jsonl",
+    ".loom/tasks/task-20261031-142857-task-4eae0b0e/artifacts.json",
+    ".loom/tasks/task-20261031-142857-task-4eae0b0e/context.md",
+    ".loom/tasks/task-20261031-142857-task-4eae0b0e/decision.md",
+    ".loom/tasks/task-20261031-142857-task-4eae0b0e/git-snapshot.json",
+    ".loom/tasks/task-20261031-142857-task-4eae0b0e/logs.txt",
+    ".loom/tasks/task-20261031-142857-task-4eae0b0e/previous-results.md",
+    ".loom/tasks/task-20261031-142857-task-4eae0b0e/prompt.md",
+    ".loom/tasks/task-20261031-142857-task-4eae0b0e/result.md",
+    ".loom/tasks/task-20261031-142857-task-4eae0b0e/troubleshooting.md"
+  ],
   "source_proposal_id": "",
   "source_prompt": ""
 }
