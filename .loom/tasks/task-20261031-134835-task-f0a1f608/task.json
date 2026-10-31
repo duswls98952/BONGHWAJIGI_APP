@@ -1,0 +1,32 @@
+{
+  "id": "task-20261031-134835-task-f0a1f608",
+  "job_id": "job-20261031-081911-png-html-28b089bf",
+  "title": "로딩 화면 고정 미리보기 주소 추가",
+  "description": "HTML 시안을 #loading 주소로 직접 열면 자동 전환 없이 로딩 화면과 색 애니메이션을 계속 볼 수 있게 한다. 해시 없는 일반 시작은 기존 약 2.6초 뒤 홈으로 전환한다. README와 모바일 화면 기획서에 미리보기 방법을 기록한다.",
+  "status": "RUNNING",
+  "created_at": "2026-10-31T13:48:35+00:00",
+  "updated_at": "2026-10-31T13:48:37+00:00",
+  "order_index": 51,
+  "assigned_agent": "codex",
+  "depends_on": [],
+  "expected_output": "public/prototype/app.js, README.md, docs/HeoNey/봉화지기_모바일_화면_기획서.md, Loom 기록",
+  "done_condition": "public/prototype/index.html#loading을 5초 이상 열어도 로딩 화면이 유지된다. 해시 없는 index.html은 약 2.6초 후 #home으로 전환하고 #home 등 기존 직접 진입은 유지된다.",
+  "in_scope": "public/prototype/app.js, README.md, docs/HeoNey/봉화지기_모바일_화면_기획서.md, Loom 기록",
+  "out_of_scope": "로고 디자인, 로딩 시간 변경, Expo 네이티브 시작 화면",
+  "validation_hint": "Chrome --virtual-time-budget=5000으로 public/prototype/index.html#loading 화면 유지와 해시 없는 index.html의 #home 전환을 각각 캡처·확인한다. npm run check:docs 및 git diff --check를 실행한다.",
+  "required_docs": [],
+  "memory_refs": [],
+  "document_outputs": [],
+  "document_output_exceptions": [],
+  "run_attempts": 0,
+  "last_error": "",
+  "commit_refs": [
+    "5d6846add3b5c069d0ea2c02d37c5dc2bd8e0481"
+  ],
+  "branch_name": "HeoNey_dev",
+  "git_dirty": true,
+  "git_snapshot_captured_at": "2026-10-31T13:48:37+00:00",
+  "artifacts": [],
+  "source_proposal_id": "",
+  "source_prompt": ""
+}

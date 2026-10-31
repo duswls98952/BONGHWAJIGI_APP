@@ -1,15 +1,16 @@
 let loadingTimer;
 
 function showScreen() {
-  const name = location.hash.slice(1) || 'loading';
+  const hash = location.hash.slice(1);
+  const name = hash || 'loading';
   const selected = document.getElementById(name) ? name : 'home';
   document.querySelectorAll('[data-screen]').forEach((screen) => {
     screen.hidden = screen.id !== selected;
   });
   clearTimeout(loadingTimer);
-  if (selected === 'loading') {
+  if (selected === 'loading' && !hash) {
     loadingTimer = window.setTimeout(() => {
-      if ((location.hash.slice(1) || 'loading') !== 'loading') return;
+      if (location.hash) return;
       history.replaceState(null, '', '#home');
       showScreen();
     }, 2600);
