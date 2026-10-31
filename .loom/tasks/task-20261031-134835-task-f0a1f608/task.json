@@ -3,9 +3,9 @@
   "job_id": "job-20261031-081911-png-html-28b089bf",
   "title": "로딩 화면 고정 미리보기 주소 추가",
   "description": "HTML 시안을 #loading 주소로 직접 열면 자동 전환 없이 로딩 화면과 색 애니메이션을 계속 볼 수 있게 한다. 해시 없는 일반 시작은 기존 약 2.6초 뒤 홈으로 전환한다. README와 모바일 화면 기획서에 미리보기 방법을 기록한다.",
-  "status": "RUNNING",
+  "status": "DONE",
   "created_at": "2026-10-31T13:48:35+00:00",
-  "updated_at": "2026-10-31T13:48:37+00:00",
+  "updated_at": "2026-10-31T13:49:31+00:00",
   "order_index": 51,
   "assigned_agent": "codex",
   "depends_on": [],
@@ -21,12 +21,24 @@
   "run_attempts": 0,
   "last_error": "",
   "commit_refs": [
-    "5d6846add3b5c069d0ea2c02d37c5dc2bd8e0481"
+    "5d6846add3b5c069d0ea2c02d37c5dc2bd8e0481",
+    "3c074e305be57953a07ec812eefa15aa99ddddd8"
   ],
   "branch_name": "HeoNey_dev",
   "git_dirty": true,
-  "git_snapshot_captured_at": "2026-10-31T13:48:37+00:00",
-  "artifacts": [],
+  "git_snapshot_captured_at": "2026-10-31T13:49:31+00:00",
+  "artifacts": [
+    ".loom/tasks/task-20261031-134835-task-f0a1f608/agent-events.jsonl",
+    ".loom/tasks/task-20261031-134835-task-f0a1f608/artifacts.json",
+    ".loom/tasks/task-20261031-134835-task-f0a1f608/context.md",
+    ".loom/tasks/task-20261031-134835-task-f0a1f608/decision.md",
+    ".loom/tasks/task-20261031-134835-task-f0a1f608/git-snapshot.json",
+    ".loom/tasks/task-20261031-134835-task-f0a1f608/logs.txt",
+    ".loom/tasks/task-20261031-134835-task-f0a1f608/previous-results.md",
+    ".loom/tasks/task-20261031-134835-task-f0a1f608/prompt.md",
+    ".loom/tasks/task-20261031-134835-task-f0a1f608/result.md",
+    ".loom/tasks/task-20261031-134835-task-f0a1f608/troubleshooting.md"
+  ],
   "source_proposal_id": "",
   "source_prompt": ""
 }
