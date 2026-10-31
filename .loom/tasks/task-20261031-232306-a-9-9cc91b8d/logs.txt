@@ -1,0 +1,4 @@
+[2026-10-31T23:23:22+00:00] agent=foreground task=task-20261031-232306-a-9-9cc91b8d Foreground task session started.
+
+2026-11-01 KST: exact9s cut retained79.7s; user-controlled profile recording take01=60.831211s, take02=50.040478s, take03=41.989456s; user requested redo twice then confirmed take03 finished. All capture processes stopped.
+Validation: after9s=79.700s, selected=42.000s/1260 frames, full decode no errors/warnings. Original packet DTS strictly increasing; null timebase rounding caused16 warnings, original demux timebase decode0 warnings. AAC1955 packets payload+PTS identical. Selected SHA256 3fcaee544a1981f50ee32342e42d266a45670164222a25fec816b1fa9b25eb8f.
