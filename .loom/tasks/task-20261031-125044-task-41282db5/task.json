@@ -3,9 +3,9 @@
   "job_id": "job-20261031-081911-png-html-28b089bf",
   "title": "홈 픽토그램 회색화와 음성 대화 카드 디자인 통일",
   "description": "PNG 기반 모바일 HTML 시안에서 오늘의 행동요령과 나의 사전준비 카드의 픽토그램을 진한 회색으로 바꾼다. 긴급 대응의 실시간 음성 대화 제목·파형·현재 AI 발화 한 개를 오늘의 행동요령처럼 왼쪽 제목 탭과 낮은 오른쪽 윗변의 큰 카드에 담고 발화 박스를 외곽선 없는 둥근 카드로 맞춘다. 기존 파란색 음성 강조와 문구는 유지한다.",
-  "status": "RUNNING",
+  "status": "DONE",
   "created_at": "2026-10-31T12:50:44+00:00",
-  "updated_at": "2026-10-31T12:50:45+00:00",
+  "updated_at": "2026-10-31T12:51:46+00:00",
   "order_index": 35,
   "assigned_agent": "codex",
   "depends_on": [],
@@ -21,12 +21,24 @@
   "run_attempts": 0,
   "last_error": "",
   "commit_refs": [
-    "a9fe21503f3560cffb2f1c926666be75a8a12531"
+    "a9fe21503f3560cffb2f1c926666be75a8a12531",
+    "7e67348de5d9fb73007e452b2303e9d4f9435468"
   ],
   "branch_name": "HeoNey_dev",
   "git_dirty": true,
-  "git_snapshot_captured_at": "2026-10-31T12:50:45+00:00",
-  "artifacts": [],
+  "git_snapshot_captured_at": "2026-10-31T12:51:46+00:00",
+  "artifacts": [
+    ".loom/tasks/task-20261031-125044-task-41282db5/agent-events.jsonl",
+    ".loom/tasks/task-20261031-125044-task-41282db5/artifacts.json",
+    ".loom/tasks/task-20261031-125044-task-41282db5/context.md",
+    ".loom/tasks/task-20261031-125044-task-41282db5/decision.md",
+    ".loom/tasks/task-20261031-125044-task-41282db5/git-snapshot.json",
+    ".loom/tasks/task-20261031-125044-task-41282db5/logs.txt",
+    ".loom/tasks/task-20261031-125044-task-41282db5/previous-results.md",
+    ".loom/tasks/task-20261031-125044-task-41282db5/prompt.md",
+    ".loom/tasks/task-20261031-125044-task-41282db5/result.md",
+    ".loom/tasks/task-20261031-125044-task-41282db5/troubleshooting.md"
+  ],
   "source_proposal_id": "",
   "source_prompt": ""
 }
