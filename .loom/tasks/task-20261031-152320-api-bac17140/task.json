@@ -3,9 +3,9 @@
   "job_id": "job-20261031-152248-apk-cf438185",
   "title": "앱 개발 서버에서 완성 목업 전 화면과 실서버 API 차이 확인",
   "description": "사용자가 앱 레포 조회·구현·APK 배포를 새로 직접 지시했다. 최신 main 목업을 develop에서 보존하고 개발 서버를 실행하여 전체 화면·상호작용을 확인한다. 현재 서버0.2.0-mvp와 앱0.1 계약·인증·미구현 기능을 대조하고 순차 구현 기준을 문서화한다.",
-  "status": "RUNNING",
+  "status": "DONE",
   "created_at": "2026-10-31T15:23:20+00:00",
-  "updated_at": "2026-10-31T15:24:16+00:00",
+  "updated_at": "2026-10-31T15:33:44+00:00",
   "order_index": 1,
   "assigned_agent": "foreground",
   "depends_on": [],
@@ -29,12 +29,25 @@
   "run_attempts": 0,
   "last_error": "",
   "commit_refs": [
-    "ce9ebd5cbdfdd1dd8b56f8053785c3846d40a1a7"
+    "ce9ebd5cbdfdd1dd8b56f8053785c3846d40a1a7",
+    "1c975672efe10da55aeb24eb7f026f8daaa29590"
   ],
   "branch_name": "develop",
   "git_dirty": true,
-  "git_snapshot_captured_at": "2026-10-31T15:24:16+00:00",
-  "artifacts": [],
+  "git_snapshot_captured_at": "2026-10-31T15:33:44+00:00",
+  "artifacts": [
+    ".loom/tasks/task-20261031-152320-api-bac17140/agent-events.jsonl",
+    ".loom/tasks/task-20261031-152320-api-bac17140/artifacts.json",
+    ".loom/tasks/task-20261031-152320-api-bac17140/context.md",
+    ".loom/tasks/task-20261031-152320-api-bac17140/decision.md",
+    ".loom/tasks/task-20261031-152320-api-bac17140/git-snapshot.json",
+    ".loom/tasks/task-20261031-152320-api-bac17140/logs.txt",
+    ".loom/tasks/task-20261031-152320-api-bac17140/previous-results.md",
+    ".loom/tasks/task-20261031-152320-api-bac17140/prompt.md",
+    ".loom/tasks/task-20261031-152320-api-bac17140/result.md",
+    ".loom/tasks/task-20261031-152320-api-bac17140/troubleshooting.md",
+    "docs/08-live-integration-audit.md"
+  ],
   "source_proposal_id": "",
   "source_prompt": ""
 }

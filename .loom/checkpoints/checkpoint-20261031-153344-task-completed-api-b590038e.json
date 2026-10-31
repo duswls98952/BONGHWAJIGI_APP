@@ -1,0 +1,19 @@
+{
+  "id": "checkpoint-20261031-153344-task-completed-api-b590038e",
+  "created_at": "2026-10-31T15:33:44+00:00",
+  "reason": "Task completed: 앱 개발 서버에서 완성 목업 전 화면과 실서버 API 차이 확인",
+  "summary": "앱 개발 서버에서 완성 목업 전 화면과 실서버 API 차이 확인 -> DONE @ develop/1c975672efe1",
+  "job_id": "job-20261031-152248-apk-cf438185",
+  "task_id": "task-20261031-152320-api-bac17140",
+  "commit_sha": "1c975672efe10da55aeb24eb7f026f8daaa29590",
+  "branch_name": "develop",
+  "dirty": true,
+  "staged_files": [],
+  "modified_files": [
+    ".loom/job-runs/job-run-20261031-152416-job-20261031-152248-apk-cf438185-63894514/job-run.json",
+    ".loom/task-definitions/task-def-20261031-152320-api-d6cd1848/task-definition.json"
+  ],
+  "untracked_files": [],
+  "snapshot_captured_at": "2026-10-31T15:33:44+00:00",
+  "rollback_strategy": "revert-or-branch"
+}
