@@ -1,0 +1,32 @@
+{
+  "id": "task-20261031-104814-task-2da201ba",
+  "job_id": "job-20261031-081911-png-html-28b089bf",
+  "title": "홈 주변 재난 제목 변경",
+  "description": "모바일 HTML 홈의 최근 주변 재난 정보 제목을 주변 재난 사항으로 바꾸고 모바일 화면 기획서에서 이 영역을 가리키는 표기를 맞춘다.",
+  "status": "RUNNING",
+  "created_at": "2026-10-31T10:48:14+00:00",
+  "updated_at": "2026-10-31T10:48:16+00:00",
+  "order_index": 25,
+  "assigned_agent": "codex",
+  "depends_on": [],
+  "expected_output": "public/prototype/index.html과 모바일 화면 기획서의 제목 변경 및 Loom 작업 기록",
+  "done_condition": "HTML 홈 제목과 기획서의 해당 섹션 명칭이 주변 재난 사항으로 일치하고 기존 제목 표기가 관련 문서에 남지 않는다.",
+  "in_scope": "public/prototype/index.html, docs/HeoNey/봉화지기_모바일_화면_기획서.md, Loom 작업 기록",
+  "out_of_scope": "Expo 앱, 카드 내용, 최근 3개월·최대 3건 규칙, CSS 및 다른 화면",
+  "validation_hint": "두 파일의 문구 검색, 기획서 상대 링크 확인, git diff --check",
+  "required_docs": [],
+  "memory_refs": [],
+  "document_outputs": [],
+  "document_output_exceptions": [],
+  "run_attempts": 0,
+  "last_error": "",
+  "commit_refs": [
+    "e9b89fc3dedc6e710e72c72c415475e778f3a879"
+  ],
+  "branch_name": "HeoNey_dev",
+  "git_dirty": true,
+  "git_snapshot_captured_at": "2026-10-31T10:48:16+00:00",
+  "artifacts": [],
+  "source_proposal_id": "",
+  "source_prompt": ""
+}
