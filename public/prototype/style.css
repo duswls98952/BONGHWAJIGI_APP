@@ -42,7 +42,7 @@ p{margin:0}
 .tip-card strong{font-size:15px;display:block;margin-bottom:5px}
 .tip-card p{font-size:14px;color:var(--muted);line-height:1.4}
 .nearby{margin-top:26px}
-.feed{border:1px solid #e4e7e9;border-radius:14px;margin:27px -3px 0;padding:0 13px}
+.feed{border:1px solid #e4e7e9;border-radius:14px;margin:0 -3px;padding:0 13px}
 .feed-row{height:86px;display:flex;align-items:center;gap:9px}
 .feed-row+.feed-row{border-top:1px solid #eef0f1}
 .feed-icon{width:37px;height:37px;border-radius:8px;background:var(--card);display:grid;place-items:center;flex:none}
