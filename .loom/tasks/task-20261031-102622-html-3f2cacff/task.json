@@ -1,0 +1,32 @@
+{
+  "id": "task-20261031-102622-html-3f2cacff",
+  "job_id": "job-20261031-081911-png-html-28b089bf",
+  "title": "모바일 HTML 홈에 개인 준비사항 카드 추가",
+  "description": "PNG 기반 모바일 HTML 시안의 홈에서 오늘의 안전 행동요령과 최근 주변 재난 정보 사이에 내 상황에 맞는 준비사항 영역을 추가하고 예시 카드 2개를 배치한다. 모바일 기획서도 새 순서와 시안 한계에 맞춘다.",
+  "status": "RUNNING",
+  "created_at": "2026-10-31T10:26:22+00:00",
+  "updated_at": "2026-10-31T10:26:24+00:00",
+  "order_index": 22,
+  "assigned_agent": "codex",
+  "depends_on": [],
+  "expected_output": "public/prototype/index.html, public/prototype/style.css, 모바일 화면 기획서 갱신과 Loom 결과 기록",
+  "done_condition": "홈의 두 기존 영역 사이에 준비사항 제목과 2개 예시 카드가 표시되고 제목·간격·모바일 폭이 기존 홈 스타일과 일치하며 문서와 정적 검증을 마친다.",
+  "in_scope": "HTML 홈 영역, 시안 CSS, 모바일 화면 기획서, Loom 기록",
+  "out_of_scope": "Expo 앱 기능, 서버 개인화 로직, API 계약, 다른 화면",
+  "validation_hint": "HTML 순서·카드 수 확인, CSS 파싱, git diff --check, 가능하면 브라우저 시각 확인",
+  "required_docs": [],
+  "memory_refs": [],
+  "document_outputs": [],
+  "document_output_exceptions": [],
+  "run_attempts": 0,
+  "last_error": "",
+  "commit_refs": [
+    "8d96a4efe8c479dbc25a45bc58586177ba8c5856"
+  ],
+  "branch_name": "HeoNey_dev",
+  "git_dirty": true,
+  "git_snapshot_captured_at": "2026-10-31T10:26:24+00:00",
+  "artifacts": [],
+  "source_proposal_id": "",
+  "source_prompt": ""
+}
