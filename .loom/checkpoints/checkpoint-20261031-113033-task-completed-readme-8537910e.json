@@ -1,0 +1,19 @@
+{
+  "id": "checkpoint-20261031-113033-task-completed-readme-8537910e",
+  "created_at": "2026-10-31T11:30:33+00:00",
+  "reason": "Task completed: README에 평상시·재난 시 화면 흐름과 긴급 화면 설계 의도 명시",
+  "summary": "README에 평상시·재난 시 화면 흐름과 긴급 화면 설계 의도 명시 -> DONE @ HeoNey_dev/dbac17052ba4",
+  "job_id": "job-20261031-081911-png-html-28b089bf",
+  "task_id": "task-20261031-112959-readme-a7a5c0f0",
+  "commit_sha": "dbac17052ba40f206b116a51ab4fa5dbc4121a06",
+  "branch_name": "HeoNey_dev",
+  "dirty": true,
+  "staged_files": [],
+  "modified_files": [
+    ".loom/job-runs/job-run-20261031-113001-job-20261031-081911-png-html-28b089bf-cbe64b5c/job-run.json",
+    ".loom/task-definitions/task-def-20261031-112959-readme-b3016ad1/task-definition.json"
+  ],
+  "untracked_files": [],
+  "snapshot_captured_at": "2026-10-31T11:30:33+00:00",
+  "rollback_strategy": "revert-or-branch"
+}

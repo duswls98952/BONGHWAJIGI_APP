@@ -3,9 +3,9 @@
   "job_id": "job-20261031-081911-png-html-28b089bf",
   "title": "README에 평상시·재난 시 화면 흐름과 긴급 화면 설계 의도 명시",
   "description": "루트 README와 모바일 화면 기획서에 평상시 홈·프로필 중심 이용, 재난 알림 또는 활성 재난 확인 시 긴급 대응으로 바로 진입하는 흐름, 긴급 정보의 한눈 파악과 화면 전환 최소화 의도를 명시한다. 자동 화면 전환이 구현된 것으로 오해되지 않게 현재 상태를 구분한다.",
-  "status": "RUNNING",
+  "status": "DONE",
   "created_at": "2026-10-31T11:29:59+00:00",
-  "updated_at": "2026-10-31T11:30:01+00:00",
+  "updated_at": "2026-10-31T11:30:33+00:00",
   "order_index": 28,
   "assigned_agent": "codex",
   "depends_on": [],
@@ -21,12 +21,24 @@
   "run_attempts": 0,
   "last_error": "",
   "commit_refs": [
-    "2495d1f40f2bf35553026c4db790f8db97604ba8"
+    "2495d1f40f2bf35553026c4db790f8db97604ba8",
+    "dbac17052ba40f206b116a51ab4fa5dbc4121a06"
   ],
   "branch_name": "HeoNey_dev",
   "git_dirty": true,
-  "git_snapshot_captured_at": "2026-10-31T11:30:01+00:00",
-  "artifacts": [],
+  "git_snapshot_captured_at": "2026-10-31T11:30:33+00:00",
+  "artifacts": [
+    ".loom/tasks/task-20261031-112959-readme-a7a5c0f0/agent-events.jsonl",
+    ".loom/tasks/task-20261031-112959-readme-a7a5c0f0/artifacts.json",
+    ".loom/tasks/task-20261031-112959-readme-a7a5c0f0/context.md",
+    ".loom/tasks/task-20261031-112959-readme-a7a5c0f0/decision.md",
+    ".loom/tasks/task-20261031-112959-readme-a7a5c0f0/git-snapshot.json",
+    ".loom/tasks/task-20261031-112959-readme-a7a5c0f0/logs.txt",
+    ".loom/tasks/task-20261031-112959-readme-a7a5c0f0/previous-results.md",
+    ".loom/tasks/task-20261031-112959-readme-a7a5c0f0/prompt.md",
+    ".loom/tasks/task-20261031-112959-readme-a7a5c0f0/result.md",
+    ".loom/tasks/task-20261031-112959-readme-a7a5c0f0/troubleshooting.md"
+  ],
   "source_proposal_id": "",
   "source_prompt": ""
 }
