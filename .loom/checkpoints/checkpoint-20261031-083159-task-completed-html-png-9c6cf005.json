@@ -1,0 +1,19 @@
+{
+  "id": "checkpoint-20261031-083159-task-completed-html-png-9c6cf005",
+  "created_at": "2026-10-31T08:31:59+00:00",
+  "reason": "Task completed: HTML 시안의 PNG 정합성 점검과 마무리",
+  "summary": "HTML 시안의 PNG 정합성 점검과 마무리 -> DONE @ HeoNey_dev/2c2f621127cc",
+  "job_id": "job-20261031-081911-png-html-28b089bf",
+  "task_id": "task-20261031-082510-html-png-ac043c33",
+  "commit_sha": "2c2f621127cc8490b1d2652af9d76b583e97eee7",
+  "branch_name": "HeoNey_dev",
+  "dirty": true,
+  "staged_files": [],
+  "modified_files": [
+    ".loom/job-runs/job-run-20261031-082512-job-20261031-081911-png-html-28b089bf-145825fd/job-run.json",
+    ".loom/task-definitions/task-def-20261031-082510-html-png-258b1c8d/task-definition.json"
+  ],
+  "untracked_files": [],
+  "snapshot_captured_at": "2026-10-31T08:31:59+00:00",
+  "rollback_strategy": "revert-or-branch"
+}

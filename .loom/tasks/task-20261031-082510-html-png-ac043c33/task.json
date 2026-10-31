@@ -3,11 +3,11 @@
   "job_id": "job-20261031-081911-png-html-28b089bf",
   "title": "HTML 시안의 PNG 정합성 점검과 마무리",
   "description": "기존 다섯 화면 HTML을 제공 PNG와 대조하여 누락·과잉 항목, 배치, 화면 이동, 모바일 스크롤 문제를 수정하고 가능한 브라우저 표시를 확인한다.",
-  "status": "RUNNING",
+  "status": "DONE",
   "created_at": "2026-10-31T08:25:10+00:00",
-  "updated_at": "2026-10-31T08:25:12+00:00",
+  "updated_at": "2026-10-31T08:31:59+00:00",
   "order_index": 2,
-  "assigned_agent": "codex",
+  "assigned_agent": "foreground",
   "depends_on": [],
   "expected_output": "PNG와 더 가깝게 조정된 HTML/CSS 및 검증 기록",
   "done_condition": "다섯 화면의 주요 항목과 순서가 PNG에 부합하고 모바일 폭의 넘침과 이동 링크를 검사하며 사용 가능한 브라우저로 시각 확인하거나 제한을 명확히 기록한다.",
@@ -21,12 +21,24 @@
   "run_attempts": 0,
   "last_error": "",
   "commit_refs": [
-    "c5fdb6aef2dce735ee541a700e3973128d0af501"
+    "c5fdb6aef2dce735ee541a700e3973128d0af501",
+    "2c2f621127cc8490b1d2652af9d76b583e97eee7"
   ],
   "branch_name": "HeoNey_dev",
   "git_dirty": true,
-  "git_snapshot_captured_at": "2026-10-31T08:25:12+00:00",
-  "artifacts": [],
+  "git_snapshot_captured_at": "2026-10-31T08:31:59+00:00",
+  "artifacts": [
+    ".loom/tasks/task-20261031-082510-html-png-ac043c33/agent-events.jsonl",
+    ".loom/tasks/task-20261031-082510-html-png-ac043c33/artifacts.json",
+    ".loom/tasks/task-20261031-082510-html-png-ac043c33/context.md",
+    ".loom/tasks/task-20261031-082510-html-png-ac043c33/decision.md",
+    ".loom/tasks/task-20261031-082510-html-png-ac043c33/git-snapshot.json",
+    ".loom/tasks/task-20261031-082510-html-png-ac043c33/logs.txt",
+    ".loom/tasks/task-20261031-082510-html-png-ac043c33/previous-results.md",
+    ".loom/tasks/task-20261031-082510-html-png-ac043c33/prompt.md",
+    ".loom/tasks/task-20261031-082510-html-png-ac043c33/result.md",
+    ".loom/tasks/task-20261031-082510-html-png-ac043c33/troubleshooting.md"
+  ],
   "source_proposal_id": "",
   "source_prompt": ""
 }
