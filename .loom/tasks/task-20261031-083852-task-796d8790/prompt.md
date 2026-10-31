@@ -24,7 +24,7 @@ Keep code identifiers, file paths, shell commands, URLs, commit hashes, and orig
 - Job ID: `job-20261031-081911-png-html-28b089bf`
 - Title: PNG 기반 모바일 HTML 시안
 - Goal: 사용자가 제공한 다섯 모바일 PNG의 화면 항목과 순서를 따라 독립 HTML 시안을 만들고 Expo 웹 개발 서버에서 확인한다. 기본 수칙은 재난별 공통 안내로, 맞춤 행동요령은 개인 상태 기반 예시로 분리한다.
-- Status: `PENDING`
+- Status: `REVIEW_REQUIRED`
 - Required branch: `HeoNey_dev`
 - Task count: `4`
 
@@ -41,7 +41,7 @@ Keep code identifiers, file paths, shell commands, URLs, commit hashes, and orig
 - Document outputs: -
 - Document output exceptions: -
 - Source proposal: `-`
-- Status: `PENDING`
+- Status: `REVIEW_REQUIRED`
 - Agent: `codex`
 - Order: `4`
 - Depends on: None

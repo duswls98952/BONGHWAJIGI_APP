@@ -5,7 +5,7 @@
   "description": "사용자의 최신 요청에 따라 HTML 프로필 설정 상단에 홈으로 이동하는 뒤로가기 버튼을 추가한다.",
   "status": "RUNNING",
   "created_at": "2026-10-31T08:38:52+00:00",
-  "updated_at": "2026-10-31T08:38:54+00:00",
+  "updated_at": "2026-10-31T08:40:12+00:00",
   "order_index": 4,
   "assigned_agent": "codex",
   "depends_on": [],
@@ -21,12 +21,24 @@
   "run_attempts": 0,
   "last_error": "",
   "commit_refs": [
-    "0b86de3a92b95bc2654ad7af3c3fa447f22bac98"
+    "0b86de3a92b95bc2654ad7af3c3fa447f22bac98",
+    "43aacd828aef19b32f13f1a9ae75b46cd30d73e2"
   ],
   "branch_name": "HeoNey_dev",
   "git_dirty": true,
-  "git_snapshot_captured_at": "2026-10-31T08:38:54+00:00",
-  "artifacts": [],
+  "git_snapshot_captured_at": "2026-10-31T08:40:12+00:00",
+  "artifacts": [
+    ".loom/tasks/task-20261031-083852-task-796d8790/agent-events.jsonl",
+    ".loom/tasks/task-20261031-083852-task-796d8790/artifacts.json",
+    ".loom/tasks/task-20261031-083852-task-796d8790/context.md",
+    ".loom/tasks/task-20261031-083852-task-796d8790/decision.md",
+    ".loom/tasks/task-20261031-083852-task-796d8790/git-snapshot.json",
+    ".loom/tasks/task-20261031-083852-task-796d8790/logs.txt",
+    ".loom/tasks/task-20261031-083852-task-796d8790/previous-results.md",
+    ".loom/tasks/task-20261031-083852-task-796d8790/prompt.md",
+    ".loom/tasks/task-20261031-083852-task-796d8790/result.md",
+    ".loom/tasks/task-20261031-083852-task-796d8790/troubleshooting.md"
+  ],
   "source_proposal_id": "",
   "source_prompt": ""
 }
