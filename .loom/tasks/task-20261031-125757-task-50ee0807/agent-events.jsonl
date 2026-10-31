@@ -1,1 +1,2 @@
 {"id": "event-df109a2f6d7c", "type": "foreground_session_started", "message": "Foreground task session started.", "created_at": "2026-10-31T12:57:59+00:00", "agent": "codex", "task_id": "task-20261031-125757-task-50ee0807"}
+{"id": "event-9c1a4c108558", "type": "foreground_session_done", "message": "맞춤 행동요령 선 테두리 카드 수정 완료", "created_at": "2026-10-31T12:58:47+00:00", "agent": "codex", "task_id": "task-20261031-125757-task-50ee0807"}

@@ -1,0 +1,20 @@
+{
+  "id": "checkpoint-20261031-125847-task-completed-511e9081",
+  "created_at": "2026-10-31T12:58:47+00:00",
+  "reason": "Task completed: 맞춤 행동요령 카드를 선 테두리로 수정",
+  "summary": "맞춤 행동요령 카드를 선 테두리로 수정 -> DONE @ HeoNey_dev/049aa9b8e3a3",
+  "job_id": "job-20261031-081911-png-html-28b089bf",
+  "task_id": "task-20261031-125757-task-50ee0807",
+  "commit_sha": "049aa9b8e3a31fec463a8fec297b476a6655e185",
+  "branch_name": "HeoNey_dev",
+  "dirty": true,
+  "staged_files": [],
+  "modified_files": [
+    ".loom/job-runs/job-run-20261031-125759-job-20261031-081911-png-html-28b089bf-f24457a1/job-run.json",
+    ".loom/task-definitions/task-def-20261031-125757-task-def-aae9e2d7/task-definition.json",
+    ".loom/tasks/task-20261031-120114-suite-bold-8ef87683/troubleshooting.md"
+  ],
+  "untracked_files": [],
+  "snapshot_captured_at": "2026-10-31T12:58:47+00:00",
+  "rollback_strategy": "revert-or-branch"
+}

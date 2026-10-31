@@ -3,9 +3,9 @@
   "job_id": "job-20261031-081911-png-html-28b089bf",
   "title": "맞춤 행동요령 카드를 선 테두리로 수정",
   "description": "직전 연회색 채움 카드는 사용자 의도와 달랐다. 주변 재난 사항 목록처럼 흰색 배경과 연회색 테두리만 있는 둥근 박스로 맞춤 행동요령 목록을 수정한다.",
-  "status": "RUNNING",
+  "status": "DONE",
   "created_at": "2026-10-31T12:57:57+00:00",
-  "updated_at": "2026-10-31T12:57:59+00:00",
+  "updated_at": "2026-10-31T12:58:47+00:00",
   "order_index": 38,
   "assigned_agent": "codex",
   "depends_on": [],
@@ -21,12 +21,24 @@
   "run_attempts": 0,
   "last_error": "",
   "commit_refs": [
-    "53bbbbdec6cab6f6d7e6c957a1929c175a94b285"
+    "53bbbbdec6cab6f6d7e6c957a1929c175a94b285",
+    "049aa9b8e3a31fec463a8fec297b476a6655e185"
   ],
   "branch_name": "HeoNey_dev",
   "git_dirty": true,
-  "git_snapshot_captured_at": "2026-10-31T12:57:59+00:00",
-  "artifacts": [],
+  "git_snapshot_captured_at": "2026-10-31T12:58:47+00:00",
+  "artifacts": [
+    ".loom/tasks/task-20261031-125757-task-50ee0807/agent-events.jsonl",
+    ".loom/tasks/task-20261031-125757-task-50ee0807/artifacts.json",
+    ".loom/tasks/task-20261031-125757-task-50ee0807/context.md",
+    ".loom/tasks/task-20261031-125757-task-50ee0807/decision.md",
+    ".loom/tasks/task-20261031-125757-task-50ee0807/git-snapshot.json",
+    ".loom/tasks/task-20261031-125757-task-50ee0807/logs.txt",
+    ".loom/tasks/task-20261031-125757-task-50ee0807/previous-results.md",
+    ".loom/tasks/task-20261031-125757-task-50ee0807/prompt.md",
+    ".loom/tasks/task-20261031-125757-task-50ee0807/result.md",
+    ".loom/tasks/task-20261031-125757-task-50ee0807/troubleshooting.md"
+  ],
   "source_proposal_id": "",
   "source_prompt": ""
 }
