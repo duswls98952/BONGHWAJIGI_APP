@@ -3,9 +3,9 @@
   "job_id": "job-20261031-081911-png-html-28b089bf",
   "title": "나의 사전준비 카드에 같은 단차와 녹회색 적용",
   "description": "사용자의 최신 참고 이미지에 맞춰 PNG 기반 모바일 HTML 시안의 나의 사전준비 영역에도 오늘의 행동요령과 같은 왼쪽 제목 탭·낮은 오른쪽 윗변의 큰 카드 디자인을 적용한다. 안쪽 두 카드 배경은 참고 이미지의 창업을 준비 카드와 비슷한 연한 녹회색으로 바꾸며 내용·배치와 오늘의 행동요령 색은 유지한다.",
-  "status": "RUNNING",
+  "status": "DONE",
   "created_at": "2026-10-31T12:46:48+00:00",
-  "updated_at": "2026-10-31T12:46:50+00:00",
+  "updated_at": "2026-10-31T12:47:44+00:00",
   "order_index": 34,
   "assigned_agent": "codex",
   "depends_on": [],
@@ -21,12 +21,24 @@
   "run_attempts": 0,
   "last_error": "",
   "commit_refs": [
-    "44fe01fbe27c933f06b2da9749d07f2b553bd8bb"
+    "44fe01fbe27c933f06b2da9749d07f2b553bd8bb",
+    "474f43f37d96d84908c2ceb1f31ef4456a9a616b"
   ],
   "branch_name": "HeoNey_dev",
   "git_dirty": true,
-  "git_snapshot_captured_at": "2026-10-31T12:46:50+00:00",
-  "artifacts": [],
+  "git_snapshot_captured_at": "2026-10-31T12:47:44+00:00",
+  "artifacts": [
+    ".loom/tasks/task-20261031-124648-task-85a35b59/agent-events.jsonl",
+    ".loom/tasks/task-20261031-124648-task-85a35b59/artifacts.json",
+    ".loom/tasks/task-20261031-124648-task-85a35b59/context.md",
+    ".loom/tasks/task-20261031-124648-task-85a35b59/decision.md",
+    ".loom/tasks/task-20261031-124648-task-85a35b59/git-snapshot.json",
+    ".loom/tasks/task-20261031-124648-task-85a35b59/logs.txt",
+    ".loom/tasks/task-20261031-124648-task-85a35b59/previous-results.md",
+    ".loom/tasks/task-20261031-124648-task-85a35b59/prompt.md",
+    ".loom/tasks/task-20261031-124648-task-85a35b59/result.md",
+    ".loom/tasks/task-20261031-124648-task-85a35b59/troubleshooting.md"
+  ],
   "source_proposal_id": "",
   "source_prompt": ""
 }

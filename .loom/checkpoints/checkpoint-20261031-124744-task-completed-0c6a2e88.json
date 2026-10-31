@@ -1,0 +1,20 @@
+{
+  "id": "checkpoint-20261031-124744-task-completed-0c6a2e88",
+  "created_at": "2026-10-31T12:47:44+00:00",
+  "reason": "Task completed: 나의 사전준비 카드에 같은 단차와 녹회색 적용",
+  "summary": "나의 사전준비 카드에 같은 단차와 녹회색 적용 -> DONE @ HeoNey_dev/474f43f37d96",
+  "job_id": "job-20261031-081911-png-html-28b089bf",
+  "task_id": "task-20261031-124648-task-85a35b59",
+  "commit_sha": "474f43f37d96d84908c2ceb1f31ef4456a9a616b",
+  "branch_name": "HeoNey_dev",
+  "dirty": true,
+  "staged_files": [],
+  "modified_files": [
+    ".loom/job-runs/job-run-20261031-124650-job-20261031-081911-png-html-28b089bf-808a2d0d/job-run.json",
+    ".loom/task-definitions/task-def-20261031-124648-task-def-c7eacf81/task-definition.json",
+    ".loom/tasks/task-20261031-120114-suite-bold-8ef87683/troubleshooting.md"
+  ],
+  "untracked_files": [],
+  "snapshot_captured_at": "2026-10-31T12:47:44+00:00",
+  "rollback_strategy": "revert-or-branch"
+}
