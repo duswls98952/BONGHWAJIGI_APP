@@ -1,3 +1,4 @@
 [2026-10-31T13:27:16+00:00] agent=codex task=task-20261031-132714-task-733032bf Foreground task session started.
 2026-10-31 홈 상태 표시줄과 헤더를 home-header로 묶고 배경 #edf3f6 적용.
 2026-10-31 Chrome 헤드리스 모바일 너비 스크린샷 확인. npm run check:docs, git diff --check, Loom Task 검증 통과.
+[2026-10-31T13:28:01+00:00] agent=codex task=task-20261031-132714-task-733032bf 홈 상단 상태 표시줄과 헤더에 연한 푸른 회색 배경 적용 완료

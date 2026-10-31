@@ -3,9 +3,9 @@
   "job_id": "job-20261031-081911-png-html-28b089bf",
   "title": "홈 상단 상태 표시줄과 로고 영역에 푸른 회색 배경 적용",
   "description": "PNG 기반 모바일 HTML 시안의 홈 상단에서 상태 표시줄과 봉화 지기·프로필 헤더를 하나의 연한 푸른 회색 배경 영역으로 묶어 좌우 여백 없이 표시한다. 긴급 경보의 상단 배경 구조를 참고하되 홈 화면에만 적용한다.",
-  "status": "RUNNING",
+  "status": "DONE",
   "created_at": "2026-10-31T13:27:14+00:00",
-  "updated_at": "2026-10-31T13:27:16+00:00",
+  "updated_at": "2026-10-31T13:28:01+00:00",
   "order_index": 43,
   "assigned_agent": "codex",
   "depends_on": [],
@@ -21,12 +21,24 @@
   "run_attempts": 0,
   "last_error": "",
   "commit_refs": [
-    "2c1f810bfe4a623200bfb2178f2496e262b110e1"
+    "2c1f810bfe4a623200bfb2178f2496e262b110e1",
+    "f5d56ff7a296e7d1681b66c54088cd3d53f8d94a"
   ],
   "branch_name": "HeoNey_dev",
   "git_dirty": true,
-  "git_snapshot_captured_at": "2026-10-31T13:27:16+00:00",
-  "artifacts": [],
+  "git_snapshot_captured_at": "2026-10-31T13:28:01+00:00",
+  "artifacts": [
+    ".loom/tasks/task-20261031-132714-task-733032bf/agent-events.jsonl",
+    ".loom/tasks/task-20261031-132714-task-733032bf/artifacts.json",
+    ".loom/tasks/task-20261031-132714-task-733032bf/context.md",
+    ".loom/tasks/task-20261031-132714-task-733032bf/decision.md",
+    ".loom/tasks/task-20261031-132714-task-733032bf/git-snapshot.json",
+    ".loom/tasks/task-20261031-132714-task-733032bf/logs.txt",
+    ".loom/tasks/task-20261031-132714-task-733032bf/previous-results.md",
+    ".loom/tasks/task-20261031-132714-task-733032bf/prompt.md",
+    ".loom/tasks/task-20261031-132714-task-733032bf/result.md",
+    ".loom/tasks/task-20261031-132714-task-733032bf/troubleshooting.md"
+  ],
   "source_proposal_id": "",
   "source_prompt": ""
 }
