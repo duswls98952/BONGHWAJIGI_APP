@@ -1,0 +1,20 @@
+{
+  "id": "checkpoint-20261031-143521-task-completed-html-46aaa94d",
+  "created_at": "2026-10-31T14:35:21+00:00",
+  "reason": "Task completed: 최근 모바일 HTML 시안 커밋 원격 푸시",
+  "summary": "최근 모바일 HTML 시안 커밋 원격 푸시 -> DONE @ HeoNey_dev/945e318c9ae3",
+  "job_id": "job-20261031-081911-png-html-28b089bf",
+  "task_id": "task-20261031-143411-html-dd0a2fb1",
+  "commit_sha": "945e318c9ae3084cbd6c5d69772bfd6695719914",
+  "branch_name": "HeoNey_dev",
+  "dirty": true,
+  "staged_files": [],
+  "modified_files": [
+    ".loom/job-runs/job-run-20261031-143413-job-20261031-081911-png-html-28b089bf-532fe995/job-run.json",
+    ".loom/task-definitions/task-def-20261031-143411-html-f506151f/task-definition.json",
+    ".loom/tasks/task-20261031-120114-suite-bold-8ef87683/troubleshooting.md"
+  ],
+  "untracked_files": [],
+  "snapshot_captured_at": "2026-10-31T14:35:21+00:00",
+  "rollback_strategy": "revert-or-branch"
+}

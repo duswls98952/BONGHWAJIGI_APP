@@ -4,7 +4,7 @@
   "title": "최근 모바일 HTML 시안 커밋 원격 푸시",
   "description": "HeoNey_dev의 최근 HTML UI 시안 커밋을 원격 origin/HeoNey_dev로 푸시한다. 원격 상태와 브랜치 차이를 확인하고 기존의 무관한 미커밋 Loom 파일은 제외한다.",
   "created_at": "2026-10-31T14:34:11+00:00",
-  "updated_at": "2026-10-31T14:34:13+00:00",
+  "updated_at": "2026-10-31T14:35:21+00:00",
   "order_index": 63,
   "legacy_task_id": "task-20261031-143411-html-dd0a2fb1",
   "depends_on": [],
