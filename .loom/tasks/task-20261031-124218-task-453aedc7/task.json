@@ -3,9 +3,9 @@
   "job_id": "job-20261031-081911-png-html-28b089bf",
   "title": "오늘의 행동요령 참고 이미지 스타일 적용",
   "description": "홈의 오늘의 행동요령 제목을 첨부 이미지의 혜택 알리미 제목처럼 단정한 영역으로 만들되 화살표와 나의 혜택 요소는 넣지 않는다. 아래 두 카드의 세로 배치와 문구·아이콘은 유지하고 카드 테두리를 제거해 연분홍 채움으로 바꾼다. 기존에 같은 규격을 쓰는 나의 사전준비 카드도 동일하게 맞춘다.",
-  "status": "RUNNING",
+  "status": "DONE",
   "created_at": "2026-10-31T12:42:18+00:00",
-  "updated_at": "2026-10-31T12:42:20+00:00",
+  "updated_at": "2026-10-31T12:43:22+00:00",
   "order_index": 32,
   "assigned_agent": "codex",
   "depends_on": [],
@@ -21,12 +21,24 @@
   "run_attempts": 0,
   "last_error": "",
   "commit_refs": [
-    "fa729b7243ddbe0859678a0922ce88f17139fa40"
+    "fa729b7243ddbe0859678a0922ce88f17139fa40",
+    "4568bd62482e19c639d0eb7b711c7c6e4b694e62"
   ],
   "branch_name": "HeoNey_dev",
   "git_dirty": true,
-  "git_snapshot_captured_at": "2026-10-31T12:42:20+00:00",
-  "artifacts": [],
+  "git_snapshot_captured_at": "2026-10-31T12:43:22+00:00",
+  "artifacts": [
+    ".loom/tasks/task-20261031-124218-task-453aedc7/agent-events.jsonl",
+    ".loom/tasks/task-20261031-124218-task-453aedc7/artifacts.json",
+    ".loom/tasks/task-20261031-124218-task-453aedc7/context.md",
+    ".loom/tasks/task-20261031-124218-task-453aedc7/decision.md",
+    ".loom/tasks/task-20261031-124218-task-453aedc7/git-snapshot.json",
+    ".loom/tasks/task-20261031-124218-task-453aedc7/logs.txt",
+    ".loom/tasks/task-20261031-124218-task-453aedc7/previous-results.md",
+    ".loom/tasks/task-20261031-124218-task-453aedc7/prompt.md",
+    ".loom/tasks/task-20261031-124218-task-453aedc7/result.md",
+    ".loom/tasks/task-20261031-124218-task-453aedc7/troubleshooting.md"
+  ],
   "source_proposal_id": "",
   "source_prompt": ""
 }
