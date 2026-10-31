@@ -1,0 +1,32 @@
+{
+  "id": "task-20261031-125432-task-72138666",
+  "job_id": "job-20261031-081911-png-html-28b089bf",
+  "title": "실시간 음성 대화 큰 카드 윗변 평평하게 수정",
+  "description": "사용자의 최신 지시에 따라 PNG 기반 모바일 HTML 시안 긴급 대응의 실시간 음성 대화 큰 카드에서 제목 탭과 오른쪽 낮은 윗변을 제거하고 전체 너비의 둥근 사각형 배경으로 채운다. 제목·파형·AI 발화 박스와 색상은 유지한다.",
+  "status": "RUNNING",
+  "created_at": "2026-10-31T12:54:32+00:00",
+  "updated_at": "2026-10-31T12:54:34+00:00",
+  "order_index": 36,
+  "assigned_agent": "codex",
+  "depends_on": [],
+  "expected_output": "public/prototype/style.css, docs/HeoNey/봉화지기_모바일_화면_기획서.md 및 Loom 작업 기록",
+  "done_condition": "실시간 음성 대화 큰 카드의 윗변이 전체 너비에서 같은 높이로 채워지고 단차가 없으며 제목·파형·발화 박스의 내용과 색상은 유지된다. 브라우저·문서 검사가 통과한다.",
+  "in_scope": "실시간 음성 대화 영역 CSS, 모바일 화면 기획서, 새 Loom 작업 기록",
+  "out_of_scope": "홈 카드, 음성 데이터·TTS·API, 다른 화면, Expo 앱, 배포",
+  "validation_hint": "브라우저 긴급 대응 화면 확인, git diff --check, npm run check:docs, Loom task validate",
+  "required_docs": [],
+  "memory_refs": [],
+  "document_outputs": [],
+  "document_output_exceptions": [],
+  "run_attempts": 0,
+  "last_error": "",
+  "commit_refs": [
+    "fbaabe2defea8d104efcc41e7f1d1e2a97457265"
+  ],
+  "branch_name": "HeoNey_dev",
+  "git_dirty": true,
+  "git_snapshot_captured_at": "2026-10-31T12:54:34+00:00",
+  "artifacts": [],
+  "source_proposal_id": "",
+  "source_prompt": ""
+}
