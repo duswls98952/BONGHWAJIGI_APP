@@ -1,10 +1,10 @@
 {
-  "status": "RUNNING",
-  "agent": "codex",
+  "status": "DONE",
+  "agent": "foreground",
   "mode": "foreground",
   "execution_surface": "foreground",
   "task_run_id": "task-run-20261031-085647-task-def-20261031-085645-task-def-44a8ea56-4ddf8f0f",
-  "generated_at": "2026-10-31T08:56:47+00:00",
+  "generated_at": "2026-10-31T08:57:48+00:00",
   "artifacts": [
     ".loom/tasks/task-20261031-085645-task-940e5aa9/prompt.md",
     ".loom/tasks/task-20261031-085645-task-940e5aa9/context.md",
