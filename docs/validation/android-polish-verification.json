@@ -1,7 +1,7 @@
 {
-  "version": "0.3.0",
-  "version_code": 4,
-  "source_commit": "964d6f19c4e3b5a6b0420d42de5624b61eaa90f5",
+  "version": "0.3.1",
+  "version_code": 5,
+  "source_commit": "c0b87ea2bab3ba769ebe3bfbbc91e140d0c12f0e",
   "device": "Samsung SM-G996N Android 15",
   "install_update": "success",
   "existing_session_preserved": true,
@@ -12,10 +12,42 @@
     "continuous_tab_outline",
     "connection_banner_removed"
   ],
-  "speech_and_confirmation": "user_reported_issue_under_diagnosis",
+  "speech_and_confirmation": "user_confirmed_success",
   "native_route_polyline": "user_confirmed_and_observed_in_CUA",
   "actual_gps_tested": false,
   "actual_119_called_or_sent": false,
   "firebase_push_tested": false,
-  "runtime_errors_at_launch": []
+  "runtime_errors_at_launch": [],
+  "microphone_permission": "granted_before_and_after_update",
+  "native_route_verified_version": "0.3.0",
+  "previous_speech_issue": {
+    "version": "0.3.0",
+    "symptom": "말하기 시작 직후 취소",
+    "evidence": "이미 허용한 마이크의 권한 Activity를 반복 요청하여 native start 전에 비활성화됨",
+    "fix": "기존 권한 조회 후 필요할 때만 요청; 최초 승인 후 명시적 재시작"
+  },
+  "speech_engine": {
+    "language": "ko-KR",
+    "on_device": true,
+    "existing_permission_reused": true,
+    "native_start_observed": true,
+    "native_end_observed": true,
+    "observed_at_device_time": "2026-11-01 04:18:25–04:18:31 KST",
+    "transcription_and_proposal": "CUA에서 합성 테스트 문장의 인식과 계단 이용 어려움 제안을 확인",
+    "screenshot": "docs/validation/android-polish-speech.png",
+    "user_confirmation": "음성 인식과 상태 반영 모두 정상",
+    "new_tts_audio_audition": false
+  },
+  "server_confirmation": {
+    "evidence": "docs/validation/android-polish-server-evidence.json",
+    "read_only": true,
+    "source": "qwen_grounded",
+    "base_context_revision": 4,
+    "next_turn_context_revision": 5,
+    "policy_revision_before": 14,
+    "policy_revision_after": 15,
+    "response_before": "경고",
+    "response_after": "대피",
+    "subsequent_policy_error": null
+  }
 }

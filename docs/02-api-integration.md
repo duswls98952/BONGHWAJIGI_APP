@@ -1,6 +1,6 @@
 # 현재 MVP API 연결
 
-2026-11-01 KST 기준 앱 **0.3.0**은 **0.2.0-mvp** 서버 계약을 사용한다. 서버 `4144822`에서 텍스트 대화·상태 제안 확인·합성 경로가 추가됐으며 schema_version은 유지된다. [현재 OpenAPI](api/mvp-openapi.json), [원본 커밋·SHA256](api/mvp-provenance.json), [합성 정책 응답](api/mvp-fixtures.json), [대화·경로 fixture](api/mvp-interaction-fixtures.json)가 기준이다. 이전 `upstream-openapi.yaml`, `generated.ts`, `createApi`와 구형 테스트는 이력으로 남아 있으며 현재 화면의 계약이 아니다. 0.3.0의 실제 휴대폰 통합 검증은 대기 중이다.
+2026-11-01 KST 기준 앱 **0.3.1**은 **0.2.0-mvp** 서버 계약을 사용한다. 배포 서버 `4144822`에서 텍스트 대화·상태 제안 확인·합성 경로가 추가됐으며 schema_version은 유지된다. [현재 OpenAPI](api/mvp-openapi.json), [원본 커밋·SHA256](api/mvp-provenance.json), [합성 정책 응답](api/mvp-fixtures.json), [대화·경로 fixture](api/mvp-interaction-fixtures.json)가 기준이다. 이전 `upstream-openapi.yaml`, `generated.ts`, `createApi`와 구형 테스트는 이력으로 남아 있으며 현재 화면의 계약이 아니다. 합성 경로선·목적지 마커는 Android에서 사용자와 CUA가 확인했다. 0.3.1에서 마이크 권한 반복 요청 문제를 수정했고, 한국어 인식·상태 제안 화면과 사용자의 상태 반영 성공을 확인했다.
 
 현재 호출 경로는 `app/*` → `src/mvp/*` → `src/api/client.ts`의 `createMvpApi`다. `src/mvp/api.ts`가 mock/live와 인증을 연결한다. LIVE 오류를 mock 응답으로 자동 대체하지 않는다. `live`는 실제 서버에 HTTP 요청한다는 앱 설정이며, 현재 서버 응답의 `meta.mode`와 정책의 `content.mode`는 계속 `simulation`이다.
 
