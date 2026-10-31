@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="384" height="387" viewBox="0 0 384 387" role="img" aria-labelledby="title desc">
+  <title id="title">숫자 24 획별 색상 참고</title>
+  <desc id="desc">사용자가 보낸 24 이미지의 숫자 4 색 배치를 바탕으로 다시 구성한 참고 이미지. 원본 첨부 파일은 아니다.</desc>
+  <rect width="384" height="387" fill="#fff"/>
+  <path d="M36 101C36 62 61 41 93 41s49 22 49 48c0 31-16 50-48 82l-56 56h112" fill="none" stroke="#183e63" stroke-width="22" stroke-linecap="square" stroke-linejoin="miter"/>
+  <path d="M243 34h44L190 164h61v-62h35v95H153v-42Z" fill="#183e63"/>
+  <path d="M251 101h35v63h-35z" fill="#e99543"/>
+  <path d="M286 164h64v33h-64z" fill="#d94754"/>
+  <path d="M251 197h35v62h-35z" fill="#4299c7"/>
+  <rect y="323" width="384" height="64" fill="#f5f5f5"/>
+</svg>
