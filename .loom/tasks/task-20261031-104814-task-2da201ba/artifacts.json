@@ -1,10 +1,10 @@
 {
-  "status": "RUNNING",
+  "status": "DONE",
   "agent": "codex",
   "mode": "foreground",
   "execution_surface": "foreground",
   "task_run_id": "task-run-20261031-104816-task-def-20261031-104814-task-def-4ccf8061-0207ff3a",
-  "generated_at": "2026-10-31T10:48:16+00:00",
+  "generated_at": "2026-10-31T10:48:42+00:00",
   "artifacts": [
     ".loom/tasks/task-20261031-104814-task-2da201ba/prompt.md",
     ".loom/tasks/task-20261031-104814-task-2da201ba/context.md",
@@ -15,9 +15,7 @@
     ".loom/tasks/task-20261031-104814-task-2da201ba/troubleshooting.md",
     ".loom/tasks/task-20261031-104814-task-2da201ba/logs.txt",
     ".loom/tasks/task-20261031-104814-task-2da201ba/agent-events.jsonl",
-    ".loom/tasks/task-20261031-104814-task-2da201ba/artifacts.json",
-    "public/prototype/index.html",
-    "docs/HeoNey/봉화지기_모바일_화면_기획서.md"
+    ".loom/tasks/task-20261031-104814-task-2da201ba/artifacts.json"
   ],
   "artifact_groups": {
     "user_outputs": [
@@ -36,10 +34,7 @@
       ".loom/tasks/task-20261031-104814-task-2da201ba/agent-events.jsonl",
       ".loom/tasks/task-20261031-104814-task-2da201ba/artifacts.json"
     ],
-    "work_products": [
-      "public/prototype/index.html",
-      "docs/HeoNey/봉화지기_모바일_화면_기획서.md"
-    ]
+    "work_products": []
   },
   "contract_snapshot": {
     "schema_version": 1,

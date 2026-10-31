@@ -1,1 +1,2 @@
 {"id": "event-dc07b85ba024", "type": "foreground_session_started", "message": "Foreground task session started.", "created_at": "2026-10-31T10:48:16+00:00", "agent": "codex", "task_id": "task-20261031-104814-task-2da201ba"}
+{"id": "event-76daae691c52", "type": "foreground_session_done", "message": "홈 주변 재난 영역 제목과 모바일 기획서 표기를 주변 재난 사항으로 변경하고 검증함", "created_at": "2026-10-31T10:48:42+00:00", "agent": "codex", "task_id": "task-20261031-104814-task-2da201ba"}
