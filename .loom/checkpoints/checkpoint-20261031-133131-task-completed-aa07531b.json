@@ -1,0 +1,20 @@
+{
+  "id": "checkpoint-20261031-133131-task-completed-aa07531b",
+  "created_at": "2026-10-31T13:31:31+00:00",
+  "reason": "Task completed: 홈 봉화지기 글자에 태극색 흐름 적용",
+  "summary": "홈 봉화지기 글자에 태극색 흐름 적용 -> DONE @ HeoNey_dev/784f5ba94fc9",
+  "job_id": "job-20261031-081911-png-html-28b089bf",
+  "task_id": "task-20261031-133033-task-57379b18",
+  "commit_sha": "784f5ba94fc98ee4c86f857e1f23a92750240350",
+  "branch_name": "HeoNey_dev",
+  "dirty": true,
+  "staged_files": [],
+  "modified_files": [
+    ".loom/job-runs/job-run-20261031-133034-job-20261031-081911-png-html-28b089bf-9a5e2c2f/job-run.json",
+    ".loom/task-definitions/task-def-20261031-133033-task-def-b08bec1f/task-definition.json",
+    ".loom/tasks/task-20261031-120114-suite-bold-8ef87683/troubleshooting.md"
+  ],
+  "untracked_files": [],
+  "snapshot_captured_at": "2026-10-31T13:31:31+00:00",
+  "rollback_strategy": "revert-or-branch"
+}
