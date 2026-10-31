@@ -1,0 +1,32 @@
+{
+  "id": "task-20261031-142857-task-4eae0b0e",
+  "job_id": "job-20261031-081911-png-html-28b089bf",
+  "title": "첫 설정 로고 적용과 위치정보 필수 표시",
+  "description": "첫 설정 화면의 재난 대비용 상태설정 제목을 홈에서 사용한 봉화지기 로고로 교체하고 가운데 배치한다. 개인위치정보 이용 항목을 선택에서 필수로 바꾸며 모바일 화면 기획서의 항목 구분도 맞춘다.",
+  "status": "RUNNING",
+  "created_at": "2026-10-31T14:28:57+00:00",
+  "updated_at": "2026-10-31T14:28:59+00:00",
+  "order_index": 60,
+  "assigned_agent": "codex",
+  "depends_on": [],
+  "expected_output": "public/prototype/index.html, public/prototype/style.css, docs/HeoNey/봉화지기_모바일_화면_기획서.md 및 Loom 기록",
+  "done_condition": "첫 설정 화면 상단에 홈과 동일한 봉화지기 로고가 표시되고 개인위치정보 이용에는 [필수]가 보인다. 기존 제목 문구와 위치정보 [선택] 표시는 남지 않으며 체크·상세 동작은 유지된다.",
+  "in_scope": "public/prototype/index.html, public/prototype/style.css, docs/HeoNey/봉화지기_모바일_화면_기획서.md, Loom 기록",
+  "out_of_scope": "실제 위치 권한·동의 저장, 약관 법률 문안 확정, 홈 로고 디자인 자체 변경",
+  "validation_hint": "Chrome 모바일 화면 캡처, 문구 확인, npm run check:docs, git diff --check",
+  "required_docs": [],
+  "memory_refs": [],
+  "document_outputs": [],
+  "document_output_exceptions": [],
+  "run_attempts": 0,
+  "last_error": "",
+  "commit_refs": [
+    "7938ab7332cb83b582d6c320e9960aa06404614d"
+  ],
+  "branch_name": "HeoNey_dev",
+  "git_dirty": true,
+  "git_snapshot_captured_at": "2026-10-31T14:28:59+00:00",
+  "artifacts": [],
+  "source_proposal_id": "",
+  "source_prompt": ""
+}

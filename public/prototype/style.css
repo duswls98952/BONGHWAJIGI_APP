@@ -15,8 +15,8 @@ a{color:inherit;text-decoration:none}
 .loading-brand-tail{font-size:.9em}
 @keyframes loading-color-wave{to{background-position:100% 50%}}
 .onboarding-content{padding:14px 20px 38px}
-.onboarding-intro{margin:10px 0 30px}
-.onboarding-intro h1{font-size:25px;letter-spacing:-.9px;margin:0;text-align:center}
+.onboarding-intro{margin:10px 0 30px;display:flex;justify-content:center}
+.onboarding-intro .brand-mark{font-size:31px;margin:0}
 .onboarding-section-help{font-size:14px;line-height:1.5;color:#343b42}
 .consent-section{margin-bottom:39px}
 .consent-section h2,.onboarding-profile h2{font-size:21px;margin:0 0 16px}

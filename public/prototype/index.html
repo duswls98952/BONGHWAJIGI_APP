@@ -46,7 +46,19 @@
     <section class="screen onboarding-screen" id="onboarding" data-screen hidden>
       <div class="statusbar"><span>9:41</span><span class="device-icons"><svg><use href="#signal"/></svg><svg><use href="#wifi"/></svg><span class="battery"></span></span></div>
       <main class="onboarding-content">
-        <header class="onboarding-intro"><h1>재난 대비용 상태설정</h1></header>
+        <header class="onboarding-intro"><h1 class="brand-mark" aria-label="봉화 지기"><svg class="brand-colored" viewBox="0 0 1824 950" aria-hidden="true" focusable="false">
+            <g transform="translate(0 800) scale(1 -1)">
+              <use href="#brand-bong-upper" class="brand-navy"/>
+              <use href="#brand-bong-ring" class="brand-red"/>
+              <g transform="translate(912 0)">
+                <use href="#brand-hwa-cap" class="brand-orange"/>
+                <use href="#brand-hwa-body" class="brand-navy"/>
+                <use href="#brand-hwa-right" class="brand-orange" clip-path="url(#brand-hwa-top-clip)"/>
+                <use href="#brand-hwa-right" class="brand-red" clip-path="url(#brand-hwa-mid-clip)"/>
+                <use href="#brand-hwa-right" class="brand-sky" clip-path="url(#brand-hwa-bottom-clip)"/>
+              </g>
+            </g>
+          </svg><span class="brand-neutral">지기</span></h1></header>
         <section class="consent-section" aria-labelledby="consent-heading">
           <h2 id="consent-heading">이용 동의</h2>
           <div class="consent-all-row">
@@ -57,7 +69,7 @@
             <p class="consent-detail" id="terms-detail" hidden>서비스의 이용 조건에 관한 항목입니다. 실제 약관 전문은 서비스 운영 전에 제공해야 합니다.</p>
             <div class="consent-row"><label class="consent-check"><input type="checkbox" data-consent-item><span class="checkbox-mark" aria-hidden="true"></span><span><strong>[필수]</strong> 개인정보 수집·이용</span></label><button class="consent-detail-button" type="button" data-detail-toggle="privacy-detail" aria-controls="privacy-detail" aria-expanded="false" aria-label="개인정보 수집·이용 설명 보기"><span aria-hidden="true">›</span></button></div>
             <p class="consent-detail" id="privacy-detail" hidden>아래에 입력하는 프로필 정보의 처리에 관한 항목입니다. 수집 항목·목적·보유 기간 등 실제 고지 내용은 확정 전입니다.</p>
-            <div class="consent-row"><label class="consent-check"><input type="checkbox" data-consent-item><span class="checkbox-mark" aria-hidden="true"></span><span><strong>[선택]</strong> 개인위치정보 이용</span></label><button class="consent-detail-button" type="button" data-detail-toggle="location-detail" aria-controls="location-detail" aria-expanded="false" aria-label="개인위치정보 이용 설명 보기"><span aria-hidden="true">›</span></button></div>
+            <div class="consent-row"><label class="consent-check"><input type="checkbox" data-consent-item><span class="checkbox-mark" aria-hidden="true"></span><span><strong>[필수]</strong> 개인위치정보 이용</span></label><button class="consent-detail-button" type="button" data-detail-toggle="location-detail" aria-controls="location-detail" aria-expanded="false" aria-label="개인위치정보 이용 설명 보기"><span aria-hidden="true">›</span></button></div>
             <p class="consent-detail" id="location-detail" hidden>내 주변 재난과 위치 기반 안내에 관한 항목입니다. 이 체크는 기기의 위치 권한을 허용하지 않습니다.</p>
             <div class="consent-row"><label class="consent-check"><input type="checkbox" data-consent-item><span class="checkbox-mark" aria-hidden="true"></span><span><strong>[선택]</strong> 건강·의료 정보 처리</span></label><button class="consent-detail-button" type="button" data-detail-toggle="health-detail" aria-controls="health-detail" aria-expanded="false" aria-label="건강·의료 정보 처리 설명 보기"><span aria-hidden="true">›</span></button></div>
             <p class="consent-detail" id="health-detail" hidden>건강·의료 특이사항을 직접 입력할 때 사용하는 별도 동의 항목입니다. 입력하지 않아도 됩니다.</p>
