@@ -80,10 +80,10 @@ p{margin:0}
 .tags{display:flex;flex-wrap:wrap;gap:6px}
 .tags span{border:1px solid var(--ink);border-radius:6px;background:var(--card);padding:7px 8px;font-size:12px;line-height:1.2}
 .personal h2{margin-bottom:15px}
-.steps{list-style:none;margin:0;padding:16px;border-radius:14px;background:var(--card)}
+.steps{list-style:none;margin:0 -3px;padding:16px;border:1px solid #e4e7e9;border-radius:14px;background:#fff}
 .steps li{display:flex;gap:12px;margin-bottom:22px}
 .steps li:last-child{margin-bottom:0}
-.steps li>span{width:26px;height:26px;flex:none;display:grid;place-items:center;border-radius:50%;background:#fff;font-size:13px;font-weight:750}
+.steps li>span{width:26px;height:26px;flex:none;display:grid;place-items:center;border-radius:50%;background:var(--card);font-size:13px;font-weight:750}
 .steps strong{display:block;font-size:16px;line-height:1.45;margin-bottom:4px;letter-spacing:-.3px}
 .steps p{color:var(--muted);font-size:14px;line-height:1.56;word-break:keep-all}
 .action-bar{position:fixed;z-index:10;left:50%;bottom:0;transform:translateX(-50%);width:min(100%,390px);padding:8px 16px 32px;background:#fff;display:flex;gap:8px}
