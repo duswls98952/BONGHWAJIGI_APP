@@ -21,7 +21,7 @@ if (Platform.OS !== 'web' && !TaskManager.isTaskDefined(LOCATION_TASK)) {
   });
 }
 export async function shareCurrentLocation() {
-  if(settings.mode==='mock')throw new Error('모의 시연에서는 합성 위치를 사용합니다. 실제 위치는 서버 연결 모드에서 공유할 수 있어요.');
+  if(settings.mode==='mock')throw new Error('현재 연결에서는 GPS 위치를 공유할 수 없어요. 안내 위치를 설정해 주세요.');
   const permission = await Location.requestForegroundPermissionsAsync();
   if (permission.status !== 'granted') throw new Error('위치 권한이 필요합니다. 권한 없이도 공식 안내를 볼 수 있습니다.');
   return sendFix(await Location.getCurrentPositionAsync({ accuracy: Location.Accuracy.High }));

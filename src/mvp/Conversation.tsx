@@ -29,8 +29,7 @@ export default function Conversation({responseId,active}:{responseId:string;acti
   const runtime=useMvp(),snapshot=runtime.snapshots[responseId]?.data;
   const scope=`${runtime.session?.tokens.user_id??''}:${responseId}`;
   const [draft,setDraft]=useState(''),[busy,setBusy]=useState(false),[saving,setSaving]=useState(false),[message,setMessage]=useState('');
-  const [turn,setTurn]=useState<MvpSchema<'TextTurnData'>|null>(null),[lastUser,setLastUser]=useState('');
-  const [history,setHistory]=useState<{user:string;answer:string}[]>([]),[showHistory,setShowHistory]=useState(false);
+  const [turn,setTurn]=useState<MvpSchema<'TextTurnData'>|null>(null);
   const controller=useRef<AbortController|null>(null),generation=useRef(0),locked=useRef(false),speechNotice=useRef(false);
   const latest=useRef({scope,active,snapshot,now:runtime.now});latest.current={scope,active,snapshot,now:runtime.now};
   const current=active&&dialogueCurrent(turn,snapshot,runtime.now);
@@ -45,14 +44,14 @@ export default function Conversation({responseId,active}:{responseId:string;acti
     if(!active){generation.current++;controller.current?.abort();controller.current=null;locked.current=false;setBusy(false);setSaving(false);}
     return()=>{generation.current++;controller.current?.abort();locked.current=false;};
   },[scope,active]);
-  useEffect(()=>{setBusy(false);setSaving(false);setDraft('');setTurn(null);setLastUser('');setHistory([]);setMessage('');setShowHistory(false);},[scope]);
+  useEffect(()=>{setBusy(false);setSaving(false);setDraft('');setTurn(null);setMessage('');},[scope]);
   useEffect(()=>{if(speech.transcript)setDraft(speech.transcript);},[speech.transcript]);
 
   async function send(raw:string){
     const text=raw.trim(),start=latest.current;
     if(text.length>1000){setMessage('말씀하신 내용이 길어요. 1,000자 이내로 줄여 보내 주세요.');return;}
     if(!text||!start.active||!start.snapshot||locked.current)return;
-    locked.current=true;setBusy(true);setMessage('');setTurn(null);setLastUser(text);tts.setEnabled(false);
+    locked.current=true;setBusy(true);setMessage('');setTurn(null);tts.setEnabled(false);
     const token=++generation.current,abort=new AbortController();controller.current=abort;
     const id=newId();
     const relevant=()=>!abort.signal.aborted&&generation.current===token&&latest.current.scope===start.scope&&latest.current.active;
@@ -72,7 +71,6 @@ export default function Conversation({responseId,active}:{responseId:string;acti
         setMessage('안내가 바뀌었어요. 최신 내용을 확인하고 다시 말씀해 주세요.');void runtime.refresh().catch(()=>undefined);return;
       }
       setTurn(response.data);setDraft('');
-      if(response.data.assistant)setHistory(old=>[...old,{user:text,answer:response.data.assistant!.text}].slice(-8));
       tts.setEnabled(true);
     }catch(problem){if(relevant()){
       const stale=problem instanceof ApiError&&['TURN_STALE','REVISION_CONFLICT','TURN_SUPERSEDED','TURN_EXPIRED','RESPONSE_REFRESH_REQUIRED','RESPONSE_REVISION_CONFLICT','CONTEXT_REVISION_CONFLICT'].includes(problem.code);
@@ -101,7 +99,6 @@ export default function Conversation({responseId,active}:{responseId:string;acti
   return <View style={{marginHorizontal:-12,padding:12,borderRadius:24,backgroundColor:'#f7f9fb',gap:12}}>
     <Text style={s.heading}>실시간 음성 대화</Text>
     <Wave active={tts.speaking||speech.status==='listening'}/>
-    {!!lastUser&&<Text style={{fontSize:14,lineHeight:22,color:'#58636c',textAlign:'right'}}>나: {lastUser}</Text>}
     <View accessibilityLiveRegion="polite" style={{minHeight:80,borderRadius:16,backgroundColor:'#e8f2f6',padding:14,justifyContent:'center'}}><Text style={{fontSize:17,lineHeight:27,fontWeight:'700',textAlign:'center',color:'#245c74'}}>{busy?'말씀하신 내용을 확인하고 있어요…':utterance?.text??'최신 안내를 확인하고 있어요.'}</Text></View>
     {proposal&&<View style={{gap:10,padding:12,backgroundColor:'#fff',borderWidth:1,borderColor:'#87949d',borderRadius:12}}><Body>이 상태로 안내를 갱신할까요?</Body>{[...new Set(turn!.proposal!.evidence.map(proposalLabel))].map(label=><Body key={label}>• {label}</Body>)}<View style={{flexDirection:'row',gap:8}}><View style={{flex:1}}><Button title={saving?'반영 중…':'상태 반영'} disabled={saving} onPress={()=>void confirm()}/></View><View style={{flex:1}}><Button secondary title="취소" disabled={saving} onPress={()=>setTurn(null)}/></View></View></View>}
     <TextInput accessibilityLabel="대화 내용" value={draft} onChangeText={setDraft} editable={active&&!busy&&!recording&&!saving} placeholder="현재 상황을 말하거나 입력하세요" placeholderTextColor="#737d85" multiline maxLength={1000} style={[s.input,{minHeight:48,maxHeight:120}]}/>
@@ -112,6 +109,5 @@ export default function Conversation({responseId,active}:{responseId:string;acti
     {recording&&<Button secondary title="음성 입력 취소" onPress={()=>{speech.cancel();setDraft('');}}/>}
     <Pressable accessibilityRole="button" disabled={!active||recording||busy} onPress={()=>tts.setEnabled(!tts.enabled)} style={{minHeight:48,justifyContent:'center',alignItems:'center'}}><Text style={{color:'#245c74',fontSize:14,fontWeight:'700'}}>{tts.enabled?'음성 읽기 끄기':'안내 읽어주기'}</Text></Pressable>
     {!!(message||speech.error||tts.error)&&<Body>{message||speech.error||tts.error}</Body>}
-    {history.length>1&&<><Pressable accessibilityRole="button" accessibilityState={{expanded:showHistory}} onPress={()=>setShowHistory(!showHistory)} style={{minHeight:48,justifyContent:'center'}}><Text style={{fontSize:13,color:'#245c74'}}>이전 대화 {showHistory?'접기':'보기'}</Text></Pressable>{showHistory&&history.slice(0,-1).map((item,index)=><View key={index} style={{gap:5,borderTopWidth:1,borderColor:'#dfe3e7',paddingTop:10}}><Body small>나: {item.user}</Body><Body small>{item.answer}</Body></View>)}</>}
   </View>;
 }

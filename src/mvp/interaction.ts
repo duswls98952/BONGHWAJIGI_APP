@@ -33,7 +33,9 @@ export function simulationRoutePoints(value:MvpSchema<'RouteData'>|null|undefine
 
 export function proposalLabel(evidence:MvpSchema<'ProposalEvidence'>):string{
   const labels:Record<string,Record<string,string>>={
-    'state.helper_present':{true:'도와줄 사람이 함께 있음',false:'혼자 있음'},
+    'state.helper_present':{true:'도와줄 사람이 함께 있음',false:'현재 조력자 없음'},
+    'state.child_present':{true:'아이 동반',false:'아이와 함께 있지 않음'},
+    'state.alone_now':{yes:'혼자 있음',no:'동행인 있음',unknown:'동행 여부 확인 필요'},
     'state.can_move':{true:'스스로 이동 가능',false:'스스로 이동하기 어려움'},
     'state.injured':{true:'다친 곳이 있음',false:'다친 곳이 없음'},
     'state.observed_hazard':{unknown:'주변 상황 확인 필요',none:'연기·불꽃 보이지 않음',smoke:'연기가 보임',flames:'불꽃이 보임',fear:'두려움이 큼',trapped:'빠져나가기 어려움'},

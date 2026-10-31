@@ -25,11 +25,11 @@ export function EmergencyActions({responseId,alertId}:{responseId?:string;alertI
     setMessage('');setOpen(true);
   }
   async function dial(){
-    if(mvpIsMock||Platform.OS==='web'){setMessage('모의 시연에서는 실제 전화·문자를 연결하지 않아요.');return;}
+    if(mvpIsMock||Platform.OS==='web'){setMessage('이 환경에서는 전화·문자 앱을 열 수 없어요.');return;}
     try{await Linking.openURL('tel:119');}catch{setMessage('전화 앱을 열지 못했어요. 휴대폰에서 직접 119를 눌러 주세요.');}
   }
   async function sms(){
-    if(mvpIsMock||Platform.OS==='web'){setMessage('모의 시연에서는 실제 전화·문자를 연결하지 않아요.');return;}
+    if(mvpIsMock||Platform.OS==='web'){setMessage('이 환경에서는 전화·문자 앱을 열 수 없어요.');return;}
     if(!await SMS.isAvailableAsync()){setMessage('이 기기에서 문자 작성 화면을 열 수 없어요.');return;}
     await SMS.sendSMSAsync(['119'],text);
     setMessage('문자 작성 화면을 열었어요. 실제 전송·접수 여부는 문자 앱과 구조기관에서 확인해 주세요.');

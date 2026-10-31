@@ -1,20 +1,20 @@
 {
-  "기준": "실제 테스트 서버에서 캡처한 합성0.2 응답, 인증값 없음",
-  "reference_time": "2026-10-31T12:00:00+00:00",
+  "기준": "실제 출처를 보존한 로컬 API 계약 fixture; Qwen 추출은 고정 테스트 응답",
+  "reference_time": "2026-10-31T19:44:14.954322+00:00",
   "snapshots": {
     "1": {
       "meta": {
         "schema_version": "0.2.0-mvp",
         "mode": "simulation",
-        "request_id": "be7272c4-388d-480d-8805-56ddf7067108",
-        "generated_at": "2026-10-31T16:06:56.780297Z",
+        "request_id": "8459ec9d-e257-4d49-9782-65ed60c41223",
+        "generated_at": "2026-10-31T19:44:15.490866Z",
         "data_status": "current"
       },
       "data": {
-        "id": "9caaab5f-8b09-4efe-ab6c-b75be324b126",
-        "scenario_id": "three-stage-1e81b193602e4b0ebf748106de9a8e33",
+        "id": "fixture-response",
+        "scenario_id": "fixture-filming",
         "revision": 1,
-        "evaluated_at": "2026-10-31T12:00:00Z",
+        "evaluated_at": "2026-10-31T19:44:14.954322Z",
         "pending_update": false,
         "error_code": null,
         "content": {
@@ -23,24 +23,24 @@
           "disaster_type": "wildfire",
           "incident_id": "fire",
           "incident": {
-            "title": "합성 산불",
-            "origin": "synthetic",
-            "observed_at": "2026-10-31T12:00:00Z",
-            "expires_at": "2026-10-31T13:00:00Z",
+            "title": "2025년 3월 의성 산불의 영덕 지역 확산",
+            "origin": "historical_replay",
+            "observed_at": "2026-10-31T19:44:14.954322Z",
+            "expires_at": "2026-10-31T20:44:14.954322Z",
             "area": {
-              "west": 128.0,
-              "south": 35.0,
-              "east": 130.0,
+              "west": 129.0,
+              "south": 36.0,
+              "east": 129.8,
               "north": 37.0
             },
             "sources": [
               {
-                "title": "합성 시연 출처",
-                "url": "https://example.invalid/mvp",
-                "published_at": "2026-10-31T12:00:00Z",
-                "collected_at": "2026-10-31T12:00:00Z",
+                "title": "산불경보 '심각' 단계 전국 확대…국가적으로 엄중한 상황",
+                "url": "https://www.korea.kr/news/policyNewsView.do?newsId=148940993",
+                "published_at": "2025-03-26T23:59:59+09:00",
+                "collected_at": "2026-10-31T19:35:02Z",
                 "verified": true,
-                "publisher": null,
+                "publisher": "대한민국 정책브리핑",
                 "publisher_url": null
               }
             ]
@@ -59,7 +59,9 @@
             ],
             "policy_version": "wildfire-three-stage-v1",
             "hazard_band": "H1",
-            "questions": [],
+            "questions": [
+              "지금 아이와 함께 계신가요?"
+            ],
             "support_available": true,
             "automatic_emergency_call": false
           },
@@ -103,32 +105,32 @@
           ],
           "official_alerts": [
             {
-              "alert_id": "fixture-notice",
+              "alert_id": "national-warning",
               "mode": "simulation",
               "revision": 1,
               "state": "issued",
-              "authority": "합성 시연 발령기관",
-              "severity": "주의(시연)",
-              "issued_at": "2026-10-31T12:00:00Z",
-              "expires_at": "2026-10-31T13:00:00Z",
+              "authority": "산림청",
+              "severity": "심각",
+              "issued_at": "2025-03-25T16:00:00+09:00",
+              "expires_at": "2026-10-31T20:44:14.954322Z",
               "area": {
-                "west": 128.0,
-                "south": 35.0,
-                "east": 130.0,
+                "west": 129.0,
+                "south": 36.0,
+                "east": 129.8,
                 "north": 37.0
               },
-              "raw_text": "[합성 시연] 산불 상황입니다. 지역 안내와 대피 준비 사항을 확인하세요.",
+              "raw_text": "정부는 25일 오후 4시부로 산불경보 '심각' 단계를 전국으로 확대하고 국가소방동원령을 추가 발동했다.",
               "source": {
-                "title": "합성 시연 출처",
-                "url": "https://example.invalid/mvp",
-                "published_at": "2026-10-31T12:00:00Z",
-                "collected_at": "2026-10-31T12:00:00Z",
+                "title": "산불경보 '심각' 단계 전국 확대…국가적으로 엄중한 상황",
+                "url": "https://www.korea.kr/news/policyNewsView.do?newsId=148940993",
+                "published_at": "2025-03-26T23:59:59+09:00",
+                "collected_at": "2026-10-31T19:35:02Z",
                 "verified": true,
-                "publisher": null,
+                "publisher": "대한민국 정책브리핑",
                 "publisher_url": null
               },
               "validity_confirmed": true,
-              "instruction_kind": "prepare",
+              "instruction_kind": "information",
               "record_status": "active_record",
               "user_relevance": "inside",
               "requires_qwen": false
@@ -150,21 +152,22 @@
             "template_fallback": true
           },
           "input_versions": {
-            "profile:a": 1,
-            "location:a": 1,
-            "incident:fire": 1,
+            "profile:a": 2,
+            "location:a": 2,
+            "incident:fire": 2,
             "rules:active": 1,
-            "alert:fire/fixture-notice": 1,
+            "alert:fire/national-warning": 1,
+            "app_profile:a": 1,
             "environment:fire": 1,
             "guidance:mvp-prepare-follow": 1,
             "guidance:mvp-prepare-bag": 1
           },
-          "valid_until": "2026-10-31T12:05:00Z",
+          "valid_until": "2026-10-31T19:49:14.954322Z",
           "assistant_utterance": {
-            "id": "9caaab5f-8b09-4efe-ab6c-b75be324b126:1",
-            "text": "공식 대피 안내와 재난문자를 확인하고 대피할 장소를 확인하세요.\n즉시 이동할 수 있도록 비상용품과 가방을 준비하세요.",
+            "id": "fixture-response:1",
+            "text": "지금 아이와 함께 계신가요?",
             "source": "reviewed_policy_text",
-            "valid_until": "2026-10-31T12:05:00Z"
+            "valid_until": "2026-10-31T19:49:14.954322Z"
           },
           "user_id": "a",
           "notification": {
@@ -183,15 +186,15 @@
       "meta": {
         "schema_version": "0.2.0-mvp",
         "mode": "simulation",
-        "request_id": "bcc9d608-cb59-4380-b52a-4be8b9bdc7ba",
-        "generated_at": "2026-10-31T16:06:56.825324Z",
+        "request_id": "1f0b1828-62c6-4a67-af52-c927c0f6b323",
+        "generated_at": "2026-10-31T19:44:15.686308Z",
         "data_status": "current"
       },
       "data": {
-        "id": "9caaab5f-8b09-4efe-ab6c-b75be324b126",
-        "scenario_id": "three-stage-1e81b193602e4b0ebf748106de9a8e33",
-        "revision": 2,
-        "evaluated_at": "2026-10-31T12:00:00Z",
+        "id": "fixture-response",
+        "scenario_id": "fixture-filming",
+        "revision": 3,
+        "evaluated_at": "2026-10-31T19:44:14.954322Z",
         "pending_update": false,
         "error_code": null,
         "content": {
@@ -200,24 +203,24 @@
           "disaster_type": "wildfire",
           "incident_id": "fire",
           "incident": {
-            "title": "합성 산불",
-            "origin": "synthetic",
-            "observed_at": "2026-10-31T12:00:00Z",
-            "expires_at": "2026-10-31T13:00:00Z",
+            "title": "2025년 3월 의성 산불의 영덕 지역 확산",
+            "origin": "historical_replay",
+            "observed_at": "2026-10-31T19:44:14.954322Z",
+            "expires_at": "2026-10-31T20:44:14.954322Z",
             "area": {
-              "west": 128.0,
-              "south": 35.0,
-              "east": 130.0,
+              "west": 129.0,
+              "south": 36.0,
+              "east": 129.8,
               "north": 37.0
             },
             "sources": [
               {
-                "title": "합성 시연 출처",
-                "url": "https://example.invalid/mvp",
-                "published_at": "2026-10-31T12:00:00Z",
-                "collected_at": "2026-10-31T12:00:00Z",
+                "title": "산불경보 '심각' 단계 전국 확대…국가적으로 엄중한 상황",
+                "url": "https://www.korea.kr/news/policyNewsView.do?newsId=148940993",
+                "published_at": "2025-03-26T23:59:59+09:00",
+                "collected_at": "2026-10-31T19:35:02Z",
                 "verified": true,
-                "publisher": null,
+                "publisher": "대한민국 정책브리핑",
                 "publisher_url": null
               }
             ]
@@ -258,36 +261,72 @@
               "guidance_revision": 1,
               "approved_policy": true,
               "reason_code": "reviewed_three_stage_policy"
-            }
-          ],
-          "official_alerts": [
+            },
             {
-              "alert_id": "fixture-notice",
-              "mode": "simulation",
-              "revision": 1,
-              "state": "issued",
-              "authority": "합성 시연 발령기관",
-              "severity": "주의(시연)",
-              "issued_at": "2026-10-31T12:00:00Z",
-              "expires_at": "2026-10-31T13:00:00Z",
-              "area": {
-                "west": 128.0,
-                "south": 35.0,
-                "east": 130.0,
-                "north": 37.0
-              },
-              "raw_text": "[합성 시연] 산불 상황입니다. 지역 안내와 대피 준비 사항을 확인하세요.",
+              "action_id": "mvp-act-assist",
+              "text": "혼자 이동하기 어렵다면 주변 사람이나 조력자에게 도움을 요청해 함께 이동하세요.",
+              "priority": 2,
               "source": {
-                "title": "합성 시연 출처",
-                "url": "https://example.invalid/mvp",
+                "title": "국민안전24 산불 행동요령 확인본",
+                "url": "https://www.safekorea.go.kr/safekorea-kor/acts/nacts/action-guide.do?category=forestFires&menuSn=4",
                 "published_at": "2026-10-31T12:00:00Z",
                 "collected_at": "2026-10-31T12:00:00Z",
                 "verified": true,
                 "publisher": null,
                 "publisher_url": null
               },
+              "guidance_id": "mvp-act-assist",
+              "guidance_revision": 1,
+              "approved_policy": true,
+              "reason_code": "reviewed_three_stage_policy"
+            },
+            {
+              "action_id": "mvp-act-aid",
+              "text": "보조기구를 챙기고 관계자의 대피 안내에 따라 이동하세요.",
+              "priority": 3,
+              "source": {
+                "title": "국민안전24 산불 행동요령 확인본",
+                "url": "https://www.safekorea.go.kr/safekorea-kor/acts/nacts/action-guide.do?category=forestFires&menuSn=4",
+                "published_at": "2026-10-31T12:00:00Z",
+                "collected_at": "2026-10-31T12:00:00Z",
+                "verified": true,
+                "publisher": null,
+                "publisher_url": null
+              },
+              "guidance_id": "mvp-act-aid",
+              "guidance_revision": 1,
+              "approved_policy": true,
+              "reason_code": "reviewed_three_stage_policy"
+            }
+          ],
+          "official_alerts": [
+            {
+              "alert_id": "national-warning",
+              "mode": "simulation",
+              "revision": 1,
+              "state": "issued",
+              "authority": "산림청",
+              "severity": "심각",
+              "issued_at": "2025-03-25T16:00:00+09:00",
+              "expires_at": "2026-10-31T20:44:14.954322Z",
+              "area": {
+                "west": 129.0,
+                "south": 36.0,
+                "east": 129.8,
+                "north": 37.0
+              },
+              "raw_text": "정부는 25일 오후 4시부로 산불경보 '심각' 단계를 전국으로 확대하고 국가소방동원령을 추가 발동했다.",
+              "source": {
+                "title": "산불경보 '심각' 단계 전국 확대…국가적으로 엄중한 상황",
+                "url": "https://www.korea.kr/news/policyNewsView.do?newsId=148940993",
+                "published_at": "2025-03-26T23:59:59+09:00",
+                "collected_at": "2026-10-31T19:35:02Z",
+                "verified": true,
+                "publisher": "대한민국 정책브리핑",
+                "publisher_url": null
+              },
               "validity_confirmed": true,
-              "instruction_kind": "prepare",
+              "instruction_kind": "information",
               "record_status": "active_record",
               "user_relevance": "inside",
               "requires_qwen": false
@@ -309,31 +348,51 @@
             "template_fallback": true
           },
           "input_versions": {
-            "profile:a": 1,
-            "location:a": 1,
-            "incident:fire": 1,
+            "profile:b": 2,
+            "location:b": 2,
+            "incident:fire": 2,
             "rules:active": 1,
-            "alert:fire/fixture-notice": 1,
+            "alert:fire/national-warning": 1,
+            "app_profile:b": 1,
+            "state:fire/b": 1,
             "environment:fire": 2,
-            "guidance:mvp-act-follow": 1
+            "route:fire/b": 1,
+            "guidance:mvp-act-follow": 1,
+            "guidance:mvp-act-assist": 1,
+            "guidance:mvp-act-aid": 1
           },
-          "valid_until": "2026-10-31T12:05:00Z",
+          "valid_until": "2026-10-31T19:49:14.954322Z",
           "assistant_utterance": {
-            "id": "9caaab5f-8b09-4efe-ab6c-b75be324b126:2",
-            "text": "관계자의 대피 안내에 따라 안내된 장소로 즉시 이동하세요.",
+            "id": "fixture-response:3",
+            "text": "관계자의 대피 안내에 따라 안내된 장소로 즉시 이동하세요.\n혼자 이동하기 어렵다면 주변 사람이나 조력자에게 도움을 요청해 함께 이동하세요.\n보조기구를 챙기고 관계자의 대피 안내에 따라 이동하세요.",
             "source": "reviewed_policy_text",
-            "valid_until": "2026-10-31T12:05:00Z"
+            "valid_until": "2026-10-31T19:49:14.954322Z"
           },
-          "user_id": "a",
+          "user_id": "b",
           "notification": {
             "status": "configuration_pending",
             "dispatched": false
           }
         },
         "user_context": {
-          "revision": 0,
-          "status": "unavailable",
-          "data": null
+          "revision": 1,
+          "status": "available",
+          "data": {
+            "mode": "simulation",
+            "revision": 1,
+            "observed_at": "2026-10-31T19:44:14.954322Z",
+            "expires_at": "2026-10-31T19:49:14.954322Z",
+            "child_present": null,
+            "alone_now": "yes",
+            "mobility_override": null,
+            "helper_present": false,
+            "can_move": true,
+            "injured": null,
+            "observed_hazard": "unknown",
+            "location_type": "unknown",
+            "evacuation_status": "unknown",
+            "deescalation_confirmed": false
+          }
         }
       }
     },
@@ -341,15 +400,15 @@
       "meta": {
         "schema_version": "0.2.0-mvp",
         "mode": "simulation",
-        "request_id": "de971959-dfe4-4d6e-ac34-f0d1e29303db",
-        "generated_at": "2026-10-31T16:06:56.860765Z",
+        "request_id": "c379dc37-93ee-4678-a087-b375468250ed",
+        "generated_at": "2026-10-31T19:44:15.612864Z",
         "data_status": "current"
       },
       "data": {
-        "id": "9caaab5f-8b09-4efe-ab6c-b75be324b126",
-        "scenario_id": "three-stage-1e81b193602e4b0ebf748106de9a8e33",
+        "id": "fixture-response",
+        "scenario_id": "fixture-filming",
         "revision": 3,
-        "evaluated_at": "2026-10-31T12:00:00Z",
+        "evaluated_at": "2026-10-31T19:44:14.954322Z",
         "pending_update": false,
         "error_code": null,
         "content": {
@@ -358,24 +417,24 @@
           "disaster_type": "wildfire",
           "incident_id": "fire",
           "incident": {
-            "title": "합성 산불",
-            "origin": "synthetic",
-            "observed_at": "2026-10-31T12:00:00Z",
-            "expires_at": "2026-10-31T13:00:00Z",
+            "title": "2025년 3월 의성 산불의 영덕 지역 확산",
+            "origin": "historical_replay",
+            "observed_at": "2026-10-31T19:44:14.954322Z",
+            "expires_at": "2026-10-31T20:44:14.954322Z",
             "area": {
-              "west": 128.0,
-              "south": 35.0,
-              "east": 130.0,
+              "west": 129.0,
+              "south": 36.0,
+              "east": 129.8,
               "north": 37.0
             },
             "sources": [
               {
-                "title": "합성 시연 출처",
-                "url": "https://example.invalid/mvp",
-                "published_at": "2026-10-31T12:00:00Z",
-                "collected_at": "2026-10-31T12:00:00Z",
+                "title": "산불경보 '심각' 단계 전국 확대…국가적으로 엄중한 상황",
+                "url": "https://www.korea.kr/news/policyNewsView.do?newsId=148940993",
+                "published_at": "2025-03-26T23:59:59+09:00",
+                "collected_at": "2026-10-31T19:35:02Z",
                 "verified": true,
-                "publisher": null,
+                "publisher": "대한민국 정책브리핑",
                 "publisher_url": null
               }
             ]
@@ -390,7 +449,7 @@
             "number": 3,
             "label": "위급",
             "reason_codes": [
-              "USER_CANNOT_EVACUATE"
+              "NO_AVAILABLE_EVACUATION_ROUTE"
             ],
             "policy_version": "wildfire-three-stage-v1",
             "hazard_band": "H3",
@@ -452,36 +511,54 @@
               "guidance_revision": 1,
               "approved_policy": true,
               "reason_code": "reviewed_three_stage_policy"
-            }
-          ],
-          "official_alerts": [
+            },
             {
-              "alert_id": "fixture-notice",
-              "mode": "simulation",
-              "revision": 1,
-              "state": "issued",
-              "authority": "합성 시연 발령기관",
-              "severity": "주의(시연)",
-              "issued_at": "2026-10-31T12:00:00Z",
-              "expires_at": "2026-10-31T13:00:00Z",
-              "area": {
-                "west": 128.0,
-                "south": 35.0,
-                "east": 130.0,
-                "north": 37.0
-              },
-              "raw_text": "[합성 시연] 산불 상황입니다. 지역 안내와 대피 준비 사항을 확인하세요.",
+              "action_id": "mvp-assist-child",
+              "text": "아이와 떨어지지 마세요. 119에 현재 위치와 아이 동반·경로 통제 상황을 알리세요.",
+              "priority": 4,
               "source": {
-                "title": "합성 시연 출처",
-                "url": "https://example.invalid/mvp",
+                "title": "국민안전24 산불 행동요령 확인본",
+                "url": "https://www.safekorea.go.kr/safekorea-kor/acts/nacts/action-guide.do?category=forestFires&menuSn=4",
                 "published_at": "2026-10-31T12:00:00Z",
                 "collected_at": "2026-10-31T12:00:00Z",
                 "verified": true,
                 "publisher": null,
                 "publisher_url": null
               },
+              "guidance_id": "mvp-assist-child",
+              "guidance_revision": 1,
+              "approved_policy": true,
+              "reason_code": "reviewed_three_stage_policy"
+            }
+          ],
+          "official_alerts": [
+            {
+              "alert_id": "national-warning",
+              "mode": "simulation",
+              "revision": 1,
+              "state": "issued",
+              "authority": "산림청",
+              "severity": "심각",
+              "issued_at": "2025-03-25T16:00:00+09:00",
+              "expires_at": "2026-10-31T20:44:14.954322Z",
+              "area": {
+                "west": 129.0,
+                "south": 36.0,
+                "east": 129.8,
+                "north": 37.0
+              },
+              "raw_text": "정부는 25일 오후 4시부로 산불경보 '심각' 단계를 전국으로 확대하고 국가소방동원령을 추가 발동했다.",
+              "source": {
+                "title": "산불경보 '심각' 단계 전국 확대…국가적으로 엄중한 상황",
+                "url": "https://www.korea.kr/news/policyNewsView.do?newsId=148940993",
+                "published_at": "2025-03-26T23:59:59+09:00",
+                "collected_at": "2026-10-31T19:35:02Z",
+                "verified": true,
+                "publisher": "대한민국 정책브리핑",
+                "publisher_url": null
+              },
               "validity_confirmed": true,
-              "instruction_kind": "prepare",
+              "instruction_kind": "information",
               "record_status": "active_record",
               "user_relevance": "inside",
               "requires_qwen": false
@@ -503,23 +580,26 @@
             "template_fallback": true
           },
           "input_versions": {
-            "profile:a": 1,
-            "location:a": 1,
-            "incident:fire": 1,
+            "profile:a": 2,
+            "location:a": 2,
+            "incident:fire": 2,
             "rules:active": 1,
-            "alert:fire/fixture-notice": 1,
+            "alert:fire/national-warning": 1,
+            "app_profile:a": 1,
             "state:fire/a": 1,
             "environment:fire": 2,
+            "route:fire/a": 1,
             "guidance:mvp-assist-call": 1,
             "guidance:mvp-assist-location": 1,
-            "guidance:mvp-assist-follow": 1
+            "guidance:mvp-assist-follow": 1,
+            "guidance:mvp-assist-child": 1
           },
-          "valid_until": "2026-10-31T12:05:00Z",
+          "valid_until": "2026-10-31T19:49:14.954322Z",
           "assistant_utterance": {
-            "id": "9caaab5f-8b09-4efe-ab6c-b75be324b126:3",
-            "text": "119에 연락해 현재 위치와 대피할 수 없는 상황을 알리고 도움을 요청하세요.\n알고 있는 주소나 주변 지형지물, 함께 있는 인원과 이동에 필요한 도움을 알리세요.\n구조기관의 안내를 따르세요. 안내를 받는 동안에도 신고 연결 수단을 사용할 수 있습니다.",
+            "id": "fixture-response:3",
+            "text": "119에 연락해 현재 위치와 대피할 수 없는 상황을 알리고 도움을 요청하세요.\n알고 있는 주소나 주변 지형지물, 함께 있는 인원과 이동에 필요한 도움을 알리세요.\n구조기관의 안내를 따르세요. 안내를 받는 동안에도 신고 연결 수단을 사용할 수 있습니다.\n아이와 떨어지지 마세요. 119에 현재 위치와 아이 동반·경로 통제 상황을 알리세요.",
             "source": "reviewed_policy_text",
-            "valid_until": "2026-10-31T12:05:00Z"
+            "valid_until": "2026-10-31T19:49:14.954322Z"
           },
           "user_id": "a",
           "notification": {
@@ -533,13 +613,15 @@
           "data": {
             "mode": "simulation",
             "revision": 1,
-            "observed_at": "2026-10-31T12:00:00Z",
-            "expires_at": "2026-10-31T12:05:00Z",
+            "observed_at": "2026-10-31T19:44:14.954322Z",
+            "expires_at": "2026-10-31T19:49:14.954322Z",
+            "child_present": true,
+            "alone_now": "unknown",
             "mobility_override": null,
             "helper_present": null,
-            "can_move": false,
+            "can_move": null,
             "injured": null,
-            "observed_hazard": "trapped",
+            "observed_hazard": "unknown",
             "location_type": "unknown",
             "evacuation_status": "unknown",
             "deescalation_confirmed": false
@@ -552,20 +634,20 @@
     "meta": {
       "schema_version": "0.2.0-mvp",
       "mode": "simulation",
-      "request_id": "037688da-64e4-4389-9903-7e2d70a112c5",
-      "generated_at": "2026-10-31T16:06:56.904946Z",
+      "request_id": "d1bbec5a-0f2a-44b9-9d6f-7bb90e0848ff",
+      "generated_at": "2026-10-31T19:44:15.575552Z",
       "data_status": "current"
     },
     "data": {
       "nearby_disasters": [
         {
           "id": "fire",
-          "title": "합성 산불",
-          "origin": "synthetic",
-          "observed_at": "2026-10-31T12:00:00Z",
+          "title": "2025년 3월 의성 산불의 영덕 지역 확산",
+          "origin": "historical_replay",
+          "observed_at": "2026-10-31T19:44:14.954322Z",
           "relevance": "inside",
           "reason": "LOCATION_INSIDE_AREA",
-          "response_id": "9caaab5f-8b09-4efe-ab6c-b75be324b126",
+          "response_id": "fixture-response",
           "data_status": "current"
         }
       ],
@@ -664,19 +746,75 @@
           }
         ]
       },
+      "today_guidance": {
+        "status": "available",
+        "location_input_revision": 2,
+        "generated_at": "2026-10-31T19:44:14.954322Z",
+        "valid_until": "2026-10-31T19:49:14.954322Z",
+        "reason_codes": [],
+        "items": [
+          {
+            "id": "mvp-regional-dry",
+            "text": "건조한 산림 주변에서는 불씨에 주의하고 입산 통제 정보를 확인하세요.",
+            "source": {
+              "title": "국민안전24 산불 행동요령 확인본",
+              "url": "https://www.safekorea.go.kr/safekorea-kor/acts/nacts/action-guide.do?category=forestFires&menuSn=4",
+              "published_at": "2026-10-31T12:00:00Z",
+              "collected_at": "2026-10-31T12:00:00Z",
+              "verified": true,
+              "publisher": null,
+              "publisher_url": null
+            },
+            "revision": 1,
+            "title": "건조한 산림 화재 주의",
+            "valid_until": "2026-10-31T19:49:14.954322Z",
+            "evidence": [
+              {
+                "title": "산불경보 '심각' 단계 전국 확대…국가적으로 엄중한 상황",
+                "url": "https://www.korea.kr/news/policyNewsView.do?newsId=148940993",
+                "published_at": "2025-03-26T23:59:59+09:00",
+                "collected_at": "2026-10-31T19:35:02Z",
+                "verified": true,
+                "publisher": "대한민국 정책브리핑",
+                "publisher_url": null
+              },
+              {
+                "title": "산성계곡생태공원 어드벤처 소개",
+                "url": "https://stay.yd.go.kr/adventure/pages/sub.htm?nav_code=adv1591964511",
+                "published_at": "2026-10-31T19:35:02Z",
+                "collected_at": "2026-10-31T19:35:02Z",
+                "verified": true,
+                "publisher": "영덕군",
+                "publisher_url": null
+              },
+              {
+                "title": "A·B 위치와 이동 조건 설정",
+                "url": "https://github.com/develsvai/BONGHWAJIGI/blob/develop/data/filming/yeongdeok-20250325.json",
+                "published_at": "2026-10-31T19:44:14.954322Z",
+                "collected_at": "2026-10-31T19:44:14.954322Z",
+                "verified": true,
+                "publisher": null,
+                "publisher_url": null
+              }
+            ],
+            "origin": "synthetic",
+            "original_observed_at": null
+          }
+        ]
+      },
       "location": {
         "revision": 1,
-        "input_revision": 1,
+        "input_revision": 2,
         "status": "available",
         "fix": {
-          "fix_id": "fixture-fix",
+          "fix_id": "fixture-a",
           "installation_id": "phone",
-          "latitude": 36.0,
-          "longitude": 129.0,
+          "latitude": 36.43,
+          "longitude": 129.32,
           "accuracy_m": 10.0,
-          "captured_at": "2026-10-31T12:00:00Z"
+          "captured_at": "2026-10-31T19:44:14.954322Z"
         },
-        "valid_until": "2026-10-31T12:05:00Z",
+        "valid_until": "2026-10-31T19:49:14.954322Z",
         "reason_codes": []
       },
       "features": {
@@ -686,13 +824,16 @@
         "server_audio": false,
         "support_draft": false,
         "route_geometry": false,
+        "text_turns": true,
+        "simulation_route": false,
         "push_provider": "simulation"
       },
       "preparations": {
         "status": "available",
         "policy_version": "wildfire-three-stage-v1",
-        "profile_revision": 0,
-        "generated_at": "2026-10-31T12:00:00Z",
+        "profile_revision": 1,
+        "location_input_revision": 2,
+        "generated_at": "2026-10-31T19:44:14.954322Z",
         "items": [
           {
             "id": "mvp-ready-bag",
@@ -707,12 +848,14 @@
               "publisher_url": null
             },
             "revision": 1,
+            "kind": "common",
+            "title": "비상가방 준비",
             "valid_until": "2026-11-30T12:00:00Z",
             "reason_code": "BASIC_PREPARATION"
           },
           {
-            "id": "mvp-ready-bag-check",
-            "text": "평소 준비한 비상용품의 보관 위치와 사용 가능한 상태를 확인하세요.",
+            "id": "mvp-ready-child",
+            "text": "아이에게 필요한 물·간식·여벌 옷을 비상가방에 챙기세요.",
             "source": {
               "title": "국민안전24 산불 행동요령 확인본",
               "url": "https://www.safekorea.go.kr/safekorea-kor/acts/nacts/action-guide.do?category=forestFires&menuSn=4",
@@ -723,30 +866,32 @@
               "publisher_url": null
             },
             "revision": 1,
+            "kind": "personal",
+            "title": "어린이 비상용품 준비",
             "valid_until": "2026-11-30T12:00:00Z",
-            "reason_code": "BASIC_PREPARATION"
+            "reason_code": "CHILD_PREPARATION"
           }
         ]
       },
       "alerts": [
         {
-          "id": "03f97033fd48cd6086e7826faad4b5d2",
+          "id": "70a6330d29e45f10e927e966644922c2",
           "revision": 1,
-          "response_id": "9caaab5f-8b09-4efe-ab6c-b75be324b126",
+          "response_id": "fixture-response",
           "incident_id": "fire",
-          "original_text": "[합성 시연] 산불 상황입니다. 지역 안내와 대피 준비 사항을 확인하세요.",
-          "official_severity": "주의(시연)",
-          "authority": "합성 시연 발령기관",
-          "issued_at": "2026-10-31T12:00:00Z",
-          "valid_until": "2026-10-31T13:00:00Z",
-          "instruction_kind": "prepare",
+          "original_text": "정부는 25일 오후 4시부로 산불경보 '심각' 단계를 전국으로 확대하고 국가소방동원령을 추가 발동했다.",
+          "official_severity": "심각",
+          "authority": "산림청",
+          "issued_at": "2025-03-25T16:00:00+09:00",
+          "valid_until": "2026-10-31T20:44:14.954322Z",
+          "instruction_kind": "information",
           "source": {
-            "title": "합성 시연 출처",
-            "url": "https://example.invalid/mvp",
-            "published_at": "2026-10-31T12:00:00Z",
-            "collected_at": "2026-10-31T12:00:00Z",
+            "title": "산불경보 '심각' 단계 전국 확대…국가적으로 엄중한 상황",
+            "url": "https://www.korea.kr/news/policyNewsView.do?newsId=148940993",
+            "published_at": "2025-03-26T23:59:59+09:00",
+            "collected_at": "2026-10-31T19:35:02Z",
             "verified": true,
-            "publisher": null,
+            "publisher": "대한민국 정책브리핑",
             "publisher_url": null
           },
           "status": "active",
@@ -763,22 +908,39 @@
     "meta": {
       "schema_version": "0.2.0-mvp",
       "mode": "simulation",
-      "request_id": "172417c7-38ed-4d98-83b3-9a03966bba3c",
-      "generated_at": "2026-10-31T16:06:56.914370Z",
+      "request_id": "b3878f4e-d144-4371-a0da-73968e143ad9",
+      "generated_at": "2026-10-31T19:44:15.690249Z",
       "data_status": "current"
     },
     "data": {
-      "revision": 0,
-      "input_revision": 1,
-      "profile": {}
+      "revision": 1,
+      "input_revision": 2,
+      "profile": {
+        "display_name": "",
+        "age_band": "unknown",
+        "emergency_contact": "",
+        "usual_place": "",
+        "building_floor": "",
+        "health_consent": false,
+        "health_notes": "",
+        "mobility": "independent",
+        "stairs": "unknown",
+        "communication_preference": "text",
+        "sensory_supports": [],
+        "dependents": [
+          "child"
+        ],
+        "helper_registered": null,
+        "vehicle_access": null
+      }
     }
   },
   "rules": {
     "meta": {
       "schema_version": "0.2.0-mvp",
       "mode": "simulation",
-      "request_id": "fbad02e4-ed66-42e5-999b-2b00f79b078a",
-      "generated_at": "2026-10-31T16:06:56.924534Z",
+      "request_id": "64a605b7-ac02-4a18-8928-c1d61c635ed5",
+      "generated_at": "2026-10-31T19:44:15.696801Z",
       "data_status": "current"
     },
     "data": {
@@ -881,8 +1043,8 @@
     "meta": {
       "schema_version": "0.2.0-mvp",
       "mode": "simulation",
-      "request_id": "c4257652-9a3c-48b2-9c31-b76c902150d8",
-      "generated_at": "2026-10-31T16:06:56.930245+00:00",
+      "request_id": "2fc88257-32f0-4dde-ad99-e91aa45edba9",
+      "generated_at": "2026-10-31T19:44:15.700020+00:00",
       "data_status": "current"
     },
     "data": {
@@ -917,6 +1079,8 @@
         "server_audio": false,
         "support_draft": false,
         "route_geometry": false,
+        "text_turns": true,
+        "simulation_route": false,
         "push_provider": "simulation"
       },
       "policy_status": "reviewed_mvp",
@@ -936,8 +1100,8 @@
     "meta": {
       "schema_version": "0.2.0-mvp",
       "mode": "simulation",
-      "request_id": "d6a2fdd4-a5d9-4117-aec2-413a2daf51a9",
-      "generated_at": "2026-10-31T16:06:56.934182+00:00",
+      "request_id": "2ea4dec6-2d9f-4d86-9981-f60a887d7af0",
+      "generated_at": "2026-10-31T19:44:15.703146+00:00",
       "data_status": "current"
     },
     "data": {

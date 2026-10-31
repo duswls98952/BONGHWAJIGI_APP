@@ -1,8 +1,12 @@
 import assert from 'node:assert/strict';
 import test from 'node:test';
+import fixtures from '../docs/api/mvp-fixtures.json';
 import {createMvpApi} from '../src/api/client';
 import {ApiError} from '../src/api/http';
 import type {MvpSchema} from '../src/api/mvp-types';
+import {proposalContext} from '../src/mvp/interaction';
+import {confirmedStateLabels} from '../src/mvp/currentState';
+import {currentTodayGuidance,currentPreparations,guidanceReferenceDate} from '../src/mvp/homeContent';
 import {checkSnapshot,snapshotReady} from '../src/mvp/core';
 import {createMvpMock} from '../src/mvp/mock';
 
@@ -16,7 +20,7 @@ test('MVP server fixtures replay 경고, 대피, 위급 with simulation and unav
     assert.ok(value.data.revision>revision);revision=value.data.revision;
     assert.equal(snapshotReady(value),true);assert.ok(value.data.content!.actions.length>0);
     assert.equal(value.data.content!.assistant_utterance?.source,'reviewed_policy_text');
-    assert.match(String(value.data.content!.official_alerts[0]!.raw_text),/합성 시연/);
+    assert.equal(value.data.content!.official_alerts[0]!.raw_text,fixtures.home.data.alerts[0]!.original_text);
   }
   const route=(await api.route(mock.snapshot().id)).data;
   assert.equal(route.status,'simulation');assert.equal(route.route?.operational_use,false);assert.equal(route.route?.origin,'synthetic');
@@ -68,4 +72,70 @@ test('MVP mock updates return the changed response once per cursor',async()=>{
   assert.equal(changed.data.events.length,1);assert.equal(changed.data.events[0]?.resource_id,mock.snapshot().id);
   assert.equal(changed.data.events[0]?.resource_revision,mock.snapshot().revision);
   const unchanged=await api.updates(changed.data.next_cursor,undefined,0);assert.deepEqual(unchanged.data.events,[]);
+});
+
+
+test('captured A/B episodes keep distinct preparations, server questions, routes and confirmed-only current state',async()=>{
+  for(const role of ['A','B'] as const){
+    const mock=createMvpMock(),api=createMvpApi(mock.transport);
+    const profile=(await api.profile()).data;
+    await api.saveProfile({base_revision:profile.revision,profile:role==='A'?{dependents:['child'],mobility:'independent'}:{dependents:[],mobility:'walking_aid'}},`profile-${role}`);
+    const home=(await api.home()).data,now=Date.now();
+    assert.equal(currentTodayGuidance(home,now).length,1);
+    assert.equal(guidanceReferenceDate(currentTodayGuidance(home,now)),'자료 기준 2025.03.26');
+    const preparations=currentPreparations(home.preparations,profile.revision+1,now,home.location);
+    assert.deepEqual(preparations.map(item=>item.kind),['common','personal']);
+    assert.equal(preparations[1]!.title,role==='A'?'어린이 비상용품 준비':'이동 보조기구 점검');
+    const before=(await api.snapshot(mock.snapshot().id)).data;
+    assert.equal(before.content!.personal_response.level,role==='A'?'request_assistance':'act');
+    assert.equal(before.content!.assistant_utterance?.text,role==='A'?'지금 아이와 함께 계신가요?':'보조기구를 사용해 혼자 이동할 수 있나요?');
+    assert.deepEqual(confirmedStateLabels(before.user_context,now),[]);
+    const route=(await api.route(before.id)).data;
+    assert.equal(route.status,role==='A'?'unavailable':'simulation');
+    if(role==='A'){assert.equal(route.reason,'ROUTE_BLOCKED');assert.equal(route.route,null);}
+    else assert.equal(route.route?.operational_use,false);
+    const answer=role==='A'?'지금 아이랑 있습니다.':'혼자라 이동할 수 있어요.';
+    const turn=(await api.textTurn(before.id,{client_turn_id:`turn-${role}`,text:answer,base_response_revision:before.revision,base_context_revision:before.user_context.revision})).data;
+    assert.ok(turn.proposal);
+    assert.deepEqual(confirmedStateLabels((await api.snapshot(before.id)).data.user_context,now),[]);
+    const confirmation=proposalContext(turn,before,now);assert.ok(confirmation);
+    await api.context(before.id,confirmation);
+    const after=(await api.snapshot(before.id)).data;
+    assert.deepEqual(confirmedStateLabels(after.user_context,now),role==='A'?['아이 동반']:['혼자 있음','이동 가능']);
+    assert.ok(after.content!.actions.some(action=>action.text.includes(role==='A'?'아이':'보조기구')));
+    assert.equal(after.content!.prediction.probability,null);
+  }
+});
+
+test('selecting a captured profile after a long onboarding restarts its expiry clock without changing source dates',async()=>{
+  const actualNow=Date.now,start=Date.now(),mock=createMvpMock(),api=createMvpApi(mock.transport);
+  try{
+    Date.now=()=>start+10*60*1000;
+    const profile=(await api.profile()).data;
+    await api.saveProfile({base_revision:profile.revision,profile:{dependents:['child']}},'delayed-onboarding');
+    const home=(await api.home()).data;
+    assert.ok(Date.parse(home.location.valid_until!)>Date.now());
+    assert.equal(currentTodayGuidance(home,Date.now()).length,1);
+    assert.equal(guidanceReferenceDate(home.today_guidance.items),'자료 기준 2025.03.26');
+  }finally{Date.now=actualNow;}
+});
+
+test('switching the same development account from confirmed A to B clears tags without rolling context revisions back',async()=>{
+  const mock=createMvpMock(),api=createMvpApi(mock.transport);
+  let previousContext=0;
+  for(const role of ['A','B'] as const){
+    const profile=(await api.profile()).data;
+    await api.saveProfile({base_revision:profile.revision,profile:role==='A'?{dependents:['child']}:{dependents:[],mobility:'walking_aid'}},`switch-${role}`);
+    const before=await api.snapshot(mock.snapshot().id),now=Date.now();
+    assert.ok(before.data.user_context.revision>previousContext);
+    assert.equal(snapshotReady(before,{[`state:${before.data.content!.incident_id}/${before.data.content!.user_id}`]:previousContext}),true);
+    assert.deepEqual(confirmedStateLabels(before.data.user_context,now),[]);
+    const text=role==='A'?'지금 아이랑 있습니다.':'혼자라 이동할 수 있어요.';
+    const turn=(await api.textTurn(before.data.id,{client_turn_id:`switch-turn-${role}`,text,base_response_revision:before.data.revision,base_context_revision:before.data.user_context.revision})).data;
+    const body=proposalContext(turn,before.data,now);assert.ok(body);
+    const accepted=await api.context(before.data.id,body);
+    previousContext=accepted.data.context_revision;
+    const after=(await api.snapshot(before.data.id)).data;
+    assert.deepEqual(confirmedStateLabels(after.user_context,now),role==='A'?['아이 동반']:['혼자 있음','이동 가능']);
+  }
 });

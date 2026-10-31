@@ -30,7 +30,7 @@ function ConnectedMap({location,bounds,height=184,route=[],destinationLabel}:Mvp
       onInitialized={()=>{setInitialized(true);console.info('[map] native view initialized');}}>
       {geometry.bounds&&<NaverMapPolygonOverlay coords={geometry.polygon} color="#c8514930" outlineColor="#b85c56" outlineWidth={2}/>}
       {!!geometry.route.length&&<NaverMapPolylineOverlay coords={geometry.route} color="#245c74" width={6}/>}
-      {!!geometry.route.length&&<NaverMapMarkerOverlay {...geometry.route[geometry.route.length-1]!} caption={{text:destinationLabel??'시연 도착점',color:'#003764',haloColor:'#ffffff'}} tintColor="#003764"/>}
+      {!!geometry.route.length&&<NaverMapMarkerOverlay {...geometry.route[geometry.route.length-1]!} caption={{text:destinationLabel??'도착점',color:'#003764',haloColor:'#ffffff'}} tintColor="#003764"/>}
       {geometry.location&&<>
         <NaverMapCircleOverlay latitude={geometry.location.latitude} longitude={geometry.location.longitude} radius={geometry.location.accuracy_m} color="#2670c520" outlineColor="#2670c580" outlineWidth={1}/>
         <NaverMapMarkerOverlay latitude={geometry.location.latitude} longitude={geometry.location.longitude} caption={{text:'공유한 위치',color:'#174a79',haloColor:'#ffffff'}} tintColor="#2670c5"/>

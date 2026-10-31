@@ -47,6 +47,7 @@ function RouteBody(){
   const dependencies=routeDependencies(snapshot?.data,value.required,value.home?.data.location.input_revision??-1);
   const points=location&&dependencies?simulationRoutePoints(data,value.now,dependencies):[];
   const route=points.length?data?.route:null;
+  const unavailableMessage=data?.reason==='ROUTE_BLOCKED'?'대피 경로가 통제됐어요. 현재 맞춤 행동요령을 확인해 주세요.':data?.reason==='ROUTE_STATUS_UNKNOWN'||data?.reason==='ROUTE_EVIDENCE_UNAVAILABLE'?'경로의 통행 여부를 확인하고 있어요.':data?.reason==='OUTSIDE_SIMULATION_ROUTE_START'?'현재 위치에 연결된 경로가 없어요.':'현재 표시할 대피 경로가 없어요.';
   const demoAvailable=value.home?.meta.mode==='simulation'&&settings.mode==='live'&&settings.demoLatitude!==''&&settings.demoLongitude!=='';
   async function renew(){
     if(renewLock.current||!latest.current.active)return;
@@ -65,9 +66,9 @@ function RouteBody(){
     finally{if(generation.current===token){renewLock.current=false;setRenewing(false);}}
   }
   return <Page title="대피로" footer={<EmergencyActions responseId={responseId} alertId={params.alertId}/>}>
-    {route&&<Text style={{alignSelf:'flex-start',fontSize:12,color:'#695000',backgroundColor:'#fff1b8',paddingVertical:6,paddingHorizontal:10,borderRadius:6}}>시연 경로 · 실제 이동용 아님</Text>}
+    {route&&<Text style={{alignSelf:'flex-start',fontSize:12,color:'#695000',backgroundColor:'#fff1b8',paddingVertical:6,paddingHorizontal:10,borderRadius:6}}>참고 경로 · 실제 통행 여부 확인 필요</Text>}
     <MvpMap location={location} height={380} route={points} destinationLabel={route?.destination.name} simulation={value.home?.meta.mode==='simulation'}/>
-    {route?<><View style={s.row}><Text style={s.heading}>{route.destination.name}</Text></View><View style={{borderWidth:1,borderColor:'#dfe3e7',borderRadius:14,padding:16,gap:14}}>{route.steps.map(step=><View key={step.sequence} style={s.row}><Text style={s.stepNumber}>{step.sequence}</Text><View style={{flex:1}}><Body>{step.text}</Body></View></View>)}</View></>:<Card><Body>{loading&&ready?'경로를 확인하고 있어요.':!location?'시연 위치를 확인하면 경로가 표시돼요.':'현재 표시할 대피 경로가 없어요.'}</Body>{demoAvailable&&<Button title={renewing?'확인 중…':'시연 위치로 경로 보기'} disabled={renewing} onPress={()=>void renew()}/>}</Card>}
+    {route?<><View style={s.row}><Text style={s.heading}>{route.destination.name}</Text></View><View style={{borderWidth:1,borderColor:'#dfe3e7',borderRadius:14,padding:16,gap:14}}>{route.steps.map(step=><View key={step.sequence} style={s.row}><Text style={s.stepNumber}>{step.sequence}</Text><View style={{flex:1}}><Body>{step.text}</Body></View></View>)}</View></>:<Card><Body>{loading&&ready?'경로를 확인하고 있어요.':!location?'안내 위치를 설정하면 경로를 확인할 수 있어요.':unavailableMessage}</Body>{demoAvailable&&!location&&<Button title={renewing?'확인 중…':'안내 위치 설정'} disabled={renewing} onPress={()=>void renew()}/>}</Card>}
     {!!error&&<Body>{error}</Body>}
     <Button secondary title="경로 다시 확인" disabled={renewing} onPress={()=>{setNonce(n=>n+1);void value.refresh().catch(problem=>setError(userMessage(problem)));}}/>
   </Page>;

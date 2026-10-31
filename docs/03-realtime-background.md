@@ -84,3 +84,5 @@ alert 푸시는 서버 커밋 `dcbc62e`에서 ID 불일치를 보완했다. deli
 `EXPO_PUBLIC_ENABLE_BACKGROUND_LOCATION=true`와 명시적 시작 동의가 있어야 백그라운드 위치 요청을 시작할 수 있다. TaskManager 작업은 모듈 최상위에 정의되며 권한·동의 상태를 확인한다. Android foreground service 안내와 중지 기능을 제공한다. 초기 요청 옵션15초/20m는 OS에 전달하는 설정이며 정확한 주기를 보장하지 않는다.
 
 백그라운드 위치는 기본 off다. 지속 실행·절전·재부팅·권한 철회·서버 장애는 실기기 인수 검사가 남아 있다. 서버 위치 삭제와 OS 위치 공유 중지는 별도 동작이다. 지속 공유가 켜져 있다면 먼저 중지한 뒤 서버 위치를 삭제한다.
+
+0.4.0 전경 경보 배너·로컬 알림과 역할별 위치 설정은 [지역 안내 기록](13-location-guidance-scenarios.md)을 따른다. Firebase 미연결 조건은 같다.

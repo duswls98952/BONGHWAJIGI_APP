@@ -276,6 +276,23 @@ export interface paths {
         patch?: never;
         trace?: never;
     };
+    "/internal/v1/policy/scenarios/{scenario_id}/regional-conditions/{region_id}": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get?: never;
+        /** Regional Conditions */
+        put: operations["regional_conditions_internal_v1_policy_scenarios__scenario_id__regional_conditions__region_id__put"];
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
     "/internal/v1/policy/scenarios/{scenario_id}/bootstrap-policy": {
         parameters: {
             query?: never;
@@ -932,7 +949,7 @@ export interface components {
              * Status
              * @enum {string}
              */
-            status: "active" | "cancelled" | "unconfirmed_or_expired";
+            status: "active" | "cancelled" | "unconfirmed_or_expired" | "archived";
             relevance: components["schemas"]["Relevance"];
             /**
              * Requires Qwen
@@ -1156,6 +1173,14 @@ export interface components {
              * Format: date-time
              */
             expires_at: string;
+            /** Child Present */
+            child_present?: boolean | null;
+            /**
+             * Alone Now
+             * @default unknown
+             * @enum {string}
+             */
+            alone_now?: "yes" | "no" | "unknown";
             /** Mobility Override */
             mobility_override?: ("unknown" | "independent" | "needs_time" | "requires_help") | null;
             /** Helper Present */
@@ -1414,6 +1439,7 @@ export interface components {
             /** Nearby Disasters */
             nearby_disasters: components["schemas"]["DisasterData"][];
             basic_rules: components["schemas"]["RulesData"];
+            today_guidance: components["schemas"]["RegionalGuidanceData"];
             location: components["schemas"]["LocationData"];
             /** Features */
             features: {
@@ -1438,6 +1464,12 @@ export interface components {
              * @enum {string}
              */
             origin: "synthetic" | "historical_replay" | "collected_sample";
+            /**
+             * Feed Visibility
+             * @default visible
+             * @enum {string}
+             */
+            feed_visibility?: "visible" | "archived";
             /**
              * Disaster Type
              * @default wildfire
@@ -1726,6 +1758,8 @@ export interface components {
             policy_version: string;
             /** Profile Revision */
             profile_revision: number;
+            /** Location Input Revision */
+            location_input_revision: number;
             /**
              * Generated At
              * Format: date-time
@@ -1743,6 +1777,13 @@ export interface components {
             source: components["schemas"]["Source"];
             /** Revision */
             revision: number;
+            /**
+             * Kind
+             * @enum {string}
+             */
+            kind: "common" | "personal";
+            /** Title */
+            title: string;
             /**
              * Valid Until
              * Format: date-time
@@ -1774,6 +1815,16 @@ export interface components {
              * @default false
              */
             mobility_assistance?: boolean;
+            /**
+             * Child Registered
+             * @default false
+             */
+            child_registered?: boolean;
+            /**
+             * Assistive Device
+             * @default false
+             */
+            assistive_device?: boolean;
             /**
              * Children Accompanying
              * @default false
@@ -1828,10 +1879,118 @@ export interface components {
              */
             occurred_at: string;
         };
+        /** ReferenceRoute */
+        ReferenceRoute: {
+            /** Id */
+            id: string;
+            /**
+             * Origin
+             * @default synthetic
+             * @enum {string}
+             */
+            origin?: "synthetic" | "historical_replay";
+            /**
+             * Operational Use
+             * @default false
+             * @constant
+             */
+            operational_use?: false;
+            /** Label */
+            label: string;
+            geometry: components["schemas"]["RouteGeometry"];
+            start: components["schemas"]["RouteDestination"];
+            destination: components["schemas"]["RouteDestination"];
+            /** Steps */
+            steps: components["schemas"]["RouteStep"][];
+            bounds: components["schemas"]["Box"];
+        };
         /** RefreshRequest */
         RefreshRequest: {
             /** Refresh Token */
             refresh_token: string;
+        };
+        /** RegionalConditionsInput */
+        RegionalConditionsInput: {
+            /** Region Id */
+            region_id: string;
+            /**
+             * Mode
+             * @default simulation
+             * @constant
+             */
+            mode?: "simulation";
+            /** Revision */
+            revision: number;
+            /**
+             * Origin
+             * @enum {string}
+             */
+            origin: "synthetic" | "historical_replay" | "collected_sample";
+            /**
+             * Observed At
+             * Format: date-time
+             */
+            observed_at: string;
+            /**
+             * Expires At
+             * Format: date-time
+             */
+            expires_at: string;
+            /** Original Observed At */
+            original_observed_at?: string | null;
+            area: components["schemas"]["Box"];
+            /** Forest Nearby */
+            forest_nearby?: boolean | null;
+            /** Dry Warning */
+            dry_warning?: boolean | null;
+            /** Fog Observed */
+            fog_observed?: boolean | null;
+            /** Sources */
+            sources: components["schemas"]["Source"][];
+        };
+        /** RegionalGuidanceData */
+        RegionalGuidanceData: {
+            /**
+             * Status
+             * @enum {string}
+             */
+            status: "available" | "unavailable";
+            /** Location Input Revision */
+            location_input_revision: number;
+            /**
+             * Generated At
+             * Format: date-time
+             */
+            generated_at: string;
+            /** Valid Until */
+            valid_until: string | null;
+            /** Reason Codes */
+            reason_codes: string[];
+            /** Items */
+            items: components["schemas"]["RegionalGuidanceItem"][];
+        };
+        /** RegionalGuidanceItem */
+        RegionalGuidanceItem: {
+            /** Id */
+            id: string;
+            /** Text */
+            text: string;
+            source: components["schemas"]["Source"];
+            /** Revision */
+            revision: number;
+            /** Title */
+            title: string;
+            /**
+             * Valid Until
+             * Format: date-time
+             */
+            valid_until: string;
+            /** Evidence */
+            evidence: components["schemas"]["Source"][];
+            /** Origin */
+            origin: string;
+            /** Original Observed At */
+            original_observed_at: string | null;
         };
         /** Relevance */
         Relevance: {
@@ -1948,6 +2107,7 @@ export interface components {
             reason: string;
             /** Destination */
             destination?: string | null;
+            reference_route?: components["schemas"]["ReferenceRoute"] | null;
         };
         /** RoutePoint */
         RoutePoint: {
@@ -2076,9 +2236,9 @@ export interface components {
             /**
              * Origin
              * @default synthetic
-             * @constant
+             * @enum {string}
              */
-            origin?: "synthetic";
+            origin?: "synthetic" | "historical_replay";
             /**
              * Operational Use
              * @default false
@@ -2151,6 +2311,14 @@ export interface components {
         };
         /** StatePatch */
         StatePatch: {
+            /** Child Present */
+            child_present?: boolean | null;
+            /**
+             * Alone Now
+             * @default unknown
+             * @enum {string}
+             */
+            alone_now?: "yes" | "no" | "unknown";
             /** Helper Present */
             helper_present?: boolean | null;
             /** Can Move */
@@ -2745,6 +2913,42 @@ export interface operations {
         requestBody: {
             content: {
                 "application/json": components["schemas"]["RuleSetInput"];
+            };
+        };
+        responses: {
+            /** @description Successful Response */
+            202: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": unknown;
+                };
+            };
+            /** @description Validation Error */
+            422: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["HTTPValidationError"];
+                };
+            };
+        };
+    };
+    regional_conditions_internal_v1_policy_scenarios__scenario_id__regional_conditions__region_id__put: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path: {
+                scenario_id: string;
+                region_id: string;
+            };
+            cookie?: never;
+        };
+        requestBody: {
+            content: {
+                "application/json": components["schemas"]["RegionalConditionsInput"];
             };
         };
         responses: {

@@ -4,6 +4,7 @@ import {SafeAreaView} from 'react-native-safe-area-context';
 import Svg, {Circle, Path} from 'react-native-svg';
 import {router} from 'expo-router';
 import {useMvp} from './Runtime';
+import {currentRelevantAlert} from './alertUpdates';
 import Brand from './Brand';
 export {default as Brand} from './Brand';
 
@@ -35,7 +36,16 @@ export function StatusLine() {
   if(value.status!=='reconnecting')return null;
   return <View accessibilityLiveRegion="polite" style={s.status}><Text style={s.statusText}>연결을 다시 확인하고 있어요.</Text></View>;
 }
-export function Page({children,title,home=false,footer,background='#fff',scrollRef,onContentSizeChange}:React.PropsWithChildren<{title?:string;home?:boolean;footer?:React.ReactNode;background?:string;scrollRef?:React.RefObject<React.ComponentRef<typeof ScrollView>|null>;onContentSizeChange?:(width:number,height:number)=>void}>) {return <SafeAreaView style={[s.safe,{backgroundColor:home?'#f2f4f4':background}]} edges={['top','bottom']}><View style={[s.frame,{backgroundColor:background}]}>{home?<View style={s.homeHeader}><Brand/><Pressable accessibilityRole="button" accessibilityLabel="내정보" onPress={()=>router.push('/profile')} style={s.headerLink}><Icon name="gear" size={18}/><Text style={{fontSize:15,fontWeight:'700',color:'#292d31'}}>내정보</Text></Pressable></View>:title?<View style={s.header}><Pressable accessibilityRole="button" accessibilityLabel="이전 화면으로 돌아가기" style={s.back} onPress={()=>router.canGoBack()?router.back():router.replace('/')}><Icon name="back"/></Pressable><Text style={s.headerTitle}>{title}</Text></View>:null}<StatusLine/><ScrollView ref={scrollRef} onContentSizeChange={onContentSizeChange} keyboardShouldPersistTaps="handled" contentContainerStyle={[s.content,home&&{paddingTop:14},!!footer&&{paddingBottom:25}]}>{children}</ScrollView>{footer}</View></SafeAreaView>;}
+export function NewAlertBanner(){
+  const runtime=useMvp();
+  const alert=runtime.home?.data.alerts.find(item=>item.id===runtime.newAlert?.id&&item.revision===runtime.newAlert.revision);
+  if(!runtime.foreground||!alert||!currentRelevantAlert(alert,runtime.home?.data.location,runtime.now,runtime.required[`location:${runtime.session?.tokens.user_id}`]??0))return null;
+  return <View accessibilityLiveRegion="assertive" style={{backgroundColor:'#fff1e6',borderBottomWidth:1,borderColor:'#bb6b32',paddingHorizontal:12,paddingVertical:7,flexDirection:'row',alignItems:'center',gap:8}}>
+    <Pressable accessibilityRole="button" accessibilityLabel="새 공식 경보 확인" style={{flex:1,minHeight:48,justifyContent:'center',gap:4}} onPress={()=>{runtime.dismissAlert();router.push({pathname:'/emergency',params:{alertId:alert.id,incidentId:alert.incident_id,...(alert.response_id?{responseId:alert.response_id}:{})}});}}><Text style={{color:'#753510',fontWeight:'800',fontSize:15}}>내 위치 관련 공식 경보</Text><Text style={{color:'#753510',fontSize:13}}>눌러서 대응 안내 확인</Text></Pressable>
+    <Pressable accessibilityRole="button" accessibilityLabel="새 경보 알림 닫기" onPress={runtime.dismissAlert} style={{minWidth:48,minHeight:48,justifyContent:'center',alignItems:'center'}}><Text style={{fontSize:22,color:'#753510'}}>×</Text></Pressable>
+  </View>;
+}
+export function Page({children,title,home=false,footer,background='#fff',scrollRef,onContentSizeChange}:React.PropsWithChildren<{title?:string;home?:boolean;footer?:React.ReactNode;background?:string;scrollRef?:React.RefObject<React.ComponentRef<typeof ScrollView>|null>;onContentSizeChange?:(width:number,height:number)=>void}>) {return <SafeAreaView style={[s.safe,{backgroundColor:home?'#f2f4f4':background}]} edges={['top','bottom']}><View style={[s.frame,{backgroundColor:background}]}>{home?<View style={s.homeHeader}><Brand/><Pressable accessibilityRole="button" accessibilityLabel="내정보" onPress={()=>router.push('/profile')} style={s.headerLink}><Icon name="gear" size={18}/><Text style={{fontSize:15,fontWeight:'700',color:'#292d31'}}>내정보</Text></Pressable></View>:title?<View style={s.header}><Pressable accessibilityRole="button" accessibilityLabel="이전 화면으로 돌아가기" style={s.back} onPress={()=>router.canGoBack()?router.back():router.replace('/')}><Icon name="back"/></Pressable><Text style={s.headerTitle}>{title}</Text></View>:null}<StatusLine/><NewAlertBanner/><ScrollView ref={scrollRef} onContentSizeChange={onContentSizeChange} keyboardShouldPersistTaps="handled" contentContainerStyle={[s.content,home&&{paddingTop:14},!!footer&&{paddingBottom:25}]}>{children}</ScrollView>{footer}</View></SafeAreaView>;}
 export function Loading(){return <SafeAreaView style={[s.safe,{justifyContent:'center',alignItems:'center',gap:24}]}><Brand large/><ActivityIndicator color={colors.navy}/></SafeAreaView>;}
 export const s=StyleSheet.create({
   safe:{flex:1,backgroundColor:'#fff'},frame:{flex:1,width:'100%',maxWidth:390,alignSelf:'center'},

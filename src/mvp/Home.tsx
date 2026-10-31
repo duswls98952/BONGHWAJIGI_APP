@@ -2,9 +2,8 @@ import {useState,type PropsWithChildren} from 'react';
 import {Pressable,StyleSheet,Text,View} from 'react-native';
 import Svg,{Path,Defs,LinearGradient,Stop,Rect} from 'react-native-svg';
 import {router} from 'expo-router';
-import {useMvp,mvpIsMock} from './Runtime';
-import {mvpMock} from './api';
-import {freshUntil} from './core';
+import {useMvp} from './Runtime';
+import {currentTodayGuidance,currentPreparations,guidanceReferenceDate} from './homeContent';
 import {Body,Button,Card,Icon,Page,s} from './ui';
 import MvpMap from './Map';
 import {currentMapLocation} from './mapGeometry';
@@ -22,13 +21,15 @@ function HomeSection({title,color,children}:PropsWithChildren<{title:string;colo
     <View style={{padding:12,paddingTop:0,gap:12}}>{children}</View>
   </View>;
 }
-function Tip({text,icon,tint,border}:{text:string;icon:string;tint:string;border:string}){
-  return <View style={[h.tip,{backgroundColor:tint,borderColor:border}]}><Icon name={icon} color="#243238"/><Text style={h.tipText}>{text}</Text></View>;
+function Tip({title,text,icon,tint,border}:{title:string;text:string;icon:string;tint:string;border:string}){
+  return <View style={[h.tip,{backgroundColor:tint,borderColor:border}]}><Icon name={icon} color="#243238"/><View style={{flex:1,gap:5}}><Text style={h.tipText}>{title}</Text><Text style={{fontSize:14,lineHeight:21,color:'#17242b'}}>{text}</Text></View></View>;
 }
 function HomeBody(){
   const value=useMvp(),home=value.home?.data;
   const location=currentMapLocation(home?.location,value.now,value.required[`location:${value.session?.tokens.user_id}`]??0);
-  const preparationCurrent=home&&home.preparations.status==='available'&&home.preparations.profile_revision>=(value.profile?.data.revision??0)&&home.preparations.items.every(item=>freshUntil(item.valid_until,value.now));
+  const today=currentTodayGuidance(home,value.now,value.required[`location:${value.session?.tokens.user_id}`]??0);
+  const preparations=currentPreparations(home?.preparations,value.profile?.data.revision??0,value.now,home?.location,value.required[`location:${value.session?.tokens.user_id}`]??0);
+  const referenceDate=guidanceReferenceDate(today);
   function open(responseId:string|null,alertId?:string,incidentId?:string){router.push({pathname:'/emergency',params:{...(responseId?{responseId}:{}),...(alertId?{alertId}:{}),...(incidentId?{incidentId}:{})}});}
   const settings=()=>router.push({pathname:'/profile',params:{section:'location'}});
   return <Page home>
@@ -40,12 +41,12 @@ function HomeBody(){
     {!!value.error&&<Card><Body>{value.error}</Body><Button secondary title="다시 확인" onPress={()=>void value.refresh().catch(()=>undefined)}/></Card>}
     {!home&&<Card><Body>주변 정보를 확인하고 있어요.</Body><Button secondary title="다시 불러오기" onPress={()=>void value.refresh().catch(()=>undefined)}/></Card>}
     <HomeSection title="오늘의 행동요령" color="#f3deed">
-      {home?.basic_rules.items.slice(0,2).map((item,index)=><Tip key={item.id} text={item.text} icon={index?'bag':'sun'} tint="#e5b8d2" border="#bd8baa"/>)}
-      {!home?.basic_rules.items.length&&<Body>행동요령을 확인하고 있어요.</Body>}
+      {today.map((item,index)=><Tip key={item.id} title={item.title} text={item.text} icon={index?'bag':'sun'} tint="#e5b8d2" border="#bd8baa"/>)}
+      {!today.length&&<Body>{location?'현재 위치의 지역·기상 자료를 확인하고 있어요.':'안내 위치를 설정하면 지역 행동요령을 확인할 수 있어요.'}</Body>}
+      {referenceDate&&<Text style={{fontSize:12,lineHeight:18,color:'#59354d'}}>{referenceDate}</Text>}
     </HomeSection>
     <HomeSection title="나의 사전준비" color="#e2ece5">
-      {preparationCurrent?home.preparations.items.map((item,index)=><Tip key={item.id} text={item.text} icon={index?'checklist':'bag'} tint="#bfd5c5" border="#90b19b"/>):<Body>준비 안내를 확인하고 있어요.</Body>}
-      {preparationCurrent&&!home.preparations.items.length&&<Body>등록된 준비 안내가 없어요.</Body>}
+      {preparations.length?preparations.map((item,index)=><Tip key={item.id} title={item.title} text={item.text} icon={index?'checklist':'bag'} tint="#bfd5c5" border="#90b19b"/>):<Body>준비 안내를 확인하고 있어요.</Body>}
     </HomeSection>
     <View style={s.section}><Text style={s.heading}>주변 재난 사항</Text><View style={h.feed}>
       {home?.alerts.map((alert,index)=><Pressable key={alert.id} accessibilityRole="button" accessibilityLabel={`${alert.status==='active'?'공식 경보':'공식 경보 상태'} 원문 확인`} style={[h.feedRow,index>0&&h.feedBorder]} onPress={()=>open(alert.response_id,alert.id,alert.incident_id)}>
@@ -54,11 +55,10 @@ function HomeBody(){
       {home?.nearby_disasters.map((item,index)=><Pressable key={item.id} accessibilityRole="button" accessibilityLabel={`${item.title} 확인`} onPress={()=>open(item.response_id,undefined,item.id)} style={[h.feedRow,(index>0||!!home.alerts.length)&&h.feedBorder]}><View style={h.feedIcon}><Icon name="fire" size={19}/></View><View style={{flex:1,gap:7}}><Text style={h.feedTitle}>{item.title}</Text><Text style={h.feedDetail}>{new Date(item.observed_at).toLocaleString('ko-KR',{month:'2-digit',day:'2-digit',hour:'2-digit',minute:'2-digit'})}{item.data_status!=='current'?' · 최신성 확인 필요':''}</Text></View></Pressable>)}
       {!home?.nearby_disasters.length&&!home?.alerts.length&&<View style={{paddingVertical:20}}><Body>표시할 재난 정보가 없어요.</Body></View>}
     </View></View>
-    {mvpIsMock&&<Card title="모의 시연 제어"><View style={s.choices}>{([['1','경고'],['2','대피'],['3','위급']] as const).map(([stage,label])=><Button key={stage} secondary title={label} onPress={()=>{mvpMock.setStage(stage);void value.refresh().catch(()=>undefined);}}/>)}</View></Card>}
   </Page>;
 }
 const h=StyleSheet.create({
-  tabSection:{marginHorizontal:-12,minHeight:108},tip:{minHeight:80,borderRadius:16,borderWidth:1,flexDirection:'row',gap:13,padding:16,alignItems:'flex-start'},tipText:{flex:1,fontSize:15,fontWeight:'700',lineHeight:23,color:'#17242b'},
+  tabSection:{marginHorizontal:-12,minHeight:108},tip:{minHeight:80,borderRadius:16,borderWidth:1,flexDirection:'row',gap:13,padding:16,alignItems:'flex-start'},tipText:{fontSize:15,fontWeight:'700',lineHeight:23,color:'#17242b'},
   feed:{borderWidth:1,borderColor:'#e4e7e9',borderRadius:14,marginHorizontal:-3,paddingHorizontal:13},feedRow:{minHeight:86,flexDirection:'row',alignItems:'center',gap:9,paddingVertical:14},feedBorder:{borderTopWidth:1,borderTopColor:'#eef0f1'},feedIcon:{width:37,height:37,borderRadius:8,backgroundColor:'#f3f5f7',alignItems:'center',justifyContent:'center'},feedTitle:{fontSize:14,fontWeight:'700',color:'#20262d',flexShrink:1},feedDetail:{fontSize:13,lineHeight:19,color:'#20262d'},badge:{fontSize:12,color:'#a03a16',backgroundColor:'#ffebe3',borderRadius:20,paddingHorizontal:8,paddingVertical:3},
 });
 export default function Home(){return <RequireSession><HomeBody/></RequireSession>;}

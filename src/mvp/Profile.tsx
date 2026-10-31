@@ -52,8 +52,8 @@ function ProfileBody(){
         {feedback('location')}
       </Card>
     </View>
-    {demoAvailable&&<Card title="시연 위치">
-      <Button secondary title={busy&&messageSection==='demo'?'시연 위치를 저장하고 있어요…':'시연 위치로 안내 확인'} disabled={busy} onPress={()=>void perform('demo',async()=>{const result=await mvpApi.sendLocation({fix_id:newId(),installation_id:await installationId(),latitude:Number(settings.demoLatitude),longitude:Number(settings.demoLongitude),accuracy_m:10,captured_at:new Date().toISOString()});runtime.requireInput('location',result.data.input_revision);await runtime.refresh();},'시연 위치를 저장했어요.')}/>
+    {demoAvailable&&<Card title="안내 위치">
+      <Button secondary title={busy&&messageSection==='demo'?'안내 위치를 저장하고 있어요…':'안내 위치 설정'} disabled={busy} onPress={()=>void perform('demo',async()=>{const result=await mvpApi.sendLocation({fix_id:newId(),installation_id:await installationId(),latitude:Number(settings.demoLatitude),longitude:Number(settings.demoLongitude),accuracy_m:10,captured_at:new Date().toISOString()});runtime.requireInput('location',result.data.input_revision);await runtime.refresh();},'안내 위치를 저장했어요.')}/>
       {feedback('demo')}
     </Card>}
     <Card title="내 정보 관리">

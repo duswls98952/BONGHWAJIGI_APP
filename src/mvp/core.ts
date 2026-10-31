@@ -43,7 +43,7 @@ export function userMessage(error:unknown) {
     if (error.status===401) return '연결 시간이 끝났습니다. 다시 시작해 주세요.';
     if (error.status===409) return '다른 변경이 먼저 반영됐습니다. 최신 내용을 불러온 뒤 다시 저장해 주세요.';
     if (error.status===429) return '요청이 많아 잠시 기다려야 합니다. 잠시 후 다시 시도해 주세요.';
-    if (error.code==='INSTALLATION_REGISTRATION_DISABLED') return '현재 서버에서 새 시연 연결을 준비 중입니다.';
+    if (error.code==='INSTALLATION_REGISTRATION_DISABLED') return '현재 서버에서 새 연결을 준비 중입니다.';
     if (error.code==='LOCATION_TIME_INVALID'||error.code==='CONTEXT_TIME_INVALID') return '휴대폰의 날짜와 시간을 자동으로 설정한 뒤, 현재 위치나 상태를 다시 보내 주세요.';
     if (error.status===422) return '입력 내용과 동의 항목을 다시 확인해 주세요.';
     if (error.status===404) return '현재 접근할 수 있는 안내가 없습니다.';
