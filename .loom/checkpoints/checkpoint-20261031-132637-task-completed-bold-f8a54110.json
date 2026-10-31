@@ -1,0 +1,20 @@
+{
+  "id": "checkpoint-20261031-132637-task-completed-bold-f8a54110",
+  "created_at": "2026-10-31T13:26:37+00:00",
+  "reason": "Task completed: 홈 로고에 정부상징서체 Bold 시안 적용",
+  "summary": "홈 로고에 정부상징서체 Bold 시안 적용 -> DONE @ HeoNey_dev/e30ffa87a682",
+  "job_id": "job-20261031-081911-png-html-28b089bf",
+  "task_id": "task-20261031-132423-bold-794e09a6",
+  "commit_sha": "e30ffa87a682e7c95c0d7b13c4c42f7c34d854f1",
+  "branch_name": "HeoNey_dev",
+  "dirty": true,
+  "staged_files": [],
+  "modified_files": [
+    ".loom/job-runs/job-run-20261031-132425-job-20261031-081911-png-html-28b089bf-debf219c/job-run.json",
+    ".loom/task-definitions/task-def-20261031-132423-bold-232ed2f3/task-definition.json",
+    ".loom/tasks/task-20261031-120114-suite-bold-8ef87683/troubleshooting.md"
+  ],
+  "untracked_files": [],
+  "snapshot_captured_at": "2026-10-31T13:26:37+00:00",
+  "rollback_strategy": "revert-or-branch"
+}
