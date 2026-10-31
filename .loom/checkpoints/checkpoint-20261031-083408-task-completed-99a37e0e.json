@@ -1,0 +1,19 @@
+{
+  "id": "checkpoint-20261031-083408-task-completed-99a37e0e",
+  "created_at": "2026-10-31T08:34:08+00:00",
+  "reason": "Task completed: 홈의 세 섹션 제목 글자 크기 통일",
+  "summary": "홈의 세 섹션 제목 글자 크기 통일 -> DONE @ HeoNey_dev/d44caf969c06",
+  "job_id": "job-20261031-081911-png-html-28b089bf",
+  "task_id": "task-20261031-083329-task-453f2d2d",
+  "commit_sha": "d44caf969c064505fcf13d6c5898efaf55c9ca24",
+  "branch_name": "HeoNey_dev",
+  "dirty": true,
+  "staged_files": [],
+  "modified_files": [
+    ".loom/job-runs/job-run-20261031-083332-job-20261031-081911-png-html-28b089bf-37e6d2bb/job-run.json",
+    ".loom/task-definitions/task-def-20261031-083329-task-def-18c20e85/task-definition.json"
+  ],
+  "untracked_files": [],
+  "snapshot_captured_at": "2026-10-31T08:34:08+00:00",
+  "rollback_strategy": "revert-or-branch"
+}
