@@ -1,0 +1,32 @@
+{
+  "id": "task-20261031-135500-task-7d5f1545",
+  "job_id": "job-20261031-081911-png-html-28b089bf",
+  "title": "로딩 원형 문양 원본과 앞뒤 레이어 적용",
+  "description": "로딩 화면의 근사 SVG 원형을 저장된 정부상징 원형 문양 PNG 원본으로 교체한다. 남색 부분은 글씨 뒤에 두고 빨간 꼬리 픽셀은 글씨 앞에 겹치게 해 감싸는 깊이감을 만든다. #loading 고정 미리보기와 일반 홈 전환을 유지한다.",
+  "status": "RUNNING",
+  "created_at": "2026-10-31T13:55:00+00:00",
+  "updated_at": "2026-10-31T13:55:02+00:00",
+  "order_index": 52,
+  "assigned_agent": "codex",
+  "depends_on": [],
+  "expected_output": "public/prototype/index.html, style.css, 원형 문양 PNG 복사본, 모바일 화면 기획서, Loom 기록",
+  "done_condition": "로딩 화면 원형은 docs/HeoNey/assert/정부상징_원형문양_참고.png와 같은 PNG 원본이다. 남색은 글씨 뒤, 빨간 꼬리는 글씨 앞에 보이며 글씨가 읽힌다. #loading 미리보기와 일반 자동 전환이 유지된다.",
+  "in_scope": "public/prototype/index.html, public/prototype/style.css, public/prototype의 원형 이미지, docs/HeoNey/봉화지기_모바일_화면_기획서.md, Loom 기록",
+  "out_of_scope": "홈 로고, API, Expo 네이티브 시작 화면",
+  "validation_hint": "원형 PNG SHA-256 비교; Chrome #loading 시작·중간·5초 캡처와 해시 없는 5초 홈 캡처; node --check public/prototype/app.js, npm run check:docs, git diff --check",
+  "required_docs": [],
+  "memory_refs": [],
+  "document_outputs": [],
+  "document_output_exceptions": [],
+  "run_attempts": 0,
+  "last_error": "",
+  "commit_refs": [
+    "fd08bba1337af890cc80a0bf9c433f84321ffab8"
+  ],
+  "branch_name": "HeoNey_dev",
+  "git_dirty": true,
+  "git_snapshot_captured_at": "2026-10-31T13:55:02+00:00",
+  "artifacts": [],
+  "source_proposal_id": "",
+  "source_prompt": ""
+}

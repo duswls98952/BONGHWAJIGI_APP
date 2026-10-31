@@ -42,11 +42,7 @@
   <div class="phone">
     <section class="screen loading-screen" id="loading" data-screen role="status" aria-label="봉화 지기 로딩 중">
       <div class="loading-emblem">
-        <svg class="loading-symbol" viewBox="0 0 320 320" aria-hidden="true" focusable="false">
-          <circle cx="160" cy="160" r="150" fill="#003764"/>
-          <path d="M66 142C77 70 139 34 204 43c65 8 105 64 105 130 0 57-28 100-83 131 39-37 59-79 58-126-1-70-43-119-103-122C127 52 82 85 66 142Z" fill="#e4032e"/>
-          <circle cx="160" cy="159" r="104" fill="#fff"/>
-        </svg>
+        <img class="loading-symbol" src="government-symbol.png" alt="" aria-hidden="true">
         <h1 class="brand-mark loading-brand" aria-label="봉화 지기">
           <svg class="brand-colored" viewBox="0 0 1824 950" aria-hidden="true" focusable="false">
             <g transform="translate(0 800) scale(1 -1)">
@@ -63,6 +59,14 @@
           </svg>
           <span class="brand-neutral">지기</span>
         </h1>
+        <svg class="loading-symbol-tail" viewBox="0 0 172 170" aria-hidden="true" focusable="false">
+          <defs>
+            <filter id="loading-red-only" color-interpolation-filters="sRGB">
+              <feColorMatrix type="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  2 -1 -1 0 0"/>
+            </filter>
+          </defs>
+          <image href="government-symbol.png" width="172" height="170" filter="url(#loading-red-only)"/>
+        </svg>
       </div>
     </section>
     <section class="screen" id="home" data-screen hidden>
