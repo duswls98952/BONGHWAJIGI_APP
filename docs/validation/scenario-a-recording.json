@@ -1,0 +1,139 @@
+{
+  "checked_at": "2026-10-31T20:39:07.968981+00:00",
+  "scenario": "A",
+  "device": "Samsung SM-G996N Android 15",
+  "app_version": "0.4.0 (6)",
+  "files": [
+    {
+      "path": "artifacts/recordings/2026-11-01-A/A-scenario-raw.mp4",
+      "sha256": "1ad5c33f489ebb323cb94346baa37513ddbf47d8f7452cd9c24af0827ee558e4",
+      "media": {
+        "programs": [],
+        "stream_groups": [],
+        "streams": [
+          {
+            "codec_name": "h264",
+            "codec_type": "video",
+            "width": 1080,
+            "height": 2400
+          },
+          {
+            "codec_name": "aac",
+            "codec_type": "audio",
+            "sample_rate": "48000",
+            "channels": 2
+          }
+        ],
+        "format": {
+          "duration": "378.814917",
+          "size": "50452926"
+        }
+      },
+      "decode_exit_code": 0
+    },
+    {
+      "path": "artifacts/recordings/2026-11-01-A/A-scenario-review.mp4",
+      "sha256": "0323072030eff13f004ed03e6ce1298e130435ad8f00b8f592a62e947b772e8b",
+      "media": {
+        "programs": [],
+        "stream_groups": [],
+        "streams": [
+          {
+            "codec_name": "h264",
+            "codec_type": "video",
+            "width": 1080,
+            "height": 2400
+          },
+          {
+            "codec_name": "aac",
+            "codec_type": "audio",
+            "sample_rate": "48000",
+            "channels": 2
+          }
+        ],
+        "format": {
+          "duration": "88.700000",
+          "size": "4097715"
+        }
+      },
+      "decode_exit_code": 0
+    },
+    {
+      "path": "artifacts/recordings/2026-11-01-A/A-alert-pickup.mp4",
+      "sha256": "352e2108d8390f879bd9c9cdcde0daa92786a3cfa578fa4822be9532703d3a2f",
+      "media": {
+        "programs": [],
+        "stream_groups": [],
+        "streams": [
+          {
+            "codec_name": "h264",
+            "codec_type": "video",
+            "width": 1080,
+            "height": 2400
+          },
+          {
+            "codec_name": "aac",
+            "codec_type": "audio",
+            "sample_rate": "48000",
+            "channels": 2
+          }
+        ],
+        "format": {
+          "duration": "67.409750",
+          "size": "24349601"
+        }
+      },
+      "decode_exit_code": 0
+    },
+    {
+      "path": "artifacts/recordings/2026-11-01-A/A-alert-mic-pickup.mp4",
+      "sha256": "fcb1688c2e812fab97412bdfbbc72cef1b941828efd6f91f2ed6f0947e6bf22a",
+      "media": {
+        "programs": [],
+        "stream_groups": [],
+        "streams": [
+          {
+            "codec_name": "aac",
+            "codec_type": "audio",
+            "sample_rate": "48000",
+            "channels": 2
+          },
+          {
+            "codec_name": "h264",
+            "codec_type": "video",
+            "width": 1080,
+            "height": 2400
+          }
+        ],
+        "format": {
+          "duration": "36.718644",
+          "size": "5762285"
+        }
+      },
+      "decode_exit_code": 0
+    }
+  ],
+  "server_evidence": {
+    "assistant_source": "qwen_grounded",
+    "child_present": true,
+    "context_revision_from": 0,
+    "context_revision_to": 1,
+    "personal_response": "위급 3단계",
+    "response_revision_after_confirmation": 10,
+    "error": null
+  },
+  "user_confirmed": [
+    "어린이 프로필과 공통·개인 준비 카드",
+    "위급 단계와 아이 동반 질문·음성",
+    "실제 음성 입력 및 아이 동반 상태 반영",
+    "현재 상태·행동요령과 위급 화면",
+    "마지막 마이크 보충 촬영에서 알림음 1회"
+  ],
+  "audio_scope": {
+    "raw_and_review": "앱 질문·안내 TTS. 사용자가 말한 원음과 시스템 알림음은 포함하지 않음. STT 인식 결과는 화면에 담김.",
+    "output_pickup": "기기 출력 캡처에서도 알림음 누락. 사용하지 않는 기술 확인용 테이크.",
+    "mic_pickup": "휴대폰 마이크로 별도 알림음 촬영. 주변 소리 포함. 사용자가 알림음 1회 청취 확인. 본편과 자동 합성하지 않음."
+  },
+  "no_actual_gps_or_emergency_call": true,
+  "no_external_upload": true
+}

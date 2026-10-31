@@ -18,3 +18,4 @@ GoogleService-Info.plist
 
 .local-private/
 artifacts/apk/
+artifacts/recordings/

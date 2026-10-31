@@ -1,0 +1,3 @@
+[2026-10-31T20:20:13+00:00] agent=foreground task=task-20261031-202001-a-5f3e9a39 Foreground task session started.
+
+2026-11-01 KST: A actual-phone recording finished; raw378.814917s; review88.7s; internal audio captured TTS only; alert microphone pickup36.7s; user confirmed all steps and one alert sound. Server read-only child_present=true, qwen_grounded, personal response level3. Artifacts local, no upload.

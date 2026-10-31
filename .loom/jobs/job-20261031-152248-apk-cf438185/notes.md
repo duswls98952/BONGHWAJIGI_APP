@@ -30,3 +30,9 @@
 
 - Task: `task-20261031-193008-task-33cb114d`
 - Tags: `filming`, `android`
+## 2026-10-31T20:40:20+00:00
+
+A 실제 폰 원본 6분18.8초·88.7초 확인본·36.7초 알림음 마이크 보충본을 로컬 저장했다. 실제 STT→Qwen 제안→명시 확인→아이 동반·위급3단계와 맞춤 안내를 사용자·서버·영상으로 확인했다. 본편은 TTS를 포함하고 시스템 알림음은 별도 보충본이다. 전체 디코드·19개 문서링크·Loom strict 통과, 모든 녹화 종료. 상세 docs/14-scenario-a-recording.md.
+
+- Task: `task-20261031-202001-a-5f3e9a39`
+- Tags: `recording`, `android`, `validation`
