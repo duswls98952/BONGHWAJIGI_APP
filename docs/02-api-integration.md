@@ -1,6 +1,6 @@
 # 현재 MVP API 연결
 
-2026-11-01 KST 기준 앱은 **0.2.0-mvp** 서버 계약을 사용한다. [현재 OpenAPI](api/mvp-openapi.json), [원본 커밋·SHA256](api/mvp-provenance.json), [합성 응답 캡처](api/mvp-fixtures.json)가 기준이다. 이전 `upstream-openapi.yaml`, `generated.ts`, `createApi`와 구형 테스트는 이력으로 남아 있으며 현재 화면의 계약이 아니다.
+2026-11-01 KST 기준 앱 **0.3.0**은 **0.2.0-mvp** 서버 계약을 사용한다. 서버 `4144822`에서 텍스트 대화·상태 제안 확인·합성 경로가 추가됐으며 schema_version은 유지된다. [현재 OpenAPI](api/mvp-openapi.json), [원본 커밋·SHA256](api/mvp-provenance.json), [합성 정책 응답](api/mvp-fixtures.json), [대화·경로 fixture](api/mvp-interaction-fixtures.json)가 기준이다. 이전 `upstream-openapi.yaml`, `generated.ts`, `createApi`와 구형 테스트는 이력으로 남아 있으며 현재 화면의 계약이 아니다. 0.3.0의 실제 휴대폰 통합 검증은 대기 중이다.
 
 현재 호출 경로는 `app/*` → `src/mvp/*` → `src/api/client.ts`의 `createMvpApi`다. `src/mvp/api.ts`가 mock/live와 인증을 연결한다. LIVE 오류를 mock 응답으로 자동 대체하지 않는다. `live`는 실제 서버에 HTTP 요청한다는 앱 설정이며, 현재 서버 응답의 `meta.mode`와 정책의 `content.mode`는 계속 `simulation`이다.
 
@@ -19,15 +19,35 @@
 | 사전 정보 | GET/PUT/DELETE `/v1/me/profile` | 프로필 폼·저장·삭제; `revision`, `input_revision` |
 | 사전준비 카드 | GET `/v1/me/preparations` | 서버 선정 카드 최대2개. 홈에도 동일 구조 포함 |
 | 위치 | GET/PUT/DELETE `/v1/me/location` | 측정 좌표·정확도·측정시각·설치 ID; 현재 위치 공유와 삭제 |
-| 확인한 현재 상태 | PUT `/v1/me/responses/{response_id}/context` | 사용자 확인과 기준 revision을 제출; 202 이후 새 정책 대기 |
+| 확인한 현재 상태 | PUT `/v1/me/responses/{response_id}/context` | 사용자 확인과 기준 revision 제출; 대화 제안 확인에는 `proposal_turn_id`도 제출; 202 이후 새 정책 대기 |
+| 텍스트 대화 | POST `/v1/me/responses/{response_id}/text-turns` | 최종 STT 또는 직접 입력 텍스트, 기준 response/context revision; 서버 Qwen 답변과 확인할 상태 제안 |
+| 대화 결과 재조회 | GET `/v1/me/responses/{response_id}/text-turns/{turn_id}` | POST 응답 유실·진행 중일 때 같은 client turn ID로 조회 |
 | 알림 선호 | GET/PUT `/v1/me/preferences` | 호출 함수 제공. 현재 UI의 알림 권한 등록은 devices API 사용 |
 | 단말 등록·해제 | PUT/DELETE `/v1/me/devices/{installation_id}` | 설치 정보·OS 알림 권한·준비된 경우 native FCM 토큰 |
 | 경보 표시·열기 기록 | POST `/v1/me/alerts/{alert_id}/receipts` | 전경 긴급 화면에서 실제 표시/열기 기록; 중복키 사용 |
 | 로그아웃 | POST `/v1/me/logout` | 서버 세션 해제 요청과 기기 세션 삭제 |
 | 산불 수칙 | GET `/v1/safety-rules/wildfire` | 검토된 `items`, `avoid`, 출처·버전 |
-| 대피 경로 | GET `/v1/me/responses/{response_id}/route` | 현재 `{status:"unavailable",route:null,reason}`. 호출 함수만 제공하며 화면은 미제공 안내 |
+| 대피 경로 | GET `/v1/me/responses/{response_id}/route` | 허용된 합성 시나리오·현재 위치에서 `status=simulation`; 그 외 `unavailable/route=null`. 유효한 합성 선·목적지를 지도에 표시 |
 
-현재 앱은 `voice-turns`나 서버 `support-drafts`를 호출하지 않는다. 서버 음성·채팅 및 서버 신고 초안 기능은 현재 범위에서 비활성이다. 119 초안은 기기에서 사용자가 확인·수정하고 전화/문자 앱으로 넘긴다. [지도·TTS](04-map-tts.md), [남은 서버·단말 연결](06-server-handoff.md)을 함께 참고한다.
+음성은 단말에서 글로 변환해 `text-turns`로 보내며 서버 오디오 입력·`voice-turns`·서버 `support-drafts`는 사용하지 않는다. 서버 기능값은 `text_turns=true`, `simulation_route=true`, `voice_turns=false`, `server_audio=false`, `route_geometry=false`다. 119 초안은 기기에서 사용자가 확인·수정하고 전화/문자 앱으로 넘긴다. [지도·음성](04-map-tts.md), [남은 서버·단말 연결](06-server-handoff.md)을 함께 참고한다.
+
+## 텍스트 대화·제안 확인
+
+대화 요청은 `client_turn_id`, `text`(최대 1,000자), `base_response_revision`, `base_context_revision`을 보낸다. 서버는 현재 정책의 행동과 상태, 같은 세션·응답·revision에 속한 최근 대화를 바탕으로 Qwen을 호출한다. 모델은 현재 정책에 있는 행동 ID를 고르고 직접 발언한 상태만 제안한다. 서버가 검토된 행동과 정해진 질문으로 최종 문장을 구성하므로 모델의 자유 생성 지시문이 그대로 표시되지 않는다. 생성 실패나 잘못된 출력은 `assistant.source=reviewed_policy_fallback`으로 구분한다.
+
+`TextTurnData`는 `turn_id`, `response_id`, `status`(`processing/complete`), `response_revision`, `context_revision`, `valid_until`, `assistant`, `proposal`, `reason_code`를 포함한다. 제안의 `evidence`는 변경 필드·값·현재 발언의 인용 근거를 제공한다. 유효기간은 정책 만료와 2분 중 짧은 값이다.
+
+앱은 유효한 완료 응답만 보여 준다. 사용자 **상태 반영** 선택 후 `proposal_turn_id=turn_id`, `confirmation=user_confirmed`, 제안의 `base_revision/state/overrides`, 현재 `observed_at`을 context API에 제출한다. 서버가 동일 사용자·세션·정책/context revision·유효기간·제안 내용 일치를 다시 검사한다. 제안 생성이나 TTS 재생만으로 현재 상태를 저장하지 않는다. 직접 상태 선택은 기존처럼 `proposal_turn_id` 없이 사용할 수 있다.
+
+같은 turn ID와 본문은 유효한 결과를 재사용한다. POST 응답 유실 또는 `TURN_IN_PROGRESS`이면 GET으로 같은 ID를 조회한다. 앱의 진행 상태 조회는 1초 간격 최대 8회이며 무한 요청하지 않는다. `REVISION_CONFLICT`, `RESPONSE_REFRESH_REQUIRED`, `TURN_SUPERSEDED`, `TURN_EXPIRED`에서는 이전 제안을 버리고 최신 정책을 다시 확인한다. 서버는 같은 ID의 다른 본문·변조된 제안·다른 세션의 접근을 거부하고 사용자당 10분 내 20턴으로 제한한다.
+
+서버는 대화 행을 최대 10분 보관 대상으로 두고 다음 대화 요청에서 만료 행을 정리한다. 만료 즉시 물리 삭제하는 스케줄러라는 뜻은 아니다. 이전 대화 중 모델 문맥에 포함되는 것은 현재 조건에 맞는 최근 3턴, 각 발언/답변 최대 300자다. 앱은 현재 화면의 최근 8개를 메모리에 보관하며 계정·사건 변경 시 비운다.
+
+## 합성 경로 계약
+
+경로 표시에는 `status=simulation`, `route.origin=synthetic`, `route.operational_use=false`, 유효한 `valid_until`, 최신 사건·위치 `input_versions`가 필요하다. `geometry`는 GeoJSON `LineString`이며 `[경도, 위도]` 순서다. `start/destination/steps`도 서버가 제공한다. 정책 갱신 대기·이전 입력·만료·잘못된 좌표이면 선을 숨긴다.
+
+서버가 허용한 `mobile-demo/mobile-fire`와 합성 시작점 근처에서만 시연 선을 제공한다. 실제 자료·다른 위치·만료 위치에는 `unavailable`과 null을 반환한다. 화면에 **시연 경로 · 실제 이동용 아님**을 표시하며 실제 검증된 대피 경로 또는 지정 대피소로 설명하지 않는다. 상세 조건은 [지도·시연 경로](04-map-tts.md)를 따른다.
 
 ## 응답과 대응 단계
 

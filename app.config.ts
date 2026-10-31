@@ -7,7 +7,7 @@ const projectId = process.env.EXPO_PUBLIC_EAS_PROJECT_ID;
 const config: ExpoConfig = {
   name: '봉화지기',
   slug: 'bonghwajigi-app',
-  version: '0.2.1',
+  version: '0.3.0',
   scheme: 'bonghwajigi',
   orientation: 'portrait',
   userInterfaceStyle: 'light',
@@ -15,7 +15,7 @@ const config: ExpoConfig = {
   ios: { bundleIdentifier: 'com.bonghwajigi.app', supportsTablet: false },
   android: {
     package: 'com.bonghwajigi.app',
-    versionCode: 3,
+    versionCode: 4,
     blockedPermissions: ['android.permission.READ_EXTERNAL_STORAGE','android.permission.WRITE_EXTERNAL_STORAGE','android.permission.SYSTEM_ALERT_WINDOW'],
     ...(process.env.GOOGLE_SERVICES_JSON ? { googleServicesFile: process.env.GOOGLE_SERVICES_JSON } : {}),
   },
@@ -25,6 +25,11 @@ const config: ExpoConfig = {
     'expo-router',
     './plugins/with-release-signing.cjs',
     'expo-secure-store',
+    ['expo-speech-recognition', {
+      microphonePermission: '말한 내용을 입력하여 재난 안내와 대화합니다.',
+      speechRecognitionPermission: '말한 내용을 글로 바꾸어 재난 안내와 대화합니다.',
+      androidSpeechServicePackages: ['com.google.android.googlequicksearchbox', 'com.google.android.tts', 'com.google.android.as'],
+    }],
     ['expo-notifications', { defaultChannel: 'disaster-alerts' }],
     ['expo-location', {
       locationWhenInUsePermission: '내 위치와 관련된 재난 정보와 경로를 표시합니다.',

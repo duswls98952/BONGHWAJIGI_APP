@@ -1,5 +1,5 @@
 import {useState} from 'react';
-import {Alert,Linking,Modal,Platform,ScrollView,Text,TextInput,View} from 'react-native';
+import {Alert,Linking,Modal,Platform,Pressable,ScrollView,Text,TextInput,View} from 'react-native';
 import {SafeAreaView} from 'react-native-safe-area-context';
 import * as SMS from 'expo-sms';
 import {router} from 'expo-router';
@@ -36,9 +36,9 @@ export function EmergencyActions({responseId,alertId}:{responseId?:string;alertI
   }
   return <>
     <View style={s.actionBar}>
-      <View style={{flex:1}}><Button secondary title="기본 수칙" onPress={()=>router.push('/rules')}/></View>
-      <View style={{flex:1}}><Button secondary title="대피로" onPress={()=>router.push({pathname:'/route',params:{...(responseId?{responseId}:{}),...(alertId?{alertId}:{})}})}/></View>
-      <View style={{flex:1}}><Button danger title="119 신고" onPress={prepare}/></View>
+      <Pressable accessibilityRole="button" onPress={()=>router.push('/rules')} style={[s.action,{borderColor:'transparent'}]}><Icon name="book" size={19}/><Text style={{fontSize:12,fontWeight:'700'}}>기본 수칙</Text></Pressable>
+      <Pressable accessibilityRole="button" onPress={()=>router.push({pathname:'/route',params:{...(responseId?{responseId}:{}),...(alertId?{alertId}:{})}})} style={s.action}><Icon name="route" size={19}/><Text style={{fontSize:12,fontWeight:'700'}}>대피로</Text></Pressable>
+      <Pressable accessibilityRole="button" onPress={prepare} style={[s.action,{backgroundColor:'#b93836',borderColor:'#b93836'}]}><Icon name="phone" size={19} color="#fff"/><Text style={{fontSize:12,fontWeight:'700',color:'#fff'}}>119 신고</Text></Pressable>
     </View>
     <Modal visible={open} onRequestClose={()=>setOpen(false)} animationType="slide"><SafeAreaView style={[s.safe,{padding:22,gap:18}]}><ScrollView contentContainerStyle={{gap:18,paddingBottom:20}}><View style={s.row}><Icon name="phone" color="#b93836"/><Text style={s.heading}>119 연결 준비</Text></View><Body>현재 내용은 내가 확인하는 초안이에요. 자동으로 전송하거나 신고하지 않아요.</Body><TextInput accessibilityLabel="119 문자 초안" multiline value={text} onChangeText={setText} style={[s.input,{minHeight:210,textAlignVertical:'top'}]}/><Button danger title="전화 앱에서 119 열기" onPress={()=>Alert.alert('119 전화 화면','실제 긴급 연락이 필요한 상황인가요? 전화 앱에서 번호를 확인하고 직접 통화해 주세요.',[{text:'취소',style:'cancel'},{text:'전화 앱 열기',onPress:()=>void dial()}])}/><Button secondary title="문자 작성 화면 열기" onPress={()=>void sms().catch(()=>setMessage('문자 작성 화면을 열지 못했어요.'))}/>{!!message&&<Body>{message}</Body>}<Button secondary title="닫기" onPress={()=>setOpen(false)}/></ScrollView></SafeAreaView></Modal>
   </>;

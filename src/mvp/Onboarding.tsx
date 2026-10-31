@@ -19,16 +19,14 @@ export function Onboarding(){
   const all=consent.every(Boolean)&&draft.health_consent===true;
   async function save(){setBusy(true);setError('');try{await runtime.onboard(draft);}catch(problem){setError(userMessage(problem));}finally{setBusy(false);}}
   return <Page>
-    <View style={{alignItems:'center',paddingVertical:28}}><Brand/></View>
-    <Body muted>내 상황에 맞는 산불 안내를 위한 사전 정보예요.</Body>
+    <View style={{alignItems:'center',paddingTop:10,paddingBottom:4}}><Brand/></View>
     <Text style={s.heading}>이용 동의</Text>
-    <Pressable accessibilityRole="checkbox" accessibilityState={{checked:all}} aria-checked={all} style={[s.row,{padding:17,backgroundColor:'#f1f3f6',borderRadius:20,minHeight:56}]} onPress={()=>{setConsent([!all,!all,!all]);setDraft(old=>({...old,health_consent:!all,health_notes:all?'':old.health_notes??''}));}}><Icon name={all?'check':'warning'} color={all?'#003764':'#929ba3'}/><Text style={{fontSize:18,fontWeight:'800'}}>전체 동의</Text></Pressable>
-    <View style={{gap:3}}>{terms.map((term,index)=><View key={term.title}><View style={s.row}><Pressable accessibilityRole="checkbox" accessibilityState={{checked:consent[index]??false}} aria-checked={consent[index]??false} onPress={()=>setConsent(old=>old.map((v,i)=>i===index?!v:v))} style={[s.row,{flex:1,minHeight:50,paddingLeft:10}]}><Icon name="check" color={consent[index]?colorsNavy:'#9ba3aa'}/><Text style={{fontSize:15,fontWeight:'700'}}>[필수] {term.title}</Text></Pressable><Pressable accessibilityRole="button" accessibilityLabel={`${term.title} 설명 보기`} accessibilityState={{expanded:expanded===index}} onPress={()=>setExpanded(expanded===index?null:index)} style={s.back}><Text style={{fontSize:28,color:'#58636c'}}>{expanded===index?'⌄':'›'}</Text></Pressable></View>{expanded===index&&<Card><Body small>{term.text}</Body></Card>}</View>)}<View style={{paddingHorizontal:10,paddingVertical:10}}><Body small muted>건강·의료 정보 처리는 아래 선택 항목에서 별도로 동의할 수 있어요.</Body></View></View>
+    <Pressable accessibilityRole="checkbox" accessibilityState={{checked:all}} aria-checked={all} style={[s.row,{paddingHorizontal:17,backgroundColor:'#f0f2f7',borderRadius:20,minHeight:48,gap:13}]} onPress={()=>{setConsent([!all,!all,!all]);setDraft(old=>({...old,health_consent:!all,health_notes:all?'':old.health_notes??''}));}}><View style={{width:22,height:22,borderRadius:6,borderWidth:1.5,borderColor:all?colorsNavy:'#9ba3aa',backgroundColor:all?colorsNavy:'#fff',alignItems:'center',justifyContent:'center'}}>{all&&<Icon name="check" size={17} color="#fff"/>}</View><Text style={{fontSize:20,fontWeight:'700'}}>전체 동의</Text></Pressable>
+    <View style={{gap:3}}>{terms.map((term,index)=><View key={term.title}><View style={s.row}><Pressable accessibilityRole="checkbox" accessibilityState={{checked:consent[index]??false}} aria-checked={consent[index]??false} onPress={()=>setConsent(old=>old.map((v,i)=>i===index?!v:v))} style={[s.row,{flex:1,minHeight:50,paddingLeft:10}]}><Icon name="check" color={consent[index]?colorsNavy:'#9ba3aa'}/><Text style={{fontSize:15,fontWeight:'700'}}>[필수] {term.title}</Text></Pressable><Pressable accessibilityRole="button" accessibilityLabel={`${term.title} 설명 보기`} accessibilityState={{expanded:expanded===index}} onPress={()=>setExpanded(expanded===index?null:index)} style={s.back}><Text style={{fontSize:28,color:'#58636c'}}>{expanded===index?'⌄':'›'}</Text></Pressable></View>{expanded===index&&<Card><Body small>{term.text}</Body></Card>}</View>)}</View>
     <Text style={s.heading}>내 정보 입력</Text>
     <ProfileForm value={draft} onChange={setDraft}/>
     {!!(error||runtime.error)&&<View accessibilityLiveRegion="polite" style={s.notice}><Body>{error||runtime.error}</Body></View>}
     <Button title={busy?'저장하고 연결 중…':'동의하고 저장'} disabled={busy||!consent.every(Boolean)} onPress={()=>void save()}/>
-    <Body small muted>저장 후에도 내정보에서 내용을 바꿀 수 있어요.</Body>
   </Page>;
 }
 const colorsNavy='#003764';

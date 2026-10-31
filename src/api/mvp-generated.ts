@@ -775,23 +775,6 @@ export interface paths {
         patch?: never;
         trace?: never;
     };
-    "/v1/me/responses/{response_id}/route": {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        /** Route */
-        get: operations["route_v1_me_responses__response_id__route_get"];
-        put?: never;
-        post?: never;
-        delete?: never;
-        options?: never;
-        head?: never;
-        patch?: never;
-        trace?: never;
-    };
     "/v1/me/responses/{response_id}/support-drafts": {
         parameters: {
             query?: never;
@@ -839,6 +822,57 @@ export interface paths {
         post?: never;
         /** Delete Voice */
         delete: operations["delete_voice_v1_me_responses__response_id__voice_turns__turn_id__delete"];
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/v1/me/responses/{response_id}/text-turns": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get?: never;
+        put?: never;
+        /** Text Turn */
+        post: operations["text_turn_v1_me_responses__response_id__text_turns_post"];
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/v1/me/responses/{response_id}/text-turns/{turn_id}": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        /** Get Text Turn */
+        get: operations["get_text_turn_v1_me_responses__response_id__text_turns__turn_id__get"];
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/v1/me/responses/{response_id}/route": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        /** Route */
+        get: operations["route_v1_me_responses__response_id__route_get"];
+        put?: never;
+        post?: never;
+        delete?: never;
         options?: never;
         head?: never;
         patch?: never;
@@ -1058,7 +1092,7 @@ export interface components {
         /** ContextOverrides */
         ContextOverrides: {
             /** Mobility */
-            mobility?: ("independent" | "walking_aid" | "wheelchair" | "assistance_required" | "unknown") | null;
+            mobility?: ("independent" | "walking_aid" | "wheelchair" | "assistance_required" | "unknown" | "needs_time" | "requires_help") | null;
             /** Stairs */
             stairs?: ("able" | "difficult" | "unable" | "unknown") | null;
             /**
@@ -1067,6 +1101,21 @@ export interface components {
              * @enum {string}
              */
             alone_now?: "yes" | "no" | "unknown";
+        };
+        /** ContextProposal */
+        ContextProposal: {
+            /**
+             * Requires Confirmation
+             * @default true
+             * @constant
+             */
+            requires_confirmation?: true;
+            /** Base Revision */
+            base_revision: number;
+            state: components["schemas"]["StatePatch"];
+            overrides: components["schemas"]["ContextOverrides"];
+            /** Evidence */
+            evidence: components["schemas"]["ProposalEvidence"][];
         };
         /** ContextWrite */
         ContextWrite: {
@@ -1082,6 +1131,8 @@ export interface components {
              * @constant
              */
             confirmation: "user_confirmed";
+            /** Proposal Turn Id */
+            proposal_turn_id?: string | null;
             overrides?: components["schemas"]["ContextOverrides"];
             state?: components["schemas"]["StatePatch"];
         };
@@ -1182,6 +1233,18 @@ export interface components {
             /** App Version */
             app_version: string;
         };
+        /** DialogueAssistant */
+        DialogueAssistant: {
+            /** Text */
+            text: string;
+            /**
+             * Source
+             * @enum {string}
+             */
+            source: "qwen_grounded" | "reviewed_policy_fallback";
+            /** Action Ids */
+            action_ids: string[];
+        };
         /** DisasterData */
         DisasterData: {
             /** Id */
@@ -1232,6 +1295,11 @@ export interface components {
             meta: components["schemas"]["Meta"];
             data: components["schemas"]["ProfileData"];
         };
+        /** Envelope[RouteData] */
+        Envelope_RouteData_: {
+            meta: components["schemas"]["Meta"];
+            data: components["schemas"]["RouteData"];
+        };
         /** Envelope[RulesData] */
         Envelope_RulesData_: {
             meta: components["schemas"]["Meta"];
@@ -1246,6 +1314,11 @@ export interface components {
         Envelope_SnapshotData_: {
             meta: components["schemas"]["Meta"];
             data: components["schemas"]["SnapshotData"];
+        };
+        /** Envelope[TextTurnData] */
+        Envelope_TextTurnData_: {
+            meta: components["schemas"]["Meta"];
+            data: components["schemas"]["TextTurnData"];
         };
         /** EnvironmentInput */
         EnvironmentInput: {
@@ -1729,6 +1802,15 @@ export interface components {
             base_revision: number;
             profile: components["schemas"]["AppProfile"];
         };
+        /** ProposalEvidence */
+        ProposalEvidence: {
+            /** Field */
+            field: string;
+            /** Value */
+            value: boolean | string;
+            /** Quote */
+            quote: string;
+        };
         /** ReceiptWrite */
         ReceiptWrite: {
             /** Alert Revision */
@@ -1802,6 +1884,40 @@ export interface components {
             /** Valid Until */
             valid_until?: string | null;
         };
+        /** RouteData */
+        RouteData: {
+            /**
+             * Status
+             * @enum {string}
+             */
+            status: "simulation" | "unavailable";
+            route: components["schemas"]["SimulationRoute"] | null;
+            /** Reason */
+            reason: string;
+        };
+        /** RouteDestination */
+        RouteDestination: {
+            /** Latitude */
+            latitude: number;
+            /** Longitude */
+            longitude: number;
+            /** Name */
+            name: string;
+        };
+        /** RouteGeometry */
+        RouteGeometry: {
+            /**
+             * Type
+             * @default LineString
+             * @constant
+             */
+            type?: "LineString";
+            /** Coordinates */
+            coordinates: [
+                number,
+                number
+            ][];
+        };
         /** RouteInput */
         RouteInput: {
             /**
@@ -1832,6 +1948,21 @@ export interface components {
             reason: string;
             /** Destination */
             destination?: string | null;
+        };
+        /** RoutePoint */
+        RoutePoint: {
+            /** Latitude */
+            latitude: number;
+            /** Longitude */
+            longitude: number;
+        };
+        /** RouteStep */
+        RouteStep: {
+            /** Sequence */
+            sequence: number;
+            /** Text */
+            text: string;
+            point: components["schemas"]["RoutePoint"];
         };
         /** Rule */
         Rule: {
@@ -1938,6 +2069,40 @@ export interface components {
             /** Refresh Expires At */
             refresh_expires_at: string;
         };
+        /** SimulationRoute */
+        SimulationRoute: {
+            /** Id */
+            id: string;
+            /**
+             * Origin
+             * @default synthetic
+             * @constant
+             */
+            origin?: "synthetic";
+            /**
+             * Operational Use
+             * @default false
+             * @constant
+             */
+            operational_use?: false;
+            /** Label */
+            label: string;
+            geometry: components["schemas"]["RouteGeometry"];
+            start: components["schemas"]["RouteDestination"];
+            destination: components["schemas"]["RouteDestination"];
+            /** Steps */
+            steps: components["schemas"]["RouteStep"][];
+            bounds: components["schemas"]["Box"];
+            /**
+             * Valid Until
+             * Format: date-time
+             */
+            valid_until: string;
+            /** Input Versions */
+            input_versions: {
+                [key: string]: number;
+            };
+        };
         /** SnapshotData */
         SnapshotData: {
             /** Id */
@@ -2015,6 +2180,42 @@ export interface components {
              * @default false
              */
             deescalation_confirmed?: boolean;
+        };
+        /** TextTurnData */
+        TextTurnData: {
+            /** Turn Id */
+            turn_id: string;
+            /** Response Id */
+            response_id: string;
+            /**
+             * Status
+             * @enum {string}
+             */
+            status: "processing" | "complete";
+            /** Response Revision */
+            response_revision: number;
+            /** Context Revision */
+            context_revision: number;
+            /**
+             * Valid Until
+             * Format: date-time
+             */
+            valid_until: string;
+            assistant: components["schemas"]["DialogueAssistant"] | null;
+            proposal: components["schemas"]["ContextProposal"] | null;
+            /** Reason Code */
+            reason_code: string | null;
+        };
+        /** TextTurnWrite */
+        TextTurnWrite: {
+            /** Client Turn Id */
+            client_turn_id: string;
+            /** Text */
+            text: string;
+            /** Base Response Revision */
+            base_response_revision: number;
+            /** Base Context Revision */
+            base_context_revision: number;
         };
         /** UserContextData */
         UserContextData: {
@@ -3561,37 +3762,6 @@ export interface operations {
             };
         };
     };
-    route_v1_me_responses__response_id__route_get: {
-        parameters: {
-            query?: never;
-            header?: never;
-            path: {
-                response_id: string;
-            };
-            cookie?: never;
-        };
-        requestBody?: never;
-        responses: {
-            /** @description Successful Response */
-            200: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content: {
-                    "application/json": unknown;
-                };
-            };
-            /** @description Validation Error */
-            422: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content: {
-                    "application/json": components["schemas"]["HTTPValidationError"];
-                };
-            };
-        };
-    };
     support_draft_v1_me_responses__response_id__support_drafts_post: {
         parameters: {
             query?: never;
@@ -3714,6 +3884,104 @@ export interface operations {
                 };
                 content: {
                     "application/json": unknown;
+                };
+            };
+        };
+    };
+    text_turn_v1_me_responses__response_id__text_turns_post: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path: {
+                response_id: string;
+            };
+            cookie?: never;
+        };
+        requestBody: {
+            content: {
+                "application/json": components["schemas"]["TextTurnWrite"];
+            };
+        };
+        responses: {
+            /** @description Successful Response */
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["Envelope_TextTurnData_"];
+                };
+            };
+            /** @description Validation Error */
+            422: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["HTTPValidationError"];
+                };
+            };
+        };
+    };
+    get_text_turn_v1_me_responses__response_id__text_turns__turn_id__get: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path: {
+                response_id: string;
+                turn_id: string;
+            };
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            /** @description Successful Response */
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["Envelope_TextTurnData_"];
+                };
+            };
+            /** @description Validation Error */
+            422: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["HTTPValidationError"];
+                };
+            };
+        };
+    };
+    route_v1_me_responses__response_id__route_get: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path: {
+                response_id: string;
+            };
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            /** @description Successful Response */
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["Envelope_RouteData_"];
+                };
+            };
+            /** @description Validation Error */
+            422: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["HTTPValidationError"];
                 };
             };
         };

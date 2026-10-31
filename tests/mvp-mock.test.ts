@@ -18,7 +18,12 @@ test('MVP server fixtures replay 경고, 대피, 위급 with simulation and unav
     assert.equal(value.data.content!.assistant_utterance?.source,'reviewed_policy_text');
     assert.match(String(value.data.content!.official_alerts[0]!.raw_text),/합성 시연/);
   }
-  assert.deepEqual((await api.route(mock.snapshot().id)).data,{status:'unavailable',route:null,reason:'NO_VERIFIED_ROUTE_GEOMETRY'});
+  const route=(await api.route(mock.snapshot().id)).data;
+  assert.equal(route.status,'simulation');assert.equal(route.route?.operational_use,false);assert.equal(route.route?.origin,'synthetic');
+  assert.ok(route.route!.geometry.coordinates.length>=2);
+  assert.deepEqual(Object.keys(route.route!.input_versions).sort(),['incident:fire','location:a']);
+  await api.deleteLocation();
+  assert.deepEqual((await api.route(mock.snapshot().id)).data,{status:'unavailable',route:null,reason:'LOCATION_NOT_AVAILABLE'});
 });
 
 test('MVP profile writes use revisions, reject stale saves and advance policy input requirements',async()=>{

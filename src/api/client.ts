@@ -55,7 +55,9 @@ export function createMvpApi(request: VersionedTransport<MvpSchema<'Meta'>>) {
     preparations: () => request<MvpSchema<'PreparationsData'>>('/v1/me/preparations'),
     receipt: (alertId: string, body: MvpSchema<'ReceiptWrite'>, key: string) => request<{receipt_id:string;recorded_at:string;meaning:string}>(`/v1/me/alerts/${id(alertId)}/receipts`, {method:'POST',body,idempotencyKey:key}),
     logout: () => request<{status:string}>('/v1/me/logout', {method:'POST'}),
-    route: (responseId: string) => request<{status:'unavailable';route:null;reason:string}>(`/v1/me/responses/${id(responseId)}/route`),
+    textTurn: (responseId: string, body: MvpSchema<'TextTurnWrite'>, signal?: AbortSignal) => request<MvpSchema<'TextTurnData'>>(`/v1/me/responses/${id(responseId)}/text-turns`, {method:'POST',body,signal}),
+    textTurnResult: (responseId: string, turnId: string, signal?: AbortSignal) => request<MvpSchema<'TextTurnData'>>(`/v1/me/responses/${id(responseId)}/text-turns/${id(turnId)}`, {signal}),
+    route: (responseId: string, signal?: AbortSignal) => request<MvpSchema<'RouteData'>>(`/v1/me/responses/${id(responseId)}/route`, {signal}),
   };
 }
 export type MvpApi = ReturnType<typeof createMvpApi>;

@@ -3,7 +3,8 @@ import {freshUntil} from './core';
 
 export type MapBounds={west:number;east:number;south:number;north:number};
 export type MapLocation=MvpSchema<'LocationWrite'>;
-export type MvpMapProps={location?:MapLocation|null;bounds?:MapBounds|null;simulation?:boolean};
+export type MapPoint={latitude:number;longitude:number};
+export type MvpMapProps={location?:MapLocation|null;bounds?:MapBounds|null;simulation?:boolean;height?:number;route?:MapPoint[];destinationLabel?:string};
 
 export function validCoordinate(latitude:number,longitude:number){
   return Number.isFinite(latitude)&&Number.isFinite(longitude)&&Math.abs(latitude)<=90&&Math.abs(longitude)<=180;
@@ -19,9 +20,10 @@ export function currentMapLocation(value:MvpSchema<'HomeData'>['location']|null|
   const fix=value.fix;
   return fix&&validCoordinate(fix.latitude,fix.longitude)&&Number.isFinite(fix.accuracy_m)&&fix.accuracy_m>=0?fix:null;
 }
-export function mapGeometry(inputLocation:MvpMapProps['location'],inputBounds:MvpMapProps['bounds']){
+export function mapGeometry(inputLocation:MvpMapProps['location'],inputBounds:MvpMapProps['bounds'],inputRoute:MapPoint[]=[]){
   const location=inputLocation&&validCoordinate(inputLocation.latitude,inputLocation.longitude)?inputLocation:null;
   const bounds=validBounds(inputBounds);
+  const route=inputRoute.length>=2&&inputRoute.length<=500&&inputRoute.every(p=>validCoordinate(p.latitude,p.longitude))?inputRoute:[];
   // Naver uses clockwise, closed rings. This box is the supplied related area, not a fire perimeter.
   const polygon=bounds?[
     {latitude:bounds.south,longitude:bounds.west},
@@ -30,16 +32,18 @@ export function mapGeometry(inputLocation:MvpMapProps['location'],inputBounds:Mv
     {latitude:bounds.south,longitude:bounds.east},
     {latitude:bounds.south,longitude:bounds.west},
   ]:[];
-  if(!location&&!bounds){
+  if(!location&&!bounds&&!route.length){
     // A labelled national overview, never a substitute for the user's location.
-    return {location,bounds,polygon,region:{latitude:33,longitude:124,latitudeDelta:6,longitudeDelta:8}};
+    return {location,bounds,polygon,route,region:{latitude:33,longitude:124,latitudeDelta:6,longitudeDelta:8}};
   }
-  let south=bounds?.south??location!.latitude,north=bounds?.north??location!.latitude;
-  let west=bounds?.west??location!.longitude,east=bounds?.east??location!.longitude;
+  const start=location??route[0]!;
+  let south=bounds?.south??start.latitude,north=bounds?.north??start.latitude;
+  let west=bounds?.west??start.longitude,east=bounds?.east??start.longitude;
   if(location){south=Math.min(south,location.latitude);north=Math.max(north,location.latitude);west=Math.min(west,location.longitude);east=Math.max(east,location.longitude);}
+  for(const p of route){south=Math.min(south,p.latitude);north=Math.max(north,p.latitude);west=Math.min(west,p.longitude);east=Math.max(east,p.longitude);}
   const yPadding=Math.max((north-south)*.15,.003),xPadding=Math.max((east-west)*.15,.003);
   south=Math.max(-90,south-yPadding);north=Math.min(90,north+yPadding);
   west=Math.max(-180,west-xPadding);east=Math.min(180,east+xPadding);
   // Region starts at the south-west corner, not the centre.
-  return {location,bounds,polygon,region:{latitude:south,longitude:west,latitudeDelta:north-south,longitudeDelta:east-west}};
+  return {location,bounds,polygon,route,region:{latitude:south,longitude:west,latitudeDelta:north-south,longitudeDelta:east-west}};
 }
