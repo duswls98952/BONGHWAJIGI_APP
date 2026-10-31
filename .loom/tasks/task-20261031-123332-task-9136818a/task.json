@@ -3,9 +3,9 @@
   "job_id": "job-20261031-081911-png-html-28b089bf",
   "title": "프로필 긴급 연락처 아래 안내 문구 제거",
   "description": "정적 HTML 시안의 프로필 긴급 연락처 입력란 아래에 있는 연락처 예시·실제 발신 기능 없음 안내 문구를 삭제한다.",
-  "status": "RUNNING",
+  "status": "DONE",
   "created_at": "2026-10-31T12:33:32+00:00",
-  "updated_at": "2026-10-31T12:33:34+00:00",
+  "updated_at": "2026-10-31T12:34:21+00:00",
   "order_index": 31,
   "assigned_agent": "codex",
   "depends_on": [],
@@ -21,12 +21,24 @@
   "run_attempts": 0,
   "last_error": "",
   "commit_refs": [
-    "5cc5b3e8945ab2f69033e570b9c50da8a46936e7"
+    "5cc5b3e8945ab2f69033e570b9c50da8a46936e7",
+    "917c7347ab7a05511e829d4c1def8571e749ff94"
   ],
   "branch_name": "HeoNey_dev",
   "git_dirty": true,
-  "git_snapshot_captured_at": "2026-10-31T12:33:34+00:00",
-  "artifacts": [],
+  "git_snapshot_captured_at": "2026-10-31T12:34:21+00:00",
+  "artifacts": [
+    ".loom/tasks/task-20261031-123332-task-9136818a/agent-events.jsonl",
+    ".loom/tasks/task-20261031-123332-task-9136818a/artifacts.json",
+    ".loom/tasks/task-20261031-123332-task-9136818a/context.md",
+    ".loom/tasks/task-20261031-123332-task-9136818a/decision.md",
+    ".loom/tasks/task-20261031-123332-task-9136818a/git-snapshot.json",
+    ".loom/tasks/task-20261031-123332-task-9136818a/logs.txt",
+    ".loom/tasks/task-20261031-123332-task-9136818a/previous-results.md",
+    ".loom/tasks/task-20261031-123332-task-9136818a/prompt.md",
+    ".loom/tasks/task-20261031-123332-task-9136818a/result.md",
+    ".loom/tasks/task-20261031-123332-task-9136818a/troubleshooting.md"
+  ],
   "source_proposal_id": "",
   "source_prompt": ""
 }

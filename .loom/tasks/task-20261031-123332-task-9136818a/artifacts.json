@@ -1,10 +1,10 @@
 {
-  "status": "RUNNING",
+  "status": "DONE",
   "agent": "codex",
   "mode": "foreground",
   "execution_surface": "foreground",
   "task_run_id": "task-run-20261031-123333-task-def-20261031-123332-task-def-46a91cae-7f0ef255",
-  "generated_at": "2026-10-31T12:33:34+00:00",
+  "generated_at": "2026-10-31T12:34:21+00:00",
   "artifacts": [
     ".loom/tasks/task-20261031-123332-task-9136818a/prompt.md",
     ".loom/tasks/task-20261031-123332-task-9136818a/context.md",
@@ -15,8 +15,7 @@
     ".loom/tasks/task-20261031-123332-task-9136818a/troubleshooting.md",
     ".loom/tasks/task-20261031-123332-task-9136818a/logs.txt",
     ".loom/tasks/task-20261031-123332-task-9136818a/agent-events.jsonl",
-    ".loom/tasks/task-20261031-123332-task-9136818a/artifacts.json",
-    "public/prototype/index.html"
+    ".loom/tasks/task-20261031-123332-task-9136818a/artifacts.json"
   ],
   "artifact_groups": {
     "user_outputs": [
@@ -35,9 +34,7 @@
       ".loom/tasks/task-20261031-123332-task-9136818a/agent-events.jsonl",
       ".loom/tasks/task-20261031-123332-task-9136818a/artifacts.json"
     ],
-    "work_products": [
-      "public/prototype/index.html"
-    ]
+    "work_products": []
   },
   "contract_snapshot": {
     "schema_version": 1,
