@@ -1,0 +1,19 @@
+{
+  "id": "checkpoint-20261031-094806-task-completed-93111e6c",
+  "created_at": "2026-10-31T09:48:06+00:00",
+  "reason": "Task completed: 긴급 경보 픽토그램과 영향 지역 지도 정리",
+  "summary": "긴급 경보 픽토그램과 영향 지역 지도 정리 -> DONE @ HeoNey_dev/f98bb4746dd4",
+  "job_id": "job-20261031-081911-png-html-28b089bf",
+  "task_id": "task-20261031-094709-task-73bdaa89",
+  "commit_sha": "f98bb4746dd4e4b8053632a46a472227416c4045",
+  "branch_name": "HeoNey_dev",
+  "dirty": true,
+  "staged_files": [],
+  "modified_files": [
+    ".loom/job-runs/job-run-20261031-094711-job-20261031-081911-png-html-28b089bf-3bb5d6ab/job-run.json",
+    ".loom/task-definitions/task-def-20261031-094709-task-def-a80e726a/task-definition.json"
+  ],
+  "untracked_files": [],
+  "snapshot_captured_at": "2026-10-31T09:48:06+00:00",
+  "rollback_strategy": "revert-or-branch"
+}
