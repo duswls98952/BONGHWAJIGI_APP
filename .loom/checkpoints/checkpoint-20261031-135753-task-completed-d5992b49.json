@@ -1,0 +1,20 @@
+{
+  "id": "checkpoint-20261031-135753-task-completed-d5992b49",
+  "created_at": "2026-10-31T13:57:53+00:00",
+  "reason": "Task completed: 로딩 원형 문양 원본과 앞뒤 레이어 적용",
+  "summary": "로딩 원형 문양 원본과 앞뒤 레이어 적용 -> DONE @ HeoNey_dev/f988922e4703",
+  "job_id": "job-20261031-081911-png-html-28b089bf",
+  "task_id": "task-20261031-135500-task-7d5f1545",
+  "commit_sha": "f988922e47032b9ffa3ab3fa69be431c0f2b11e6",
+  "branch_name": "HeoNey_dev",
+  "dirty": true,
+  "staged_files": [],
+  "modified_files": [
+    ".loom/job-runs/job-run-20261031-135502-job-20261031-081911-png-html-28b089bf-40ec6efd/job-run.json",
+    ".loom/task-definitions/task-def-20261031-135500-task-def-3eab0815/task-definition.json",
+    ".loom/tasks/task-20261031-120114-suite-bold-8ef87683/troubleshooting.md"
+  ],
+  "untracked_files": [],
+  "snapshot_captured_at": "2026-10-31T13:57:53+00:00",
+  "rollback_strategy": "revert-or-branch"
+}
