@@ -1,6 +1,6 @@
-# 0.3.0 목업 정렬·음성 대화·시연 경로
+# 0.3.1 목업 정렬·음성 대화·시연 경로
 
-2026-11-01 KST. Android 설치와 실기기 확인을 진행 중이다. 이 문서는 완료한 코드 검증과 아직 진행 중인 단말 검증을 구분한다.
+2026-11-01 KST. Android 설치를 완료했고 마이크·경로의 사용자 확인을 진행 중이다. 이 문서는 완료한 코드 검증과 아직 진행 중인 단말 검증을 구분한다.
 
 ## 반영 내용
 
@@ -26,8 +26,10 @@ OpenAPI 출처는 [provenance](api/mvp-provenance.json)에 기록한다. `POST /
 
 - `npm run check`: exit 0, 타입 검사·58개 자동 테스트·문서 링크 검사 통과. `npm run export:web`: exit 0.
 - 웹에서 상태 제안과 확인 UI, 위치·알림 절 바로가기, 의료 문구와 버튼 대비를 확인했다. 웹 지도는 명시된 도식이며 네이티브 지도 증거로 사용하지 않는다.
-- 서버 담당자는 실제 PostgreSQL 120개 테스트와 실제 Qwen HTTPS 검증을 통과했다. 배포 소스 414482274f9252056ac350c69d4687e7a1429d8b. 확인 전 상태 불변, 확인 후 경고→대피→위급, 멱등 재전송·오래된 제안 거절·시연 경로와 영역 밖 미제공을 검증했다.
-- Android 0.3.0 / versionCode 4 빌드·설치·마이크 입력·경로 선 표시는 아직 진행 중이다.
+- 서버 담당자는 실제 PostgreSQL 121개 테스트와 실제 Qwen HTTPS 검증을 통과했다. 배포 소스 414482274f9252056ac350c69d4687e7a1429d8b. 확인 전 상태 불변, 확인 후 경고→대피→위급, 멱등 재전송·오래된 제안 거절·시연 경로와 영역 밖 미제공을 검증했다.
+- Android 0.3.0 / versionCode 4 release 빌드(5분35초)와 Samsung SM-G996N(Android15) 업데이트 설치를 완료했다. 동일 내부 서명, embedded JS, arm64, non-debuggable, 마이크 권한, LIVE Tailnet API를 확인했다.
+- 실기기 로고·네이버 지도 타일·진해진 카드 색·연속 라운드·연결 배너 제거를 직접 확인했다. 설치 직후 ReactNativeJS/AndroidRuntime 오류 로그는 없었다.
+- 실제 네이버 지도 경로선·목적지 마커는 사용자와 CUA가 확인했다. 말하기가 즉시 취소되는 문제는 아래0.3.1 수정 후 재검증한다.
 
 ## 검토 중 수정한 문제
 
@@ -39,3 +41,20 @@ OpenAPI 출처는 [provenance](api/mvp-provenance.json)에 기록한다. `POST /
 ## 별도 준비 사항
 
 Firebase 실제 푸시, 실제 예측 모델 연결, 검증된 실제 대피 경로, 실사용자 GPS 시연은 이번 패치에 포함하지 않는다. 기존 내부 서명을 유지한 Tailnet 전용 APK로 배포한다.
+
+## APK
+
+- 파일: `artifacts/apk/bonghwajigi-0.3.0-private-arm64.apk`
+- 소스: `964d6f19c4e3b5a6b0420d42de5624b61eaa90f5`
+- SHA256: `2dd5ef78cd8e79ee5389120110aeef80dfbbf717688bd4553709d72a9fdd9969`
+- 66,084,218 bytes. 기존 내부 서명으로 설치해 저장된 세션을 유지했다.
+- [빌드 보고서](validation/android-polish-build.json), [실기기 홈](validation/android-polish-home.png), [웹 카드](validation/web-polish-home.png), [설정 바로가기](validation/web-polish-settings.png), [상태 확인 UI](validation/web-polish-conversation.png).
+- 빌드 중 문서·검증 이미지·Loom 기록만 변경했으며 실행 소스와 설정은 위 소스 커밋과 일치한다.
+
+## 0.3.1 음성 시작 수정
+
+0.3.0 실기기에서 말하기가 약0.1초 뒤 취소됐다. 실제 로그에서 각 버튼 입력마다 `REQUEST_PERMISSIONS` Activity가 다시 열렸고 `RECORD_AUDIO`는 이미 granted=true였다. native 인식 start 이전에 앱이 비활성화되어 준비 세션이 취소되는 흐름을 확인했다.
+
+0.3.1은 먼저 getPermissionsAsync로 허용 상태를 확인해 허용된 마이크의 권한 창을 다시 열지 않는다. 첫 허용은 녹음 세션 생성 전에 처리하고, 허용 후 다시 누르도록 안내한다. 화면/계정 이탈 시 자동으로 녹음을 재시작하지 않는다. 상태·오류 코드만 진단 로그에 남기며 음성 원문·사용자 ID·위치·토큰을 추가 기록하지 않는다.
+
+`npm run check`: exit0, 62개 테스트와 타입·문서 검사 통과. 새 APK 재빌드/단말 검증 진행 중. 위0.3.0 APK는 최초 검증 이력이며 최종 설치 파일은 재검증 후 갱신한다.

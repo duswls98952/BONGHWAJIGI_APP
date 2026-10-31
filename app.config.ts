@@ -7,7 +7,7 @@ const projectId = process.env.EXPO_PUBLIC_EAS_PROJECT_ID;
 const config: ExpoConfig = {
   name: '봉화지기',
   slug: 'bonghwajigi-app',
-  version: '0.3.0',
+  version: '0.3.1',
   scheme: 'bonghwajigi',
   orientation: 'portrait',
   userInterfaceStyle: 'light',
@@ -15,7 +15,7 @@ const config: ExpoConfig = {
   ios: { bundleIdentifier: 'com.bonghwajigi.app', supportsTablet: false },
   android: {
     package: 'com.bonghwajigi.app',
-    versionCode: 4,
+    versionCode: 5,
     blockedPermissions: ['android.permission.READ_EXTERNAL_STORAGE','android.permission.WRITE_EXTERNAL_STORAGE','android.permission.SYSTEM_ALERT_WINDOW'],
     ...(process.env.GOOGLE_SERVICES_JSON ? { googleServicesFile: process.env.GOOGLE_SERVICES_JSON } : {}),
   },

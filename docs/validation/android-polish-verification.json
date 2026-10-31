@@ -1,0 +1,21 @@
+{
+  "version": "0.3.0",
+  "version_code": 4,
+  "source_commit": "964d6f19c4e3b5a6b0420d42de5624b61eaa90f5",
+  "device": "Samsung SM-G996N Android 15",
+  "install_update": "success",
+  "existing_session_preserved": true,
+  "observed": [
+    "mockup_logo",
+    "naver_map_tiles",
+    "stronger_card_contrast",
+    "continuous_tab_outline",
+    "connection_banner_removed"
+  ],
+  "speech_and_confirmation": "user_reported_issue_under_diagnosis",
+  "native_route_polyline": "user_confirmed_and_observed_in_CUA",
+  "actual_gps_tested": false,
+  "actual_119_called_or_sent": false,
+  "firebase_push_tested": false,
+  "runtime_errors_at_launch": []
+}

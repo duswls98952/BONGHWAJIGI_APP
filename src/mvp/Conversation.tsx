@@ -41,6 +41,7 @@ export default function Conversation({responseId,active}:{responseId:string;acti
   const tts=useTts(utterance,current&&turn?`turn:${turn.turn_id}`:`${responseId}:${snapshot?.revision}:${snapshot?.content?.assistant_utterance?.id}`,active&&!recording&&!busy&&!saving);
 
   useEffect(()=>{
+    console.info('[speech] conversation eligibility', {active});
     if(!active){generation.current++;controller.current?.abort();controller.current=null;locked.current=false;setBusy(false);setSaving(false);}
     return()=>{generation.current++;controller.current?.abort();locked.current=false;};
   },[scope,active]);
@@ -89,8 +90,9 @@ export default function Conversation({responseId,active}:{responseId:string;acti
     catch(problem){if(generation.current===token){setMessage(userMessage(problem));if(problem instanceof ApiError&&[409,410].includes(problem.status)){setTurn(null);void runtime.refresh().catch(()=>undefined);}}}
     finally{if(generation.current===token){locked.current=false;setSaving(false);}}
   }
-  async function beginSpeech(){const start=latest.current.scope;tts.setEnabled(false);await Speech.stop();if(latest.current.scope===start&&latest.current.active)await speech.start();}
+  async function beginSpeech(){const start=latest.current.scope;console.info('[speech] prepare microphone',{active:latest.current.active});tts.setEnabled(false);await Speech.stop();console.info('[speech] tts stopped',{active:latest.current.active,sameScope:latest.current.scope===start});if(latest.current.scope===start&&latest.current.active)await speech.start();}
   function speak(){
+    console.info('[speech] button pressed',{active:latest.current.active,status:speech.status});
     if(recording){speech.stop();return;}
     if(speechNotice.current){void beginSpeech().catch(()=>setMessage('마이크를 시작하지 못했어요.'));return;}
     const scopeAtOpen=latest.current.scope,versionAtOpen=generation.current;

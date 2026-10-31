@@ -1,6 +1,51 @@
 import assert from 'node:assert/strict';
 import test from 'node:test';
-import {SpeechSession,speechErrorMessage} from '../src/platform/speechSession';
+import {prepareSpeechPermission,SpeechSession,speechErrorMessage} from '../src/platform/speechSession';
+
+test('an already allowed microphone does not reopen the Android permission activity',async()=>{
+  let requests = 0;
+  const result = await prepareSpeechPermission({
+    read:async()=>({granted:true}),
+    request:async()=>{requests++;return {granted:true};},
+    isCurrent:()=>true,
+  });
+  assert.equal(result,'ready');
+  assert.equal(requests,0);
+});
+
+test('first permission approval requires a new tap even when the system dialog backgrounds the app',async()=>{
+  let active = true,requests = 0;
+  const result = await prepareSpeechPermission({
+    read:async()=>({granted:false}),
+    request:async()=>{requests++;active=false;return {granted:true};},
+    isCurrent:()=>active,
+  });
+  assert.equal(result,'restart-required');
+  assert.notEqual(result,'ready');
+  assert.equal(requests,1);
+});
+
+test('leaving during a permission lookup cannot request permission or start recognition later',async()=>{
+  let active = true,requests = 0;
+  let resolve!:(value:{granted:boolean})=>void;
+  const outcome = prepareSpeechPermission({
+    read:()=>new Promise(done=>{resolve=done;}),
+    request:async()=>{requests++;return {granted:true};},
+    isCurrent:()=>active,
+  });
+  active=false;
+  resolve({granted:false});
+  assert.equal(await outcome,'cancelled');
+  assert.equal(requests,0);
+});
+
+test('denying the initial microphone permission never produces a ready recording attempt',async()=>{
+  assert.equal(await prepareSpeechPermission({
+    read:async()=>({granted:false}),
+    request:async()=>({granted:false}),
+    isCurrent:()=>true,
+  }),'denied');
+});
 
 test('partials never submit, and duplicate finals cannot submit the same speech twice',()=>{
   const session = new SpeechSession();

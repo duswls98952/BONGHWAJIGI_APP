@@ -24,6 +24,24 @@ export type SpeechInput = {
   cancel: () => void;
 };
 
+type SpeechPermission = {granted:boolean};
+type SpeechPermissionOutcome = 'ready' | 'restart-required' | 'denied' | 'cancelled';
+
+/** A first permission prompt never starts recording. Android can temporarily
+ * background the app while showing it; callers may show a scoped restart notice
+ * after it closes, but must not resume that interrupted recording attempt. */
+export async function prepareSpeechPermission(options:{
+  read:()=>Promise<SpeechPermission>;
+  request:()=>Promise<SpeechPermission>;
+  isCurrent:()=>boolean;
+}):Promise<SpeechPermissionOutcome> {
+  const existing = await options.read();
+  if (!options.isCurrent()) return 'cancelled';
+  if (existing.granted) return 'ready';
+  const requested = await options.request();
+  return requested.granted ? 'restart-required' : 'denied';
+}
+
 /** A recognizer's events have no request ID. The native adapter holds its lease
  * until `end`; this guard additionally rejects async work from older screens. */
 export class SpeechSession {

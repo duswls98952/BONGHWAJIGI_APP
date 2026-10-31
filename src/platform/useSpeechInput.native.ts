@@ -2,7 +2,7 @@ import {useCallback,useEffect,useRef,useState} from 'react';
 import {AppState,Platform} from 'react-native';
 import Constants from 'expo-constants';
 import type {ExpoSpeechRecognitionResultEvent} from 'expo-speech-recognition';
-import {SpeechSession,speechErrorMessage,type SpeechInput,type SpeechInputOptions,type SpeechInputStatus} from './speechSession';
+import {prepareSpeechPermission,SpeechSession,speechErrorMessage,type SpeechInput,type SpeechInputOptions,type SpeechInputStatus} from './speechSession';
 export type {SpeechInput,SpeechInputOptions,SpeechInputResult,SpeechInputStatus} from './speechSession';
 
 type SpeechModule = typeof import('expo-speech-recognition').ExpoSpeechRecognitionModule;
@@ -20,6 +20,11 @@ type Lease = {
 let engine:SpeechModule|null|undefined;
 let activeLease:Lease|null = null;
 
+function trace(event:string,details:Record<string,string|boolean|null|undefined>={}) {
+  // Never log speech contents, account/response IDs, or location information.
+  console.info('[speech]',event,details);
+}
+
 function clearTimer(lease:Lease) {
   if (lease.timeout) clearTimeout(lease.timeout);
   lease.timeout = null;
@@ -29,6 +34,7 @@ function release(lease:Lease) {
   if (activeLease === lease) activeLease = null;
 }
 function dispatch(event:SpeechEvent) {
+  if (event.type !== 'result') trace(`event:${event.type}`,event.type === 'error' ? {code:event.code} : {});
   const lease = activeLease;
   if (!lease) return;
   // Native `end` is the final event of a session. Do not release on abort or
@@ -71,13 +77,24 @@ export function useSpeechInput(options:SpeechInputOptions):SpeechInput {
   const mounted = useRef(false);
   const owner = useRef(Symbol('speech-input'));
   const session = useRef(new SpeechSession());
+  const preparation = useRef<number|null>(null);
+  const preparationSequence = useRef(0);
+  const noticeSequence = useRef(0);
+  const previousKey = useRef(options.sessionKey);
   const [supported,setSupported] = useState(false);
   const [status,setStatus] = useState<SpeechInputStatus>('idle');
   const [transcript,setTranscript] = useState('');
   const [error,setError] = useState('');
   const [onDevice,setOnDevice] = useState<boolean|null>(null);
 
-  const cancel = useCallback(()=>{
+  const cancelFor = useCallback((reason:'user'|'disabled'|'scope-change'|'background'|'unmount')=>{
+    trace('cancel',{reason,enabled:latest.current.enabled,appState:AppState.currentState});
+    preparation.current = null;
+    preparationSequence.current++;
+    // A system permission dialog can disable/background this same screen. Its
+    // result may still explain that the user must press again; leaving the
+    // screen or an explicit cancellation discards that pending notice as well.
+    if (reason !== 'disabled' && reason !== 'background') noticeSequence.current++;
     session.current.cancel();
     const lease = activeLease;
     if (lease?.owner === owner.current) {
@@ -91,18 +108,28 @@ export function useSpeechInput(options:SpeechInputOptions):SpeechInput {
         }
       } else release(lease);
     }
-    if (mounted.current) {setStatus('idle');setTranscript('');setError('');setOnDevice(null);}
+    if (mounted.current) {
+      setStatus('idle');setTranscript('');setOnDevice(null);
+      if (reason !== 'disabled' && reason !== 'background') setError('');
+    }
   },[]);
+  const cancel = useCallback(()=>cancelFor('user'),[cancelFor]);
 
   useEffect(()=>{
     mounted.current = true;
     setSupported(Boolean(getEngine()));
-    const listener = AppState.addEventListener('change',state=>{if (state === 'background') cancel();});
-    return ()=>{mounted.current=false;cancel();listener.remove();};
-  },[cancel]);
-  useEffect(()=>{cancel();},[options.enabled,options.sessionKey,cancel]);
+    const listener = AppState.addEventListener('change',state=>{if (state === 'background') cancelFor('background');});
+    return ()=>{mounted.current=false;cancelFor('unmount');listener.remove();};
+  },[cancelFor]);
+  useEffect(()=>{
+    if (previousKey.current !== options.sessionKey) {
+      previousKey.current = options.sessionKey;
+      cancelFor('scope-change');
+    } else if (!options.enabled) cancelFor('disabled');
+  },[options.enabled,options.sessionKey,cancelFor]);
 
   const start = useCallback(async()=>{
+    trace('start:requested',{enabled:latest.current.enabled,appState:AppState.currentState});
     if (!mounted.current || !latest.current.enabled || AppState.currentState === 'background') return;
     const native = getEngine();
     if (!native) {setStatus('error');setError('음성 인식을 사용할 수 없어요. 글로 입력해 주세요.');return;}
@@ -112,7 +139,46 @@ export function useSpeechInput(options:SpeechInputOptions):SpeechInput {
       }
       return;
     }
+    if (preparation.current !== null) return;
     const key = latest.current.sessionKey;
+    const attempt = ++preparationSequence.current;
+    const notice = ++noticeSequence.current;
+    preparation.current = attempt;
+    const preparing = ()=>mounted.current && latest.current.enabled && latest.current.sessionKey === key && preparation.current === attempt;
+    setStatus('preparing');setError('');setTranscript('');setOnDevice(null);
+    try {
+      const permission = await prepareSpeechPermission({
+        read:async()=>{
+          const result = await native.getPermissionsAsync();
+          trace('permission:existing',{granted:result.granted,enabled:latest.current.enabled,appState:AppState.currentState});
+          return result;
+        },
+        request:async()=>{
+          trace('permission:request',{enabled:latest.current.enabled,appState:AppState.currentState});
+          const result = await native.requestPermissionsAsync();
+          trace('permission:result',{granted:result.granted,enabled:latest.current.enabled,appState:AppState.currentState});
+          return result;
+        },
+        isCurrent:preparing,
+      });
+      if (permission !== 'ready') {
+        if (permission !== 'cancelled' && mounted.current && latest.current.sessionKey === key && noticeSequence.current === notice) {
+          setStatus(permission === 'restart-required' ? 'idle' : 'error');
+          setError(permission === 'restart-required' ? '마이크를 허용했어요. 말하기를 다시 눌러 주세요.' : speechErrorMessage('not-allowed'));
+        }
+        if (preparation.current === attempt) preparation.current = null;
+        return;
+      }
+      if (!preparing()) return;
+    } catch {
+      trace('permission:failed',{enabled:latest.current.enabled,appState:AppState.currentState});
+      if (preparing()) {setStatus('error');setError(speechErrorMessage('unknown'));}
+      if (preparation.current === attempt) preparation.current = null;
+      return;
+    }
+    preparation.current = null;
+    // Another mounted owner may have started while the permission check ran.
+    if (activeLease) {setStatus('error');setError(speechErrorMessage('busy'));return;}
     const token = session.current.begin(key);
     if (token === null) return;
     let localRecognition = false;
@@ -147,15 +213,12 @@ export function useSpeechInput(options:SpeechInputOptions):SpeechInput {
       }
     }};
     activeLease = lease;
-    setStatus('preparing');setError('');setTranscript('');setOnDevice(null);
     try {
-      const permission = await native.requestPermissionsAsync();
-      if (!current()) {if (!lease.nativeStarted) release(lease);return;}
-      if (!permission.granted) {release(lease);fail(speechErrorMessage('not-allowed'));return;}
       localRecognition = await koreanOnDevice(native);
       if (!current()) {release(lease);return;}
       setOnDevice(localRecognition);
       lease.nativeStarted = true;
+      trace('start:native',{onDevice:localRecognition,enabled:latest.current.enabled,appState:AppState.currentState});
       native.start({lang:'ko-KR',interimResults:true,maxAlternatives:1,continuous:false,
         requiresOnDeviceRecognition:localRecognition,recordingOptions:{persist:false}});
       if (activeLease === lease && current()) lease.timeout = setTimeout(lease.onTimeout,45000);
