@@ -54,11 +54,10 @@ p{margin:0}
 .active-badge{font-size:12px;color:#ef5a29;background:#ffebe3;border-radius:20px;padding:3px 8px;white-space:nowrap}
 .ended{font-size:11px;color:#696f73}
 .emergency-content{padding-top:12px;padding-bottom:105px}
-.alert{height:60px;border:1px solid #df3332;border-radius:8px;background:#fce9e7;color:#c73531;display:flex;align-items:center;justify-content:space-between;gap:8px;padding:0 11px}
+.alert{height:60px;border:1px solid #df3332;border-radius:8px;background:#fce9e7;color:#c73531;display:flex;align-items:center;justify-content:center;gap:8px;padding:0 11px}
 .alert-main{display:flex;align-items:center;gap:8px;min-width:0}
 .alert svg{width:20px;height:20px;flex:none;fill:none;stroke:currentColor;stroke-width:2}
-.alert strong,.alert b{font-size:clamp(18px,5.9vw,23px);white-space:nowrap}
-.alert strong{letter-spacing:-.6px}
+.alert strong{font-size:clamp(18px,5.9vw,23px);white-space:nowrap;letter-spacing:-.6px}
 .affected{margin-top:26px}
 .affected h2,.voice h2,.status h2{margin-bottom:14px}
 .hazard-map{height:176px;border:1px solid var(--ink)}
