@@ -1,7 +1,6 @@
-@font-face{font-family:"SUITE";src:url("fonts/SUITE-Bold.woff2") format("woff2");font-style:normal;font-weight:700;font-display:swap}
-:root{--ink:#20262d;--muted:#69737e;--card:#f3f5f7;--blue:#245c74;--red:#b93836;--line:#dfe3e7}
+:root{--ink:#20262d;--muted:#000;--card:#f3f5f7;--blue:#245c74;--red:#b93836;--line:#dfe3e7}
 *{box-sizing:border-box}
-html{font-family:-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Noto Sans KR",sans-serif;color:var(--ink);background:#fff}
+html{font-family:-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Noto Sans KR",sans-serif;color:#000;background:#fff}
 body{margin:0}
 button,input{font:inherit}
 button{cursor:pointer}
@@ -19,7 +18,7 @@ a{color:inherit;text-decoration:none}
 .topbar{height:56px;display:flex;align-items:center;gap:20px;padding:0 16px}
 .topbar h1{font-size:18px;line-height:1.25;letter-spacing:-.5px;margin:0;font-weight:750}
 .home-topbar{height:59px;justify-content:space-between}
-.home-topbar h1{font-family:"SUITE",-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Noto Sans KR",sans-serif;font-size:31px;font-weight:700}
+.home-topbar h1{font-size:31px}
 .home-profile-link{display:grid;place-items:center;min-width:48px;min-height:48px;font-size:15px;font-weight:700}
 .icon-link{display:grid;place-items:center;width:27px;height:32px;flex:none}
 .icon-link svg{width:23px;height:23px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
@@ -53,9 +52,9 @@ p{margin:0}
 .feed-text{flex:1;min-width:0}
 .feed-text>div{display:flex;align-items:center;justify-content:space-between;gap:5px}
 .feed-text strong{font-size:14px;font-weight:650;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
-.feed-text p{font-size:13px;color:#4c5258;margin-top:7px}
+.feed-text p{font-size:13px;color:#000;margin-top:7px}
 .active-badge{font-size:12px;color:#ef5a29;background:#ffebe3;border-radius:20px;padding:3px 8px;white-space:nowrap}
-.ended{font-size:11px;color:#696f73}
+.ended{font-size:11px;color:#000}
 .emergency-content{padding-top:12px;padding-bottom:105px}
 .alert{height:60px;border:1px solid #df3332;border-radius:8px;background:#fce9e7;color:#9d2422;display:flex;align-items:center;justify-content:center;gap:8px;padding:0 11px;animation:alert-pulse 1.4s ease-in-out infinite alternate}
 @keyframes alert-pulse{from{background-color:#fce9e7}to{background-color:#f6c0bb}}
@@ -83,12 +82,12 @@ p{margin:0}
 .steps p{color:var(--muted);font-size:14px;line-height:1.56;word-break:keep-all}
 .action-bar{position:fixed;z-index:10;left:50%;bottom:0;transform:translateX(-50%);width:min(100%,390px);padding:8px 16px 32px;background:#fff;display:flex;gap:8px}
 .action-bar:after,.bottom-indicator:after{content:"";position:absolute;width:134px;height:5px;background:#171a1d;border-radius:5px;left:50%;bottom:9px;transform:translateX(-50%)}
-.action{height:56px;flex:1;border:1px solid var(--ink);border-radius:8px;background:var(--card);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1px;font-size:12px;font-weight:700;color:var(--ink)}
+.action{height:56px;flex:1;border:1px solid var(--ink);border-radius:8px;background:var(--card);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1px;font-size:12px;font-weight:700;color:#000}
 .action svg{width:19px;height:19px;fill:none;stroke:currentColor;stroke-width:2}
 .action.basic{border-color:transparent}
 .action.call{background:var(--red);border-color:var(--red);color:#fff}
 .route-content{padding-top:16px}
-.route-label{display:inline-block;background:var(--card);color:#68727e;border-radius:9px;padding:7px 10px;font-size:12px;margin-bottom:15px}
+.route-label{display:inline-block;background:var(--card);color:#000;border-radius:9px;padding:7px 10px;font-size:12px;margin-bottom:15px}
 .route-placeholder{height:calc(100dvh - 265px);min-height:430px;border-radius:16px;background:var(--card);display:flex;align-items:center;justify-content:center;flex-direction:column;text-align:center;padding:20px}
 .route-placeholder svg{width:37px;height:37px;fill:none;stroke:#788895;stroke-width:1.5;margin-bottom:24px}
 .route-placeholder h2{font-size:19px;letter-spacing:-.5px;margin:0 0 16px}
@@ -104,9 +103,9 @@ p{margin:0}
 .field{margin-bottom:20px}
 .field:last-child{margin-bottom:0}
 .field label,.field-label{display:block;font-size:13px;font-weight:650;margin-bottom:9px}
-.field input{height:47px;width:100%;border:1px solid var(--ink);border-radius:8px;background:#fff;padding:0 11px;color:var(--ink);font-size:15px}
+.field input{height:47px;width:100%;border:1px solid var(--ink);border-radius:8px;background:#fff;padding:0 11px;color:#000;font-size:15px}
 .choices{display:flex;flex-wrap:wrap;gap:8px}
-.choices button{min-height:43px;border:1px solid var(--line);border-radius:8px;background:#fff;color:#39434d;padding:10px 11px;font-size:13px;font-weight:600;white-space:nowrap}
+.choices button{min-height:43px;border:1px solid var(--line);border-radius:8px;background:#fff;color:#000;padding:10px 11px;font-size:13px;font-weight:600;white-space:nowrap}
 .choices button.selected{border-color:var(--blue);background:#e8f2f6;color:var(--blue);font-weight:700}
 .choices button.selected:before{content:"✓";font-size:17px;margin-right:7px;vertical-align:-1px}
 .field-help{font-size:12px;color:var(--muted);line-height:1.5;margin-top:7px}
