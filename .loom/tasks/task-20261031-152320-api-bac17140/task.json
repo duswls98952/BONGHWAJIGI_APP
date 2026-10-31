@@ -1,0 +1,40 @@
+{
+  "id": "task-20261031-152320-api-bac17140",
+  "job_id": "job-20261031-152248-apk-cf438185",
+  "title": "앱 개발 서버에서 완성 목업 전 화면과 실서버 API 차이 확인",
+  "description": "사용자가 앱 레포 조회·구현·APK 배포를 새로 직접 지시했다. 최신 main 목업을 develop에서 보존하고 개발 서버를 실행하여 전체 화면·상호작용을 확인한다. 현재 서버0.2.0-mvp와 앱0.1 계약·인증·미구현 기능을 대조하고 순차 구현 기준을 문서화한다.",
+  "status": "RUNNING",
+  "created_at": "2026-10-31T15:23:20+00:00",
+  "updated_at": "2026-10-31T15:24:16+00:00",
+  "order_index": 1,
+  "assigned_agent": "foreground",
+  "depends_on": [],
+  "expected_output": "개발 서버의 목업 화면 검증, 화면별 기능/API 공백표, 이어질 앱 구현·통합·APK 작업 계약",
+  "done_condition": "완성 목업의 모든 화면과 주요 버튼을 확인하고 현재 앱/서버 차이 및 실제 검증 가능 범위·외부 자격 조건을 근거와 함께 기록한다.",
+  "in_scope": "개발 서버 실행; 목업 시각·상호작용 확인; 앱과 서버 코드 읽기; API/환경/네이티브 빌드 준비 점검; 후속 작업 계약",
+  "out_of_scope": "실제 예측 연결; 학습 작업 변경; Firebase 미준비를 실제 푸시 성공으로 표시; 실제 119 연락; 다른 채팅의 파일 덮어쓰기",
+  "validation_hint": "개발 서버와 전 화면 브라우저 확인; 최신 서버 OpenAPI 대조; npm run check와 현 상태 기록; Loom 검증",
+  "required_docs": [
+    "docs/01-start-here.md",
+    "docs/02-api-integration.md",
+    "docs/03-realtime-background.md",
+    "docs/04-map-tts.md",
+    "docs/05-codex-workflow.md"
+  ],
+  "memory_refs": [],
+  "document_outputs": [
+    "docs/08-live-integration-audit.md"
+  ],
+  "document_output_exceptions": [],
+  "run_attempts": 0,
+  "last_error": "",
+  "commit_refs": [
+    "ce9ebd5cbdfdd1dd8b56f8053785c3846d40a1a7"
+  ],
+  "branch_name": "develop",
+  "git_dirty": true,
+  "git_snapshot_captured_at": "2026-10-31T15:24:16+00:00",
+  "artifacts": [],
+  "source_proposal_id": "",
+  "source_prompt": ""
+}
