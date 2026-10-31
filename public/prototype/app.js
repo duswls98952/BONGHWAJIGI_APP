@@ -1,9 +1,19 @@
+let loadingTimer;
+
 function showScreen() {
-  const name = location.hash.slice(1) || 'home';
+  const name = location.hash.slice(1) || 'loading';
   const selected = document.getElementById(name) ? name : 'home';
   document.querySelectorAll('[data-screen]').forEach((screen) => {
     screen.hidden = screen.id !== selected;
   });
+  clearTimeout(loadingTimer);
+  if (selected === 'loading') {
+    loadingTimer = window.setTimeout(() => {
+      if ((location.hash.slice(1) || 'loading') !== 'loading') return;
+      history.replaceState(null, '', '#home');
+      showScreen();
+    }, 2600);
+  }
   window.scrollTo(0, 0);
 }
 

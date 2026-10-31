@@ -31,10 +31,13 @@
   </svg>
 
   <div class="phone">
-    <section class="screen" id="home" data-screen>
+    <section class="screen loading-screen" id="loading" data-screen role="status" aria-label="봉화 지기 로딩 중">
+      <h1 class="brand-mark loading-brand">봉화 지기</h1>
+    </section>
+    <section class="screen" id="home" data-screen hidden>
       <div class="home-header">
         <div class="statusbar"><span>9:41</span><span class="device-icons"><svg><use href="#signal"/></svg><svg><use href="#wifi"/></svg><span class="battery"></span></span></div>
-        <header class="topbar home-topbar"><h1>봉화 지기</h1><a class="home-profile-link" href="#profile"><svg aria-hidden="true"><use href="#settings"/></svg><span>프로필</span></a></header>
+        <header class="topbar home-topbar"><h1 class="brand-mark">봉화 지기</h1><a class="home-profile-link" href="#profile"><svg aria-hidden="true"><use href="#settings"/></svg><span>프로필</span></a></header>
       </div>
       <main class="content home-content">
         <section class="home-map-block" aria-label="지도와 현재 위치"><div class="map home-map"><img src="map.svg" alt="구로동 주변 지도 예시"><div class="my-location"><span class="ring"><span class="dot"></span></span><span class="my-label">내 위치</span></div></div><div class="location-line"><svg><use href="#pin"/></svg><strong>서울특별시 구로구 구로동</strong></div></section>
