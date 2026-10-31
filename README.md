@@ -24,9 +24,9 @@ npm run check
 | 내정보 | 프로필 수정·삭제, 현재 위치 공유/삭제, 알림 설정, 로그아웃 |
 | 긴급 대응 | 서버3단계, 현재 상태 저장·재평가, 최신 행동과 단말 TTS |
 | 기본 수칙 | 서버 지침·회피 항목·출처 |
-| 대피로·119 | 2D 도식과 경로 미제공 안내, 사용자 확인용 신고 초안·단말 연결 버튼 |
+| 지도·대피로·119 | Android 네이버 2D 지도·공유 위치·관련 영역, 경로 미제공 안내, 사용자 확인용 신고 초안·단말 연결 버튼 |
 
-Firebase와 지도 Client ID는 준비 전입니다. 실제 원격 푸시·지도 타일·검증된 도로 경로를 제공한다고 표시하지 않습니다. 실제 예측 모델 연결은 이번 범위에서 제외됐으며 확률은 unavailable/null입니다. 실제119 연락은 시험하지 않습니다.
+Android 0.2.1에 네이버 지도를 연결했습니다. 웹·Expo Go·키 없는 빌드는 명시된 도식을 사용합니다. Firebase 원격 푸시와 검증된 대피 경로는 아직 제공하지 않습니다. 실제 예측 모델 연결은 이번 범위에서 제외됐으며 확률은 unavailable/null입니다. 실제119 연락은 시험하지 않습니다.
 
 ## 문서
 
@@ -34,10 +34,11 @@ Firebase와 지도 Client ID는 준비 전입니다. 실제 원격 푸시·지�
 - [현재 API 계약](docs/02-api-integration.md)
 - [실시간 갱신·백그라운드](docs/03-realtime-background.md)
 - [지도·단말 TTS](docs/04-map-tts.md)
+- [네이버 지도 연결·0.2.1 APK 검증](docs/11-naver-map-integration.md)
 - [검증 기록](docs/07-validation.md)
 - [목업 감사와 API 공백](docs/08-live-integration-audit.md)
 - [문서 안내](docs/README.md)
 
 서명 키와 서비스 비밀값은 Git과 앱 공개 환경변수에 넣지 않습니다. 개발·실단말·APK 배포 검증을 구분해 기록합니다. Codex 작업은 [AGENTS.md](AGENTS.md)를 따릅니다.
 
-실제 휴대폰 설치와 사설 HTTPS 접속·APK 재빌드는 [Android 배포 문서](docs/10-android-delivery.md)를 따릅니다.
+사설 HTTPS 접속과 단말 시연은 [Android 배포 문서](docs/10-android-delivery.md), 지도 키를 포함한 최신 APK 재빌드는 [네이버 지도 배포](docs/11-naver-map-integration.md)를 따릅니다.

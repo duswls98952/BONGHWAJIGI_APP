@@ -35,6 +35,26 @@ env PATH=/private/tmp/bonghwajigi-node24/node_modules/node/bin:$PATH \
 
 ## 검증 상태
 
-현재 구현 검사와 APK 빌드·실제 단말 검증을 진행 중이다. 최종 APK SHA256, 단말 화면 증거와 검증 결과는 완료 후 이 절에 기록한다.
+2026-11-01 03:22~03:24 KST, Samsung SM-G996N / Android15에서 업데이트 설치와 지도 표시를 확인했다.
+
+| 항목 | 결과 |
+| --- | --- |
+| 자동 검사 | Node24, TypeScript, 45개 테스트(기존40+지도5), 16개 문서 링크 통과 |
+| 웹 | export 성공. 네이버 native SDK를 호출하지 않는 명시된 도식 |
+| native APK | release 빌드·v2 서명·arm64·내장 JS·non-debuggable·평문 통신 금지 검사 통과 |
+| 기본 지도 | 위치가 없는 전국 지도에서 실제 타일·지명·NAVER/OpenStreetMap 표기 확인 |
+| 위치 반영 | 사용자가 합성 위치를 저장한 뒤 홈 마커·좌표·정확도10m 문구·카메라 이동을 직접 캡처 |
+| 관련 영역 | 공식 경보 상세의 붉은 관련 영역과 위치 마커 동시 표시를 사용자 직접 확인 |
+| 서버 대조 | 단말 위치 revision2, 유효기간5분, 사건 bounds 유효, 정책 requested/applied14/14·error null 확인 |
+| 재현 경계 | 키 오류/쿼터 오류를 주입하거나 비행기 모드·iOS를 시험하지 않음. 초기화 로그만으로 지도 성공을 판정하지 않음 |
+
+홈은 공유한 위치를, 긴급 안내는 위치와 해당 사건의 관련 영역을 표시한다. 첫 확인에서 마커가 없던 것은 유효한 위치가 없는 전국 보기 상태였고, 시연 위치 저장 후 마커가 나타났다. 합성 좌표는 5분 후 만료되므로 다시 보려면 `내정보 → 시연 위치로 안내 확인`을 누른다. 휴대폰의 실제 GPS는 이번 검증에서 수집하지 않았다.
+
+- APK: `artifacts/apk/bonghwajigi-0.2.1-private-arm64.apk`, 65,382,230 bytes.
+- SHA256: `5d4b2cb00adead0d2f6e2e1f51c76c32819c6b7b5095189549dd8fc0079aee25`.
+- 앱 실행 소스: `66c4d734287549d6403c429ca42e6fdb44d38d2b`. 빌드 도중 네 개 안내 문서만 수정되어 보고서의 `source_dirty`가 true이며 실행 소스는 해당 커밋과 동일하다.
+- 기존 내부 release 서명 유지. API는 `https://inno-server-011.tail2dac17.ts.net`이며 같은 Tailnet 연결이 필요하고, 지도 타일은 네이버로 인터넷 접속한다.
+- [APK 빌드 검사](validation/android-map-build.json), [단말 검증 범위](validation/android-map-verification.json).
+- [위치 없는 전국 지도](validation/android-naver-overview.png), [시연 위치 마커](validation/android-naver-location.png). 붉은 영역은 사용자 직접 확인 결과이며 별도 화면 캡처로 주장하지 않는다.
 
 Firebase 기기 푸시·실제 예측·검증된 대피 경로·백그라운드 GPS·iOS 실기기 검증은 포함하지 않는다.

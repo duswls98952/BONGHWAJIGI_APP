@@ -40,13 +40,14 @@ EAS 사용 시 계정·프로젝트·서명 설정 후 `npx eas-cli build --prof
 | `app/profile.tsx` | S4 사전 프로필·위치·알림 설정 |
 | `app/rules.tsx` | S5 기본 수칙 |
 | `src/mvp/ui.tsx` | 공통 카드·버튼·글자·색상 |
-| `src/mvp/Map.tsx` | 현재 2D 도식(실제 지도 키 미준비) |
+| `src/mvp/Map.native.tsx`, `mapGeometry.ts` | Android 네이버 2D 지도, 공유 위치·관련 범위·만료 검사 |
+| `src/mvp/Map.tsx`, `MapDiagram.tsx` | 웹·Expo Go·키 없는 빌드의 명시된 도식 |
 | `src/api/client.ts` | API 경로·요청 형식. 화면에서 URL을 다시 작성하지 않음 |
 | `src/mvp/mock.ts` | 앱 개발용 모의 서버. 실제 판단 엔진이 아님 |
 | `src/runtime/Runtime.tsx` | 단일 갱신 루프·캐시·앱 복귀 처리 |
 | `src/platform/` | 위치·푸시·토큰·TTS 같은 단말 기능 |
 
-S3 3D 화면과 버튼은 없습니다. 2D 경로는 S2 지도에 겹쳐 표시합니다. 화면 번호는 하단 탭 개수가 아닙니다.
+S3 3D 화면과 버튼은 없습니다. 현재 서버의 검증된 경로는 unavailable이므로 지도에 임의 경로선을 그리지 않습니다. 화면 번호는 하단 탭 개수가 아닙니다. Android 지도 키 주입과 최신 APK는 [네이버 지도 연결](11-naver-map-integration.md)을 따릅니다.
 
 ## 개발 순서
 
