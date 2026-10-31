@@ -1,0 +1,2 @@
+{"id": "event-76289b46dc5b", "type": "foreground_session_started", "message": "Foreground task session started.", "created_at": "2026-10-31T13:47:10+00:00", "agent": "codex", "task_id": "task-20261031-134707-task-ac05352a"}
+{"id": "event-7b407121fbea", "type": "foreground_session_done", "message": "홈 프로필 위치·색과 상단 배경 조정 완료", "created_at": "2026-10-31T13:47:59+00:00", "agent": "codex", "task_id": "task-20261031-134707-task-ac05352a"}

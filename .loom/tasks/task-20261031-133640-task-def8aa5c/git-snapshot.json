@@ -1,0 +1,35 @@
+{
+  "before": {
+    "available": true,
+    "branch_name": "HeoNey_dev",
+    "commit_sha": "a71dab777f933babc613e6046d2503ceb61d7865",
+    "dirty": true,
+    "staged_files": [],
+    "modified_files": [
+      ".loom/events.jsonl",
+      ".loom/jobs/job-20261031-081911-png-html-28b089bf/job.json",
+      ".loom/tasks/task-20261031-120114-suite-bold-8ef87683/troubleshooting.md"
+    ],
+    "untracked_files": [
+      ".loom/job-runs/job-run-20261031-133642-job-20261031-081911-png-html-28b089bf-4b2ffbcd/",
+      ".loom/task-definitions/task-def-20261031-133640-task-def-6a4b51ae/",
+      ".loom/task-runs/task-run-20261031-133642-task-def-20261031-133640-task-def-6a4b51ae-55b80a2b/",
+      ".loom/tasks/task-20261031-133640-task-def8aa5c/"
+    ],
+    "captured_at": "2026-10-31T13:36:42+00:00"
+  },
+  "after": {
+    "available": true,
+    "branch_name": "HeoNey_dev",
+    "commit_sha": "d9c49e79fb49339091c4ad3a1d7edba4509191f1",
+    "dirty": true,
+    "staged_files": [],
+    "modified_files": [
+      ".loom/job-runs/job-run-20261031-133642-job-20261031-081911-png-html-28b089bf-4b2ffbcd/job-run.json",
+      ".loom/task-definitions/task-def-20261031-133640-task-def-6a4b51ae/task-definition.json",
+      ".loom/tasks/task-20261031-120114-suite-bold-8ef87683/troubleshooting.md"
+    ],
+    "untracked_files": [],
+    "captured_at": "2026-10-31T13:38:37+00:00"
+  }
+}

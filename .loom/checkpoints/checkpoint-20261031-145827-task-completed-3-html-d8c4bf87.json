@@ -1,0 +1,20 @@
+{
+  "id": "checkpoint-20261031-145827-task-completed-3-html-d8c4bf87",
+  "created_at": "2026-10-31T14:58:27+00:00",
+  "reason": "Task completed: 내정보 저장 버튼과 산불 3단계 HTML 목업 구현",
+  "summary": "내정보 저장 버튼과 산불 3단계 HTML 목업 구현 -> DONE @ HeoNey_dev/676999292a9d",
+  "job_id": "job-20261031-081911-png-html-28b089bf",
+  "task_id": "task-20261031-145421-3-html-4abf9d90",
+  "commit_sha": "676999292a9d684fd29b1f53440ba333c2a177fc",
+  "branch_name": "HeoNey_dev",
+  "dirty": true,
+  "staged_files": [],
+  "modified_files": [
+    ".loom/job-runs/job-run-20261031-145422-job-20261031-081911-png-html-28b089bf-bbfc3154/job-run.json",
+    ".loom/task-definitions/task-def-20261031-145421-3-html-7e5d8227/task-definition.json",
+    ".loom/tasks/task-20261031-120114-suite-bold-8ef87683/troubleshooting.md"
+  ],
+  "untracked_files": [],
+  "snapshot_captured_at": "2026-10-31T14:58:27+00:00",
+  "rollback_strategy": "revert-or-branch"
+}

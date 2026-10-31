@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1622" height="452" viewBox="0 0 1622 452" role="img" aria-labelledby="title desc">
+  <title id="title">정부청색·정부적색 색상 참고</title>
+  <desc id="desc">제공된 색상표 이미지의 값을 바탕으로 다시 구성한 참고 이미지. 정부청색 RGB 0 55 100, 정부적색 RGB 228 3 46.</desc>
+  <rect width="1622" height="452" fill="#fff"/>
+  <rect x="64" y="50" width="718" height="80" fill="#003764"/>
+  <rect x="846" y="50" width="718" height="80" fill="#e4032e"/>
+  <g fill="#202124" font-family="Arial, 'Apple SD Gothic Neo', sans-serif">
+    <text x="64" y="250" font-size="40" font-weight="700">정부청색 GOK Blue</text>
+    <text x="846" y="250" font-size="40" font-weight="700">정부적색 GOK Red</text>
+    <g font-size="31">
+      <text x="64" y="322" font-weight="700">CMYK</text>
+      <text x="181" y="322">C 100% + M 70% + Y 20% + K 40%</text>
+      <text x="64" y="377" font-weight="700">RGB</text>
+      <text x="164" y="377">R 0 G 55 B 100</text>
+      <text x="64" y="431" font-weight="700">PANTONE</text>
+      <text x="231" y="431">PANTONE 2955 C</text>
+      <text x="846" y="322" font-weight="700">CMYK</text>
+      <text x="969" y="322">M 100% + Y 80%</text>
+      <text x="846" y="377" font-weight="700">RGB</text>
+      <text x="948" y="377">R 228 G 3 B 46</text>
+      <text x="846" y="431" font-weight="700">PANTONE</text>
+      <text x="1022" y="431">PANTONE 1935C</text>
+    </g>
+  </g>
+</svg>

@@ -1,0 +1,20 @@
+{
+  "id": "checkpoint-20261031-140056-task-completed-6a79688b",
+  "created_at": "2026-10-31T14:00:56+00:00",
+  "reason": "Task completed: 로딩 원형 제거와 정부색 글자 물결 적용",
+  "summary": "로딩 원형 제거와 정부색 글자 물결 적용 -> DONE @ HeoNey_dev/94da71d0affb",
+  "job_id": "job-20261031-081911-png-html-28b089bf",
+  "task_id": "task-20261031-135936-task-3741570c",
+  "commit_sha": "94da71d0affb2f8ca8186275e47af1de25fe7476",
+  "branch_name": "HeoNey_dev",
+  "dirty": true,
+  "staged_files": [],
+  "modified_files": [
+    ".loom/job-runs/job-run-20261031-135938-job-20261031-081911-png-html-28b089bf-80246d70/job-run.json",
+    ".loom/task-definitions/task-def-20261031-135936-task-def-f1c52f12/task-definition.json",
+    ".loom/tasks/task-20261031-120114-suite-bold-8ef87683/troubleshooting.md"
+  ],
+  "untracked_files": [],
+  "snapshot_captured_at": "2026-10-31T14:00:56+00:00",
+  "rollback_strategy": "revert-or-branch"
+}

@@ -1,0 +1,14 @@
+{
+  "status": "APPROVED",
+  "task_id": "task-20261031-150244-task-4718cccf",
+  "job_id": "job-20261031-081911-png-html-28b089bf",
+  "agent": "codex::high",
+  "command_source": "foreground-recovery",
+  "created_at": "2026-10-31T15:04:32+00:00",
+  "scope": "task",
+  "approval_event_created_at": "2026-10-31T15:03:08+00:00",
+  "approval_event_title": "정책/권한 확인 필요",
+  "approval_event_reason": "에이전트가 계속 진행하려면 정책/권한 확인이 필요합니다.",
+  "execution_mode": "task-scoped-approved-permissions",
+  "expires_when": "task_done_or_newer_approval_event"
+}

@@ -1,0 +1,2 @@
+{"id": "event-b8ce92465050", "type": "foreground_session_started", "message": "Foreground task session started.", "created_at": "2026-10-31T13:29:06+00:00", "agent": "codex", "task_id": "task-20261031-132904-task-4b5030c5"}
+{"id": "event-0a75ea2da2b9", "type": "foreground_session_done", "message": "홈 배경이 지도 주변에서 옅어져 위치 표시 전에 흰색으로 돌아오도록 적용 완료", "created_at": "2026-10-31T13:29:53+00:00", "agent": "codex", "task_id": "task-20261031-132904-task-4b5030c5"}

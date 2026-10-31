@@ -1,0 +1,20 @@
+{
+  "id": "checkpoint-20261031-125544-task-completed-798bb5a3",
+  "created_at": "2026-10-31T12:55:44+00:00",
+  "reason": "Task completed: 실시간 음성 대화 큰 카드 윗변 평평하게 수정",
+  "summary": "실시간 음성 대화 큰 카드 윗변 평평하게 수정 -> DONE @ HeoNey_dev/3395530bed7f",
+  "job_id": "job-20261031-081911-png-html-28b089bf",
+  "task_id": "task-20261031-125432-task-72138666",
+  "commit_sha": "3395530bed7f55c562f190981348d13b3e7fee05",
+  "branch_name": "HeoNey_dev",
+  "dirty": true,
+  "staged_files": [],
+  "modified_files": [
+    ".loom/job-runs/job-run-20261031-125434-job-20261031-081911-png-html-28b089bf-2e759614/job-run.json",
+    ".loom/task-definitions/task-def-20261031-125433-task-def-69125900/task-definition.json",
+    ".loom/tasks/task-20261031-120114-suite-bold-8ef87683/troubleshooting.md"
+  ],
+  "untracked_files": [],
+  "snapshot_captured_at": "2026-10-31T12:55:44+00:00",
+  "rollback_strategy": "revert-or-branch"
+}

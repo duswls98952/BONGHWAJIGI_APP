@@ -1,0 +1,20 @@
+{
+  "id": "checkpoint-20261031-134759-task-completed-d3ced99d",
+  "created_at": "2026-10-31T13:47:59+00:00",
+  "reason": "Task completed: 홈 프로필 위치·색과 상단 배경 조정",
+  "summary": "홈 프로필 위치·색과 상단 배경 조정 -> DONE @ HeoNey_dev/413cbcb7ada0",
+  "job_id": "job-20261031-081911-png-html-28b089bf",
+  "task_id": "task-20261031-134707-task-ac05352a",
+  "commit_sha": "413cbcb7ada050380a32af9729b0a14228e4d72a",
+  "branch_name": "HeoNey_dev",
+  "dirty": true,
+  "staged_files": [],
+  "modified_files": [
+    ".loom/job-runs/job-run-20261031-134710-job-20261031-081911-png-html-28b089bf-9c8b68f6/job-run.json",
+    ".loom/task-definitions/task-def-20261031-134707-task-def-19639ae5/task-definition.json",
+    ".loom/tasks/task-20261031-120114-suite-bold-8ef87683/troubleshooting.md"
+  ],
+  "untracked_files": [],
+  "snapshot_captured_at": "2026-10-31T13:47:59+00:00",
+  "rollback_strategy": "revert-or-branch"
+}

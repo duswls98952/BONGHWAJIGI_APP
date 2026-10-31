@@ -1,0 +1,20 @@
+{
+  "id": "checkpoint-20261031-142944-task-completed-c918c18f",
+  "created_at": "2026-10-31T14:29:44+00:00",
+  "reason": "Task completed: 첫 설정 로고 적용과 위치정보 필수 표시",
+  "summary": "첫 설정 로고 적용과 위치정보 필수 표시 -> DONE @ HeoNey_dev/04e7a63481ef",
+  "job_id": "job-20261031-081911-png-html-28b089bf",
+  "task_id": "task-20261031-142857-task-4eae0b0e",
+  "commit_sha": "04e7a63481eff976395bd88700467c5c1b08d602",
+  "branch_name": "HeoNey_dev",
+  "dirty": true,
+  "staged_files": [],
+  "modified_files": [
+    ".loom/job-runs/job-run-20261031-142859-job-20261031-081911-png-html-28b089bf-8544966d/job-run.json",
+    ".loom/task-definitions/task-def-20261031-142857-task-def-26f8e8b8/task-definition.json",
+    ".loom/tasks/task-20261031-120114-suite-bold-8ef87683/troubleshooting.md"
+  ],
+  "untracked_files": [],
+  "snapshot_captured_at": "2026-10-31T14:29:44+00:00",
+  "rollback_strategy": "revert-or-branch"
+}

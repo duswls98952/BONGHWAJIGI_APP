@@ -1,0 +1,41 @@
+{
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "status",
+    "summary",
+    "result_markdown",
+    "decision_markdown",
+    "troubleshooting_markdown",
+    "artifact_paths"
+  ],
+  "properties": {
+    "status": {
+      "type": "string",
+      "enum": [
+        "DONE",
+        "REVIEW_REQUIRED",
+        "BLOCKED",
+        "FAILED"
+      ]
+    },
+    "summary": {
+      "type": "string"
+    },
+    "result_markdown": {
+      "type": "string"
+    },
+    "decision_markdown": {
+      "type": "string"
+    },
+    "troubleshooting_markdown": {
+      "type": "string"
+    },
+    "artifact_paths": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  }
+}

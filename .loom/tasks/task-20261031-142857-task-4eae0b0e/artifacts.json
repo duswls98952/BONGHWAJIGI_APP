@@ -1,0 +1,63 @@
+{
+  "status": "DONE",
+  "agent": "codex",
+  "mode": "foreground",
+  "execution_surface": "foreground",
+  "task_run_id": "task-run-20261031-142859-task-def-20261031-142857-task-def-26f8e8b8-3f7eccb2",
+  "generated_at": "2026-10-31T14:29:44+00:00",
+  "artifacts": [
+    ".loom/tasks/task-20261031-142857-task-4eae0b0e/prompt.md",
+    ".loom/tasks/task-20261031-142857-task-4eae0b0e/context.md",
+    ".loom/tasks/task-20261031-142857-task-4eae0b0e/previous-results.md",
+    ".loom/tasks/task-20261031-142857-task-4eae0b0e/git-snapshot.json",
+    ".loom/tasks/task-20261031-142857-task-4eae0b0e/result.md",
+    ".loom/tasks/task-20261031-142857-task-4eae0b0e/decision.md",
+    ".loom/tasks/task-20261031-142857-task-4eae0b0e/troubleshooting.md",
+    ".loom/tasks/task-20261031-142857-task-4eae0b0e/logs.txt",
+    ".loom/tasks/task-20261031-142857-task-4eae0b0e/agent-events.jsonl",
+    ".loom/tasks/task-20261031-142857-task-4eae0b0e/artifacts.json"
+  ],
+  "artifact_groups": {
+    "user_outputs": [
+      ".loom/tasks/task-20261031-142857-task-4eae0b0e/result.md",
+      ".loom/tasks/task-20261031-142857-task-4eae0b0e/decision.md",
+      ".loom/tasks/task-20261031-142857-task-4eae0b0e/troubleshooting.md"
+    ],
+    "execution_inputs": [
+      ".loom/tasks/task-20261031-142857-task-4eae0b0e/prompt.md",
+      ".loom/tasks/task-20261031-142857-task-4eae0b0e/context.md",
+      ".loom/tasks/task-20261031-142857-task-4eae0b0e/previous-results.md"
+    ],
+    "execution_audit": [
+      ".loom/tasks/task-20261031-142857-task-4eae0b0e/git-snapshot.json",
+      ".loom/tasks/task-20261031-142857-task-4eae0b0e/logs.txt",
+      ".loom/tasks/task-20261031-142857-task-4eae0b0e/agent-events.jsonl",
+      ".loom/tasks/task-20261031-142857-task-4eae0b0e/artifacts.json"
+    ],
+    "work_products": []
+  },
+  "contract_snapshot": {
+    "schema_version": 1,
+    "contract_ids": [
+      "task-execution",
+      "done-guardrail"
+    ],
+    "contracts": [
+      {
+        "id": "task-execution",
+        "title": "Task Execution Context Contract",
+        "source_paths": [
+          "loom/application/context_pack.py",
+          "loom/application/team_policy.py"
+        ]
+      },
+      {
+        "id": "done-guardrail",
+        "title": "Task Completion Guardrail Contract",
+        "source_paths": [
+          "loom/application/services.py"
+        ]
+      }
+    ]
+  }
+}
