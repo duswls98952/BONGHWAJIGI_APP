@@ -24,9 +24,9 @@ Keep code identifiers, file paths, shell commands, URLs, commit hashes, and orig
 - Job ID: `job-20261031-152248-apk-cf438185`
 - Title: 완성 목업의 앱 구현과 실서버 통합·APK 배포
 - Goal: 사용자가 완성한 HTML 목업을 개발 서버에서 전 화면 확인하고 최신 서버 계약의 공백을 대조한다. Expo 앱에 화면과 동작을 구현해 실제 서버로 기능을 검증하고 설치 가능한 Android APK와 인수 자료를 제공한다. 배포 저장소는 앱 원격을 서브모듈로 고정한다. 기존 실제 예측 제외와 Firebase 미준비 조건은 유지한다.
-- Status: `PENDING`
+- Status: `RUNNING`
 - Required branch: `develop`
-- Task count: `4`
+- Task count: `5`
 
 ## Task
 
@@ -41,7 +41,7 @@ Keep code identifiers, file paths, shell commands, URLs, commit hashes, and orig
 - Document outputs: `docs/11-naver-map-integration.md`
 - Document output exceptions: -
 - Source proposal: `-`
-- Status: `PENDING`
+- Status: `REVIEW_REQUIRED`
 - Agent: `foreground`
 - Order: `4`
 - Depends on: None

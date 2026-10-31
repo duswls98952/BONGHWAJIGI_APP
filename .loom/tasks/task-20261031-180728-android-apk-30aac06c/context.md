@@ -36,7 +36,7 @@ Loom 프로젝트 메모리 루트입니다.
 - Title: 완성 목업의 앱 구현과 실서버 통합·APK 배포
 - Goal: 사용자가 완성한 HTML 목업을 개발 서버에서 전 화면 확인하고 최신 서버 계약의 공백을 대조한다. Expo 앱에 화면과 동작을 구현해 실제 서버로 기능을 검증하고 설치 가능한 Android APK와 인수 자료를 제공한다. 배포 저장소는 앱 원격을 서브모듈로 고정한다. 기존 실제 예측 제외와 Firebase 미준비 조건은 유지한다.
 - Branch: develop
-- Task count: `4`
+- Task count: `5`
 
 ## Task
 
@@ -52,7 +52,7 @@ Loom 프로젝트 메모리 루트입니다.
 - Document outputs: `docs/11-naver-map-integration.md`
 - Document output exceptions: -
 - Source proposal: `-`
-- Status: PENDING
+- Status: REVIEW_REQUIRED
 - Assigned agent: foreground
 
 ## Advisor Source Prompt
@@ -92,15 +92,19 @@ No explicit context references recorded for this job.
 
 # 2D 표시·대피 경로·단말 TTS
 
-2026-11-01 KST 기준 **3D는 MVP에서 제외**한다. 네이버 지도 Client ID와 Android 앱 등록은 사용자가 아직 준비되지 않았다고 확인했다. 실제 지도·실제 대피 경로·푸시 전달을 현재 구현 완료로 표시하지 않는다.
+2026-11-01 KST 기준 **3D는 MVP에서 제외**한다. 사용자가 Maps Client ID를 제공하여 Android 네이버 지도 연결을 진행했다. 실제 단말 검증과 배포 결과는 [지도 연결 기록](11-naver-map-integration.md)을 따른다. 실제 대피 경로·푸시 전달은 별도 준비 대상이다.
 
 ## 현재 지도 화면
 
-현재 홈·긴급·대피로는 `src/mvp/Map.tsx`의 2D 도식을 사용한다. ‘지도 연결 준비 중 · 실제 도로가 아닌 도식’을 표시한다. 서버에서 받은 관련 지역 bounding box와 유효한 공유 위치가 있을 때만 범위·위치 점을 표시한다. 지역 사각형은 실제 화선이나 대피 경로가 아니다. 목업의 예시 지명·도로·날씨를 실제 기본값으로 사용하지 않는다.
+홈·긴급·대피로는 네이티브에서 `src/mvp/Map.native.tsx`로 실제 네이버 2D 지도를 표시한다. 웹·Expo Go·키 없는 빌드는 `MapDiagram.tsx`의 명시된 도식을 사용한다. LIVE 지도 실패를 모의 성공으로 바꾸지 않는다. 웹 JS Maps 연동은 이번 Android 연결 범위에 포함하지 않는다.
 
-의존성에는 `@mj-studio/react-native-naver-map` 2.9.1과 Client ID 조건부 네이티브 설정이 있다. 이전 `src/components/DisasterMap.native.tsx`는 구형 화면용 코드이며 현재 MVP Map을 자동으로 대체하지 않는다. **Client ID 입력만으로 현재 화면의 실지도가 완성되는 것은 아니다.**
+`mapGeometry.ts`가 유효기간·최신 입력 revision·좌표 범위를 확인한다. 만료/삭제/이전 위치는 지도 마커에서 제외하고 지역 안/밖 문구도 새 정책까지 보류한다. 현재 위치가 없으면 위치 미확인을 명시하고 전국 지도 또는 사건의 관련 지역만 보여 준다. 위치/지역 갱신은 초기 카메라 재사용 대신 SDK ref로 반영한다.
 
-실지도를 연결할 때는 등록된 Android package `com.bonghwajigi.app`, Client ID, 네이티브 빌드를 확인하고 현재 MVP Map에 연결해야 한다. 실제 도로·위치·입력 영역 표시, 인증 실패, 네트워크 장애를 단말에서 검증한다. Secret은 앱 코드나 EXPO_PUBLIC 변수에 넣지 않는다.
+붉은 폴리곤은 서버가 제공한 관련 지역 bounding box이고 실제 화선·안전 구역·대피 경로가 아니다. 사용자 입력의 위치 정확도는 원의 반경으로 표시한다. 데이터 모드는 화면에 표시하지만 실제 GPS와 합성 입력을 지도 컴포넌트가 추측하지 않는다. 지도 SDK가 GPS를 자동 요청하거나 서버로 별도 전송하도록 설정하지 않는다.
+
+의존성은 `@mj-studio/react-native-naver-map` 2.9.1이다. 플러그인의 `client_id` 옵션이 신규 Maps `NCP_KEY_ID`를 네이티브에 주입한다. Android package는 `com.bonghwajigi.app`이다. Client ID는 로컬 비공개 파일에서 빌드 환경으로 읽으며 Client Secret은 앱에 넣지 않는다. 기존 `DisasterMap.native.tsx`는 구형 화면용 코드로 현재 MVP 진입점이 아니다.
+
+SDK 초기화 이벤트는 인증·타일 다운로드 성공 증거가 아니다. 인증 실패는 SDK 기본 오류 토스트를 유지하고, 앱에는 초기화 지연·위치 없음·지도 재시도 안내를 둔다. 네트워크 단절 시 캐시된 지도가 보일 수 있으며 최신 타일 수신을 보장하지 않는다. 실기기 도로/지명/로고 표시와 오류 로그를 별도로 대조한다.
 
 ## 현재 서버의 경로 응답
 
@@ -148,6 +152,8 @@ mock과 웹에서는 실제 전화·문자 연결을 차단한다. LIVE Android�
 # Android 내부 배포 및 실서버 검증
 
 2026-11-01 KST. Loom `task-20261031-170037-android-https-apk-eab2688e`.
+
+이 문서는 0.2.0 최초 내부 배포의 기록이다. 이후 네이버 지도를 연결한 0.2.1의 APK·검증·재빌드 절차는 [지도 배포 문서](11-naver-map-integration.md)를 따른다.
 
 ## 배포물
 
@@ -217,7 +223,7 @@ API 주소는 `https://inno-server-011.tail2dac17.ts.net`이다. 휴대폰에서
 ## 현재 미제공 또는 미검증
 
 - Firebase 미준비: 원격 푸시 연결 코드·모의 발송은 있으며 실제 기기 푸시 수신은 미검증. 전경 갱신과 앱 복귀 재조회는 별도다.
-- 네이버 지도 Client ID 미준비: 실제 도로 지도 대신 명시된 2D 도식. 실제 대피 경로는 서버 `unavailable`이다.
+- 이 0.2.0 APK는 지도 키 미포함으로 2D 도식을 표시한다. 후속 0.2.1은 네이버 지도를 연결했다. 실제 대피 경로는 계속 서버 `unavailable`이다.
 - 실제 XGBoost 추론은 사용자 요청에 따라 연결 제외. 확률은 unavailable/null로 유지한다.
 - 실제 GPS·OS 위치 권한·백그라운드 위치·절전/잠금 수신·iOS는 이번 합성 단말 검증에 포함하지 않았다. 현재 빌드는 백그라운드 위치를 기본 비활성화한다.
 - 내부 시연 등록은 정식 본인인증·공개 서비스 약관 확정·계정 탈퇴 기능을 대신하지 않는다.

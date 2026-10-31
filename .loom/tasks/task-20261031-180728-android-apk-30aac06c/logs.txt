@@ -4,3 +4,5 @@
 2026-11-01 03:21 KST: release 빌드 성공(7m37s). APK0.2.1/code3, signature/permissions/Hermes 검사 통과.
 2026-11-01 03:22~03:24 KST: adb install -r 성공, CUA 실제 전국 지도와 합성 위치 마커 확인. 사용자가 공식 경보 상세 붉은 영역+마커 확인. 서버 동일 단말 위치rev2/fresh/정책requested=applied14 대조.
 2026-11-01 KST: docs/11 최신 지도 APK 정본과 빌드/QA JSON·화면 증거 작성. Client ID 추적파일 노출0건, 로컬 설정 mode600 확인.
+[2026-10-31T18:28:20+00:00] agent=foreground task=task-20261031-180728-android-apk-30aac06c Android0.2.1 실제 네이버 지도와 위치·영역 표시 검증, 앱 ced2446 push 및 메인 ad0d34d 서브모듈 재귀 clone 확인 완료
+[2026-10-31T18:30:23+00:00] agent=foreground task=task-20261031-180728-android-apk-30aac06c Foreground task session started.

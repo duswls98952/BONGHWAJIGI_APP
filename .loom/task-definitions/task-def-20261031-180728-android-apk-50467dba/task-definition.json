@@ -4,7 +4,7 @@
   "title": "네이버 지도 연결과 Android APK 실기기 검증",
   "description": "사용자가 Maps Client ID를 제공하고 연결을 직접 지시했다. 현재 MVP 2D 도식을 네이버 지도에 연결하고 유효한 위치와 서버 관련 영역을 표시한다. 실패·위치 없음·만료를 구분하고 동일 내부 서명 APK를 업데이트하여 휴대폰에서 검증한다.",
   "created_at": "2026-10-31T18:07:28+00:00",
-  "updated_at": "2026-10-31T18:07:32+00:00",
+  "updated_at": "2026-10-31T18:30:23+00:00",
   "order_index": 4,
   "legacy_task_id": "task-20261031-180728-android-apk-30aac06c",
   "depends_on": [],

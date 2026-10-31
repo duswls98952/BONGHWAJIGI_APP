@@ -1,0 +1,34 @@
+{
+  "id": "task-def-20261031-182848-task-def-23ccbda0",
+  "job_definition_id": "job-20261031-152248-apk-cf438185",
+  "title": "목업 디자인 정렬과 음성 대화·시연 대피경로 연결",
+  "description": "사용자가 지도 연결 후 로고/디자인 동일화, 문구 간소화와 버튼 대비, 위치·알림 바로가기, 실제 말하기 기반 대화·상태 갱신 및 시연 대피로 지도 표시를 직접 지시했다.",
+  "created_at": "2026-10-31T18:28:48+00:00",
+  "updated_at": "2026-10-31T18:28:58+00:00",
+  "order_index": 5,
+  "legacy_task_id": "task-20261031-182848-task-6374db8a",
+  "depends_on": [],
+  "expected_output": "목업 일치 UI, 한국어 음성 입력과 서버 대화/상태 확인 연계, 서버 계약 기반 시연 경로 지도, Android APK와 검증 문서 및 원격 고정",
+  "done_condition": "요청 문구/배너/로고/대비/바로가기가 반영되고 실제 앱에서 음성 대화 및 상태 갱신과 시연 경로 표시를 검증한다. 불확실한 상태와 미검증 경로를 실제 안전 보장으로 표현하지 않는다.",
+  "in_scope": "목업 디자인/로고; 불필요 부연설명 제거; 설정 절 바로가기; 버튼 대비; Android 한국어 STT와 텍스트 대화; 확인 기반 상태 저장; 시연 경로 API/지도; 검사/문서/Loom/배포",
+  "out_of_scope": "3D; 실제 XGBoost 연결/학습 변경; Firebase; 실제 GPS 시연; 119 통화·SMS; 검증 없는 실제 안전경로 제공; 비밀키 노출",
+  "validation_hint": "목업 이미지와 UI 비교, npm run check, 서버 계약/대화/경로 검사, Web 및 Android release, 음성 입력/확인/갱신과 경로 실제 단말 검증, 원격/submodule/Loom strict",
+  "required_docs": [
+    "docs/01-start-here.md",
+    "docs/02-api-integration.md",
+    "docs/03-realtime-background.md",
+    "docs/04-map-tts.md",
+    "docs/05-codex-workflow.md"
+  ],
+  "memory_refs": [],
+  "document_outputs": [
+    "docs/12-demo-polish-voice-route.md"
+  ],
+  "document_output_exceptions": [],
+  "default_agent": "",
+  "context_policy_id": "",
+  "executor_policy_id": "",
+  "review_policy": "",
+  "source_proposal_id": "",
+  "source_prompt": ""
+}

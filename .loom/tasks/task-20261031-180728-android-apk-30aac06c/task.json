@@ -5,7 +5,7 @@
   "description": "사용자가 Maps Client ID를 제공하고 연결을 직접 지시했다. 현재 MVP 2D 도식을 네이버 지도에 연결하고 유효한 위치와 서버 관련 영역을 표시한다. 실패·위치 없음·만료를 구분하고 동일 내부 서명 APK를 업데이트하여 휴대폰에서 검증한다.",
   "status": "RUNNING",
   "created_at": "2026-10-31T18:07:28+00:00",
-  "updated_at": "2026-10-31T18:07:32+00:00",
+  "updated_at": "2026-10-31T18:30:23+00:00",
   "order_index": 4,
   "assigned_agent": "foreground",
   "depends_on": [],
@@ -27,12 +27,25 @@
   "run_attempts": 0,
   "last_error": "",
   "commit_refs": [
-    "45feba9b282e1257b53fd53f2ee641def75b554e"
+    "45feba9b282e1257b53fd53f2ee641def75b554e",
+    "8bc3e641eee17174d64cc96684f02572f6086abf"
   ],
   "branch_name": "develop",
   "git_dirty": true,
-  "git_snapshot_captured_at": "2026-10-31T18:07:32+00:00",
-  "artifacts": [],
+  "git_snapshot_captured_at": "2026-10-31T18:30:23+00:00",
+  "artifacts": [
+    ".loom/tasks/task-20261031-180728-android-apk-30aac06c/agent-events.jsonl",
+    ".loom/tasks/task-20261031-180728-android-apk-30aac06c/artifacts.json",
+    ".loom/tasks/task-20261031-180728-android-apk-30aac06c/context.md",
+    ".loom/tasks/task-20261031-180728-android-apk-30aac06c/decision.md",
+    ".loom/tasks/task-20261031-180728-android-apk-30aac06c/git-snapshot.json",
+    ".loom/tasks/task-20261031-180728-android-apk-30aac06c/logs.txt",
+    ".loom/tasks/task-20261031-180728-android-apk-30aac06c/previous-results.md",
+    ".loom/tasks/task-20261031-180728-android-apk-30aac06c/prompt.md",
+    ".loom/tasks/task-20261031-180728-android-apk-30aac06c/result.md",
+    ".loom/tasks/task-20261031-180728-android-apk-30aac06c/troubleshooting.md",
+    "docs/11-naver-map-integration.md"
+  ],
   "source_proposal_id": "",
   "source_prompt": ""
 }
