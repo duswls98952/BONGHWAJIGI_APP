@@ -2,9 +2,9 @@
   "id": "task-run-20261031-095720-task-def-20261031-095717-task-def-75c02427-0eb2cec0",
   "job_run_id": "job-run-20261031-095720-job-20261031-081911-png-html-28b089bf-edb971eb",
   "task_definition_id": "task-def-20261031-095717-task-def-75c02427",
-  "status": "RUNNING",
+  "status": "DONE",
   "created_at": "2026-10-31T09:57:20+00:00",
-  "updated_at": "2026-10-31T09:57:20+00:00",
+  "updated_at": "2026-10-31T09:58:04+00:00",
   "legacy_task_id": "task-20261031-095717-task-5d8b5c45",
   "attempt": 1,
   "assigned_agent": "codex",
@@ -13,13 +13,29 @@
   "lease_expires_at": "",
   "queued_at": "",
   "started_at": "2026-10-31T09:57:20+00:00",
-  "completed_at": "",
+  "completed_at": "2026-10-31T09:58:04+00:00",
   "last_error": "",
-  "commit_refs": [],
-  "branch_name": "",
-  "git_dirty": false,
-  "git_snapshot_captured_at": "",
-  "artifacts": [],
-  "checkpoint_ids": [],
+  "commit_refs": [
+    "68ce182395028a27970b4761f9978d5d62d4d963",
+    "831d5ebf63badaa7763468941865ce04101d3d72"
+  ],
+  "branch_name": "HeoNey_dev",
+  "git_dirty": true,
+  "git_snapshot_captured_at": "2026-10-31T09:58:04+00:00",
+  "artifacts": [
+    ".loom/tasks/task-20261031-095717-task-5d8b5c45/agent-events.jsonl",
+    ".loom/tasks/task-20261031-095717-task-5d8b5c45/artifacts.json",
+    ".loom/tasks/task-20261031-095717-task-5d8b5c45/context.md",
+    ".loom/tasks/task-20261031-095717-task-5d8b5c45/decision.md",
+    ".loom/tasks/task-20261031-095717-task-5d8b5c45/git-snapshot.json",
+    ".loom/tasks/task-20261031-095717-task-5d8b5c45/logs.txt",
+    ".loom/tasks/task-20261031-095717-task-5d8b5c45/previous-results.md",
+    ".loom/tasks/task-20261031-095717-task-5d8b5c45/prompt.md",
+    ".loom/tasks/task-20261031-095717-task-5d8b5c45/result.md",
+    ".loom/tasks/task-20261031-095717-task-5d8b5c45/troubleshooting.md"
+  ],
+  "checkpoint_ids": [
+    "checkpoint-20261031-095804-task-completed-ac14c545"
+  ],
   "review_required_reason": ""
 }

@@ -3,9 +3,9 @@
   "job_id": "job-20261031-081911-png-html-28b089bf",
   "title": "긴급 경보 배경에 붉은 맥동 효과 추가",
   "description": "긴급 대응 화면의 홍수 대피 명령 발령 경보 배경을 붉은색으로 부드럽게 반복 강조하고 동작 줄이기 설정에서는 애니메이션을 끈다.",
-  "status": "RUNNING",
+  "status": "DONE",
   "created_at": "2026-10-31T09:57:17+00:00",
-  "updated_at": "2026-10-31T09:57:20+00:00",
+  "updated_at": "2026-10-31T09:58:04+00:00",
   "order_index": 21,
   "assigned_agent": "codex",
   "depends_on": [],
@@ -21,12 +21,24 @@
   "run_attempts": 0,
   "last_error": "",
   "commit_refs": [
-    "68ce182395028a27970b4761f9978d5d62d4d963"
+    "68ce182395028a27970b4761f9978d5d62d4d963",
+    "831d5ebf63badaa7763468941865ce04101d3d72"
   ],
   "branch_name": "HeoNey_dev",
   "git_dirty": true,
-  "git_snapshot_captured_at": "2026-10-31T09:57:20+00:00",
-  "artifacts": [],
+  "git_snapshot_captured_at": "2026-10-31T09:58:04+00:00",
+  "artifacts": [
+    ".loom/tasks/task-20261031-095717-task-5d8b5c45/agent-events.jsonl",
+    ".loom/tasks/task-20261031-095717-task-5d8b5c45/artifacts.json",
+    ".loom/tasks/task-20261031-095717-task-5d8b5c45/context.md",
+    ".loom/tasks/task-20261031-095717-task-5d8b5c45/decision.md",
+    ".loom/tasks/task-20261031-095717-task-5d8b5c45/git-snapshot.json",
+    ".loom/tasks/task-20261031-095717-task-5d8b5c45/logs.txt",
+    ".loom/tasks/task-20261031-095717-task-5d8b5c45/previous-results.md",
+    ".loom/tasks/task-20261031-095717-task-5d8b5c45/prompt.md",
+    ".loom/tasks/task-20261031-095717-task-5d8b5c45/result.md",
+    ".loom/tasks/task-20261031-095717-task-5d8b5c45/troubleshooting.md"
+  ],
   "source_proposal_id": "",
   "source_prompt": ""
 }
