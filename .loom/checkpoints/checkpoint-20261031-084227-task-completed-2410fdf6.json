@@ -1,0 +1,19 @@
+{
+  "id": "checkpoint-20261031-084227-task-completed-2410fdf6",
+  "created_at": "2026-10-31T08:42:27+00:00",
+  "reason": "Task completed: 프로필 제목과 상단 간격 조정",
+  "summary": "프로필 제목과 상단 간격 조정 -> DONE @ HeoNey_dev/bed875b33c51",
+  "job_id": "job-20261031-081911-png-html-28b089bf",
+  "task_id": "task-20261031-084128-task-462a39cb",
+  "commit_sha": "bed875b33c51828953568f6ce0f1e447e654c32c",
+  "branch_name": "HeoNey_dev",
+  "dirty": true,
+  "staged_files": [],
+  "modified_files": [
+    ".loom/job-runs/job-run-20261031-084129-job-20261031-081911-png-html-28b089bf-9f5b3ca0/job-run.json",
+    ".loom/task-definitions/task-def-20261031-084128-task-def-ab5fc254/task-definition.json"
+  ],
+  "untracked_files": [],
+  "snapshot_captured_at": "2026-10-31T08:42:27+00:00",
+  "rollback_strategy": "revert-or-branch"
+}

@@ -3,11 +3,11 @@
   "job_id": "job-20261031-081911-png-html-28b089bf",
   "title": "프로필 제목과 상단 간격 조정",
   "description": "HTML 시안의 프로필 화면 제목을 프로필로 바꾸고 뒤로가기 버튼과 제목 사이, 제목 아래 기본 정보 박스까지의 간격을 줄인다.",
-  "status": "RUNNING",
+  "status": "DONE",
   "created_at": "2026-10-31T08:41:28+00:00",
-  "updated_at": "2026-10-31T08:41:29+00:00",
+  "updated_at": "2026-10-31T08:42:27+00:00",
   "order_index": 5,
-  "assigned_agent": "codex",
+  "assigned_agent": "foreground",
   "depends_on": [],
   "expected_output": "프로필 화면 상단의 간결한 제목과 좁아진 간격",
   "done_condition": "프로필 헤더 제목이 프로필이고 헤더 내부 및 기본 정보 박스 위 간격이 기존보다 작다. 홈 복귀 링크는 유지된다.",
@@ -21,12 +21,24 @@
   "run_attempts": 0,
   "last_error": "",
   "commit_refs": [
-    "4c4d49b41789b63131661147d1f890ace0f7d972"
+    "4c4d49b41789b63131661147d1f890ace0f7d972",
+    "bed875b33c51828953568f6ce0f1e447e654c32c"
   ],
   "branch_name": "HeoNey_dev",
   "git_dirty": true,
-  "git_snapshot_captured_at": "2026-10-31T08:41:29+00:00",
-  "artifacts": [],
+  "git_snapshot_captured_at": "2026-10-31T08:42:27+00:00",
+  "artifacts": [
+    ".loom/tasks/task-20261031-084128-task-462a39cb/agent-events.jsonl",
+    ".loom/tasks/task-20261031-084128-task-462a39cb/artifacts.json",
+    ".loom/tasks/task-20261031-084128-task-462a39cb/context.md",
+    ".loom/tasks/task-20261031-084128-task-462a39cb/decision.md",
+    ".loom/tasks/task-20261031-084128-task-462a39cb/git-snapshot.json",
+    ".loom/tasks/task-20261031-084128-task-462a39cb/logs.txt",
+    ".loom/tasks/task-20261031-084128-task-462a39cb/previous-results.md",
+    ".loom/tasks/task-20261031-084128-task-462a39cb/prompt.md",
+    ".loom/tasks/task-20261031-084128-task-462a39cb/result.md",
+    ".loom/tasks/task-20261031-084128-task-462a39cb/troubleshooting.md"
+  ],
   "source_proposal_id": "",
   "source_prompt": ""
 }
