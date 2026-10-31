@@ -15,6 +15,8 @@
     <symbol id="back" viewBox="0 0 24 24"><path d="m15 4-8 8 8 8"/></symbol>
     <symbol id="sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 1v3m0 16v3M1 12h3m16 0h3M4.2 4.2l2.1 2.1m11.4 11.4 2.1 2.1M19.8 4.2l-2.1 2.1M6.3 17.7l-2.1 2.1"/></symbol>
     <symbol id="cloud" viewBox="0 0 24 24"><path d="M4 16a5 5 0 0 1 1-9 7 7 0 0 1 13 2 4 4 0 0 1 1 7H4Zm4 3h8m-7 3h6"/></symbol>
+    <symbol id="bag" viewBox="0 0 24 24"><path d="M5 8h14v13H5zM9 8V6a3 3 0 0 1 6 0v2M9 12h6m-3-3v6"/></symbol>
+    <symbol id="checklist" viewBox="0 0 24 24"><path d="M4 4h16v16H4zM8 12l3 3 5-6"/></symbol>
     <symbol id="rain" viewBox="0 0 24 24"><path d="M4 16a5 5 0 0 1 1-9 7 7 0 0 1 13 2 4 4 0 0 1 1 7H4Zm3 2-1 3m6-3-1 3m6-3-1 3"/></symbol>
     <symbol id="fire" viewBox="0 0 24 24"><path d="M12 2c1 4-2 5-2 8 2 0 3-1 4-3 5 5 6 9 3 13-3 4-11 4-13-2-2-5 1-9 8-16z"/></symbol>
     <!-- Triangle Alert pictogram adapted from Lucide; see LUCIDE-LICENSE.txt. -->
@@ -33,9 +35,9 @@
       <div class="statusbar"><span>9:41</span><span class="device-icons"><svg><use href="#signal"/></svg><svg><use href="#wifi"/></svg><span class="battery"></span></span></div>
       <header class="topbar home-topbar"><h1>봉화 지기</h1><a class="home-profile-link" href="#profile">프로필</a></header>
       <main class="content home-content">
-        <section class="home-map-block"><h2 class="home-section-title">우리 동네 안전정보</h2><div class="map home-map"><img src="map.svg" alt="구로동 주변 지도 예시"><div class="my-location"><span class="ring"><span class="dot"></span></span><span class="my-label">내 위치</span></div></div><div class="location-line"><svg><use href="#pin"/></svg><strong>서울특별시 구로구 구로동</strong></div></section>
+        <section class="home-map-block" aria-label="지도와 현재 위치"><div class="map home-map"><img src="map.svg" alt="구로동 주변 지도 예시"><div class="my-location"><span class="ring"><span class="dot"></span></span><span class="my-label">내 위치</span></div></div><div class="location-line"><svg><use href="#pin"/></svg><strong>서울특별시 구로구 구로동</strong></div></section>
         <section class="tips"><h2 class="home-section-title">오늘의 행동요령</h2><div class="tip-card"><svg><use href="#sun"/></svg><div><strong>건조한 날씨 · 산불 주의</strong><p>야외에서 불씨를 방치하지 마세요.</p></div></div><div class="tip-card"><svg><use href="#cloud"/></svg><div><strong>짙은 안개 · 시야 확보 주의</strong><p>운전 시 감속하고 안전거리를 유지하세요.</p></div></div></section>
-        <section class="preparation"><h2 class="home-section-title">나의 사전준비</h2><div class="prep-card"><strong>비상가방 준비</strong><p>생수와 손전등을 챙겨두세요.</p></div><div class="prep-card"><strong>이동 보조기구 점검</strong><p>평소 사용하는 보조기구의 상태를 확인하고, 전동 기기라면 충전해두세요.</p></div></section>
+        <section class="preparation"><h2 class="home-section-title">나의 사전준비</h2><div class="tip-card"><svg aria-hidden="true"><use href="#bag"/></svg><div><strong>비상가방 준비</strong><p>생수와 손전등을 챙겨두세요.</p></div></div><div class="tip-card"><svg aria-hidden="true"><use href="#checklist"/></svg><div><strong>이동 보조기구 점검</strong><p>평소 사용하는 보조기구의 상태를 확인하고, 전동 기기라면 충전해두세요.</p></div></div></section>
         <section class="nearby"><h2 class="home-section-title">최근 주변 재난 정보</h2><div class="feed"><div class="feed-row"><span class="feed-icon"><svg><use href="#rain"/></svg></span><div class="feed-text"><div><strong>○○구 ○○동 침수 발생</strong><span class="active-badge">진행 중</span></div><p>10.31 08:20 · 도로 일부 침수</p></div></div><div class="feed-row"><span class="feed-icon"><svg><use href="#fire"/></svg></span><div class="feed-text"><div><strong>○○구 △△동 화재 발생</strong><span class="ended">종료</span></div><p>10.25 14:30 · 화재 진화 완료</p></div></div><div class="feed-row"><span class="feed-icon"><svg><use href="#warning"/></svg></span><div class="feed-text"><div><strong>○○구 □□동 지반 침하</strong><span class="ended">종료</span></div><p>09.18 11:10 · 안전 조치 완료</p></div></div></div></section>
       </main>
     </section>

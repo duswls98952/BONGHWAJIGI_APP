@@ -1,0 +1,2 @@
+[2026-10-31T10:32:52+00:00] agent=codex task=task-20261031-103250-task-147a8a51 Foreground task session started.
+[2026-10-31T10:33:45.168Z] 홈 지도 제목 제거, 사전준비 카드 공통 스타일 적용, 기획서 수정. 검증: HTML/CSS 구조 및 문서 링크와 git diff --check 통과; TypeScript 및 14개 테스트 통과; 기존 무관 문서 링크 오류로 check:docs 실패; 브라우저 호스트 미연결.
