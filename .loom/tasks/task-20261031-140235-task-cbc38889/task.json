@@ -1,0 +1,32 @@
+{
+  "id": "task-20261031-140235-task-cbc38889",
+  "job_id": "job-20261031-081911-png-html-28b089bf",
+  "title": "로딩 지기 글자만 소폭 축소",
+  "description": "로딩 화면 봉화지기 글자에서 지기 두 글자만 봉화보다 약 10% 작게 표시한다. 글자 내부 정부청색·정부적색 흐름과 중앙 배치, 홈 로고는 유지한다.",
+  "status": "RUNNING",
+  "created_at": "2026-10-31T14:02:35+00:00",
+  "updated_at": "2026-10-31T14:02:37+00:00",
+  "order_index": 55,
+  "assigned_agent": "codex",
+  "depends_on": [],
+  "expected_output": "public/prototype/index.html, public/prototype/style.css, Loom 기록",
+  "done_condition": "로딩 화면의 지기만 봉화보다 조금 작고 두 부분 모두 정부색 애니메이션이 보인다. 전체 로고는 중앙에 있고 #loading 고정 미리보기와 일반 홈 전환이 유지된다.",
+  "in_scope": "public/prototype/index.html, public/prototype/style.css, Loom 기록",
+  "out_of_scope": "홈 로고, 다른 화면, API, Expo 네이티브 시작 화면",
+  "validation_hint": "Chrome #loading 캡처로 글자 크기와 색 채움 확인; npm run check; git diff --check",
+  "required_docs": [],
+  "memory_refs": [],
+  "document_outputs": [],
+  "document_output_exceptions": [],
+  "run_attempts": 0,
+  "last_error": "",
+  "commit_refs": [
+    "6f87745793b5e11af13e755307b597a9b57065f0"
+  ],
+  "branch_name": "HeoNey_dev",
+  "git_dirty": true,
+  "git_snapshot_captured_at": "2026-10-31T14:02:37+00:00",
+  "artifacts": [],
+  "source_proposal_id": "",
+  "source_prompt": ""
+}
