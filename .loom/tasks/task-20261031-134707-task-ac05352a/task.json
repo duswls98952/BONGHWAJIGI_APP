@@ -1,0 +1,32 @@
+{
+  "id": "task-20261031-134707-task-ac05352a",
+  "job_id": "job-20261031-081911-png-html-28b089bf",
+  "title": "홈 프로필 위치·색과 상단 배경 조정",
+  "description": "HTML 시안 홈 상단에서 톱니와 프로필 버튼을 조금 아래로 배치하고 두 요소를 지기 글자와 같은 진회색으로 표시한다. 상단 푸른 배경과 지도까지 이어지는 그라데이션을 더 옅은 회청색으로 조정한다.",
+  "status": "RUNNING",
+  "created_at": "2026-10-31T13:47:07+00:00",
+  "updated_at": "2026-10-31T13:47:10+00:00",
+  "order_index": 50,
+  "assigned_agent": "codex",
+  "depends_on": [],
+  "expected_output": "public/prototype/style.css, 모바일 화면 기획서 및 Loom 기록",
+  "done_condition": "프로필 버튼은 기존보다 조금 아래에 있으며 아이콘과 글씨가 지기와 같은 색이다. 상단 배경과 지도 주변 그라데이션은 더 옅고 회색빛이며 위치 줄 전에 자연스럽게 사라진다.",
+  "in_scope": "public/prototype/style.css, docs/HeoNey/봉화지기_모바일_화면_기획서.md, Loom 기록",
+  "out_of_scope": "다른 화면, API, 로딩 로고, 문구 변경",
+  "validation_hint": "Chrome 홈 화면 캡처, npm run check:docs, git diff --check, Loom validate",
+  "required_docs": [],
+  "memory_refs": [],
+  "document_outputs": [],
+  "document_output_exceptions": [],
+  "run_attempts": 0,
+  "last_error": "",
+  "commit_refs": [
+    "833f2422a29ac96d2f3217bd8e4c1ca8ff719ecb"
+  ],
+  "branch_name": "HeoNey_dev",
+  "git_dirty": true,
+  "git_snapshot_captured_at": "2026-10-31T13:47:10+00:00",
+  "artifacts": [],
+  "source_proposal_id": "",
+  "source_prompt": ""
+}
