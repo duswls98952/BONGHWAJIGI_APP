@@ -60,12 +60,13 @@ p{margin:0}
 .feed-text p{font-size:13px;color:#000;margin-top:7px}
 .active-badge{font-size:12px;color:#ef5a29;background:#ffebe3;border-radius:20px;padding:3px 8px;white-space:nowrap}
 .ended{font-size:11px;color:#000}
-.emergency-content{padding-top:12px;padding-bottom:105px}
-.alert{height:60px;border:1px solid #df3332;border-radius:8px;background:#fce9e7;color:#9d2422;display:flex;align-items:center;justify-content:center;gap:8px;padding:0 11px;animation:alert-pulse 1.4s ease-in-out infinite alternate}
+.emergency-content{padding-top:0;padding-bottom:105px}
+.emergency-banner{background:#fce9e7;animation:alert-pulse 1.4s ease-in-out infinite alternate}
+.alert{min-height:72px;color:#9d2422;display:flex;align-items:center;justify-content:center;padding:0 12px}
 @keyframes alert-pulse{from{background-color:#fce9e7}to{background-color:#f6c0bb}}
 .alert-main{display:flex;align-items:center;gap:8px;min-width:0}
 .alert svg{width:24px;height:24px;flex:none;fill:none;stroke:currentColor;stroke-width:2.2}
-.alert strong{font-size:clamp(18px,5.9vw,23px);white-space:nowrap;letter-spacing:-.6px}
+.alert strong{font-size:clamp(24px,6.8vw,27px);white-space:nowrap;letter-spacing:-.8px}
 .affected{margin-top:26px}
 .affected h2,.voice h2,.status h2{margin-bottom:14px}
 .hazard-map{height:176px;border:1px solid var(--ink)}
@@ -74,7 +75,7 @@ p{margin:0}
 .waveform i{display:block;width:3px;height:var(--h);background:var(--blue);border-radius:5px;animation:pulse 1.2s ease-in-out infinite alternate}
 .waveform i:nth-child(even){animation-delay:.3s}
 @keyframes pulse{to{transform:scaleY(.6)}}
-@media(prefers-reduced-motion:reduce){.waveform i,.alert{animation:none}}
+@media(prefers-reduced-motion:reduce){.waveform i,.emergency-banner{animation:none}}
 .utterance{margin-top:12px;min-height:80px;border:0;border-radius:16px;background:var(--tile-bg);color:var(--blue);display:grid;place-items:center;text-align:center;padding:12px;font-size:17px;font-weight:750;letter-spacing:-.5px}
 .status h2{margin-bottom:10px}
 .tags{display:flex;flex-wrap:wrap;gap:6px}

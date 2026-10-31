@@ -43,9 +43,11 @@
     </section>
 
     <section class="screen" id="emergency" data-screen hidden>
-      <div class="statusbar"><span>9:41</span><span class="device-icons"><svg><use href="#signal"/></svg><svg><use href="#wifi"/></svg><span class="battery"></span></span></div>
-      <main class="content emergency-content">
+      <header class="emergency-banner">
+        <div class="statusbar"><span>9:41</span><span class="device-icons"><svg><use href="#signal"/></svg><svg><use href="#wifi"/></svg><span class="battery"></span></span></div>
         <div class="alert"><span class="alert-main"><svg aria-hidden="true"><use href="#warning"/></svg><strong>홍수 대피 명령 발령</strong></span></div>
+      </header>
+      <main class="content emergency-content">
         <section class="affected"><h2 class="home-section-title">재난 영향 지역</h2><div class="map hazard-map"><img src="map.svg" alt="재난 영향 지역과 내 위치가 표시된 지도 예시"><div class="hazard-shape"></div><div class="my-location"><span class="ring"><span class="dot"></span></span><span class="my-label">내 위치</span></div></div></section>
         <section class="voice"><h2 class="home-section-title">실시간 음성 대화</h2><div class="waveform" aria-label="음성 대화 파형"><i style="--h:7px"></i><i style="--h:13px"></i><i style="--h:20px"></i><i style="--h:15px"></i><i style="--h:30px"></i><i style="--h:38px"></i><i style="--h:25px"></i><i style="--h:33px"></i><i style="--h:19px"></i><i style="--h:27px"></i><i style="--h:13px"></i><i style="--h:17px"></i><i style="--h:9px"></i><i style="--h:5px"></i></div><div class="utterance">“지금 계신 곳에 물이 들어오고 있나요?”</div></section>
         <section class="status"><h2 class="home-section-title">내 현재 상태</h2><div class="tags"><span>계단 이동 어려움</span><span>혼자 있음</span><span>위치 확인됨</span></div></section>
