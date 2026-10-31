@@ -3,9 +3,9 @@
   "job_id": "job-20261031-081911-png-html-28b089bf",
   "title": "내정보 저장 버튼과 산불 3단계 HTML 목업 구현",
   "description": "승인된 계획에 따라 HTML 프로토타입 내정보 하단에 시안용 저장 버튼을 추가하고 산불 긴급 대응 경고·대피·위급 3단계의 색상/원형 배지를 별도 해시로 제공한다. 홍수 문구와 기본 수칙을 산불 시연 내용으로 교체한다.",
-  "status": "RUNNING",
+  "status": "DONE",
   "created_at": "2026-10-31T14:54:21+00:00",
-  "updated_at": "2026-10-31T14:54:23+00:00",
+  "updated_at": "2026-10-31T14:58:27+00:00",
   "order_index": 64,
   "assigned_agent": "codex",
   "depends_on": [],
@@ -21,12 +21,24 @@
   "run_attempts": 0,
   "last_error": "",
   "commit_refs": [
-    "76addb1673e5f9b2c20b5fc74e292831a79b9681"
+    "76addb1673e5f9b2c20b5fc74e292831a79b9681",
+    "676999292a9d684fd29b1f53440ba333c2a177fc"
   ],
   "branch_name": "HeoNey_dev",
   "git_dirty": true,
-  "git_snapshot_captured_at": "2026-10-31T14:54:23+00:00",
-  "artifacts": [],
+  "git_snapshot_captured_at": "2026-10-31T14:58:27+00:00",
+  "artifacts": [
+    ".loom/tasks/task-20261031-145421-3-html-4abf9d90/agent-events.jsonl",
+    ".loom/tasks/task-20261031-145421-3-html-4abf9d90/artifacts.json",
+    ".loom/tasks/task-20261031-145421-3-html-4abf9d90/context.md",
+    ".loom/tasks/task-20261031-145421-3-html-4abf9d90/decision.md",
+    ".loom/tasks/task-20261031-145421-3-html-4abf9d90/git-snapshot.json",
+    ".loom/tasks/task-20261031-145421-3-html-4abf9d90/logs.txt",
+    ".loom/tasks/task-20261031-145421-3-html-4abf9d90/previous-results.md",
+    ".loom/tasks/task-20261031-145421-3-html-4abf9d90/prompt.md",
+    ".loom/tasks/task-20261031-145421-3-html-4abf9d90/result.md",
+    ".loom/tasks/task-20261031-145421-3-html-4abf9d90/troubleshooting.md"
+  ],
   "source_proposal_id": "",
   "source_prompt": ""
 }

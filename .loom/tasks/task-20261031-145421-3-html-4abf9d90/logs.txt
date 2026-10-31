@@ -3,3 +3,4 @@ HTML/CSS/JS 변경: 내정보 저장 안내, 산불 3단계 해시와 배너, �
 검증: npm run check 통과(테스트 14개), node --check 및 git diff --check 통과.
 Chrome file:// 확인: 세 단계 문구, 경고·대피 색, 기본 수칙 복귀, 내정보 저장 안내, iPhone SE 375px 내정보 배치.
 CSS 확인: prefers-reduced-motion에서 위급 배너 animation:none.
+[2026-10-31T14:58:27+00:00] agent=codex task=task-20261031-145421-3-html-4abf9d90 HTML 산불 3단계 목업과 내정보 저장 안내 구현, 검사 및 브라우저 확인 완료
