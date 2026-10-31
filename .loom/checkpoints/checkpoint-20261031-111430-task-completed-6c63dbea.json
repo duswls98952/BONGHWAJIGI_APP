@@ -1,0 +1,19 @@
+{
+  "id": "checkpoint-20261031-111430-task-completed-6c63dbea",
+  "created_at": "2026-10-31T11:14:30+00:00",
+  "reason": "Task completed: 모바일 기획서에 사전준비 추천 사례 추가",
+  "summary": "모바일 기획서에 사전준비 추천 사례 추가 -> DONE @ HeoNey_dev/bdea71dff6ba",
+  "job_id": "job-20261031-081911-png-html-28b089bf",
+  "task_id": "task-20261031-111337-task-ea864715",
+  "commit_sha": "bdea71dff6ba2c6cb849ba1a1b990df1bed7a6c6",
+  "branch_name": "HeoNey_dev",
+  "dirty": true,
+  "staged_files": [],
+  "modified_files": [
+    ".loom/job-runs/job-run-20261031-111339-job-20261031-081911-png-html-28b089bf-f7bf6021/job-run.json",
+    ".loom/task-definitions/task-def-20261031-111337-task-def-bad9f01f/task-definition.json"
+  ],
+  "untracked_files": [],
+  "snapshot_captured_at": "2026-10-31T11:14:30+00:00",
+  "rollback_strategy": "revert-or-branch"
+}
