@@ -1,0 +1,337 @@
+{
+  "task_id": "task-20261031-233656-a-b-f3003e64",
+  "status": "A 완성본 검증 통과, B 촬영 준비 인계",
+  "assembly": {
+    "task_id": "task-20261031-233656-a-b-f3003e64",
+    "status": "알림음 보충 전 연결본",
+    "output_file": "A-scenario-assembled.mp4",
+    "sources": [
+      {
+        "file": "A-profile-retake-selected.mp4",
+        "sha256": "3fcaee544a1981f50ee32342e42d266a45670164222a25fec816b1fa9b25eb8f",
+        "size_bytes": 2298663,
+        "source_start_seconds": 7,
+        "source_end_seconds_exclusive": 42,
+        "output_start_seconds": 0,
+        "output_end_seconds_exclusive": 35
+      },
+      {
+        "file": "A-scenario-review.mp4",
+        "sha256": "0323072030eff13f004ed03e6ce1298e130435ad8f00b8f592a62e947b772e8b",
+        "size_bytes": 4097715,
+        "source_start_seconds": 10,
+        "source_end_seconds_exclusive": 88.7,
+        "output_start_seconds": 35,
+        "output_end_seconds_exclusive": 113.7
+      }
+    ],
+    "duration_seconds": 113.7,
+    "playback_speed": 1,
+    "removed_old_profile_seconds": 10,
+    "processing": {
+      "video_codec": "h264",
+      "width": 1080,
+      "height": 2400,
+      "frame_rate": "30/1",
+      "audio_codec": "aac",
+      "audio_sample_rate": 48000,
+      "audio_channels": 2,
+      "audio_bitrate": 192000,
+      "faststart": true,
+      "new_alert_sound_added": false,
+      "audio_timing_note": "첫 소스의 오디오 끝 뒤 약0.079667초를 무음으로 유지하여 35초 영상 경계와 둘째 소스 TTS 시점을 보존했다. 다른 소리를 추가하지 않았다.",
+      "effects": [],
+      "subtitles_added": false
+    },
+    "encoding": {
+      "exit_code": 0,
+      "warnings": [],
+      "filter_complex": "[0:v:0]trim=start_frame=210:end_frame=1260,setpts=PTS-STARTPTS[v0];[0:a:0]atrim=start=7:end=42,asetpts=PTS-STARTPTS,apad=whole_dur=35,atrim=duration=35[a0];[1:v:0]trim=start_frame=300:end_frame=2661,setpts=PTS-STARTPTS[v1];[1:a:0]atrim=start=10:end=88.7,asetpts=PTS-STARTPTS,apad=whole_dur=78.7,atrim=duration=78.7[a1];[v0][a0][v1][a1]concat=n=2:v=1:a=1[v][a]"
+    },
+    "privacy": "직접 입력 정보가 포함된 로컬 전용 산출물. 원본과 이전 산출물을 보존하며 외부 업로드하지 않음.",
+    "validation": {
+      "probe": {
+        "programs": [],
+        "stream_groups": [],
+        "streams": [
+          {
+            "index": 0,
+            "codec_name": "h264",
+            "codec_type": "video",
+            "width": 1080,
+            "height": 2400,
+            "avg_frame_rate": "30/1",
+            "start_time": "0.000000",
+            "duration": "113.700000",
+            "nb_frames": "3411"
+          },
+          {
+            "index": 1,
+            "codec_name": "aac",
+            "codec_type": "audio",
+            "sample_rate": "48000",
+            "channels": 2,
+            "avg_frame_rate": "0/0",
+            "start_time": "0.000000",
+            "duration": "113.700000",
+            "nb_frames": "5331"
+          }
+        ],
+        "format": {
+          "duration": "113.700000",
+          "size": "4749414"
+        }
+      },
+      "sha256": "84eea8054f07e036011b457cd0d0834d3cfe7d94205aebc22712f4dd54c1d604",
+      "size_bytes": 4749414,
+      "decode_exit_code": 0,
+      "decode_warnings": [],
+      "faststart_moov_before_mdat": true,
+      "mp4_top_level_atoms": [
+        {
+          "type": "ftyp",
+          "offset": 0,
+          "size": 32
+        },
+        {
+          "type": "moov",
+          "offset": 32,
+          "size": 137859
+        },
+        {
+          "type": "free",
+          "offset": 137891,
+          "size": 8
+        },
+        {
+          "type": "mdat",
+          "offset": 137899,
+          "size": 4611515
+        }
+      ],
+      "boundary_frame_comparisons": [
+        {
+          "source": "A-profile-retake-selected.mp4",
+          "source_frame": 210,
+          "output_frame": 0,
+          "ssim": 0.999406
+        },
+        {
+          "source": "A-profile-retake-selected.mp4",
+          "source_frame": 1259,
+          "output_frame": 1049,
+          "ssim": 0.999928
+        },
+        {
+          "source": "A-scenario-review.mp4",
+          "source_frame": 300,
+          "output_frame": 1050,
+          "ssim": 0.999743
+        }
+      ],
+      "tts_timing_and_volume_checks": [
+        {
+          "label": "질문 TTS",
+          "source_start_seconds": 39.7,
+          "output_start_seconds": 64.7,
+          "duration_seconds": 1.9,
+          "normalized_waveform_similarity": 0.999996,
+          "rms_gain_ratio": 0.999433
+        },
+        {
+          "label": "제안 TTS",
+          "source_start_seconds": 53.9,
+          "output_start_seconds": 78.9,
+          "duration_seconds": 6.3,
+          "normalized_waveform_similarity": 0.999994,
+          "rms_gain_ratio": 0.999386
+        }
+      ],
+      "source_files_unchanged": true
+    }
+  },
+  "final": {
+    "task_id": "task-20261031-233656-a-b-f3003e64",
+    "output_file": "A-scenario-final.mp4",
+    "video_source": {
+      "file": "A-scenario-assembled.mp4",
+      "sha256": "84eea8054f07e036011b457cd0d0834d3cfe7d94205aebc22712f4dd54c1d604",
+      "video_mode": "무변환 복사",
+      "edit_list": "assembled-edit.json"
+    },
+    "alert_sound": {
+      "source_file": "A-alert-mic-pickup.mp4",
+      "source_sha256": "fcb1688c2e812fab97412bdfbbc72cef1b941828efd6f91f2ed6f0947e6bf22a",
+      "source_start_seconds": 21.4,
+      "source_end_seconds_exclusive": 23.35,
+      "source_detected_chime_onset_seconds": 21.46,
+      "processed_clip_file": "alert-tone-processed.wav",
+      "processed_clip_sha256": "b2b8d8d61b0f863a6a54a22d6698ebb0166910fcafdd866833fa70c3bed70dc3",
+      "duration_seconds": 1.95,
+      "output_clip_start_seconds": 51.94,
+      "output_expected_audible_onset_seconds": 52.0,
+      "output_clip_end_seconds": 53.89,
+      "insertions": 1,
+      "effects_in_order": [
+        {
+          "aformat": "fltp",
+          "sample_rate": 48000,
+          "channels": 2
+        },
+        {
+          "volume_db": -6
+        },
+        {
+          "highpass_hz": 250
+        },
+        {
+          "lowpass_hz": 6500
+        },
+        {
+          "fade_in_seconds": 0.02
+        },
+        {
+          "fade_out_start_seconds": 1.8,
+          "fade_out_duration_seconds": 0.15
+        }
+      ],
+      "source_limitation": "원본 보충 녹음에 클리핑된 샘플144개가 관찰됐다는 담당자 기록이 있다. 감쇠·필터 적용은 이미 손실된 원음을 복원하지 않는다. 실제 단일 보충 녹음 한 구간만 사용했다.",
+      "reported_source_clipped_samples": 144,
+      "tone_filter": "atrim=start=21.40:end=23.35,asetpts=PTS-STARTPTS,aformat=sample_fmts=fltp:sample_rates=48000:channel_layouts=stereo,volume=-6dB,highpass=f=250,lowpass=f=6500,afade=t=in:st=0:d=0.020,afade=t=out:st=1.800:d=0.150"
+    },
+    "audio_mix": {
+      "filter": "[0:a:0]aformat=sample_fmts=fltp[base];[1:a:0]adelay=51940:all=1[tone];[base][tone]amix=inputs=2:duration=first:dropout_transition=0:normalize=0[a]",
+      "base_gain": 1,
+      "normalize": false,
+      "audio_codec": "aac",
+      "sample_rate": 48000,
+      "channels": 2,
+      "bitrate": 192000,
+      "generated_voice": false,
+      "other_music_or_sound": false,
+      "timing_note": "본편의 첫 경보 배너52.000초에 실제 알림음 시작을 맞췄다. 기존 질문TTS64.7초와 제안TTS78.9초는 유지한다."
+    },
+    "encoding": {
+      "exit_code": 0,
+      "warnings": [
+        "[aist#1:0/pcm_f32le @ 0xc7b018780] Guessed Channel Layout: stereo"
+      ],
+      "faststart": true
+    },
+    "privacy": "직접 입력 정보와 실제 보충 녹음이 포함된 로컬 전용 산출물. 외부 업로드하지 않았고 모든 원본·연결본을 보존했다.",
+    "validation": {
+      "probe": {
+        "programs": [],
+        "stream_groups": [],
+        "streams": [
+          {
+            "index": 0,
+            "codec_name": "h264",
+            "codec_type": "video",
+            "width": 1080,
+            "height": 2400,
+            "avg_frame_rate": "30/1",
+            "start_time": "0.000000",
+            "duration": "113.700000",
+            "nb_frames": "3411"
+          },
+          {
+            "index": 1,
+            "codec_name": "aac",
+            "codec_type": "audio",
+            "sample_rate": "48000",
+            "channels": 2,
+            "avg_frame_rate": "0/0",
+            "start_time": "0.000000",
+            "duration": "113.700000",
+            "nb_frames": "5331"
+          }
+        ],
+        "format": {
+          "duration": "113.700000",
+          "size": "4797783"
+        }
+      },
+      "sha256": "b754d5d3019965d157c70790f7868f4bc8037f6c28e26330b3c49abab0f26ced",
+      "size_bytes": 4797783,
+      "decode_exit_code": 0,
+      "decode_warnings": [],
+      "faststart_moov_before_mdat": true,
+      "mp4_top_level_atoms": [
+        {
+          "type": "ftyp",
+          "offset": 0,
+          "size": 32
+        },
+        {
+          "type": "moov",
+          "offset": 32,
+          "size": 137859
+        },
+        {
+          "type": "free",
+          "offset": 137891,
+          "size": 8
+        },
+        {
+          "type": "mdat",
+          "offset": 137899,
+          "size": 4659884
+        }
+      ],
+      "boundary_frame_comparisons": [
+        {
+          "source": "A-profile-retake-selected.mp4",
+          "source_frame": 210,
+          "output_frame": 0,
+          "ssim": 0.999406
+        },
+        {
+          "source": "A-profile-retake-selected.mp4",
+          "source_frame": 1259,
+          "output_frame": 1049,
+          "ssim": 0.999928
+        },
+        {
+          "source": "A-scenario-review.mp4",
+          "source_frame": 300,
+          "output_frame": 1050,
+          "ssim": 0.999743
+        }
+      ],
+      "tts_timing_and_volume_checks": [
+        {
+          "label": "질문 TTS",
+          "source_start_seconds": 39.7,
+          "output_start_seconds": 64.7,
+          "duration_seconds": 1.9,
+          "normalized_waveform_similarity": 0.999996,
+          "rms_gain_ratio": 0.999433
+        },
+        {
+          "label": "제안 TTS",
+          "source_start_seconds": 53.9,
+          "output_start_seconds": 78.9,
+          "duration_seconds": 6.3,
+          "normalized_waveform_similarity": 0.999994,
+          "rms_gain_ratio": 0.999386
+        }
+      ],
+      "source_files_unchanged": true,
+      "video_packets_identical_to_assembled": true,
+      "audio_peak_level_db_max": -3.04035,
+      "final_audio_clipping_detected": false,
+      "output_frame_check_seconds": [
+        0,
+        34.966667,
+        35,
+        52,
+        65,
+        79,
+        113
+      ]
+    }
+  },
+  "visual_review": "최종 장면표에서 프로필 선택·저장, 홈 준비, 공식 경보, 위급 3단계, 음성 인식·아이 동반 확인·맞춤 행동 순서 확인",
+  "b_readiness": "USB 연결과 사용자 홈 준비 확인. 서버 SSH 복원 및 만료 상태 읽기 확인. B 변경·녹화 전."
+}
