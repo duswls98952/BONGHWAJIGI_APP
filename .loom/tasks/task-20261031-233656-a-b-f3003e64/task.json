@@ -3,9 +3,9 @@
   "job_id": "job-20261031-152248-apk-cf438185",
   "title": "A 완성 영상 편집 및 B 촬영 준비",
   "description": "사용자가 선택한 세 번째 재촬영본의 7초부터 사용하여 A 본편을 완성하고 B 촬영을 준비한다.",
-  "status": "RUNNING",
+  "status": "DONE",
   "created_at": "2026-10-31T23:36:56+00:00",
-  "updated_at": "2026-10-31T23:37:00+00:00",
+  "updated_at": "2026-10-31T23:41:58+00:00",
   "order_index": 9,
   "assigned_agent": "foreground",
   "depends_on": [],
@@ -23,12 +23,25 @@
   "run_attempts": 0,
   "last_error": "",
   "commit_refs": [
-    "49491d84b981ca8d874aadc68ba0bde71cf5f050"
+    "49491d84b981ca8d874aadc68ba0bde71cf5f050",
+    "f18d6633b0fdff89c22ef5b7861495c2cd781262"
   ],
   "branch_name": "develop",
   "git_dirty": true,
-  "git_snapshot_captured_at": "2026-10-31T23:37:00+00:00",
-  "artifacts": [],
+  "git_snapshot_captured_at": "2026-10-31T23:41:58+00:00",
+  "artifacts": [
+    ".loom/tasks/task-20261031-233656-a-b-f3003e64/agent-events.jsonl",
+    ".loom/tasks/task-20261031-233656-a-b-f3003e64/artifacts.json",
+    ".loom/tasks/task-20261031-233656-a-b-f3003e64/context.md",
+    ".loom/tasks/task-20261031-233656-a-b-f3003e64/decision.md",
+    ".loom/tasks/task-20261031-233656-a-b-f3003e64/git-snapshot.json",
+    ".loom/tasks/task-20261031-233656-a-b-f3003e64/logs.txt",
+    ".loom/tasks/task-20261031-233656-a-b-f3003e64/previous-results.md",
+    ".loom/tasks/task-20261031-233656-a-b-f3003e64/prompt.md",
+    ".loom/tasks/task-20261031-233656-a-b-f3003e64/result.md",
+    ".loom/tasks/task-20261031-233656-a-b-f3003e64/troubleshooting.md",
+    "docs/16-scenario-a-final-and-b-recording.md"
+  ],
   "source_proposal_id": "",
   "source_prompt": ""
 }

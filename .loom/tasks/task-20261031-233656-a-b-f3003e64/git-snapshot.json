@@ -17,5 +17,17 @@
     ],
     "captured_at": "2026-10-31T23:37:00+00:00"
   },
-  "after": null
+  "after": {
+    "available": true,
+    "branch_name": "develop",
+    "commit_sha": "f18d6633b0fdff89c22ef5b7861495c2cd781262",
+    "dirty": true,
+    "staged_files": [],
+    "modified_files": [
+      ".loom/job-runs/job-run-20261031-233700-job-20261031-152248-apk-cf438185-a33a4480/job-run.json",
+      ".loom/task-definitions/task-def-20261031-233656-a-b-f1d40b51/task-definition.json"
+    ],
+    "untracked_files": [],
+    "captured_at": "2026-10-31T23:41:58+00:00"
+  }
 }

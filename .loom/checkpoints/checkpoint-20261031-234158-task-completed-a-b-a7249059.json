@@ -1,0 +1,19 @@
+{
+  "id": "checkpoint-20261031-234158-task-completed-a-b-a7249059",
+  "created_at": "2026-10-31T23:41:58+00:00",
+  "reason": "Task completed: A 완성 영상 편집 및 B 촬영 준비",
+  "summary": "A 완성 영상 편집 및 B 촬영 준비 -> DONE @ develop/f18d6633b0fd",
+  "job_id": "job-20261031-152248-apk-cf438185",
+  "task_id": "task-20261031-233656-a-b-f3003e64",
+  "commit_sha": "f18d6633b0fdff89c22ef5b7861495c2cd781262",
+  "branch_name": "develop",
+  "dirty": true,
+  "staged_files": [],
+  "modified_files": [
+    ".loom/job-runs/job-run-20261031-233700-job-20261031-152248-apk-cf438185-a33a4480/job-run.json",
+    ".loom/task-definitions/task-def-20261031-233656-a-b-f1d40b51/task-definition.json"
+  ],
+  "untracked_files": [],
+  "snapshot_captured_at": "2026-10-31T23:41:58+00:00",
+  "rollback_strategy": "revert-or-branch"
+}
