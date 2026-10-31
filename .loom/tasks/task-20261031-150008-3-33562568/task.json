@@ -3,9 +3,9 @@
   "job_id": "job-20261031-081911-png-html-28b089bf",
   "title": "긴급 대응 3단계 상단 문구 간소화",
   "description": "사용자의 최신 요청에 따라 HTML 긴급 대응 3단계에서 나의 대응 단계 설명과 시연 표기를 제거하고 단계 원형 배지와 산불 발생 제목만 남긴다.",
-  "status": "RUNNING",
+  "status": "DONE",
   "created_at": "2026-10-31T15:00:08+00:00",
-  "updated_at": "2026-10-31T15:00:11+00:00",
+  "updated_at": "2026-10-31T15:01:39+00:00",
   "order_index": 65,
   "assigned_agent": "codex",
   "depends_on": [],
@@ -21,12 +21,24 @@
   "run_attempts": 0,
   "last_error": "",
   "commit_refs": [
-    "196c9a1af5b6966cc14a0414171342d2ff32afd2"
+    "196c9a1af5b6966cc14a0414171342d2ff32afd2",
+    "9e1f9189a9736ac2f0fcebae9359a1e11f519a5a"
   ],
   "branch_name": "HeoNey_dev",
   "git_dirty": true,
-  "git_snapshot_captured_at": "2026-10-31T15:00:11+00:00",
-  "artifacts": [],
+  "git_snapshot_captured_at": "2026-10-31T15:01:39+00:00",
+  "artifacts": [
+    ".loom/tasks/task-20261031-150008-3-33562568/agent-events.jsonl",
+    ".loom/tasks/task-20261031-150008-3-33562568/artifacts.json",
+    ".loom/tasks/task-20261031-150008-3-33562568/context.md",
+    ".loom/tasks/task-20261031-150008-3-33562568/decision.md",
+    ".loom/tasks/task-20261031-150008-3-33562568/git-snapshot.json",
+    ".loom/tasks/task-20261031-150008-3-33562568/logs.txt",
+    ".loom/tasks/task-20261031-150008-3-33562568/previous-results.md",
+    ".loom/tasks/task-20261031-150008-3-33562568/prompt.md",
+    ".loom/tasks/task-20261031-150008-3-33562568/result.md",
+    ".loom/tasks/task-20261031-150008-3-33562568/troubleshooting.md"
+  ],
   "source_proposal_id": "",
   "source_prompt": ""
 }
