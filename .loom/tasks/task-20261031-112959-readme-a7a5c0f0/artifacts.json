@@ -1,0 +1,68 @@
+{
+  "status": "RUNNING",
+  "agent": "codex",
+  "mode": "foreground",
+  "execution_surface": "foreground",
+  "task_run_id": "task-run-20261031-113001-task-def-20261031-112959-readme-b3016ad1-49879dbc",
+  "generated_at": "2026-10-31T11:30:01+00:00",
+  "artifacts": [
+    ".loom/tasks/task-20261031-112959-readme-a7a5c0f0/prompt.md",
+    ".loom/tasks/task-20261031-112959-readme-a7a5c0f0/context.md",
+    ".loom/tasks/task-20261031-112959-readme-a7a5c0f0/previous-results.md",
+    ".loom/tasks/task-20261031-112959-readme-a7a5c0f0/git-snapshot.json",
+    ".loom/tasks/task-20261031-112959-readme-a7a5c0f0/result.md",
+    ".loom/tasks/task-20261031-112959-readme-a7a5c0f0/decision.md",
+    ".loom/tasks/task-20261031-112959-readme-a7a5c0f0/troubleshooting.md",
+    ".loom/tasks/task-20261031-112959-readme-a7a5c0f0/logs.txt",
+    ".loom/tasks/task-20261031-112959-readme-a7a5c0f0/agent-events.jsonl",
+    ".loom/tasks/task-20261031-112959-readme-a7a5c0f0/artifacts.json",
+    "README.md",
+    "docs/HeoNey/봉화지기_모바일_화면_기획서.md"
+  ],
+  "artifact_groups": {
+    "user_outputs": [
+      ".loom/tasks/task-20261031-112959-readme-a7a5c0f0/result.md",
+      ".loom/tasks/task-20261031-112959-readme-a7a5c0f0/decision.md",
+      ".loom/tasks/task-20261031-112959-readme-a7a5c0f0/troubleshooting.md"
+    ],
+    "execution_inputs": [
+      ".loom/tasks/task-20261031-112959-readme-a7a5c0f0/prompt.md",
+      ".loom/tasks/task-20261031-112959-readme-a7a5c0f0/context.md",
+      ".loom/tasks/task-20261031-112959-readme-a7a5c0f0/previous-results.md"
+    ],
+    "execution_audit": [
+      ".loom/tasks/task-20261031-112959-readme-a7a5c0f0/git-snapshot.json",
+      ".loom/tasks/task-20261031-112959-readme-a7a5c0f0/logs.txt",
+      ".loom/tasks/task-20261031-112959-readme-a7a5c0f0/agent-events.jsonl",
+      ".loom/tasks/task-20261031-112959-readme-a7a5c0f0/artifacts.json"
+    ],
+    "work_products": [
+      "README.md",
+      "docs/HeoNey/봉화지기_모바일_화면_기획서.md"
+    ]
+  },
+  "contract_snapshot": {
+    "schema_version": 1,
+    "contract_ids": [
+      "task-execution",
+      "done-guardrail"
+    ],
+    "contracts": [
+      {
+        "id": "task-execution",
+        "title": "Task Execution Context Contract",
+        "source_paths": [
+          "loom/application/context_pack.py",
+          "loom/application/team_policy.py"
+        ]
+      },
+      {
+        "id": "done-guardrail",
+        "title": "Task Completion Guardrail Contract",
+        "source_paths": [
+          "loom/application/services.py"
+        ]
+      }
+    ]
+  }
+}
