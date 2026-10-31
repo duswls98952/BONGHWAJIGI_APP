@@ -3,9 +3,9 @@
   "job_id": "job-20261031-081911-png-html-28b089bf",
   "title": "첫 설정 전체 동의 카드와 항목 간격 추가 축소",
   "description": "기존 모바일 HTML 첫 설정 시안의 전체 동의 카드와 내부 체크박스를 한 단계 더 줄이고, 필수·선택 동의 행 사이 간격도 추가로 좁힌다. 동의 문구와 동작은 유지한다.",
-  "status": "RUNNING",
+  "status": "DONE",
   "created_at": "2026-10-31T14:31:06+00:00",
-  "updated_at": "2026-10-31T14:31:09+00:00",
+  "updated_at": "2026-10-31T14:31:58+00:00",
   "order_index": 61,
   "assigned_agent": "codex",
   "depends_on": [],
@@ -21,12 +21,24 @@
   "run_attempts": 0,
   "last_error": "",
   "commit_refs": [
-    "9fad29265e5e3f22c6445dc6cd58891e01558b71"
+    "9fad29265e5e3f22c6445dc6cd58891e01558b71",
+    "e9276853b0cc1603de4fa8b1b3f924fb66648c0a"
   ],
   "branch_name": "HeoNey_dev",
   "git_dirty": true,
-  "git_snapshot_captured_at": "2026-10-31T14:31:09+00:00",
-  "artifacts": [],
+  "git_snapshot_captured_at": "2026-10-31T14:31:58+00:00",
+  "artifacts": [
+    ".loom/tasks/task-20261031-143106-task-3f992e6b/agent-events.jsonl",
+    ".loom/tasks/task-20261031-143106-task-3f992e6b/artifacts.json",
+    ".loom/tasks/task-20261031-143106-task-3f992e6b/context.md",
+    ".loom/tasks/task-20261031-143106-task-3f992e6b/decision.md",
+    ".loom/tasks/task-20261031-143106-task-3f992e6b/git-snapshot.json",
+    ".loom/tasks/task-20261031-143106-task-3f992e6b/logs.txt",
+    ".loom/tasks/task-20261031-143106-task-3f992e6b/previous-results.md",
+    ".loom/tasks/task-20261031-143106-task-3f992e6b/prompt.md",
+    ".loom/tasks/task-20261031-143106-task-3f992e6b/result.md",
+    ".loom/tasks/task-20261031-143106-task-3f992e6b/troubleshooting.md"
+  ],
   "source_proposal_id": "",
   "source_prompt": ""
 }
