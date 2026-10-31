@@ -6,4 +6,4 @@ Node24 TypeScript·45개 테스트·문서 링크 검사와 웹/native release �
 
 APK `artifacts/apk/bonghwajigi-0.2.1-private-arm64.apk`, SHA256 `5d4b2cb00adead0d2f6e2e1f51c76c32819c6b7b5095189549dd8fc0079aee25`, 실행 소스 `66c4d734287549d6403c429ca42e6fdb44d38d2b`. 빌드 시 dirty는 README와 안내 문서 네 개만 수정한 결과이며 실행 소스는 동일하다. 상세/화면/검증 JSON은 `docs/11-naver-map-integration.md`와 `docs/validation/android-map-*`에 기록했다.
 
-웹·Expo Go는 명시된 도식이다. 실제 GPS·백그라운드 위치·Firebase·iOS·검증된 대피 경로·실제 예측과 119 연락은 이번 범위에 포함하지 않는다. 키 오류·비행기 모드 검증은 하지 않았다. 최종 문서 커밋/원격 push와 메인 서브모듈 후속 기록을 이어서 완료한다.
+웹·Expo Go는 명시된 도식이다. 실제 GPS·백그라운드 위치·Firebase·iOS·검증된 대피 경로·실제 예측과 119 연락은 이번 범위에 포함하지 않는다. 키 오류·비행기 모드 검증은 하지 않았다. 앱 QA 커밋 ced24463bb79a6ef5d3b532f6d2a48215ca84a56를 원격 develop에 반영했다. 메인 ad0d34dd67bf7bf21829fc1bffd291f06c35b4d2의 apps/mobile이 이 SHA를 가리키며 실제 GitHub 재귀 clone에서 main/app clean 및 API 계약·소스 검사를 통과했다.
