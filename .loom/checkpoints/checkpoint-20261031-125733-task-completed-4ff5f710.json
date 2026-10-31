@@ -1,0 +1,20 @@
+{
+  "id": "checkpoint-20261031-125733-task-completed-4ff5f710",
+  "created_at": "2026-10-31T12:57:33+00:00",
+  "reason": "Task completed: 맞춤 행동요령 목록을 회색 박스로 감싸기",
+  "summary": "맞춤 행동요령 목록을 회색 박스로 감싸기 -> DONE @ HeoNey_dev/8c5413b12767",
+  "job_id": "job-20261031-081911-png-html-28b089bf",
+  "task_id": "task-20261031-125609-task-cc27395e",
+  "commit_sha": "8c5413b127676f95cfbdbfdf42a9510d5557cae0",
+  "branch_name": "HeoNey_dev",
+  "dirty": true,
+  "staged_files": [],
+  "modified_files": [
+    ".loom/job-runs/job-run-20261031-125611-job-20261031-081911-png-html-28b089bf-61d1b2aa/job-run.json",
+    ".loom/task-definitions/task-def-20261031-125609-task-def-f101354f/task-definition.json",
+    ".loom/tasks/task-20261031-120114-suite-bold-8ef87683/troubleshooting.md"
+  ],
+  "untracked_files": [],
+  "snapshot_captured_at": "2026-10-31T12:57:33+00:00",
+  "rollback_strategy": "revert-or-branch"
+}

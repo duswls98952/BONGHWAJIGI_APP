@@ -3,9 +3,9 @@
   "job_id": "job-20261031-081911-png-html-28b089bf",
   "title": "맞춤 행동요령 목록을 회색 박스로 감싸기",
   "description": "긴급 대응 HTML 시안의 맞춤 행동요령 번호 목록을 홈 주변 재난 사항 목록과 유사한 회색 배경의 큰 박스 안에 배치한다. 목록 내용과 순서는 유지한다.",
-  "status": "RUNNING",
+  "status": "DONE",
   "created_at": "2026-10-31T12:56:09+00:00",
-  "updated_at": "2026-10-31T12:56:11+00:00",
+  "updated_at": "2026-10-31T12:57:33+00:00",
   "order_index": 37,
   "assigned_agent": "codex",
   "depends_on": [],
@@ -21,12 +21,24 @@
   "run_attempts": 0,
   "last_error": "",
   "commit_refs": [
-    "ad883d5bae3a85a1e2c8c484136f21a81f1b9ec8"
+    "ad883d5bae3a85a1e2c8c484136f21a81f1b9ec8",
+    "8c5413b127676f95cfbdbfdf42a9510d5557cae0"
   ],
   "branch_name": "HeoNey_dev",
   "git_dirty": true,
-  "git_snapshot_captured_at": "2026-10-31T12:56:11+00:00",
-  "artifacts": [],
+  "git_snapshot_captured_at": "2026-10-31T12:57:33+00:00",
+  "artifacts": [
+    ".loom/tasks/task-20261031-125609-task-cc27395e/agent-events.jsonl",
+    ".loom/tasks/task-20261031-125609-task-cc27395e/artifacts.json",
+    ".loom/tasks/task-20261031-125609-task-cc27395e/context.md",
+    ".loom/tasks/task-20261031-125609-task-cc27395e/decision.md",
+    ".loom/tasks/task-20261031-125609-task-cc27395e/git-snapshot.json",
+    ".loom/tasks/task-20261031-125609-task-cc27395e/logs.txt",
+    ".loom/tasks/task-20261031-125609-task-cc27395e/previous-results.md",
+    ".loom/tasks/task-20261031-125609-task-cc27395e/prompt.md",
+    ".loom/tasks/task-20261031-125609-task-cc27395e/result.md",
+    ".loom/tasks/task-20261031-125609-task-cc27395e/troubleshooting.md"
+  ],
   "source_proposal_id": "",
   "source_prompt": ""
 }
