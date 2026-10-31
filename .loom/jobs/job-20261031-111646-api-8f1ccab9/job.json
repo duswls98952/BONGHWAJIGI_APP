@@ -1,0 +1,14 @@
+{
+  "id": "job-20261031-111646-api-8f1ccab9",
+  "title": "모바일 화면 API 매칭 최신화",
+  "goal": "최신 모바일 화면 기획과 저장소의 OpenAPI 사본을 대조해 API 매칭 리스트를 갱신하고, 사전준비 추천 기능의 API 공백과 서버 인계 항목을 명확히 기록한다.",
+  "status": "RUNNING",
+  "created_at": "2026-10-31T11:16:46+00:00",
+  "updated_at": "2026-10-31T11:16:52+00:00",
+  "context_refs": [],
+  "task_ids": [
+    "task-20261031-111651-api-9e9b2e02"
+  ],
+  "branch_name": "HeoNey_dev",
+  "checkpoint_ids": []
+}

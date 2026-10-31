@@ -1,0 +1,32 @@
+{
+  "id": "task-20261031-111651-api-9e9b2e02",
+  "job_id": "job-20261031-111646-api-8f1ccab9",
+  "title": "최신 화면 기준 API 매칭과 사전준비 공백 기록",
+  "description": "모바일 API 매칭 리스트를 현재 홈·긴급 대응·프로필·기본 수칙 기획과 맞추고, 사전준비 개인 추천을 제공할 API·프로필 필드 공백과 주변 재난 3개월·최대 3건 규칙의 계약 차이를 서버 인계 문서에 기록한다. 문서의 끊어진 참조를 현재 저장소 문서로 정리한다.",
+  "status": "RUNNING",
+  "created_at": "2026-10-31T11:16:51+00:00",
+  "updated_at": "2026-10-31T11:16:52+00:00",
+  "order_index": 1,
+  "assigned_agent": "codex",
+  "depends_on": [],
+  "expected_output": "docs/HeoNey/모바일_화면_API_매칭_리스트.md, docs/06-server-handoff.md 및 Loom 기록",
+  "done_condition": "API 매칭 리스트의 명칭과 화면 구성은 최신 기획과 맞고, 사전준비 추천 공백을 기존 스키마 근거와 함께 명시하며, 2D 경로·재난 목록 계약 차이를 기록하고, 문서 내부 링크와 검증이 통과한다.",
+  "in_scope": "docs/HeoNey/모바일_화면_API_매칭_리스트.md, docs/06-server-handoff.md, Loom 기록",
+  "out_of_scope": "OpenAPI 원본·생성 타입, 앱 코드, HTML 시안, 새 API 경로·필드 확정",
+  "validation_hint": "기획서·OpenAPI 대조, npm run check:docs, git diff --check, Loom task validate",
+  "required_docs": [],
+  "memory_refs": [],
+  "document_outputs": [],
+  "document_output_exceptions": [],
+  "run_attempts": 0,
+  "last_error": "",
+  "commit_refs": [
+    "07c249b0e5b292135041c2580cee99aaced2e2dc"
+  ],
+  "branch_name": "HeoNey_dev",
+  "git_dirty": true,
+  "git_snapshot_captured_at": "2026-10-31T11:16:52+00:00",
+  "artifacts": [],
+  "source_proposal_id": "",
+  "source_prompt": ""
+}

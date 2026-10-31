@@ -1,0 +1,68 @@
+{
+  "status": "RUNNING",
+  "agent": "codex",
+  "mode": "foreground",
+  "execution_surface": "foreground",
+  "task_run_id": "task-run-20261031-111652-task-def-20261031-111651-api-74a2ae33-b4b36ac3",
+  "generated_at": "2026-10-31T11:16:52+00:00",
+  "artifacts": [
+    ".loom/tasks/task-20261031-111651-api-9e9b2e02/prompt.md",
+    ".loom/tasks/task-20261031-111651-api-9e9b2e02/context.md",
+    ".loom/tasks/task-20261031-111651-api-9e9b2e02/previous-results.md",
+    ".loom/tasks/task-20261031-111651-api-9e9b2e02/git-snapshot.json",
+    ".loom/tasks/task-20261031-111651-api-9e9b2e02/result.md",
+    ".loom/tasks/task-20261031-111651-api-9e9b2e02/decision.md",
+    ".loom/tasks/task-20261031-111651-api-9e9b2e02/troubleshooting.md",
+    ".loom/tasks/task-20261031-111651-api-9e9b2e02/logs.txt",
+    ".loom/tasks/task-20261031-111651-api-9e9b2e02/agent-events.jsonl",
+    ".loom/tasks/task-20261031-111651-api-9e9b2e02/artifacts.json",
+    "docs/HeoNey/모바일_화면_API_매칭_리스트.md",
+    "docs/06-server-handoff.md"
+  ],
+  "artifact_groups": {
+    "user_outputs": [
+      ".loom/tasks/task-20261031-111651-api-9e9b2e02/result.md",
+      ".loom/tasks/task-20261031-111651-api-9e9b2e02/decision.md",
+      ".loom/tasks/task-20261031-111651-api-9e9b2e02/troubleshooting.md"
+    ],
+    "execution_inputs": [
+      ".loom/tasks/task-20261031-111651-api-9e9b2e02/prompt.md",
+      ".loom/tasks/task-20261031-111651-api-9e9b2e02/context.md",
+      ".loom/tasks/task-20261031-111651-api-9e9b2e02/previous-results.md"
+    ],
+    "execution_audit": [
+      ".loom/tasks/task-20261031-111651-api-9e9b2e02/git-snapshot.json",
+      ".loom/tasks/task-20261031-111651-api-9e9b2e02/logs.txt",
+      ".loom/tasks/task-20261031-111651-api-9e9b2e02/agent-events.jsonl",
+      ".loom/tasks/task-20261031-111651-api-9e9b2e02/artifacts.json"
+    ],
+    "work_products": [
+      "docs/HeoNey/모바일_화면_API_매칭_리스트.md",
+      "docs/06-server-handoff.md"
+    ]
+  },
+  "contract_snapshot": {
+    "schema_version": 1,
+    "contract_ids": [
+      "task-execution",
+      "done-guardrail"
+    ],
+    "contracts": [
+      {
+        "id": "task-execution",
+        "title": "Task Execution Context Contract",
+        "source_paths": [
+          "loom/application/context_pack.py",
+          "loom/application/team_policy.py"
+        ]
+      },
+      {
+        "id": "done-guardrail",
+        "title": "Task Completion Guardrail Contract",
+        "source_paths": [
+          "loom/application/services.py"
+        ]
+      }
+    ]
+  }
+}
