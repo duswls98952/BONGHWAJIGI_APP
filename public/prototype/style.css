@@ -41,7 +41,7 @@ p{margin:0}
 .tip-card svg{width:22px;height:22px;flex:none;fill:none;stroke:#1f6b8e;stroke-width:2}
 .tip-card strong{font-size:15px;display:block;margin-bottom:5px}
 .tip-card p{font-size:14px;color:var(--muted);line-height:1.4}
-.nearby{margin-top:26px}
+.nearby,.voice,.status,.personal{margin-top:26px}
 .feed{border:1px solid #e4e7e9;border-radius:14px;margin:0 -3px;padding:0 13px}
 .feed-row{height:86px;display:flex;align-items:center;gap:9px}
 .feed-row+.feed-row{border-top:1px solid #eef0f1}
@@ -63,18 +63,15 @@ p{margin:0}
 .hazard-map{height:176px;border:1px solid var(--ink)}
 .hazard-shape{position:absolute;left:10%;top:20%;width:68%;height:80%;z-index:1;clip-path:polygon(0 17%,58% 0,100% 37%,85% 94%,23% 100%,3% 65%);background:repeating-linear-gradient(132deg,transparent 0 8px,#c43a36 8px 10px,transparent 10px 15px),#d53a3440;outline:2px solid #c43a36}
 .hazard-map small{position:absolute;left:9px;bottom:7px;font-size:10px;color:#49535a;z-index:4}
-.voice{margin-top:57px}
 .waveform{height:45px;display:flex;align-items:center;justify-content:center;gap:4px}
 .waveform i{display:block;width:3px;height:var(--h);background:var(--blue);border-radius:5px;animation:pulse 1.2s ease-in-out infinite alternate}
 .waveform i:nth-child(even){animation-delay:.3s}
 @keyframes pulse{to{transform:scaleY(.6)}}
 @media(prefers-reduced-motion:reduce){.waveform i{animation:none}}
 .utterance{margin-top:22px;min-height:59px;border:1px solid var(--blue);border-radius:16px;background:#e8f2f6;color:var(--blue);display:grid;place-items:center;text-align:center;padding:12px;font-size:17px;font-weight:750;letter-spacing:-.5px}
-.status{margin-top:42px}
 .status h2{margin-bottom:10px}
 .tags{display:flex;flex-wrap:wrap;gap:6px}
 .tags span{border:1px solid var(--ink);border-radius:6px;background:var(--card);padding:7px 8px;font-size:12px;line-height:1.2}
-.personal{margin-top:27px}
 .personal h2{margin-bottom:19px}
 .steps{list-style:none;padding:0;margin:0}
 .steps li{display:flex;gap:12px;margin-bottom:22px}
