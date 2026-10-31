@@ -6,4 +6,4 @@
 
 검증: Node24 `npm run check`(TypeScript·40개 회귀·문서 링크), Android/Web export, 서명/권한/내장JS 검사, 실제 APK 설치·재실행, 서버104개 테스트와 HTTPS 흐름이 통과했다. 세부 근거는 docs/10-android-delivery.md 및 docs/validation/android-*.json에 있다.
 
-Firebase 기기 푸시·네이버 지도·실제 예측은 미준비/제외 범위다. 실제 GPS·백그라운드 위치·iOS·119 발신은 검증하지 않았다. 원격 앱 QA 커밋과 메인 서브모듈 고정은 이 검증 문서 커밋을 전송한 뒤 마감 기록에 추가한다.
+Firebase 기기 푸시·네이버 지도·실제 예측은 미준비/제외 범위다. 실제 GPS·백그라운드 위치·iOS·119 발신은 검증하지 않았다. 앱 QA 커밋 ed91b1ce78554e339e9a95bbc49a4028cc957178을 원격 develop에 게시했고, 메인 eaeef8756cd066518fb50bc634ff2a701c78a9f5의 apps/mobile gitlink로 고정했다. 새 원격 recursive clone에서 해당 앱 커밋 자동 초기화, 메인/앱 clean, API·lockfile 해시 검사가 통과했다. 이후 앱 커밋은 이 연계 결과와 Loom 완료 기록만 추가하며 실행 소스와 검증된 gitlink는 바뀌지 않는다.
