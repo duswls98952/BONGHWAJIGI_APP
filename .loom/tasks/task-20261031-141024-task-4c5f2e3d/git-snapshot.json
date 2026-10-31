@@ -1,0 +1,22 @@
+{
+  "before": {
+    "available": true,
+    "branch_name": "HeoNey_dev",
+    "commit_sha": "12edf0bef0c141f5c4e9304ee0ca89947de369fc",
+    "dirty": true,
+    "staged_files": [],
+    "modified_files": [
+      ".loom/events.jsonl",
+      ".loom/jobs/job-20261031-081911-png-html-28b089bf/job.json",
+      ".loom/tasks/task-20261031-120114-suite-bold-8ef87683/troubleshooting.md"
+    ],
+    "untracked_files": [
+      ".loom/job-runs/job-run-20261031-141026-job-20261031-081911-png-html-28b089bf-8e4b3090/",
+      ".loom/task-definitions/task-def-20261031-141024-task-def-9fab1252/",
+      ".loom/task-runs/task-run-20261031-141026-task-def-20261031-141024-task-def-9fab1252-977e7c82/",
+      ".loom/tasks/task-20261031-141024-task-4c5f2e3d/"
+    ],
+    "captured_at": "2026-10-31T14:10:26+00:00"
+  },
+  "after": null
+}

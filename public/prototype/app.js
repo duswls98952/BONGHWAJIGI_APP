@@ -11,7 +11,7 @@ function showScreen() {
   if (selected === 'loading' && !hash) {
     loadingTimer = window.setTimeout(() => {
       if (location.hash) return;
-      history.replaceState(null, '', '#home');
+      history.replaceState(null, '', '#onboarding');
       showScreen();
     }, 2600);
   }
@@ -31,6 +31,30 @@ document.querySelectorAll('[data-choice-group]').forEach((group) => {
     });
     button.classList.add('selected');
     button.setAttribute('aria-pressed', 'true');
+  });
+});
+
+const consentAll = document.querySelector('[data-consent-all]');
+const consentItems = [...document.querySelectorAll('[data-consent-item]')];
+
+consentAll.addEventListener('change', () => {
+  consentItems.forEach((item) => { item.checked = consentAll.checked; });
+});
+
+consentItems.forEach((item) => {
+  item.addEventListener('change', () => {
+    const selectedCount = consentItems.filter((entry) => entry.checked).length;
+    consentAll.checked = selectedCount === consentItems.length;
+    consentAll.indeterminate = selectedCount > 0 && selectedCount < consentItems.length;
+  });
+});
+
+document.querySelectorAll('[data-detail-toggle]').forEach((button) => {
+  button.addEventListener('click', () => {
+    const detail = document.getElementById(button.dataset.detailToggle);
+    const expanded = button.getAttribute('aria-expanded') === 'true';
+    button.setAttribute('aria-expanded', String(!expanded));
+    detail.hidden = expanded;
   });
 });
 
