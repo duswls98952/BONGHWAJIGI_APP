@@ -3,9 +3,9 @@
   "job_id": "job-20261031-081911-png-html-28b089bf",
   "title": "봉화 획별 색상과 지기 회색 로고 적용",
   "description": "제공한 숫자 4 이미지처럼 봉화의 획을 정부청색·정부적색 계열로 분리해 홈과 로딩 로고에 적용하고 지기는 아주 어두운 회색으로 표시한다. 로딩에서 봉화 색의 움직임만 유지한다. 숫자 24 참고 이미지를 저장하고 기획서에 연결한다.",
-  "status": "RUNNING",
+  "status": "DONE",
   "created_at": "2026-10-31T13:43:18+00:00",
-  "updated_at": "2026-10-31T13:43:20+00:00",
+  "updated_at": "2026-10-31T13:46:30+00:00",
   "order_index": 49,
   "assigned_agent": "codex",
   "depends_on": [],
@@ -21,12 +21,24 @@
   "run_attempts": 0,
   "last_error": "",
   "commit_refs": [
-    "443887b393c90432d6ba2463860ab1ebea971bfe"
+    "443887b393c90432d6ba2463860ab1ebea971bfe",
+    "638c63a588e44f619c00c0bdd1922bffa9e31841"
   ],
   "branch_name": "HeoNey_dev",
   "git_dirty": true,
-  "git_snapshot_captured_at": "2026-10-31T13:43:20+00:00",
-  "artifacts": [],
+  "git_snapshot_captured_at": "2026-10-31T13:46:30+00:00",
+  "artifacts": [
+    ".loom/tasks/task-20261031-134318-task-20f8048a/agent-events.jsonl",
+    ".loom/tasks/task-20261031-134318-task-20f8048a/artifacts.json",
+    ".loom/tasks/task-20261031-134318-task-20f8048a/context.md",
+    ".loom/tasks/task-20261031-134318-task-20f8048a/decision.md",
+    ".loom/tasks/task-20261031-134318-task-20f8048a/git-snapshot.json",
+    ".loom/tasks/task-20261031-134318-task-20f8048a/logs.txt",
+    ".loom/tasks/task-20261031-134318-task-20f8048a/previous-results.md",
+    ".loom/tasks/task-20261031-134318-task-20f8048a/prompt.md",
+    ".loom/tasks/task-20261031-134318-task-20f8048a/result.md",
+    ".loom/tasks/task-20261031-134318-task-20f8048a/troubleshooting.md"
+  ],
   "source_proposal_id": "",
   "source_prompt": ""
 }
