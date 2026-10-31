@@ -16,12 +16,12 @@ a{color:inherit;text-decoration:none}
 @keyframes loading-color-wave{to{background-position:100% 50%}}
 .onboarding-content{padding:14px 20px 38px}
 .onboarding-intro{margin:10px 0 30px}
-.onboarding-intro h1{font-size:25px;letter-spacing:-.9px;margin:0 0 8px}
-.onboarding-intro p,.onboarding-section-help{font-size:14px;line-height:1.5;color:#343b42}
+.onboarding-intro h1{font-size:25px;letter-spacing:-.9px;margin:0}
+.onboarding-section-help{font-size:14px;line-height:1.5;color:#343b42}
 .consent-section{margin-bottom:39px}
 .consent-section h2,.onboarding-profile h2{font-size:21px;margin:0 0 16px}
 .consent-all-row,.consent-row{display:flex;align-items:center;justify-content:space-between;gap:8px}
-.consent-all-row{min-height:84px;padding:12px 13px 12px 17px;border-radius:20px;background:#f0f2f7}
+.consent-all-row{min-height:66px;padding:8px 13px 8px 17px;border-radius:20px;background:#f0f2f7}
 .consent-check{display:flex;align-items:center;gap:13px;min-height:44px;flex:1;cursor:pointer;font-size:16px;line-height:1.4;font-weight:650;letter-spacing:-.5px}
 .consent-all-row .consent-check{font-size:20px;font-weight:750}
 .consent-check input{position:absolute;width:1px;height:1px;opacity:0}
@@ -48,8 +48,7 @@ a{color:inherit;text-decoration:none}
 .onboarding-section-help{margin:-6px 0 19px}
 .onboarding-profile .profile-card{margin-bottom:14px}
 .onboarding-profile .profile-card h3{font-size:17px;margin:0 0 22px;letter-spacing:-.4px}
-.onboarding-prototype-note{font-size:12px;line-height:1.5;color:#444c53;margin:22px 4px 13px}
-.onboarding-start{display:grid;place-items:center;min-height:54px;border-radius:12px;background:#003764;color:#fff;font-size:16px;font-weight:750}
+.onboarding-start{display:grid;place-items:center;min-height:54px;margin-top:22px;border-radius:12px;background:#003764;color:#fff;font-size:16px;font-weight:750}
 .onboarding-start:focus-visible{outline:3px solid #8db9d1;outline-offset:2px}
 .statusbar{height:44px;padding:11px 23px 0;display:flex;justify-content:space-between;font-size:15px;font-weight:700}
 .device-icons{display:flex;align-items:center;gap:5px;height:15px;font-size:14px}

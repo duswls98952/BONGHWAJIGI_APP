@@ -46,14 +46,12 @@
     <section class="screen onboarding-screen" id="onboarding" data-screen hidden>
       <div class="statusbar"><span>9:41</span><span class="device-icons"><svg><use href="#signal"/></svg><svg><use href="#wifi"/></svg><span class="battery"></span></span></div>
       <main class="onboarding-content">
-        <header class="onboarding-intro"><h1>시작 전 설정</h1><p>서비스 동의를 확인하고 내 정보를 입력해 주세요.</p></header>
+        <header class="onboarding-intro"><h1>나의 상태를 미리 설정하세요</h1></header>
         <section class="consent-section" aria-labelledby="consent-heading">
           <h2 id="consent-heading">이용 동의</h2>
           <div class="consent-all-row">
             <label class="consent-check"><input type="checkbox" data-consent-all><span class="checkbox-mark" aria-hidden="true"></span><span>전체 동의</span></label>
-            <button class="consent-detail-button" type="button" data-detail-toggle="consent-all-detail" aria-controls="consent-all-detail" aria-expanded="false" aria-label="전체 동의 설명 보기"><span aria-hidden="true">›</span></button>
           </div>
-          <p class="consent-detail" id="consent-all-detail" hidden>아래의 필수·선택 항목을 한 번에 선택합니다. 선택 항목은 각각 따로 결정할 수 있습니다.</p>
           <div class="consent-list">
             <div class="consent-row"><label class="consent-check"><input type="checkbox" data-consent-item><span class="checkbox-mark" aria-hidden="true"></span><span><strong>[필수]</strong> 서비스 이용약관</span></label><button class="consent-detail-button" type="button" data-detail-toggle="terms-detail" aria-controls="terms-detail" aria-expanded="false" aria-label="서비스 이용약관 설명 보기"><span aria-hidden="true">›</span></button></div>
             <p class="consent-detail" id="terms-detail" hidden>서비스의 이용 조건에 관한 항목입니다. 실제 약관 전문은 서비스 운영 전에 제공해야 합니다.</p>
@@ -72,8 +70,7 @@
           <div class="profile-card"><h3>이동과 의사소통</h3><div class="field"><span class="field-label">이동 능력</span><div class="choices" data-choice-group><button type="button">독립 보행</button><button type="button">보조기구 사용</button><button type="button">도움 필요</button></div></div><div class="field"><span class="field-label">계단 이용 가능 여부</span><div class="choices" data-choice-group><button type="button">가능</button><button type="button">어려움</button><button type="button">불가능</button></div></div><div class="field"><span class="field-label">선호 안내</span><div class="choices" data-choice-group><button type="button">음성</button><button type="button">문자</button><button type="button">모두</button></div></div><div class="field"><span class="field-label">시각 지원 필요 여부</span><div class="choices" data-choice-group><button type="button">필요 없음</button><button type="button">필요함</button></div></div><div class="field"><span class="field-label">청각 지원 필요 여부</span><div class="choices" data-choice-group><button type="button">필요 없음</button><button type="button">필요함</button></div></div><div class="field"><span class="field-label">함께 대피할 보호 대상</span><div class="choices" data-choice-group><button type="button">없음</button><button type="button">어린이</button><button type="button">고령자</button><button type="button">반려동물</button><button type="button">기타</button></div></div></div>
           <div class="profile-card"><h3>추가 정보</h3><div class="field"><label for="onboarding-health">건강 및 의료 특이사항 · 선택</label><input id="onboarding-health" placeholder="필요한 내용만 입력"><p class="field-help">민감정보예요. 필요한 경우에만 직접 입력해 주세요.</p></div><div class="field"><label for="onboarding-contact">긴급 연락처</label><input id="onboarding-contact" type="tel" autocomplete="tel" placeholder="연락처 입력"></div><div class="field"><label for="onboarding-place">주요 생활 장소</label><input id="onboarding-place" placeholder="장소 입력"></div><div class="field"><label for="onboarding-floor">건물 층수</label><input id="onboarding-floor" placeholder="층수 입력"></div></div>
         </section>
-        <p class="onboarding-prototype-note">화면 시안입니다. 선택한 동의와 입력한 정보는 저장되지 않습니다.</p>
-        <a class="onboarding-start" href="#home">홈 화면 보기</a>
+        <a class="onboarding-start" href="#home">저장</a>
       </main>
     </section>
     <section class="screen" id="home" data-screen hidden>
