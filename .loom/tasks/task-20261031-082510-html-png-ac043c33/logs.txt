@@ -1,0 +1,7 @@
+[2026-10-31T08:25:12+00:00] agent=codex task=task-20261031-082510-html-png-ac043c33 Foreground task session started.
+[2026-10-31] Safari에서 홈·긴급 대응·기본 수칙·3D 임시·프로필 화면 표시 확인.
+[2026-10-31] 긴급 화면의 기본 수칙·대피로 링크, 뒤로가기, 프로필 선택 변경·하단 스크롤 확인.
+[2026-10-31] 상태바 신호·Wi-Fi SVG 교체, 프로필 선택 aria-pressed 반영.
+[2026-10-31] HTML 화면 ID 5개, 내부 링크 대상 5개, SVG 참조 26개 검증.
+[2026-10-31] node --check public/prototype/app.js 성공; EXPO_NO_TELEMETRY=1 npm run export:web 성공.
+[2026-10-31] curl http://localhost:8081/prototype/index.html: HTTP 200, text/html.

@@ -8,11 +8,18 @@ function showScreen() {
 }
 
 document.querySelectorAll('[data-choice-group]').forEach((group) => {
+  group.querySelectorAll('button').forEach((button) => {
+    button.setAttribute('aria-pressed', button.classList.contains('selected'));
+  });
   group.addEventListener('click', (event) => {
     const button = event.target.closest('button');
     if (!button) return;
-    group.querySelectorAll('button').forEach((item) => item.classList.remove('selected'));
+    group.querySelectorAll('button').forEach((item) => {
+      item.classList.remove('selected');
+      item.setAttribute('aria-pressed', 'false');
+    });
     button.classList.add('selected');
+    button.setAttribute('aria-pressed', 'true');
   });
 });
 
