@@ -1,0 +1,32 @@
+{
+  "id": "task-20261031-111337-task-ea864715",
+  "job_id": "job-20261031-081911-png-html-28b089bf",
+  "title": "모바일 기획서에 사전준비 추천 사례 추가",
+  "description": "기존 모바일 화면 기획서의 나의 사전준비 설명에 사용자가 설정한 프로필 상태와 재난 상황에 따른 준비 카드 예시를 추가한다. 실제 기능 구현이나 확정된 서버 추천 규칙으로 오해되지 않게 구분한다.",
+  "status": "RUNNING",
+  "created_at": "2026-10-31T11:13:37+00:00",
+  "updated_at": "2026-10-31T11:13:39+00:00",
+  "order_index": 26,
+  "assigned_agent": "codex",
+  "depends_on": [],
+  "expected_output": "docs/HeoNey/봉화지기_모바일_화면_기획서.md의 개인별 추천 사례와 Loom 작업 기록",
+  "done_condition": "기획서에 구체적인 프로필 상태, 재난 상황, 추천 카드 문구가 연결된 사례가 2~3개 정리되고 최대 2개 카드·서버 제공·정적 시안 한계가 명확히 유지된다.",
+  "in_scope": "docs/HeoNey/봉화지기_모바일_화면_기획서.md, Loom 작업 기록",
+  "out_of_scope": "HTML 시안, Expo 앱, API 변경, 실제 추천 로직 구현",
+  "validation_hint": "사례와 기존 규칙의 일치성 검토, 문서 상대 링크 확인, git diff --check",
+  "required_docs": [],
+  "memory_refs": [],
+  "document_outputs": [],
+  "document_output_exceptions": [],
+  "run_attempts": 0,
+  "last_error": "",
+  "commit_refs": [
+    "38722cf6347a86315a7dc0cbf07430dd2c096afa"
+  ],
+  "branch_name": "HeoNey_dev",
+  "git_dirty": true,
+  "git_snapshot_captured_at": "2026-10-31T11:13:39+00:00",
+  "artifacts": [],
+  "source_proposal_id": "",
+  "source_prompt": ""
+}
