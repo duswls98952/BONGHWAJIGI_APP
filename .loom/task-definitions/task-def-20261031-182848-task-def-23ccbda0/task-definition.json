@@ -4,7 +4,7 @@
   "title": "목업 디자인 정렬과 음성 대화·시연 대피경로 연결",
   "description": "사용자가 지도 연결 후 로고/디자인 동일화, 문구 간소화와 버튼 대비, 위치·알림 바로가기, 실제 말하기 기반 대화·상태 갱신 및 시연 대피로 지도 표시를 직접 지시했다.",
   "created_at": "2026-10-31T18:28:48+00:00",
-  "updated_at": "2026-10-31T18:28:58+00:00",
+  "updated_at": "2026-10-31T19:21:30+00:00",
   "order_index": 5,
   "legacy_task_id": "task-20261031-182848-task-6374db8a",
   "depends_on": [],
@@ -25,7 +25,7 @@
     "docs/12-demo-polish-voice-route.md"
   ],
   "document_output_exceptions": [],
-  "default_agent": "",
+  "default_agent": "foreground",
   "context_policy_id": "",
   "executor_policy_id": "",
   "review_policy": "",
