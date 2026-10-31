@@ -1,0 +1,86 @@
+{
+  "task_id": "task-20261031-234210-b-f53c14ff",
+  "status": "촬영 및 원본 검증 통과",
+  "recording": {
+    "path": "artifacts/recordings/2026-11-01-B/B-scenario-01-raw.mp4",
+    "duration_seconds": 262.891367,
+    "size_bytes": 57166283,
+    "video": "H264 1080×2400 VFR",
+    "audio": "AAC 48kHz stereo 앱출력음성",
+    "stop_exit_code": 0,
+    "recording_processes_remaining": 0,
+    "sha256": "3b698222b1988ec9b6cbdcc8ed39ac071f009a155b7b6fc829d7430357b41d74"
+  },
+  "server": {
+    "separate_private_b_state": true,
+    "permissions": "600",
+    "a_file_unchanged": true,
+    "profile_before_revision": 6,
+    "profile_before_empty": true,
+    "profile_after_user_save_revision": 7,
+    "mobility": "walking_aid",
+    "assistive_device": true,
+    "child_registered": false,
+    "trigger_count": 1,
+    "urgent_alert_latency_seconds": 1.559,
+    "integration": "complete",
+    "initial_policy_revision": 27,
+    "initial_policy_level": "act",
+    "initial_question": "보조기구를 사용해 혼자 이동할 수 있나요?",
+    "dialogue": "qwen_grounded",
+    "context_before": 1,
+    "context_after_user_confirmation": 2,
+    "context": {
+      "can_move": true,
+      "alone_now": "yes",
+      "helper_present": false,
+      "child_present": null
+    },
+    "final_policy_revision": 28,
+    "final_policy_label": "대피",
+    "final_policy_pending": false,
+    "assistive_device_action": true,
+    "child_action": false,
+    "route_geometry_returned": true,
+    "route_input_versions_match": true,
+    "check_time_utc": "2026-10-31T23:46:54Z",
+    "route_valid_until_utc": "2026-10-31T23:50:05Z",
+    "context_valid_until_utc": "2026-10-31T23:50:57Z"
+  },
+  "user_confirmation": [
+    "B 프로필 선택·저장 완료",
+    "공통/보조기구 준비 카드 확인",
+    "대피2단계·질문·읽어주기 확인",
+    "혼자있음·이동가능 명시확인 완료",
+    "상태·행동요령·경로 촬영 완료"
+  ],
+  "limitations": [
+    "B 원본이며 대기구간 포함",
+    "사용자 발화 원음은 없고 STT 결과 화면으로 확인",
+    "마지막 화면은 상태·행동요령",
+    "실제GPS·119·외부업로드 미실행"
+  ],
+  "validation": {
+    "decode_exit_code": 0,
+    "decode_warnings": [],
+    "decode_mode": "passthrough, demux timebase",
+    "tts_ranges_seconds": [
+      [
+        130.581,
+        133.322
+      ],
+      [
+        164.195,
+        172.609
+      ]
+    ],
+    "header_frame_times_seconds": [
+      125,
+      225
+    ],
+    "scene_review": "프로필 선택·저장, 홈 보조기구 준비, 대피2 헤더, 보조기구 질문, 말하기·제안, 확정 상태·행동 확인",
+    "docs": "22개 파일 링크검사 exit0 통과",
+    "loom": "79개Task strict 검사 exit0 통과",
+    "git_diff_check": "exit0 통과"
+  }
+}
