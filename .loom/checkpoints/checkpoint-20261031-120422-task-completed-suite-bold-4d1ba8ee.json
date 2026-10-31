@@ -1,0 +1,19 @@
+{
+  "id": "checkpoint-20261031-120422-task-completed-suite-bold-4d1ba8ee",
+  "created_at": "2026-10-31T12:04:22+00:00",
+  "reason": "Task completed: 홈 브랜드명에 SUITE Bold 적용",
+  "summary": "홈 브랜드명에 SUITE Bold 적용 -> DONE @ HeoNey_dev/b442e4d0f6d5",
+  "job_id": "job-20261031-081911-png-html-28b089bf",
+  "task_id": "task-20261031-120114-suite-bold-8ef87683",
+  "commit_sha": "b442e4d0f6d5db09fafa94c4f6a1ae5d776a9d6f",
+  "branch_name": "HeoNey_dev",
+  "dirty": true,
+  "staged_files": [],
+  "modified_files": [
+    ".loom/job-runs/job-run-20261031-120116-job-20261031-081911-png-html-28b089bf-44b67533/job-run.json",
+    ".loom/task-definitions/task-def-20261031-120114-suite-bold-78957401/task-definition.json"
+  ],
+  "untracked_files": [],
+  "snapshot_captured_at": "2026-10-31T12:04:22+00:00",
+  "rollback_strategy": "revert-or-branch"
+}

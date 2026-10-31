@@ -2,9 +2,9 @@
   "id": "task-run-20261031-120116-task-def-20261031-120114-suite-bold-78957401-d6712943",
   "job_run_id": "job-run-20261031-120116-job-20261031-081911-png-html-28b089bf-44b67533",
   "task_definition_id": "task-def-20261031-120114-suite-bold-78957401",
-  "status": "RUNNING",
+  "status": "DONE",
   "created_at": "2026-10-31T12:01:16+00:00",
-  "updated_at": "2026-10-31T12:01:16+00:00",
+  "updated_at": "2026-10-31T12:04:22+00:00",
   "legacy_task_id": "task-20261031-120114-suite-bold-8ef87683",
   "attempt": 1,
   "assigned_agent": "codex",
@@ -13,13 +13,29 @@
   "lease_expires_at": "",
   "queued_at": "",
   "started_at": "2026-10-31T12:01:16+00:00",
-  "completed_at": "",
+  "completed_at": "2026-10-31T12:04:22+00:00",
   "last_error": "",
-  "commit_refs": [],
-  "branch_name": "",
-  "git_dirty": false,
-  "git_snapshot_captured_at": "",
-  "artifacts": [],
-  "checkpoint_ids": [],
+  "commit_refs": [
+    "b442e4d0f6d5db09fafa94c4f6a1ae5d776a9d6f",
+    "dba6e6e348737d57e020b6f040c44d7a3182fbd7"
+  ],
+  "branch_name": "HeoNey_dev",
+  "git_dirty": true,
+  "git_snapshot_captured_at": "2026-10-31T12:04:22+00:00",
+  "artifacts": [
+    ".loom/tasks/task-20261031-120114-suite-bold-8ef87683/agent-events.jsonl",
+    ".loom/tasks/task-20261031-120114-suite-bold-8ef87683/artifacts.json",
+    ".loom/tasks/task-20261031-120114-suite-bold-8ef87683/context.md",
+    ".loom/tasks/task-20261031-120114-suite-bold-8ef87683/decision.md",
+    ".loom/tasks/task-20261031-120114-suite-bold-8ef87683/git-snapshot.json",
+    ".loom/tasks/task-20261031-120114-suite-bold-8ef87683/logs.txt",
+    ".loom/tasks/task-20261031-120114-suite-bold-8ef87683/previous-results.md",
+    ".loom/tasks/task-20261031-120114-suite-bold-8ef87683/prompt.md",
+    ".loom/tasks/task-20261031-120114-suite-bold-8ef87683/result.md",
+    ".loom/tasks/task-20261031-120114-suite-bold-8ef87683/troubleshooting.md"
+  ],
+  "checkpoint_ids": [
+    "checkpoint-20261031-120422-task-completed-suite-bold-4d1ba8ee"
+  ],
   "review_required_reason": ""
 }

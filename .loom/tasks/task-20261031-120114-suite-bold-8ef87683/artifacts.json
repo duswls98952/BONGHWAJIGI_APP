@@ -1,10 +1,10 @@
 {
-  "status": "RUNNING",
+  "status": "DONE",
   "agent": "codex",
   "mode": "foreground",
   "execution_surface": "foreground",
   "task_run_id": "task-run-20261031-120116-task-def-20261031-120114-suite-bold-78957401-d6712943",
-  "generated_at": "2026-10-31T12:01:16+00:00",
+  "generated_at": "2026-10-31T12:04:22+00:00",
   "artifacts": [
     ".loom/tasks/task-20261031-120114-suite-bold-8ef87683/prompt.md",
     ".loom/tasks/task-20261031-120114-suite-bold-8ef87683/context.md",
@@ -15,10 +15,7 @@
     ".loom/tasks/task-20261031-120114-suite-bold-8ef87683/troubleshooting.md",
     ".loom/tasks/task-20261031-120114-suite-bold-8ef87683/logs.txt",
     ".loom/tasks/task-20261031-120114-suite-bold-8ef87683/agent-events.jsonl",
-    ".loom/tasks/task-20261031-120114-suite-bold-8ef87683/artifacts.json",
-    "public/prototype/style.css",
-    "public/prototype/fonts/SUITE-Bold.woff2",
-    "public/prototype/SUITE-LICENSE.txt"
+    ".loom/tasks/task-20261031-120114-suite-bold-8ef87683/artifacts.json"
   ],
   "artifact_groups": {
     "user_outputs": [
@@ -37,11 +34,7 @@
       ".loom/tasks/task-20261031-120114-suite-bold-8ef87683/agent-events.jsonl",
       ".loom/tasks/task-20261031-120114-suite-bold-8ef87683/artifacts.json"
     ],
-    "work_products": [
-      "public/prototype/style.css",
-      "public/prototype/fonts/SUITE-Bold.woff2",
-      "public/prototype/SUITE-LICENSE.txt"
-    ]
+    "work_products": []
   },
   "contract_snapshot": {
     "schema_version": 1,
