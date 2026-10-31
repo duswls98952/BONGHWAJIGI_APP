@@ -1,14 +1,14 @@
 import * as Location from 'expo-location';
 import * as TaskManager from 'expo-task-manager';
 import { Platform } from 'react-native';
-import { api } from '../api';
+import {mvpApi} from '../mvp/api';
 import { settings } from '../config';
 import { installationId, newId, secure } from './storage';
 export const LOCATION_TASK = 'bonghwajigi-evacuation-location';
 
 async function sendFix(location: Location.LocationObject) {
   if (location.coords.accuracy === null || location.coords.accuracy < 0) throw new Error('위치 정확도를 확인할 수 없습니다.');
-  return api.location({ fix_id: newId(), installation_id: await installationId(), latitude: location.coords.latitude, longitude: location.coords.longitude, accuracy_m: location.coords.accuracy, captured_at: new Date(location.timestamp).toISOString() });
+  return mvpApi.sendLocation({ fix_id: newId(), installation_id: await installationId(), latitude: location.coords.latitude, longitude: location.coords.longitude, accuracy_m: location.coords.accuracy, captured_at: new Date(location.timestamp).toISOString() });
 }
 // Must be defined at module scope. No React state or persistent socket is used here.
 if (Platform.OS !== 'web' && !TaskManager.isTaskDefined(LOCATION_TASK)) {
@@ -21,6 +21,7 @@ if (Platform.OS !== 'web' && !TaskManager.isTaskDefined(LOCATION_TASK)) {
   });
 }
 export async function shareCurrentLocation() {
+  if(settings.mode==='mock')throw new Error('모의 시연에서는 합성 위치를 사용합니다. 실제 위치는 서버 연결 모드에서 공유할 수 있어요.');
   const permission = await Location.requestForegroundPermissionsAsync();
   if (permission.status !== 'granted') throw new Error('위치 권한이 필요합니다. 권한 없이도 공식 안내를 볼 수 있습니다.');
   return sendFix(await Location.getCurrentPositionAsync({ accuracy: Location.Accuracy.High }));

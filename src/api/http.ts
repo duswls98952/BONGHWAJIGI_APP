@@ -1,12 +1,27 @@
 import type { Envelope } from './types';
+type WireMeta = Omit<Envelope<unknown>['meta'], 'schema_version'> & { schema_version: string };
+export type VersionedTransport<M extends WireMeta> = <T>(path: string, options?: RequestOptions) => Promise<{meta: M; data: T}>;
 export class ApiError extends Error {
   constructor(public status: number, public code: string, public retryAfterMs = 0) { super(code); }
 }
 export type RequestOptions = { method?: string; body?: unknown; signal?: AbortSignal; idempotencyKey?: string; public?: boolean };
 export type Transport = <T>(path: string, options?: RequestOptions) => Promise<Envelope<T>>;
 export function createHttpTransport(baseUrl: string, getToken: () => Promise<string | null>, fetcher: typeof fetch = fetch): Transport {
+  return createVersionedHttpTransport<Envelope<unknown>['meta']>(baseUrl, getToken, '0.1.0', {fetcher});
+}
+export function validApiUrl(value: string, allowLoopbackHttp = false) {
+  try {
+    const url = new URL(value);
+    if (url.username || url.password || url.search || url.hash) return false;
+    return url.protocol === 'https:' || (allowLoopbackHttp && url.protocol === 'http:' && ['localhost', '127.0.0.1', '[::1]', '10.0.2.2'].includes(url.hostname));
+  } catch { return false; }
+}
+export function createVersionedHttpTransport<M extends WireMeta>(
+  baseUrl: string, getToken: () => Promise<string | null>, schemaVersion: M['schema_version'],
+  {fetcher = fetch, allowLoopbackHttp = false}: {fetcher?: typeof fetch; allowLoopbackHttp?: boolean} = {},
+): VersionedTransport<M> {
   return async <T>(path: string, options: RequestOptions = {}) => {
-    if (!baseUrl.startsWith('https://')) throw new ApiError(0, 'HTTPS_API_URL_REQUIRED');
+    if (!validApiUrl(baseUrl, allowLoopbackHttp)) throw new ApiError(0, 'HTTPS_API_URL_REQUIRED');
     const token = options.public ? null : await getToken();
     if (!options.public && !token) throw new ApiError(401, 'AUTH_PROVIDER_NOT_CONNECTED');
     const controller = new AbortController();
@@ -25,12 +40,12 @@ export function createHttpTransport(baseUrl: string, getToken: () => Promise<str
         const problem = await res.json().catch(() => ({}));
         const retry = res.headers.get('Retry-After');
         const wait = retry ? (Number.isFinite(Number(retry)) ? Number(retry) * 1000 : Date.parse(retry) - Date.now()) : 0;
-        throw new ApiError(res.status, typeof problem.code === 'string' ? problem.code : `HTTP_${res.status}`, Math.max(0, wait || 0));
+        throw new ApiError(res.status, typeof problem.code === 'string' ? problem.code : typeof problem.detail === 'string' ? problem.detail : `HTTP_${res.status}`, Math.max(0, wait || 0));
       }
-      if (res.status === 204) return undefined as unknown as Envelope<T>;
+      if (res.status === 204) return undefined as unknown as {meta: M; data: T};
       const body = await res.json();
-      if (!body?.meta || body.meta.schema_version !== '0.1.0' || !['live', 'simulation'].includes(body.meta.mode) || !Object.hasOwn(body, 'data')) throw new ApiError(502, 'INVALID_ENVELOPE');
-      return body as Envelope<T>;
+      if (!body?.meta || body.meta.schema_version !== schemaVersion || !['live', 'simulation'].includes(body.meta.mode) || !Object.hasOwn(body, 'data')) throw new ApiError(502, 'INVALID_ENVELOPE');
+      return body as {meta: M; data: T};
     } finally {
       clearTimeout(timer);
       options.signal?.removeEventListener('abort', onAbort);

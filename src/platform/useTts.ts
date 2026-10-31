@@ -1,7 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 import * as Speech from 'expo-speech';
-import type { Schema } from '../api/types';
-export function useTts(utterance: Schema<'Utterance'> | null | undefined, key: string, allowed: boolean) {
+export function useTts(utterance: {text:string} | null | undefined, key: string, allowed: boolean) {
   const [enabled, setEnabled] = useState(false);
   const [speaking, setSpeaking] = useState(false);
   const [error, setError] = useState('');

@@ -1,6 +1,6 @@
 {
   "name": "bonghwajigi-app",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "main": "expo-router/entry",
   "dependencies": {
     "@mj-studio/react-native-naver-map": "2.9.1",
@@ -49,7 +49,8 @@
     "export:android": "expo export --platform android",
     "export:web": "expo export --platform web",
     "api:setup": "npm ci --prefix tools/api-generator",
-    "start:go": "expo start --go"
+    "start:go": "expo start --go",
+    "api:generate:mvp": "node tools/api-generator/node_modules/openapi-typescript/bin/cli.js docs/api/mvp-openapi.json -o src/api/mvp-generated.ts --default-non-nullable false"
   },
   "private": true,
   "engines": {

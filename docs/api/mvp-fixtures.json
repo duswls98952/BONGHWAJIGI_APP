@@ -1,0 +1,953 @@
+{
+  "기준": "실제 테스트 서버에서 캡처한 합성0.2 응답, 인증값 없음",
+  "reference_time": "2026-10-31T12:00:00+00:00",
+  "snapshots": {
+    "1": {
+      "meta": {
+        "schema_version": "0.2.0-mvp",
+        "mode": "simulation",
+        "request_id": "be7272c4-388d-480d-8805-56ddf7067108",
+        "generated_at": "2026-10-31T16:06:56.780297Z",
+        "data_status": "current"
+      },
+      "data": {
+        "id": "9caaab5f-8b09-4efe-ab6c-b75be324b126",
+        "scenario_id": "three-stage-1e81b193602e4b0ebf748106de9a8e33",
+        "revision": 1,
+        "evaluated_at": "2026-10-31T12:00:00Z",
+        "pending_update": false,
+        "error_code": null,
+        "content": {
+          "mode": "simulation",
+          "operational_use": false,
+          "disaster_type": "wildfire",
+          "incident_id": "fire",
+          "incident": {
+            "title": "합성 산불",
+            "origin": "synthetic",
+            "observed_at": "2026-10-31T12:00:00Z",
+            "expires_at": "2026-10-31T13:00:00Z",
+            "area": {
+              "west": 128.0,
+              "south": 35.0,
+              "east": 130.0,
+              "north": 37.0
+            },
+            "sources": [
+              {
+                "title": "합성 시연 출처",
+                "url": "https://example.invalid/mvp",
+                "published_at": "2026-10-31T12:00:00Z",
+                "collected_at": "2026-10-31T12:00:00Z",
+                "verified": true,
+                "publisher": null,
+                "publisher_url": null
+              }
+            ]
+          },
+          "state": "simulation_preview",
+          "relevance": {
+            "status": "inside",
+            "reason_code": "LOCATION_INSIDE_AREA"
+          },
+          "personal_response": {
+            "level": "prepare",
+            "number": 1,
+            "label": "경고",
+            "reason_codes": [
+              "RELATED_FIRE_PREPARATION"
+            ],
+            "policy_version": "wildfire-three-stage-v1",
+            "hazard_band": "H1",
+            "questions": [],
+            "support_available": true,
+            "automatic_emergency_call": false
+          },
+          "actions": [
+            {
+              "action_id": "mvp-prepare-follow",
+              "text": "공식 대피 안내와 재난문자를 확인하고 대피할 장소를 확인하세요.",
+              "priority": 1,
+              "source": {
+                "title": "국민안전24 산불 행동요령 확인본",
+                "url": "https://www.safekorea.go.kr/safekorea-kor/acts/nacts/action-guide.do?category=forestFires&menuSn=4",
+                "published_at": "2026-10-31T12:00:00Z",
+                "collected_at": "2026-10-31T12:00:00Z",
+                "verified": true,
+                "publisher": null,
+                "publisher_url": null
+              },
+              "guidance_id": "mvp-prepare-follow",
+              "guidance_revision": 1,
+              "approved_policy": true,
+              "reason_code": "reviewed_three_stage_policy"
+            },
+            {
+              "action_id": "mvp-prepare-bag",
+              "text": "즉시 이동할 수 있도록 비상용품과 가방을 준비하세요.",
+              "priority": 2,
+              "source": {
+                "title": "국민안전24 산불 행동요령 확인본",
+                "url": "https://www.safekorea.go.kr/safekorea-kor/acts/nacts/action-guide.do?category=forestFires&menuSn=4",
+                "published_at": "2026-10-31T12:00:00Z",
+                "collected_at": "2026-10-31T12:00:00Z",
+                "verified": true,
+                "publisher": null,
+                "publisher_url": null
+              },
+              "guidance_id": "mvp-prepare-bag",
+              "guidance_revision": 1,
+              "approved_policy": true,
+              "reason_code": "reviewed_three_stage_policy"
+            }
+          ],
+          "official_alerts": [
+            {
+              "alert_id": "fixture-notice",
+              "mode": "simulation",
+              "revision": 1,
+              "state": "issued",
+              "authority": "합성 시연 발령기관",
+              "severity": "주의(시연)",
+              "issued_at": "2026-10-31T12:00:00Z",
+              "expires_at": "2026-10-31T13:00:00Z",
+              "area": {
+                "west": 128.0,
+                "south": 35.0,
+                "east": 130.0,
+                "north": 37.0
+              },
+              "raw_text": "[합성 시연] 산불 상황입니다. 지역 안내와 대피 준비 사항을 확인하세요.",
+              "source": {
+                "title": "합성 시연 출처",
+                "url": "https://example.invalid/mvp",
+                "published_at": "2026-10-31T12:00:00Z",
+                "collected_at": "2026-10-31T12:00:00Z",
+                "verified": true,
+                "publisher": null,
+                "publisher_url": null
+              },
+              "validity_confirmed": true,
+              "instruction_kind": "prepare",
+              "record_status": "active_record",
+              "user_relevance": "inside",
+              "requires_qwen": false
+            }
+          ],
+          "prediction": {
+            "status": "unavailable",
+            "probability": null,
+            "used_for_response_level": false,
+            "reason": "MODEL_CONNECTION_EXCLUDED"
+          },
+          "context": {
+            "status": "not_requested",
+            "summary": null,
+            "facts": [],
+            "sources": [],
+            "summary_review_status": "not_reviewed",
+            "error_code": null,
+            "template_fallback": true
+          },
+          "input_versions": {
+            "profile:a": 1,
+            "location:a": 1,
+            "incident:fire": 1,
+            "rules:active": 1,
+            "alert:fire/fixture-notice": 1,
+            "environment:fire": 1,
+            "guidance:mvp-prepare-follow": 1,
+            "guidance:mvp-prepare-bag": 1
+          },
+          "valid_until": "2026-10-31T12:05:00Z",
+          "assistant_utterance": {
+            "id": "9caaab5f-8b09-4efe-ab6c-b75be324b126:1",
+            "text": "공식 대피 안내와 재난문자를 확인하고 대피할 장소를 확인하세요.\n즉시 이동할 수 있도록 비상용품과 가방을 준비하세요.",
+            "source": "reviewed_policy_text",
+            "valid_until": "2026-10-31T12:05:00Z"
+          },
+          "user_id": "a",
+          "notification": {
+            "status": "configuration_pending",
+            "dispatched": false
+          }
+        },
+        "user_context": {
+          "revision": 0,
+          "status": "unavailable",
+          "data": null
+        }
+      }
+    },
+    "2": {
+      "meta": {
+        "schema_version": "0.2.0-mvp",
+        "mode": "simulation",
+        "request_id": "bcc9d608-cb59-4380-b52a-4be8b9bdc7ba",
+        "generated_at": "2026-10-31T16:06:56.825324Z",
+        "data_status": "current"
+      },
+      "data": {
+        "id": "9caaab5f-8b09-4efe-ab6c-b75be324b126",
+        "scenario_id": "three-stage-1e81b193602e4b0ebf748106de9a8e33",
+        "revision": 2,
+        "evaluated_at": "2026-10-31T12:00:00Z",
+        "pending_update": false,
+        "error_code": null,
+        "content": {
+          "mode": "simulation",
+          "operational_use": false,
+          "disaster_type": "wildfire",
+          "incident_id": "fire",
+          "incident": {
+            "title": "합성 산불",
+            "origin": "synthetic",
+            "observed_at": "2026-10-31T12:00:00Z",
+            "expires_at": "2026-10-31T13:00:00Z",
+            "area": {
+              "west": 128.0,
+              "south": 35.0,
+              "east": 130.0,
+              "north": 37.0
+            },
+            "sources": [
+              {
+                "title": "합성 시연 출처",
+                "url": "https://example.invalid/mvp",
+                "published_at": "2026-10-31T12:00:00Z",
+                "collected_at": "2026-10-31T12:00:00Z",
+                "verified": true,
+                "publisher": null,
+                "publisher_url": null
+              }
+            ]
+          },
+          "state": "simulation_preview",
+          "relevance": {
+            "status": "inside",
+            "reason_code": "LOCATION_INSIDE_AREA"
+          },
+          "personal_response": {
+            "level": "act",
+            "number": 2,
+            "label": "대피",
+            "reason_codes": [
+              "IMMEDIATE_LOCAL_HAZARD"
+            ],
+            "policy_version": "wildfire-three-stage-v1",
+            "hazard_band": "H3",
+            "questions": [],
+            "support_available": true,
+            "automatic_emergency_call": false
+          },
+          "actions": [
+            {
+              "action_id": "mvp-act-follow",
+              "text": "관계자의 대피 안내에 따라 안내된 장소로 즉시 이동하세요.",
+              "priority": 1,
+              "source": {
+                "title": "국민안전24 산불 행동요령 확인본",
+                "url": "https://www.safekorea.go.kr/safekorea-kor/acts/nacts/action-guide.do?category=forestFires&menuSn=4",
+                "published_at": "2026-10-31T12:00:00Z",
+                "collected_at": "2026-10-31T12:00:00Z",
+                "verified": true,
+                "publisher": null,
+                "publisher_url": null
+              },
+              "guidance_id": "mvp-act-follow",
+              "guidance_revision": 1,
+              "approved_policy": true,
+              "reason_code": "reviewed_three_stage_policy"
+            }
+          ],
+          "official_alerts": [
+            {
+              "alert_id": "fixture-notice",
+              "mode": "simulation",
+              "revision": 1,
+              "state": "issued",
+              "authority": "합성 시연 발령기관",
+              "severity": "주의(시연)",
+              "issued_at": "2026-10-31T12:00:00Z",
+              "expires_at": "2026-10-31T13:00:00Z",
+              "area": {
+                "west": 128.0,
+                "south": 35.0,
+                "east": 130.0,
+                "north": 37.0
+              },
+              "raw_text": "[합성 시연] 산불 상황입니다. 지역 안내와 대피 준비 사항을 확인하세요.",
+              "source": {
+                "title": "합성 시연 출처",
+                "url": "https://example.invalid/mvp",
+                "published_at": "2026-10-31T12:00:00Z",
+                "collected_at": "2026-10-31T12:00:00Z",
+                "verified": true,
+                "publisher": null,
+                "publisher_url": null
+              },
+              "validity_confirmed": true,
+              "instruction_kind": "prepare",
+              "record_status": "active_record",
+              "user_relevance": "inside",
+              "requires_qwen": false
+            }
+          ],
+          "prediction": {
+            "status": "unavailable",
+            "probability": null,
+            "used_for_response_level": false,
+            "reason": "MODEL_CONNECTION_EXCLUDED"
+          },
+          "context": {
+            "status": "not_requested",
+            "summary": null,
+            "facts": [],
+            "sources": [],
+            "summary_review_status": "not_reviewed",
+            "error_code": null,
+            "template_fallback": true
+          },
+          "input_versions": {
+            "profile:a": 1,
+            "location:a": 1,
+            "incident:fire": 1,
+            "rules:active": 1,
+            "alert:fire/fixture-notice": 1,
+            "environment:fire": 2,
+            "guidance:mvp-act-follow": 1
+          },
+          "valid_until": "2026-10-31T12:05:00Z",
+          "assistant_utterance": {
+            "id": "9caaab5f-8b09-4efe-ab6c-b75be324b126:2",
+            "text": "관계자의 대피 안내에 따라 안내된 장소로 즉시 이동하세요.",
+            "source": "reviewed_policy_text",
+            "valid_until": "2026-10-31T12:05:00Z"
+          },
+          "user_id": "a",
+          "notification": {
+            "status": "configuration_pending",
+            "dispatched": false
+          }
+        },
+        "user_context": {
+          "revision": 0,
+          "status": "unavailable",
+          "data": null
+        }
+      }
+    },
+    "3": {
+      "meta": {
+        "schema_version": "0.2.0-mvp",
+        "mode": "simulation",
+        "request_id": "de971959-dfe4-4d6e-ac34-f0d1e29303db",
+        "generated_at": "2026-10-31T16:06:56.860765Z",
+        "data_status": "current"
+      },
+      "data": {
+        "id": "9caaab5f-8b09-4efe-ab6c-b75be324b126",
+        "scenario_id": "three-stage-1e81b193602e4b0ebf748106de9a8e33",
+        "revision": 3,
+        "evaluated_at": "2026-10-31T12:00:00Z",
+        "pending_update": false,
+        "error_code": null,
+        "content": {
+          "mode": "simulation",
+          "operational_use": false,
+          "disaster_type": "wildfire",
+          "incident_id": "fire",
+          "incident": {
+            "title": "합성 산불",
+            "origin": "synthetic",
+            "observed_at": "2026-10-31T12:00:00Z",
+            "expires_at": "2026-10-31T13:00:00Z",
+            "area": {
+              "west": 128.0,
+              "south": 35.0,
+              "east": 130.0,
+              "north": 37.0
+            },
+            "sources": [
+              {
+                "title": "합성 시연 출처",
+                "url": "https://example.invalid/mvp",
+                "published_at": "2026-10-31T12:00:00Z",
+                "collected_at": "2026-10-31T12:00:00Z",
+                "verified": true,
+                "publisher": null,
+                "publisher_url": null
+              }
+            ]
+          },
+          "state": "simulation_preview",
+          "relevance": {
+            "status": "inside",
+            "reason_code": "LOCATION_INSIDE_AREA"
+          },
+          "personal_response": {
+            "level": "request_assistance",
+            "number": 3,
+            "label": "위급",
+            "reason_codes": [
+              "USER_CANNOT_EVACUATE"
+            ],
+            "policy_version": "wildfire-three-stage-v1",
+            "hazard_band": "H3",
+            "questions": [],
+            "support_available": true,
+            "automatic_emergency_call": false
+          },
+          "actions": [
+            {
+              "action_id": "mvp-assist-call",
+              "text": "119에 연락해 현재 위치와 대피할 수 없는 상황을 알리고 도움을 요청하세요.",
+              "priority": 1,
+              "source": {
+                "title": "국민안전24 산불 행동요령 확인본",
+                "url": "https://www.safekorea.go.kr/safekorea-kor/acts/nacts/action-guide.do?category=forestFires&menuSn=4",
+                "published_at": "2026-10-31T12:00:00Z",
+                "collected_at": "2026-10-31T12:00:00Z",
+                "verified": true,
+                "publisher": null,
+                "publisher_url": null
+              },
+              "guidance_id": "mvp-assist-call",
+              "guidance_revision": 1,
+              "approved_policy": true,
+              "reason_code": "reviewed_three_stage_policy"
+            },
+            {
+              "action_id": "mvp-assist-location",
+              "text": "알고 있는 주소나 주변 지형지물, 함께 있는 인원과 이동에 필요한 도움을 알리세요.",
+              "priority": 2,
+              "source": {
+                "title": "국민안전24 산불 행동요령 확인본",
+                "url": "https://www.safekorea.go.kr/safekorea-kor/acts/nacts/action-guide.do?category=forestFires&menuSn=4",
+                "published_at": "2026-10-31T12:00:00Z",
+                "collected_at": "2026-10-31T12:00:00Z",
+                "verified": true,
+                "publisher": null,
+                "publisher_url": null
+              },
+              "guidance_id": "mvp-assist-location",
+              "guidance_revision": 1,
+              "approved_policy": true,
+              "reason_code": "reviewed_three_stage_policy"
+            },
+            {
+              "action_id": "mvp-assist-follow",
+              "text": "구조기관의 안내를 따르세요. 안내를 받는 동안에도 신고 연결 수단을 사용할 수 있습니다.",
+              "priority": 3,
+              "source": {
+                "title": "국민안전24 산불 행동요령 확인본",
+                "url": "https://www.safekorea.go.kr/safekorea-kor/acts/nacts/action-guide.do?category=forestFires&menuSn=4",
+                "published_at": "2026-10-31T12:00:00Z",
+                "collected_at": "2026-10-31T12:00:00Z",
+                "verified": true,
+                "publisher": null,
+                "publisher_url": null
+              },
+              "guidance_id": "mvp-assist-follow",
+              "guidance_revision": 1,
+              "approved_policy": true,
+              "reason_code": "reviewed_three_stage_policy"
+            }
+          ],
+          "official_alerts": [
+            {
+              "alert_id": "fixture-notice",
+              "mode": "simulation",
+              "revision": 1,
+              "state": "issued",
+              "authority": "합성 시연 발령기관",
+              "severity": "주의(시연)",
+              "issued_at": "2026-10-31T12:00:00Z",
+              "expires_at": "2026-10-31T13:00:00Z",
+              "area": {
+                "west": 128.0,
+                "south": 35.0,
+                "east": 130.0,
+                "north": 37.0
+              },
+              "raw_text": "[합성 시연] 산불 상황입니다. 지역 안내와 대피 준비 사항을 확인하세요.",
+              "source": {
+                "title": "합성 시연 출처",
+                "url": "https://example.invalid/mvp",
+                "published_at": "2026-10-31T12:00:00Z",
+                "collected_at": "2026-10-31T12:00:00Z",
+                "verified": true,
+                "publisher": null,
+                "publisher_url": null
+              },
+              "validity_confirmed": true,
+              "instruction_kind": "prepare",
+              "record_status": "active_record",
+              "user_relevance": "inside",
+              "requires_qwen": false
+            }
+          ],
+          "prediction": {
+            "status": "unavailable",
+            "probability": null,
+            "used_for_response_level": false,
+            "reason": "MODEL_CONNECTION_EXCLUDED"
+          },
+          "context": {
+            "status": "not_requested",
+            "summary": null,
+            "facts": [],
+            "sources": [],
+            "summary_review_status": "not_reviewed",
+            "error_code": null,
+            "template_fallback": true
+          },
+          "input_versions": {
+            "profile:a": 1,
+            "location:a": 1,
+            "incident:fire": 1,
+            "rules:active": 1,
+            "alert:fire/fixture-notice": 1,
+            "state:fire/a": 1,
+            "environment:fire": 2,
+            "guidance:mvp-assist-call": 1,
+            "guidance:mvp-assist-location": 1,
+            "guidance:mvp-assist-follow": 1
+          },
+          "valid_until": "2026-10-31T12:05:00Z",
+          "assistant_utterance": {
+            "id": "9caaab5f-8b09-4efe-ab6c-b75be324b126:3",
+            "text": "119에 연락해 현재 위치와 대피할 수 없는 상황을 알리고 도움을 요청하세요.\n알고 있는 주소나 주변 지형지물, 함께 있는 인원과 이동에 필요한 도움을 알리세요.\n구조기관의 안내를 따르세요. 안내를 받는 동안에도 신고 연결 수단을 사용할 수 있습니다.",
+            "source": "reviewed_policy_text",
+            "valid_until": "2026-10-31T12:05:00Z"
+          },
+          "user_id": "a",
+          "notification": {
+            "status": "configuration_pending",
+            "dispatched": false
+          }
+        },
+        "user_context": {
+          "revision": 1,
+          "status": "available",
+          "data": {
+            "mode": "simulation",
+            "revision": 1,
+            "observed_at": "2026-10-31T12:00:00Z",
+            "expires_at": "2026-10-31T12:05:00Z",
+            "mobility_override": null,
+            "helper_present": null,
+            "can_move": false,
+            "injured": null,
+            "observed_hazard": "trapped",
+            "location_type": "unknown",
+            "evacuation_status": "unknown",
+            "deescalation_confirmed": false
+          }
+        }
+      }
+    }
+  },
+  "home": {
+    "meta": {
+      "schema_version": "0.2.0-mvp",
+      "mode": "simulation",
+      "request_id": "037688da-64e4-4389-9903-7e2d70a112c5",
+      "generated_at": "2026-10-31T16:06:56.904946Z",
+      "data_status": "current"
+    },
+    "data": {
+      "nearby_disasters": [
+        {
+          "id": "fire",
+          "title": "합성 산불",
+          "origin": "synthetic",
+          "observed_at": "2026-10-31T12:00:00Z",
+          "relevance": "inside",
+          "reason": "LOCATION_INSIDE_AREA",
+          "response_id": "9caaab5f-8b09-4efe-ab6c-b75be324b126",
+          "data_status": "current"
+        }
+      ],
+      "basic_rules": {
+        "disaster_type": "wildfire",
+        "status": "available",
+        "policy_version": "wildfire-three-stage-v1",
+        "items": [
+          {
+            "id": "mvp-prepare-follow",
+            "text": "공식 대피 안내와 재난문자를 확인하고 대피할 장소를 확인하세요.",
+            "source": {
+              "title": "국민안전24 산불 행동요령 확인본",
+              "url": "https://www.safekorea.go.kr/safekorea-kor/acts/nacts/action-guide.do?category=forestFires&menuSn=4",
+              "published_at": "2026-10-31T12:00:00Z",
+              "collected_at": "2026-10-31T12:00:00Z",
+              "verified": true,
+              "publisher": null,
+              "publisher_url": null
+            },
+            "revision": 1
+          },
+          {
+            "id": "mvp-prepare-bag",
+            "text": "즉시 이동할 수 있도록 비상용품과 가방을 준비하세요.",
+            "source": {
+              "title": "국민안전24 산불 행동요령 확인본",
+              "url": "https://www.safekorea.go.kr/safekorea-kor/acts/nacts/action-guide.do?category=forestFires&menuSn=4",
+              "published_at": "2026-10-31T12:00:00Z",
+              "collected_at": "2026-10-31T12:00:00Z",
+              "verified": true,
+              "publisher": null,
+              "publisher_url": null
+            },
+            "revision": 1
+          },
+          {
+            "id": "mvp-act-follow",
+            "text": "관계자의 대피 안내에 따라 안내된 장소로 즉시 이동하세요.",
+            "source": {
+              "title": "국민안전24 산불 행동요령 확인본",
+              "url": "https://www.safekorea.go.kr/safekorea-kor/acts/nacts/action-guide.do?category=forestFires&menuSn=4",
+              "published_at": "2026-10-31T12:00:00Z",
+              "collected_at": "2026-10-31T12:00:00Z",
+              "verified": true,
+              "publisher": null,
+              "publisher_url": null
+            },
+            "revision": 1
+          },
+          {
+            "id": "mvp-information-arrived",
+            "text": "부상 여부를 확인하고 가족이나 지인에게 현재 상황을 알리세요. 귀가는 관할 기관의 안내를 따르세요.",
+            "source": {
+              "title": "국민안전24 산불 행동요령 확인본",
+              "url": "https://www.safekorea.go.kr/safekorea-kor/acts/nacts/action-guide.do?category=forestFires&menuSn=4",
+              "published_at": "2026-10-31T12:00:00Z",
+              "collected_at": "2026-10-31T12:00:00Z",
+              "verified": true,
+              "publisher": null,
+              "publisher_url": null
+            },
+            "revision": 1
+          }
+        ],
+        "avoid": [
+          {
+            "id": "mvp-avoid-entry",
+            "text": "입산통제구역과 폐쇄된 등산로에 들어가지 마세요.",
+            "source": {
+              "title": "국민안전24 산불 행동요령 확인본",
+              "url": "https://www.safekorea.go.kr/safekorea-kor/acts/nacts/action-guide.do?category=forestFires&menuSn=4",
+              "published_at": "2026-10-31T12:00:00Z",
+              "collected_at": "2026-10-31T12:00:00Z",
+              "verified": true,
+              "publisher": null,
+              "publisher_url": null
+            },
+            "revision": 1,
+            "valid_until": "2026-11-30T12:00:00Z"
+          },
+          {
+            "id": "mvp-avoid-direction",
+            "text": "산불이 번지는 방향이나 산과 가까운 위험한 길로 이동하지 마세요.",
+            "source": {
+              "title": "국민안전24 산불 행동요령 확인본",
+              "url": "https://www.safekorea.go.kr/safekorea-kor/acts/nacts/action-guide.do?category=forestFires&menuSn=4",
+              "published_at": "2026-10-31T12:00:00Z",
+              "collected_at": "2026-10-31T12:00:00Z",
+              "verified": true,
+              "publisher": null,
+              "publisher_url": null
+            },
+            "revision": 1,
+            "valid_until": "2026-11-30T12:00:00Z"
+          }
+        ]
+      },
+      "location": {
+        "revision": 1,
+        "input_revision": 1,
+        "status": "available",
+        "fix": {
+          "fix_id": "fixture-fix",
+          "installation_id": "phone",
+          "latitude": 36.0,
+          "longitude": 129.0,
+          "accuracy_m": 10.0,
+          "captured_at": "2026-10-31T12:00:00Z"
+        },
+        "valid_until": "2026-10-31T12:05:00Z",
+        "reason_codes": []
+      },
+      "features": {
+        "impact_prediction": false,
+        "route_3d": false,
+        "voice_turns": false,
+        "server_audio": false,
+        "support_draft": false,
+        "route_geometry": false,
+        "push_provider": "simulation"
+      },
+      "preparations": {
+        "status": "available",
+        "policy_version": "wildfire-three-stage-v1",
+        "profile_revision": 0,
+        "generated_at": "2026-10-31T12:00:00Z",
+        "items": [
+          {
+            "id": "mvp-ready-bag",
+            "text": "대피할 때 바로 챙길 수 있도록 비상가방을 미리 준비해 두세요.",
+            "source": {
+              "title": "국민안전24 산불 행동요령 확인본",
+              "url": "https://www.safekorea.go.kr/safekorea-kor/acts/nacts/action-guide.do?category=forestFires&menuSn=4",
+              "published_at": "2026-10-31T12:00:00Z",
+              "collected_at": "2026-10-31T12:00:00Z",
+              "verified": true,
+              "publisher": null,
+              "publisher_url": null
+            },
+            "revision": 1,
+            "valid_until": "2026-11-30T12:00:00Z",
+            "reason_code": "BASIC_PREPARATION"
+          },
+          {
+            "id": "mvp-ready-bag-check",
+            "text": "평소 준비한 비상용품의 보관 위치와 사용 가능한 상태를 확인하세요.",
+            "source": {
+              "title": "국민안전24 산불 행동요령 확인본",
+              "url": "https://www.safekorea.go.kr/safekorea-kor/acts/nacts/action-guide.do?category=forestFires&menuSn=4",
+              "published_at": "2026-10-31T12:00:00Z",
+              "collected_at": "2026-10-31T12:00:00Z",
+              "verified": true,
+              "publisher": null,
+              "publisher_url": null
+            },
+            "revision": 1,
+            "valid_until": "2026-11-30T12:00:00Z",
+            "reason_code": "BASIC_PREPARATION"
+          }
+        ]
+      },
+      "alerts": [
+        {
+          "id": "03f97033fd48cd6086e7826faad4b5d2",
+          "revision": 1,
+          "response_id": "9caaab5f-8b09-4efe-ab6c-b75be324b126",
+          "incident_id": "fire",
+          "original_text": "[합성 시연] 산불 상황입니다. 지역 안내와 대피 준비 사항을 확인하세요.",
+          "official_severity": "주의(시연)",
+          "authority": "합성 시연 발령기관",
+          "issued_at": "2026-10-31T12:00:00Z",
+          "valid_until": "2026-10-31T13:00:00Z",
+          "instruction_kind": "prepare",
+          "source": {
+            "title": "합성 시연 출처",
+            "url": "https://example.invalid/mvp",
+            "published_at": "2026-10-31T12:00:00Z",
+            "collected_at": "2026-10-31T12:00:00Z",
+            "verified": true,
+            "publisher": null,
+            "publisher_url": null
+          },
+          "status": "active",
+          "relevance": {
+            "status": "inside",
+            "reason_code": "LOCATION_INSIDE_AREA"
+          },
+          "requires_qwen": false
+        }
+      ]
+    }
+  },
+  "profile": {
+    "meta": {
+      "schema_version": "0.2.0-mvp",
+      "mode": "simulation",
+      "request_id": "172417c7-38ed-4d98-83b3-9a03966bba3c",
+      "generated_at": "2026-10-31T16:06:56.914370Z",
+      "data_status": "current"
+    },
+    "data": {
+      "revision": 0,
+      "input_revision": 1,
+      "profile": {}
+    }
+  },
+  "rules": {
+    "meta": {
+      "schema_version": "0.2.0-mvp",
+      "mode": "simulation",
+      "request_id": "fbad02e4-ed66-42e5-999b-2b00f79b078a",
+      "generated_at": "2026-10-31T16:06:56.924534Z",
+      "data_status": "current"
+    },
+    "data": {
+      "disaster_type": "wildfire",
+      "status": "available",
+      "policy_version": "wildfire-three-stage-v1",
+      "items": [
+        {
+          "id": "mvp-prepare-follow",
+          "text": "공식 대피 안내와 재난문자를 확인하고 대피할 장소를 확인하세요.",
+          "source": {
+            "title": "국민안전24 산불 행동요령 확인본",
+            "url": "https://www.safekorea.go.kr/safekorea-kor/acts/nacts/action-guide.do?category=forestFires&menuSn=4",
+            "published_at": "2026-10-31T12:00:00Z",
+            "collected_at": "2026-10-31T12:00:00Z",
+            "verified": true,
+            "publisher": null,
+            "publisher_url": null
+          },
+          "revision": 1
+        },
+        {
+          "id": "mvp-prepare-bag",
+          "text": "즉시 이동할 수 있도록 비상용품과 가방을 준비하세요.",
+          "source": {
+            "title": "국민안전24 산불 행동요령 확인본",
+            "url": "https://www.safekorea.go.kr/safekorea-kor/acts/nacts/action-guide.do?category=forestFires&menuSn=4",
+            "published_at": "2026-10-31T12:00:00Z",
+            "collected_at": "2026-10-31T12:00:00Z",
+            "verified": true,
+            "publisher": null,
+            "publisher_url": null
+          },
+          "revision": 1
+        },
+        {
+          "id": "mvp-act-follow",
+          "text": "관계자의 대피 안내에 따라 안내된 장소로 즉시 이동하세요.",
+          "source": {
+            "title": "국민안전24 산불 행동요령 확인본",
+            "url": "https://www.safekorea.go.kr/safekorea-kor/acts/nacts/action-guide.do?category=forestFires&menuSn=4",
+            "published_at": "2026-10-31T12:00:00Z",
+            "collected_at": "2026-10-31T12:00:00Z",
+            "verified": true,
+            "publisher": null,
+            "publisher_url": null
+          },
+          "revision": 1
+        },
+        {
+          "id": "mvp-information-arrived",
+          "text": "부상 여부를 확인하고 가족이나 지인에게 현재 상황을 알리세요. 귀가는 관할 기관의 안내를 따르세요.",
+          "source": {
+            "title": "국민안전24 산불 행동요령 확인본",
+            "url": "https://www.safekorea.go.kr/safekorea-kor/acts/nacts/action-guide.do?category=forestFires&menuSn=4",
+            "published_at": "2026-10-31T12:00:00Z",
+            "collected_at": "2026-10-31T12:00:00Z",
+            "verified": true,
+            "publisher": null,
+            "publisher_url": null
+          },
+          "revision": 1
+        }
+      ],
+      "avoid": [
+        {
+          "id": "mvp-avoid-entry",
+          "text": "입산통제구역과 폐쇄된 등산로에 들어가지 마세요.",
+          "source": {
+            "title": "국민안전24 산불 행동요령 확인본",
+            "url": "https://www.safekorea.go.kr/safekorea-kor/acts/nacts/action-guide.do?category=forestFires&menuSn=4",
+            "published_at": "2026-10-31T12:00:00Z",
+            "collected_at": "2026-10-31T12:00:00Z",
+            "verified": true,
+            "publisher": null,
+            "publisher_url": null
+          },
+          "revision": 1,
+          "valid_until": "2026-11-30T12:00:00Z"
+        },
+        {
+          "id": "mvp-avoid-direction",
+          "text": "산불이 번지는 방향이나 산과 가까운 위험한 길로 이동하지 마세요.",
+          "source": {
+            "title": "국민안전24 산불 행동요령 확인본",
+            "url": "https://www.safekorea.go.kr/safekorea-kor/acts/nacts/action-guide.do?category=forestFires&menuSn=4",
+            "published_at": "2026-10-31T12:00:00Z",
+            "collected_at": "2026-10-31T12:00:00Z",
+            "verified": true,
+            "publisher": null,
+            "publisher_url": null
+          },
+          "revision": 1,
+          "valid_until": "2026-11-30T12:00:00Z"
+        }
+      ]
+    }
+  },
+  "config": {
+    "meta": {
+      "schema_version": "0.2.0-mvp",
+      "mode": "simulation",
+      "request_id": "c4257652-9a3c-48b2-9c31-b76c902150d8",
+      "generated_at": "2026-10-31T16:06:56.930245+00:00",
+      "data_status": "current"
+    },
+    "data": {
+      "contract_version": "0.2.0-mvp",
+      "disaster_types": [
+        "wildfire"
+      ],
+      "supported_locales": [
+        "ko-KR"
+      ],
+      "levels": [
+        {
+          "level": "prepare",
+          "number": 1,
+          "label": "경고"
+        },
+        {
+          "level": "act",
+          "number": 2,
+          "label": "대피"
+        },
+        {
+          "level": "request_assistance",
+          "number": 3,
+          "label": "위급"
+        }
+      ],
+      "features": {
+        "impact_prediction": false,
+        "route_3d": false,
+        "voice_turns": false,
+        "server_audio": false,
+        "support_draft": false,
+        "route_geometry": false,
+        "push_provider": "simulation"
+      },
+      "policy_status": "reviewed_mvp",
+      "location_max_age_seconds": 300,
+      "updates_wait_seconds": 25,
+      "emergency_phone": "119",
+      "automatic_emergency_call": false,
+      "draft_owner": "device",
+      "registration": {
+        "enabled": false,
+        "consent_version": "internal-demo-v1",
+        "kind": "private_simulation_installation"
+      }
+    }
+  },
+  "preferences": {
+    "meta": {
+      "schema_version": "0.2.0-mvp",
+      "mode": "simulation",
+      "request_id": "d6a2fdd4-a5d9-4117-aec2-413a2daf51a9",
+      "generated_at": "2026-10-31T16:06:56.934182+00:00",
+      "data_status": "current"
+    },
+    "data": {
+      "revision": 0,
+      "preferences": {
+        "locale": "ko-KR",
+        "notifications_enabled": true,
+        "nearby_radius_m": 10000,
+        "home_area_code": null
+      }
+    }
+  }
+}

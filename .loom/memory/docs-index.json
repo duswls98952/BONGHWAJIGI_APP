@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-10-31T07:39:55+00:00",
+  "generated_at": "2026-10-31T17:00:37+00:00",
   "docs_paths": [
     "docs"
   ],
@@ -38,35 +38,35 @@
       "path": "docs/01-start-here.md",
       "source": "repository_docs",
       "document_type": "docs",
-      "updated_at": "2026-10-31T16:31:45+09:00",
+      "updated_at": "2026-11-01T00:12:22+09:00",
       "size_bytes": 4002
     },
     {
       "id": "docs/02-api-integration.md",
-      "title": "API 연결과 주의사항",
+      "title": "현재 MVP API 연결",
       "path": "docs/02-api-integration.md",
       "source": "repository_docs",
       "document_type": "docs",
-      "updated_at": "2026-10-31T16:39:54+09:00",
-      "size_bytes": 6460
+      "updated_at": "2026-11-01T01:50:28+09:00",
+      "size_bytes": 8689
     },
     {
       "id": "docs/03-realtime-background.md",
-      "title": "서버 대화·대응 단계·백그라운드",
+      "title": "정책 갱신·앱 복귀·백그라운드",
       "path": "docs/03-realtime-background.md",
       "source": "repository_docs",
       "document_type": "docs",
-      "updated_at": "2026-10-31T16:31:45+09:00",
-      "size_bytes": 6457
+      "updated_at": "2026-11-01T01:51:27+09:00",
+      "size_bytes": 7302
     },
     {
       "id": "docs/04-map-tts.md",
-      "title": "2D 지도·서버 경로·단말 TTS",
+      "title": "2D 표시·대피 경로·단말 TTS",
       "path": "docs/04-map-tts.md",
       "source": "repository_docs",
       "document_type": "docs",
-      "updated_at": "2026-10-31T16:31:45+09:00",
-      "size_bytes": 6169
+      "updated_at": "2026-11-01T01:50:28+09:00",
+      "size_bytes": 4884
     },
     {
       "id": "docs/05-codex-workflow.md",
@@ -74,17 +74,17 @@
       "path": "docs/05-codex-workflow.md",
       "source": "repository_docs",
       "document_type": "docs",
-      "updated_at": "2026-10-31T16:31:45+09:00",
+      "updated_at": "2026-11-01T00:12:22+09:00",
       "size_bytes": 3656
     },
     {
       "id": "docs/06-server-handoff.md",
-      "title": "서버팀 연결 체크리스트",
+      "title": "앱·서버 통합 인계",
       "path": "docs/06-server-handoff.md",
       "source": "repository_docs",
       "document_type": "docs",
-      "updated_at": "2026-10-31T16:31:45+09:00",
-      "size_bytes": 4774
+      "updated_at": "2026-11-01T01:51:27+09:00",
+      "size_bytes": 6057
     },
     {
       "id": "docs/07-validation.md",
@@ -92,17 +92,80 @@
       "path": "docs/07-validation.md",
       "source": "repository_docs",
       "document_type": "docs",
-      "updated_at": "2026-10-31T16:39:54+09:00",
-      "size_bytes": 4011
+      "updated_at": "2026-11-01T00:12:22+09:00",
+      "size_bytes": 6443
+    },
+    {
+      "id": "docs/08-live-integration-audit.md",
+      "title": "목업과 실제 서버 연결 점검",
+      "path": "docs/08-live-integration-audit.md",
+      "source": "repository_docs",
+      "document_type": "docs",
+      "updated_at": "2026-11-01T00:33:18+09:00",
+      "size_bytes": 5537
+    },
+    {
+      "id": "docs/09-app-implementation.md",
+      "title": "목업 기반 앱 구현 기록",
+      "path": "docs/09-app-implementation.md",
+      "source": "repository_docs",
+      "document_type": "docs",
+      "updated_at": "2026-11-01T01:51:28+09:00",
+      "size_bytes": 5697
+    },
+    {
+      "id": "docs/HeoNey/모바일_화면_API_매칭_리스트.md",
+      "title": "모바일 화면 ↔ API 매칭 리스트",
+      "path": "docs/HeoNey/모바일_화면_API_매칭_리스트.md",
+      "source": "repository_docs",
+      "document_type": "docs",
+      "updated_at": "2026-11-01T00:12:22+09:00",
+      "size_bytes": 17031
+    },
+    {
+      "id": "docs/HeoNey/봉화지기_모바일_화면_기획서.md",
+      "title": "봉화지기 모바일 화면 기획서",
+      "path": "docs/HeoNey/봉화지기_모바일_화면_기획서.md",
+      "source": "repository_docs",
+      "document_type": "docs",
+      "updated_at": "2026-11-01T00:12:22+09:00",
+      "size_bytes": 18575
     },
     {
       "id": "docs/README.md",
-      "title": "앱팀 문서",
+      "title": "앱팀 문서 안내",
       "path": "docs/README.md",
       "source": "repository_docs",
       "document_type": "docs",
-      "updated_at": "2026-10-31T16:31:45+09:00",
-      "size_bytes": 1440
+      "updated_at": "2026-11-01T02:00:36+09:00",
+      "size_bytes": 2276
+    },
+    {
+      "id": "docs/api/mvp-fixtures.json",
+      "title": "{",
+      "path": "docs/api/mvp-fixtures.json",
+      "source": "repository_docs",
+      "document_type": "docs",
+      "updated_at": "2026-11-01T01:06:57+09:00",
+      "size_bytes": 35431
+    },
+    {
+      "id": "docs/api/mvp-openapi.json",
+      "title": "{",
+      "path": "docs/api/mvp-openapi.json",
+      "source": "repository_docs",
+      "document_type": "docs",
+      "updated_at": "2026-11-01T01:40:55+09:00",
+      "size_bytes": 138778
+    },
+    {
+      "id": "docs/api/mvp-provenance.json",
+      "title": "{",
+      "path": "docs/api/mvp-provenance.json",
+      "source": "repository_docs",
+      "document_type": "docs",
+      "updated_at": "2026-11-01T01:56:56+09:00",
+      "size_bytes": 277
     },
     {
       "id": "docs/api/provenance.json",
@@ -110,7 +173,7 @@
       "path": "docs/api/provenance.json",
       "source": "repository_docs",
       "document_type": "docs",
-      "updated_at": "2026-10-31T16:17:42+09:00",
+      "updated_at": "2026-11-01T00:12:22+09:00",
       "size_bytes": 352
     },
     {
@@ -119,7 +182,7 @@
       "path": "docs/api/upstream-examples.json",
       "source": "repository_docs",
       "document_type": "docs",
-      "updated_at": "2026-10-31T16:17:42+09:00",
+      "updated_at": "2026-11-01T00:12:22+09:00",
       "size_bytes": 106645
     },
     {
@@ -128,7 +191,7 @@
       "path": "docs/api/upstream-openapi.yaml",
       "source": "repository_docs",
       "document_type": "docs",
-      "updated_at": "2026-10-31T16:17:42+09:00",
+      "updated_at": "2026-11-01T00:12:22+09:00",
       "size_bytes": 215282
     }
   ],

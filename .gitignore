@@ -15,3 +15,6 @@ ios/
 *.mobileprovision
 google-services.json
 GoogleService-Info.plist
+
+.local-private/
+artifacts/apk/

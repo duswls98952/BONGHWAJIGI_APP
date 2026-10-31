@@ -1,0 +1,34 @@
+{
+  "id": "task-def-20261031-154046-expo-e2704dff",
+  "job_definition_id": "job-20261031-152248-apk-cf438185",
+  "title": "목업 디자인을 Expo 화면에 구현하고 현재 서버 계약과 인증 연결",
+  "description": "서버 공백 보완과 맞춰 완성 목업의 로딩·온보딩·홈·긴급3단계·프로필·수칙을 Expo에 구현하고 안전한 세션 보관·갱신, 위치·현재상태·변경 동기화·TTS·신고 화면 연결을 실제0.2 계약으로 구성한다. APK를 위한 네이티브 설정과 빌드 도구도 준비한다.",
+  "created_at": "2026-10-31T15:40:46+00:00",
+  "updated_at": "2026-10-31T15:40:56+00:00",
+  "order_index": 2,
+  "legacy_task_id": "task-20261031-154046-expo-4e0177fb",
+  "depends_on": [
+    "task-def-20261031-152320-api-d6cd1848"
+  ],
+  "expected_output": "목업 기반 동작하는 Expo 화면과 현재 API 계층·검증/모의자료·Android 빌드 설정",
+  "done_condition": "목업 전 화면이 실제 서버 데이터/인증으로 동작하고 오류·만료·정정·갱신·권한 상태를 구분한다. 타입·회귀·번들 검사를 통과하며 실제 지도/푸시/예측/도로 미제공을 성공으로 표시하지 않는다.",
+  "in_scope": "앱 UI·현재 API 타입/런타임 검사; 시연 계정·세션; 위치/알림/TTS·단말 신고 화면; Android 설정·도구; 테스트·문서",
+  "out_of_scope": "서버 비밀키/토큰 내장; 학습 변경; 실제119연락; 지도계정/FCM 준비 완료 주장; 3D·실제예측·위험도 앱 자체 판단",
+  "validation_hint": "Node24 npm run check, Android/Web 번들·목업비교, 실서버 요청·실제 Android 단말(별도 통합검증과 APK Task)",
+  "required_docs": [
+    "docs/08-live-integration-audit.md",
+    "docs/02-api-integration.md",
+    "docs/04-map-tts.md"
+  ],
+  "memory_refs": [],
+  "document_outputs": [
+    "docs/09-app-implementation.md"
+  ],
+  "document_output_exceptions": [],
+  "default_agent": "foreground",
+  "context_policy_id": "",
+  "executor_policy_id": "",
+  "review_policy": "",
+  "source_proposal_id": "",
+  "source_prompt": ""
+}
