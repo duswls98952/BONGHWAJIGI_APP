@@ -1,7 +1,7 @@
 {
-  "built_at": "2026-10-31T17:31:08.141Z",
-  "source_head": "8984d37ea5dd00597281affbd8232bf9bb1aec56",
-  "source_dirty": true,
+  "built_at": "2026-10-31T17:36:59.443Z",
+  "source_head": "0716c49d501fe5e066537b673698e07fcbd48ff6",
+  "source_dirty": false,
   "app_id": "com.bonghwajigi.app",
   "version_name": "0.2.0",
   "version_code": 2,
@@ -45,8 +45,8 @@
   "api_url": "https://inno-server-011.tail2dac17.ts.net",
   "usb_reverse_required": false,
   "apk": "artifacts/apk/bonghwajigi-0.2.0-private-arm64.apk",
-  "bytes": 65331450,
-  "sha256": "47974fdb379b2c51ebeaed25e76757669833b06fbe2eb2cfe20dd62554601d00",
+  "bytes": 65331558,
+  "sha256": "fe6892591e5224f5b982d53ce0536425f4a44290182477b865b922a63b2ad5e9",
   "signature_verification": "Verifies\nVerified using v1 scheme (JAR signing): false\nVerified using v2 scheme (APK Signature Scheme v2): true\nVerified using v3 scheme (APK Signature Scheme v3): false\nVerified using v3.1 scheme (APK Signature Scheme v3.1): false\nVerified using v3.2 scheme (APK Signature Scheme v3.2): false\nVerified using v4 scheme (APK Signature Scheme v4): false\nVerified for SourceStamp: false\nNumber of signers: 1\nV2 Signer: certificate DN: CN=Bonghwajigi Internal Demo, OU=Development, O=Bonghwajigi, C=KR\nV2 Signer: certificate SHA-256 digest: c1d8e93a78bf46017690ed4d786ab52745cb1c475a3e6107bb7245f02b25c695\nV2 Signer: certificate SHA-1 digest: 773c8ce880ca1cacb50ee3d3fb7fde264280cc64\nV2 Signer: certificate MD5 digest: 3e0aa8e708aa617d04050fbeb86cfa36\nV2 Signer: key algorithm: RSA\nV2 Signer: key size (bits): 3072\nV2 Signer: public key SHA-256 digest: 63d6973344b0634418aa1292ba7b3357bea3e5bf6bfb25d2f35184d82350e5f6\nV2 Signer: public key SHA-1 digest: 55f4649ef7a20021f31e7b59e73da904286a5801\nV2 Signer: public key MD5 digest: b3b2817aab6f04bece5da499ce23d703",
-  "source_note": "HEAD 이후 useTts.ts 수동 재읽기 및 Profile.tsx 전송 상태 표시 보완을 포함한다. 최종 커밋은 Loom 결과에 기록한다."
+  "source_note": "실행 소스는 source_head 0716c49 커밋이다. 이후 변경은 배포 증거와 Loom 기록이다."
 }

@@ -1,0 +1,69 @@
+{
+  "verified_date_kst": "2026-11-01",
+  "device": {
+    "model": "Samsung SM-G996N",
+    "android": "15"
+  },
+  "source_commit": "0716c49d501fe5e066537b673698e07fcbd48ff6",
+  "apk_sha256": "fe6892591e5224f5b982d53ce0536425f4a44290182477b865b922a63b2ad5e9",
+  "server_runtime_commit": "959ab56b9481067a8b7c6a67cc94e6d37787e351",
+  "transport": "Tailnet private HTTPS; no USB reverse required",
+  "data_mode": "simulation",
+  "method": "User-operated native app; read-only comparison of the same phone account in the actual server database. Mirroring input was not used for final confirmation.",
+  "profile": "synthetic independent mobility / stairs able",
+  "location": {
+    "source": "explicit synthetic demonstration button, not phone GPS",
+    "revision": 1,
+    "captured_at_utc": "2026-10-31T17:43:08.668Z"
+  },
+  "context_revision": 2,
+  "policy_history": [
+    {
+      "revision": 2,
+      "level": "prepare",
+      "label": "경고",
+      "number": 1,
+      "created_at_utc": "2026-10-31T17:43:08.895844Z"
+    },
+    {
+      "revision": 3,
+      "level": "act",
+      "label": "대피",
+      "number": 2,
+      "created_at_utc": "2026-10-31T17:43:26.102004Z"
+    },
+    {
+      "revision": 4,
+      "level": "request_assistance",
+      "label": "위급",
+      "number": 3,
+      "created_at_utc": "2026-10-31T17:43:34.242662Z"
+    }
+  ],
+  "tts": {
+    "result": "passed",
+    "evidence": "User explicitly confirmed audible speech after disabling phone silent mode. No audio recording was collected."
+  },
+  "checks": {
+    "installation": "passed",
+    "onboarding": "passed",
+    "secure_session_restore": "passed",
+    "official_alert_text": "passed",
+    "synthetic_location": "passed",
+    "three_stage_policy_updates": "passed",
+    "audible_tts": "passed"
+  },
+  "excluded": [
+    "actual 119 call or SMS",
+    "Firebase device push delivery",
+    "Naver road map",
+    "actual XGBoost inference",
+    "actual GPS and background location",
+    "iOS"
+  ],
+  "regression_tests": {
+    "app": 40,
+    "server": 104
+  },
+  "identifiers_redacted": true
+}
