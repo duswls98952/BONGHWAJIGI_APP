@@ -2,6 +2,14 @@
 
 2026-10-31 KST. Node 24.22.2, npm, Expo SDK 58. 앱 시작 틀에 대한 검증이며 재난 서비스 실운영 검증이 아닙니다.
 
+## 2026-10-31 개발 서버 재확인
+
+- 현재 레포의 `expo`가 51.0.39이고 다른 주요 패키지가 SDK 58 계열이라 Metro가 `ERR_PACKAGE_PATH_NOT_EXPORTED`로 시작하지 못했다. `expo`를 58.0.21로 맞추고 잠금 파일을 갱신했다.
+- Node 24.20.0에서 `EXPO_OFFLINE=1 npm run web -- --host localhost --port 8081`로 웹 개발 서버를 시작했다. `http://localhost:8081/`의 HTTP 200과 HTML 응답을 확인했다.
+- TypeScript 검사와 핵심 테스트 14개는 통과했다. `EXPO_NO_TELEMETRY=1 npm run export:web`으로 웹 번들을 생성했다.
+- `npm run check`의 문서 링크 단계는 `docs/HeoNey/`로 복사된 문서의 기존 상대 경로가 현재 레포에서 연결되지 않아 실패했다. 해당 링크 수정은 이번 서버 실행 범위 밖이다.
+- 웹 번들과 HTTP 응답을 검증했다. 실제 기기 실행, 네이버 지도, 푸시, GPS, TTS, 백그라운드 동작은 이번에 검사하지 않았다.
+
 ## 자동 검사
 
 | 검사 | 결과 |

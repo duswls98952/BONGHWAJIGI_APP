@@ -1,0 +1,10 @@
+[2026-10-31T08:14:43+00:00] agent=codex task=task-20261031-081440-expo-6a3fa224 Foreground task session started.
+[2026-10-31] Node v24.20.0, npm 11.19.0, branch HeoNey_dev 확인.
+[2026-10-31] 최초 Expo 시작: ERR_PACKAGE_PATH_NOT_EXPORTED (Expo 51.0.39 / SDK 58 불일치).
+[2026-10-31] npm install expo@~58.0.21 성공; 설치 버전 58.0.21.
+[2026-10-31] EXPO_OFFLINE=1 npm run web -- --host localhost --port 8081: Metro 시작, localhost:8081 대기.
+[2026-10-31] curl -I http://localhost:8081/: HTTP/1.1 200 OK, Content-Type: text/html.
+[2026-10-31] curl GET http://localhost:8081/: HTTP 200, 1275바이트 HTML.
+[2026-10-31] npm run check: TypeScript 통과, 14개 테스트 통과, docs/HeoNey의 상대 링크 오류로 문서 검사 실패.
+[2026-10-31] EXPO_NO_TELEMETRY=1 npm run export:web: 웹 번들 생성 성공.
+[2026-10-31] git diff --check: 통과.
