@@ -13,3 +13,4 @@
 - git diff --check: PASS
 - loom task validate --strict: PASS
 - npm audit: 13 findings retained, see docs/07-validation.md
+[2026-10-31T07:41:14+00:00] agent=foreground task=task-20261031-071443-expo-api-codex-3e7f4e33 Expo 앱 시작 틀·API 연결·실시간/백그라운드/2D/TTS·Codex 인계 문서 구현 및 검증 완료. 실제 서버/기기 검증은 후속 범위로 명시.
