@@ -3,9 +3,9 @@
   "job_id": "job-20261031-152248-apk-cf438185",
   "title": "B 시나리오 실기기 촬영",
   "description": "A 완성본 전달 후 B 보조기구 사용 프로필과 대피2단계·실제음성답변·확인 후 맞춤안내를 촬영한다.",
-  "status": "RUNNING",
+  "status": "DONE",
   "created_at": "2026-10-31T23:42:10+00:00",
-  "updated_at": "2026-10-31T23:42:19+00:00",
+  "updated_at": "2026-10-31T23:50:58+00:00",
   "order_index": 10,
   "assigned_agent": "foreground",
   "depends_on": [],
@@ -23,12 +23,25 @@
   "run_attempts": 0,
   "last_error": "",
   "commit_refs": [
-    "0301d36fc4f6d7aa070f320633c7f69040c10086"
+    "0301d36fc4f6d7aa070f320633c7f69040c10086",
+    "e057f75715ee8609acad43ad7697b9bfc283ed4e"
   ],
   "branch_name": "develop",
   "git_dirty": true,
-  "git_snapshot_captured_at": "2026-10-31T23:42:19+00:00",
-  "artifacts": [],
+  "git_snapshot_captured_at": "2026-10-31T23:50:58+00:00",
+  "artifacts": [
+    ".loom/tasks/task-20261031-234210-b-f53c14ff/agent-events.jsonl",
+    ".loom/tasks/task-20261031-234210-b-f53c14ff/artifacts.json",
+    ".loom/tasks/task-20261031-234210-b-f53c14ff/context.md",
+    ".loom/tasks/task-20261031-234210-b-f53c14ff/decision.md",
+    ".loom/tasks/task-20261031-234210-b-f53c14ff/git-snapshot.json",
+    ".loom/tasks/task-20261031-234210-b-f53c14ff/logs.txt",
+    ".loom/tasks/task-20261031-234210-b-f53c14ff/previous-results.md",
+    ".loom/tasks/task-20261031-234210-b-f53c14ff/prompt.md",
+    ".loom/tasks/task-20261031-234210-b-f53c14ff/result.md",
+    ".loom/tasks/task-20261031-234210-b-f53c14ff/troubleshooting.md",
+    "docs/17-scenario-b-recording.md"
+  ],
   "source_proposal_id": "",
   "source_prompt": ""
 }

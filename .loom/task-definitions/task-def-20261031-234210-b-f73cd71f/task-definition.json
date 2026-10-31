@@ -4,7 +4,7 @@
   "title": "B 시나리오 실기기 촬영",
   "description": "A 완성본 전달 후 B 보조기구 사용 프로필과 대피2단계·실제음성답변·확인 후 맞춤안내를 촬영한다.",
   "created_at": "2026-10-31T23:42:10+00:00",
-  "updated_at": "2026-10-31T23:42:18+00:00",
+  "updated_at": "2026-10-31T23:50:58+00:00",
   "order_index": 10,
   "legacy_task_id": "task-20261031-234210-b-f53c14ff",
   "depends_on": [],
@@ -19,7 +19,7 @@
     "docs/17-scenario-b-recording.md"
   ],
   "document_output_exceptions": [],
-  "default_agent": "",
+  "default_agent": "foreground",
   "context_policy_id": "",
   "executor_policy_id": "",
   "review_policy": "",
