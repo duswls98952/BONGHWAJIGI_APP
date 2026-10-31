@@ -1,0 +1,10 @@
+{
+  "repository": "develsvai/BONGHWAJIGI",
+  "commit": "f7e1f609e555b1c207ce4afaf07a799c588781ef",
+  "contract": "0.1.0-draft",
+  "copied_at": "2026-10-31",
+  "files": {
+    "openapi.yaml": "f7edfa133feaded36091be03865ca02a68da39fec027aae80aec1182aa76271f",
+    "examples.json": "1fd52f0c875c61d54fc58b2d9230d1303dabe049581a2ab5c62693074cf4bab7"
+  }
+}

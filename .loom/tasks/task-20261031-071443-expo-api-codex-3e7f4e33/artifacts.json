@@ -1,0 +1,106 @@
+{
+  "status": "RUNNING",
+  "agent": "foreground",
+  "mode": "foreground",
+  "execution_surface": "foreground",
+  "task_run_id": "task-run-20261031-071519-task-def-20261031-071443-expo-api-codex-d06462c4-398da601",
+  "generated_at": "2026-10-31T07:15:20+00:00",
+  "artifacts": [
+    ".loom/tasks/task-20261031-071443-expo-api-codex-3e7f4e33/prompt.md",
+    ".loom/tasks/task-20261031-071443-expo-api-codex-3e7f4e33/context.md",
+    ".loom/tasks/task-20261031-071443-expo-api-codex-3e7f4e33/previous-results.md",
+    ".loom/tasks/task-20261031-071443-expo-api-codex-3e7f4e33/git-snapshot.json",
+    ".loom/tasks/task-20261031-071443-expo-api-codex-3e7f4e33/result.md",
+    ".loom/tasks/task-20261031-071443-expo-api-codex-3e7f4e33/decision.md",
+    ".loom/tasks/task-20261031-071443-expo-api-codex-3e7f4e33/troubleshooting.md",
+    ".loom/tasks/task-20261031-071443-expo-api-codex-3e7f4e33/logs.txt",
+    ".loom/tasks/task-20261031-071443-expo-api-codex-3e7f4e33/agent-events.jsonl",
+    ".loom/tasks/task-20261031-071443-expo-api-codex-3e7f4e33/artifacts.json",
+    "README.md",
+    "AGENTS.md",
+    "package.json",
+    "package-lock.json",
+    "app.config.ts",
+    "docs/README.md",
+    "docs/01-start-here.md",
+    "docs/02-api-integration.md",
+    "docs/03-realtime-background.md",
+    "docs/04-map-tts.md",
+    "docs/05-codex-workflow.md",
+    "docs/06-server-handoff.md",
+    "docs/07-validation.md",
+    "docs/api/provenance.json",
+    "docs/api/upstream-openapi.yaml",
+    "docs/api/upstream-examples.json",
+    "docs/screenshots/mock-emergency.png",
+    "src/api/generated.ts",
+    "src/api/client.ts",
+    "src/runtime/Runtime.tsx",
+    "tests/contracts.test.ts"
+  ],
+  "artifact_groups": {
+    "user_outputs": [
+      ".loom/tasks/task-20261031-071443-expo-api-codex-3e7f4e33/result.md",
+      ".loom/tasks/task-20261031-071443-expo-api-codex-3e7f4e33/decision.md",
+      ".loom/tasks/task-20261031-071443-expo-api-codex-3e7f4e33/troubleshooting.md"
+    ],
+    "execution_inputs": [
+      ".loom/tasks/task-20261031-071443-expo-api-codex-3e7f4e33/prompt.md",
+      ".loom/tasks/task-20261031-071443-expo-api-codex-3e7f4e33/context.md",
+      ".loom/tasks/task-20261031-071443-expo-api-codex-3e7f4e33/previous-results.md"
+    ],
+    "execution_audit": [
+      ".loom/tasks/task-20261031-071443-expo-api-codex-3e7f4e33/git-snapshot.json",
+      ".loom/tasks/task-20261031-071443-expo-api-codex-3e7f4e33/logs.txt",
+      ".loom/tasks/task-20261031-071443-expo-api-codex-3e7f4e33/agent-events.jsonl",
+      ".loom/tasks/task-20261031-071443-expo-api-codex-3e7f4e33/artifacts.json"
+    ],
+    "work_products": [
+      "README.md",
+      "AGENTS.md",
+      "package.json",
+      "package-lock.json",
+      "app.config.ts",
+      "docs/README.md",
+      "docs/01-start-here.md",
+      "docs/02-api-integration.md",
+      "docs/03-realtime-background.md",
+      "docs/04-map-tts.md",
+      "docs/05-codex-workflow.md",
+      "docs/06-server-handoff.md",
+      "docs/07-validation.md",
+      "docs/api/provenance.json",
+      "docs/api/upstream-openapi.yaml",
+      "docs/api/upstream-examples.json",
+      "docs/screenshots/mock-emergency.png",
+      "src/api/generated.ts",
+      "src/api/client.ts",
+      "src/runtime/Runtime.tsx",
+      "tests/contracts.test.ts"
+    ]
+  },
+  "contract_snapshot": {
+    "schema_version": 1,
+    "contract_ids": [
+      "task-execution",
+      "done-guardrail"
+    ],
+    "contracts": [
+      {
+        "id": "task-execution",
+        "title": "Task Execution Context Contract",
+        "source_paths": [
+          "loom/application/context_pack.py",
+          "loom/application/team_policy.py"
+        ]
+      },
+      {
+        "id": "done-guardrail",
+        "title": "Task Completion Guardrail Contract",
+        "source_paths": [
+          "loom/application/services.py"
+        ]
+      }
+    ]
+  }
+}

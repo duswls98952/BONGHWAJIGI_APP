@@ -1,0 +1,136 @@
+{
+  "schema_version": 1,
+  "generated_at": "2026-10-31T07:39:55+00:00",
+  "docs_paths": [
+    "docs"
+  ],
+  "documents": [
+    {
+      "id": ".loom/memory/README.md",
+      "title": "Loom Memory",
+      "path": ".loom/memory/README.md",
+      "source": "memory",
+      "document_type": "memory",
+      "updated_at": "2026-10-31T15:48:08+09:00",
+      "size_bytes": 202
+    },
+    {
+      "id": ".loom/memory/categories.json",
+      "title": "{",
+      "path": ".loom/memory/categories.json",
+      "source": "memory",
+      "document_type": "memory",
+      "updated_at": "2026-10-31T15:48:08+09:00",
+      "size_bytes": 1484
+    },
+    {
+      "id": ".loom/memory/principles.md",
+      "title": "Principles",
+      "path": ".loom/memory/principles.md",
+      "source": "memory",
+      "document_type": "principles",
+      "updated_at": "2026-10-31T15:48:08+09:00",
+      "size_bytes": 82
+    },
+    {
+      "id": "docs/01-start-here.md",
+      "title": "개발 시작 안내",
+      "path": "docs/01-start-here.md",
+      "source": "repository_docs",
+      "document_type": "docs",
+      "updated_at": "2026-10-31T16:31:45+09:00",
+      "size_bytes": 4002
+    },
+    {
+      "id": "docs/02-api-integration.md",
+      "title": "API 연결과 주의사항",
+      "path": "docs/02-api-integration.md",
+      "source": "repository_docs",
+      "document_type": "docs",
+      "updated_at": "2026-10-31T16:39:54+09:00",
+      "size_bytes": 6460
+    },
+    {
+      "id": "docs/03-realtime-background.md",
+      "title": "서버 대화·대응 단계·백그라운드",
+      "path": "docs/03-realtime-background.md",
+      "source": "repository_docs",
+      "document_type": "docs",
+      "updated_at": "2026-10-31T16:31:45+09:00",
+      "size_bytes": 6457
+    },
+    {
+      "id": "docs/04-map-tts.md",
+      "title": "2D 지도·서버 경로·단말 TTS",
+      "path": "docs/04-map-tts.md",
+      "source": "repository_docs",
+      "document_type": "docs",
+      "updated_at": "2026-10-31T16:31:45+09:00",
+      "size_bytes": 6169
+    },
+    {
+      "id": "docs/05-codex-workflow.md",
+      "title": "한 대 컴퓨터에서 Codex로 개발하기",
+      "path": "docs/05-codex-workflow.md",
+      "source": "repository_docs",
+      "document_type": "docs",
+      "updated_at": "2026-10-31T16:31:45+09:00",
+      "size_bytes": 3656
+    },
+    {
+      "id": "docs/06-server-handoff.md",
+      "title": "서버팀 연결 체크리스트",
+      "path": "docs/06-server-handoff.md",
+      "source": "repository_docs",
+      "document_type": "docs",
+      "updated_at": "2026-10-31T16:31:45+09:00",
+      "size_bytes": 4774
+    },
+    {
+      "id": "docs/07-validation.md",
+      "title": "구현·검증 기록",
+      "path": "docs/07-validation.md",
+      "source": "repository_docs",
+      "document_type": "docs",
+      "updated_at": "2026-10-31T16:39:54+09:00",
+      "size_bytes": 4011
+    },
+    {
+      "id": "docs/README.md",
+      "title": "앱팀 문서",
+      "path": "docs/README.md",
+      "source": "repository_docs",
+      "document_type": "docs",
+      "updated_at": "2026-10-31T16:31:45+09:00",
+      "size_bytes": 1440
+    },
+    {
+      "id": "docs/api/provenance.json",
+      "title": "{",
+      "path": "docs/api/provenance.json",
+      "source": "repository_docs",
+      "document_type": "docs",
+      "updated_at": "2026-10-31T16:17:42+09:00",
+      "size_bytes": 352
+    },
+    {
+      "id": "docs/api/upstream-examples.json",
+      "title": "{",
+      "path": "docs/api/upstream-examples.json",
+      "source": "repository_docs",
+      "document_type": "docs",
+      "updated_at": "2026-10-31T16:17:42+09:00",
+      "size_bytes": 106645
+    },
+    {
+      "id": "docs/api/upstream-openapi.yaml",
+      "title": "openapi: 3.1.0",
+      "path": "docs/api/upstream-openapi.yaml",
+      "source": "repository_docs",
+      "document_type": "docs",
+      "updated_at": "2026-10-31T16:17:42+09:00",
+      "size_bytes": 215282
+    }
+  ],
+  "path": "/Users/hongyongjae/Desktop/helloworld/BONGHAWJIGI_APP/.loom/memory/docs-index.json"
+}
