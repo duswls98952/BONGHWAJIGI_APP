@@ -21,22 +21,24 @@ a{color:inherit;text-decoration:none}
 .consent-section{margin-bottom:39px}
 .consent-section h2,.onboarding-profile h2{font-size:21px;margin:0 0 16px}
 .consent-all-row,.consent-row{display:flex;align-items:center;justify-content:space-between;gap:8px}
-.consent-all-row{min-height:56px;padding:6px 13px 6px 17px;border-radius:20px;background:#f0f2f7}
+.consent-all-row{min-height:48px;padding:2px 13px 2px 17px;border-radius:20px;background:#f0f2f7}
 .consent-check{display:flex;align-items:center;gap:13px;min-height:44px;flex:1;cursor:pointer;font-size:16px;line-height:1.4;font-weight:650;letter-spacing:-.5px}
 .consent-all-row .consent-check{font-size:20px;font-weight:750}
 .consent-check input{position:absolute;width:1px;height:1px;opacity:0}
 .checkbox-mark{width:27px;height:27px;flex:none;border:1.5px solid #9ba3aa;border-radius:8px;background:#fff;display:grid;place-items:center;color:#fff}
-.consent-all-row .checkbox-mark{width:26px;height:26px;border-radius:8px}
+.consent-all-row .checkbox-mark{width:21px;height:21px;border-radius:6px}
 .consent-check input:checked+.checkbox-mark{border-color:#003764;background:#003764}
 .consent-check input:checked+.checkbox-mark:after{content:"✓";font-size:20px;line-height:1;font-weight:750}
 .consent-check input:indeterminate+.checkbox-mark{border-color:#003764;background:#e6eef3}
 .consent-check input:indeterminate+.checkbox-mark:after{content:"−";color:#003764;font-size:23px;line-height:1}
+.consent-all-row .consent-check input:checked+.checkbox-mark:after{font-size:16px}
+.consent-all-row .consent-check input:indeterminate+.checkbox-mark:after{font-size:18px}
 .consent-check input:focus-visible+.checkbox-mark{outline:3px solid #8db9d1;outline-offset:2px}
 .consent-detail-button{width:40px;height:44px;flex:none;border:0;background:transparent;color:#4c5761;font-size:33px;line-height:1;display:grid;place-items:center}
 .consent-detail-button[aria-expanded="true"] span{transform:rotate(90deg)}
 .consent-detail-button:focus-visible{outline:2px solid #003764;border-radius:8px}
-.consent-list{padding:12px 7px 0}
-.consent-row{min-height:54px}
+.consent-list{padding:8px 7px 0}
+.consent-row{min-height:48px}
 .consent-row .consent-check{font-size:15px;font-weight:600}
 .consent-row .checkbox-mark{width:26px;height:26px;border:0;background:none;color:#9ba3aa}
 .consent-row .checkbox-mark:after{content:"✓";font-size:23px;line-height:1}
