@@ -1,0 +1,32 @@
+{
+  "id": "task-20261031-143231-task-d8a0e61d",
+  "job_id": "job-20261031-081911-png-html-28b089bf",
+  "title": "홈 버튼과 정보 화면의 프로필 문구 변경",
+  "description": "HTML 시안에서 홈 상단의 프로필 버튼 문구와 해당 화면 제목을 내정보로 바꾼다. 화면 이동과 입력 항목은 유지하고 README와 모바일 화면 기획서의 사용자에게 보이는 명칭을 맞춘다.",
+  "status": "RUNNING",
+  "created_at": "2026-10-31T14:32:31+00:00",
+  "updated_at": "2026-10-31T14:32:33+00:00",
+  "order_index": 62,
+  "assigned_agent": "codex",
+  "depends_on": [],
+  "expected_output": "public/prototype/index.html, README.md, docs/HeoNey/봉화지기_모바일_화면_기획서.md 및 Loom 기록",
+  "done_condition": "홈 상단 버튼과 정보 화면 제목에 내정보가 표시되고 기존 프로필 문구가 해당 UI 위치에 남지 않는다. 홈에서 정보 화면으로, 뒤로 가기로 홈에 이동한다.",
+  "in_scope": "public/prototype/index.html, README.md, docs/HeoNey/봉화지기_모바일_화면_기획서.md, Loom 기록",
+  "out_of_scope": "프로필 입력 항목, API 구조, 다른 화면 디자인",
+  "validation_hint": "문구·링크 확인, Chrome 홈·정보 화면 캡처, npm run check:docs, git diff --check",
+  "required_docs": [],
+  "memory_refs": [],
+  "document_outputs": [],
+  "document_output_exceptions": [],
+  "run_attempts": 0,
+  "last_error": "",
+  "commit_refs": [
+    "f16c1dbd76137da96db23d48a36ce74a65a127f5"
+  ],
+  "branch_name": "HeoNey_dev",
+  "git_dirty": true,
+  "git_snapshot_captured_at": "2026-10-31T14:32:33+00:00",
+  "artifacts": [],
+  "source_proposal_id": "",
+  "source_prompt": ""
+}
