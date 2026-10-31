@@ -3,9 +3,9 @@
   "job_id": "job-20261031-081911-png-html-28b089bf",
   "title": "모바일 화면 기획서를 현재 시안과 최근 재난 목록 규칙으로 갱신",
   "description": "현재 HTML 시안과 모바일 MVP 지침을 기준으로 오래된 모바일 화면 기획서를 다시 작성하고, 최근 주변 재난 정보는 최근 3개월 이내 최신순 최대 3건으로 명시한다.",
-  "status": "RUNNING",
+  "status": "DONE",
   "created_at": "2026-10-31T09:50:36+00:00",
-  "updated_at": "2026-10-31T09:50:38+00:00",
+  "updated_at": "2026-10-31T09:52:06+00:00",
   "order_index": 18,
   "assigned_agent": "codex",
   "depends_on": [],
@@ -21,12 +21,24 @@
   "run_attempts": 0,
   "last_error": "",
   "commit_refs": [
-    "60f3ada70b789d0ce87729ad3157f13e4e465e7d"
+    "60f3ada70b789d0ce87729ad3157f13e4e465e7d",
+    "02a78a7ec886f91124c5d4ec3135d092a405fea2"
   ],
   "branch_name": "HeoNey_dev",
   "git_dirty": true,
-  "git_snapshot_captured_at": "2026-10-31T09:50:38+00:00",
-  "artifacts": [],
+  "git_snapshot_captured_at": "2026-10-31T09:52:06+00:00",
+  "artifacts": [
+    ".loom/tasks/task-20261031-095036-task-0910cdf5/agent-events.jsonl",
+    ".loom/tasks/task-20261031-095036-task-0910cdf5/artifacts.json",
+    ".loom/tasks/task-20261031-095036-task-0910cdf5/context.md",
+    ".loom/tasks/task-20261031-095036-task-0910cdf5/decision.md",
+    ".loom/tasks/task-20261031-095036-task-0910cdf5/git-snapshot.json",
+    ".loom/tasks/task-20261031-095036-task-0910cdf5/logs.txt",
+    ".loom/tasks/task-20261031-095036-task-0910cdf5/previous-results.md",
+    ".loom/tasks/task-20261031-095036-task-0910cdf5/prompt.md",
+    ".loom/tasks/task-20261031-095036-task-0910cdf5/result.md",
+    ".loom/tasks/task-20261031-095036-task-0910cdf5/troubleshooting.md"
+  ],
   "source_proposal_id": "",
   "source_prompt": ""
 }
