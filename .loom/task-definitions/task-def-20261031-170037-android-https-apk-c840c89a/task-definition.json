@@ -4,7 +4,7 @@
   "title": "실제 Android에서 사설 HTTPS 연동 검증과 서명 APK 배포",
   "description": "사용자가 연결한 Samsung 휴대폰에 내부 릴리즈 APK를 설치하고 합성 프로필·위치·긴급 경보·정책3단계·재실행을 실서버로 검증한다. 사용자가 승인한 Tailnet HTTPS와 두 기기443 접근을 사용한다. APK와 재현 가능한 배포 인수 문서를 제공하고 앱 원격 커밋을 서버 저장소 서브모듈로 고정한다.",
   "created_at": "2026-10-31T17:00:37+00:00",
-  "updated_at": "2026-10-31T17:08:32+00:00",
+  "updated_at": "2026-10-31T17:54:02+00:00",
   "order_index": 3,
   "legacy_task_id": "task-20261031-170037-android-https-apk-eab2688e",
   "depends_on": [

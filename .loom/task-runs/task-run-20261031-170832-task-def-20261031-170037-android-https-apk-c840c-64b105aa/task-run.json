@@ -2,9 +2,9 @@
   "id": "task-run-20261031-170832-task-def-20261031-170037-android-https-apk-c840c-64b105aa",
   "job_run_id": "job-run-20261031-154056-job-20261031-152248-apk-cf438185-9713e815",
   "task_definition_id": "task-def-20261031-170037-android-https-apk-c840c89a",
-  "status": "RUNNING",
+  "status": "DONE",
   "created_at": "2026-10-31T17:08:32+00:00",
-  "updated_at": "2026-10-31T17:08:32+00:00",
+  "updated_at": "2026-10-31T17:54:03+00:00",
   "legacy_task_id": "task-20261031-170037-android-https-apk-eab2688e",
   "attempt": 1,
   "assigned_agent": "foreground",
@@ -13,13 +13,30 @@
   "lease_expires_at": "",
   "queued_at": "",
   "started_at": "2026-10-31T17:08:32+00:00",
-  "completed_at": "",
+  "completed_at": "2026-10-31T17:54:03+00:00",
   "last_error": "",
-  "commit_refs": [],
-  "branch_name": "",
-  "git_dirty": false,
-  "git_snapshot_captured_at": "",
-  "artifacts": [],
-  "checkpoint_ids": [],
+  "commit_refs": [
+    "35f725f9f8684c236ec04ac5fe4f1d13bf3dbe0a",
+    "8984d37ea5dd00597281affbd8232bf9bb1aec56"
+  ],
+  "branch_name": "develop",
+  "git_dirty": true,
+  "git_snapshot_captured_at": "2026-10-31T17:54:03+00:00",
+  "artifacts": [
+    ".loom/tasks/task-20261031-170037-android-https-apk-eab2688e/agent-events.jsonl",
+    ".loom/tasks/task-20261031-170037-android-https-apk-eab2688e/artifacts.json",
+    ".loom/tasks/task-20261031-170037-android-https-apk-eab2688e/context.md",
+    ".loom/tasks/task-20261031-170037-android-https-apk-eab2688e/decision.md",
+    ".loom/tasks/task-20261031-170037-android-https-apk-eab2688e/git-snapshot.json",
+    ".loom/tasks/task-20261031-170037-android-https-apk-eab2688e/logs.txt",
+    ".loom/tasks/task-20261031-170037-android-https-apk-eab2688e/previous-results.md",
+    ".loom/tasks/task-20261031-170037-android-https-apk-eab2688e/prompt.md",
+    ".loom/tasks/task-20261031-170037-android-https-apk-eab2688e/result.md",
+    ".loom/tasks/task-20261031-170037-android-https-apk-eab2688e/troubleshooting.md",
+    "docs/10-android-delivery.md"
+  ],
+  "checkpoint_ids": [
+    "checkpoint-20261031-175403-task-completed-android-https-apk-b7522b76"
+  ],
   "review_required_reason": ""
 }
