@@ -1,0 +1,19 @@
+{
+  "id": "checkpoint-20261031-102722-task-completed-html-cc121210",
+  "created_at": "2026-10-31T10:27:22+00:00",
+  "reason": "Task completed: 모바일 HTML 홈에 개인 준비사항 카드 추가",
+  "summary": "모바일 HTML 홈에 개인 준비사항 카드 추가 -> DONE @ HeoNey_dev/8c77b5273e63",
+  "job_id": "job-20261031-081911-png-html-28b089bf",
+  "task_id": "task-20261031-102622-html-3f2cacff",
+  "commit_sha": "8c77b5273e630e4f4f7d95db7585ee9cc6a6a1cf",
+  "branch_name": "HeoNey_dev",
+  "dirty": true,
+  "staged_files": [],
+  "modified_files": [
+    ".loom/job-runs/job-run-20261031-102624-job-20261031-081911-png-html-28b089bf-d7dfa1dd/job-run.json",
+    ".loom/task-definitions/task-def-20261031-102622-html-641c5353/task-definition.json"
+  ],
+  "untracked_files": [],
+  "snapshot_captured_at": "2026-10-31T10:27:22+00:00",
+  "rollback_strategy": "revert-or-branch"
+}

@@ -3,9 +3,9 @@
   "job_id": "job-20261031-081911-png-html-28b089bf",
   "title": "모바일 HTML 홈에 개인 준비사항 카드 추가",
   "description": "PNG 기반 모바일 HTML 시안의 홈에서 오늘의 안전 행동요령과 최근 주변 재난 정보 사이에 내 상황에 맞는 준비사항 영역을 추가하고 예시 카드 2개를 배치한다. 모바일 기획서도 새 순서와 시안 한계에 맞춘다.",
-  "status": "RUNNING",
+  "status": "DONE",
   "created_at": "2026-10-31T10:26:22+00:00",
-  "updated_at": "2026-10-31T10:26:24+00:00",
+  "updated_at": "2026-10-31T10:27:22+00:00",
   "order_index": 22,
   "assigned_agent": "codex",
   "depends_on": [],
@@ -21,12 +21,24 @@
   "run_attempts": 0,
   "last_error": "",
   "commit_refs": [
-    "8d96a4efe8c479dbc25a45bc58586177ba8c5856"
+    "8d96a4efe8c479dbc25a45bc58586177ba8c5856",
+    "8c77b5273e630e4f4f7d95db7585ee9cc6a6a1cf"
   ],
   "branch_name": "HeoNey_dev",
   "git_dirty": true,
-  "git_snapshot_captured_at": "2026-10-31T10:26:24+00:00",
-  "artifacts": [],
+  "git_snapshot_captured_at": "2026-10-31T10:27:22+00:00",
+  "artifacts": [
+    ".loom/tasks/task-20261031-102622-html-3f2cacff/agent-events.jsonl",
+    ".loom/tasks/task-20261031-102622-html-3f2cacff/artifacts.json",
+    ".loom/tasks/task-20261031-102622-html-3f2cacff/context.md",
+    ".loom/tasks/task-20261031-102622-html-3f2cacff/decision.md",
+    ".loom/tasks/task-20261031-102622-html-3f2cacff/git-snapshot.json",
+    ".loom/tasks/task-20261031-102622-html-3f2cacff/logs.txt",
+    ".loom/tasks/task-20261031-102622-html-3f2cacff/previous-results.md",
+    ".loom/tasks/task-20261031-102622-html-3f2cacff/prompt.md",
+    ".loom/tasks/task-20261031-102622-html-3f2cacff/result.md",
+    ".loom/tasks/task-20261031-102622-html-3f2cacff/troubleshooting.md"
+  ],
   "source_proposal_id": "",
   "source_prompt": ""
 }

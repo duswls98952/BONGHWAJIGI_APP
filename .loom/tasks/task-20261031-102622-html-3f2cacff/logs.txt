@@ -1,3 +1,4 @@
 [2026-10-31T10:26:24+00:00] agent=codex task=task-20261031-102622-html-3f2cacff Foreground task session started.
 [2026-10-31T10:27:04+00:00] 홈 HTML에 개인 준비사항 카드 2개를 추가하고 CSS·기획서를 갱신했다.
 [2026-10-31T10:27:04+00:00] 검증: HTML 순서와 카드 수, PostCSS 파싱, 기획서 링크, git diff --check 통과. 브라우저 접근 호스트 연결 불가.
+[2026-10-31T10:27:22+00:00] agent=codex task=task-20261031-102622-html-3f2cacff 홈에 개인 준비사항 카드 2개를 추가하고 모바일 기획서에 반영, 정적 검증 완료
