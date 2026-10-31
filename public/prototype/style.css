@@ -20,7 +20,9 @@ a{color:inherit;text-decoration:none}
 .topbar h1{font-size:18px;line-height:1.25;letter-spacing:-.5px;margin:0;font-weight:750}
 .home-header{background:#edf3f6}
 .home-topbar{height:59px;justify-content:space-between}
-.home-topbar h1{font-family:ROKG,-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo",sans-serif;font-size:31px;font-weight:700;font-synthesis:weight}
+.home-topbar h1{font-family:ROKG,-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo",sans-serif;font-size:31px;font-weight:700;font-synthesis:weight;color:#0047a0}
+@supports ((-webkit-background-clip:text) or (background-clip:text)){.home-topbar h1{background:linear-gradient(110deg,#0047a0 8%,#cd2e3a 28%,#704a83 50%,#0047a0 72%,#cd2e3a 94%);background-size:220% 180%;background-position:0% 35%;-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;animation:brand-tide 6s ease-in-out infinite alternate}}
+@keyframes brand-tide{to{background-position:100% 65%}}
 .home-profile-link{display:inline-flex;align-items:center;justify-content:center;gap:5px;min-width:48px;min-height:48px;font-size:15px;font-weight:700}
 .home-profile-link svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round}
 .home-profile-link:focus-visible{outline:2px solid var(--ink);outline-offset:2px;border-radius:6px}
@@ -80,7 +82,7 @@ p{margin:0}
 .waveform i{display:block;width:3px;height:var(--h);background:var(--blue);border-radius:5px;animation:pulse 1.2s ease-in-out infinite alternate}
 .waveform i:nth-child(even){animation-delay:.3s}
 @keyframes pulse{to{transform:scaleY(.6)}}
-@media(prefers-reduced-motion:reduce){.waveform i,.emergency-banner{animation:none}}
+@media(prefers-reduced-motion:reduce){.waveform i,.emergency-banner,.home-topbar h1{animation:none}.home-topbar h1{background-position:50% 50%}}
 .utterance{margin-top:12px;min-height:80px;border:0;border-radius:16px;background:var(--tile-bg);color:var(--blue);display:grid;place-items:center;text-align:center;padding:12px;font-size:17px;font-weight:750;letter-spacing:-.5px}
 .status h2{margin-bottom:10px}
 .tags{display:flex;flex-wrap:wrap;gap:6px}
