@@ -2,3 +2,4 @@
 2026-10-31 홈 지도 영역 뒤에 연한 푸른 회색의 투명 그라데이션 적용.
 2026-10-31 Chrome 헤드리스 스크린샷에서 지도 주변 페이드와 위치 표시 줄 흰 배경 확인.
 2026-10-31 npm run check:docs, git diff --check 통과. Loom Task 계약 검증은 TASK_VALIDATION_HINT_WEAK 경고만 반환.
+[2026-10-31T13:29:53+00:00] agent=codex task=task-20261031-132904-task-4b5030c5 홈 배경이 지도 주변에서 옅어져 위치 표시 전에 흰색으로 돌아오도록 적용 완료
