@@ -1,0 +1,32 @@
+{
+  "id": "task-20261031-112719-readme-ui-535e3de3",
+  "job_id": "job-20261031-081911-png-html-28b089bf",
+  "title": "README를 모바일 UI 중심으로 정리",
+  "description": "루트 README와 docs/README의 도입부를 최신 모바일 화면의 구성·이동 흐름·시안 확인 방법 중심으로 재구성하고, 정적 HTML 시안과 Expo 앱의 구현 상태를 구분한다.",
+  "status": "RUNNING",
+  "created_at": "2026-10-31T11:27:19+00:00",
+  "updated_at": "2026-10-31T11:27:21+00:00",
+  "order_index": 27,
+  "assigned_agent": "codex",
+  "depends_on": [],
+  "expected_output": "README.md와 docs/README.md의 UI 안내 및 Loom 작업 기록",
+  "done_condition": "처음 읽는 사람이 홈·긴급 대응·프로필·재난별 기본 수칙의 목적과 이동 흐름, HTML 시안 위치, Expo 앱과의 차이, 실행 방법을 README에서 확인할 수 있고 현재 명칭·2D 범위와 일치한다.",
+  "in_scope": "README.md, docs/README.md, Loom 작업 기록",
+  "out_of_scope": "HTML/Expo 화면 구현, API 계약, PNG 수정, 배포",
+  "validation_hint": "기획서·실제 파일과 문구 대조, npm run check:docs, git diff --check",
+  "required_docs": [],
+  "memory_refs": [],
+  "document_outputs": [],
+  "document_output_exceptions": [],
+  "run_attempts": 0,
+  "last_error": "",
+  "commit_refs": [
+    "7c904e4be09dfaf458bd6957827ae675ea7512e0"
+  ],
+  "branch_name": "HeoNey_dev",
+  "git_dirty": true,
+  "git_snapshot_captured_at": "2026-10-31T11:27:21+00:00",
+  "artifacts": [],
+  "source_proposal_id": "",
+  "source_prompt": ""
+}
