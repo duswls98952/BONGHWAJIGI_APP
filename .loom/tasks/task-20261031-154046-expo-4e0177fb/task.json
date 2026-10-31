@@ -3,9 +3,9 @@
   "job_id": "job-20261031-152248-apk-cf438185",
   "title": "목업 디자인을 Expo 화면에 구현하고 현재 서버 계약과 인증 연결",
   "description": "서버 공백 보완과 맞춰 완성 목업의 로딩·온보딩·홈·긴급3단계·프로필·수칙을 Expo에 구현하고 안전한 세션 보관·갱신, 위치·현재상태·변경 동기화·TTS·신고 화면 연결을 실제0.2 계약으로 구성한다. APK를 위한 네이티브 설정과 빌드 도구도 준비한다.",
-  "status": "RUNNING",
+  "status": "DONE",
   "created_at": "2026-10-31T15:40:46+00:00",
-  "updated_at": "2026-10-31T15:40:57+00:00",
+  "updated_at": "2026-10-31T17:08:20+00:00",
   "order_index": 2,
   "assigned_agent": "foreground",
   "depends_on": [
@@ -29,12 +29,25 @@
   "run_attempts": 0,
   "last_error": "",
   "commit_refs": [
-    "63c26508cf7e141275cec8e27a1d49f77e1ec533"
+    "63c26508cf7e141275cec8e27a1d49f77e1ec533",
+    "d386cb8297a913ce2e172867fd562189696aef1d"
   ],
   "branch_name": "develop",
   "git_dirty": true,
-  "git_snapshot_captured_at": "2026-10-31T15:40:57+00:00",
-  "artifacts": [],
+  "git_snapshot_captured_at": "2026-10-31T17:08:20+00:00",
+  "artifacts": [
+    ".loom/tasks/task-20261031-154046-expo-4e0177fb/agent-events.jsonl",
+    ".loom/tasks/task-20261031-154046-expo-4e0177fb/artifacts.json",
+    ".loom/tasks/task-20261031-154046-expo-4e0177fb/context.md",
+    ".loom/tasks/task-20261031-154046-expo-4e0177fb/decision.md",
+    ".loom/tasks/task-20261031-154046-expo-4e0177fb/git-snapshot.json",
+    ".loom/tasks/task-20261031-154046-expo-4e0177fb/logs.txt",
+    ".loom/tasks/task-20261031-154046-expo-4e0177fb/previous-results.md",
+    ".loom/tasks/task-20261031-154046-expo-4e0177fb/prompt.md",
+    ".loom/tasks/task-20261031-154046-expo-4e0177fb/result.md",
+    ".loom/tasks/task-20261031-154046-expo-4e0177fb/troubleshooting.md",
+    "docs/09-app-implementation.md"
+  ],
   "source_proposal_id": "",
   "source_prompt": ""
 }

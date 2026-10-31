@@ -1,0 +1,19 @@
+{
+  "id": "checkpoint-20261031-170820-task-completed-expo-4c24bf83",
+  "created_at": "2026-10-31T17:08:20+00:00",
+  "reason": "Task completed: 목업 디자인을 Expo 화면에 구현하고 현재 서버 계약과 인증 연결",
+  "summary": "목업 디자인을 Expo 화면에 구현하고 현재 서버 계약과 인증 연결 -> DONE @ develop/d386cb8297a9",
+  "job_id": "job-20261031-152248-apk-cf438185",
+  "task_id": "task-20261031-154046-expo-4e0177fb",
+  "commit_sha": "d386cb8297a913ce2e172867fd562189696aef1d",
+  "branch_name": "develop",
+  "dirty": true,
+  "staged_files": [],
+  "modified_files": [
+    ".loom/job-runs/job-run-20261031-154056-job-20261031-152248-apk-cf438185-9713e815/job-run.json",
+    ".loom/task-definitions/task-def-20261031-154046-expo-e2704dff/task-definition.json"
+  ],
+  "untracked_files": [],
+  "snapshot_captured_at": "2026-10-31T17:08:20+00:00",
+  "rollback_strategy": "revert-or-branch"
+}
