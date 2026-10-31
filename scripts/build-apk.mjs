@@ -112,7 +112,9 @@ if (permissions.some((name) => ['android.permission.CALL_PHONE', 'android.permis
 const contents = run('unzip', ['-Z1', source], root, true).split('\n');
 if (!contents.includes('assets/index.android.bundle')) throw new Error('Release APK is missing its embedded JS bundle.');
 mkdirSync(output, { recursive: true });
-const target = join(output, `bonghwajigi-0.2.0-${loopback ? 'usb' : 'private'}-arm64.apk`);
+const packageInfo = badging.match(/^package: name='([^']+)' versionCode='([^']+)' versionName='([^']+)'/m);
+if (!packageInfo) throw new Error('APK package/version metadata not found.');
+const target = join(output, `bonghwajigi-${packageInfo[3]}-${loopback ? 'usb' : 'private'}-arm64.apk`);
 copyFileSync(source, target);
 const gitHead = run('git', ['rev-parse', 'HEAD'], root, true).trim();
 const report = {
@@ -120,8 +122,9 @@ const report = {
   source_head: gitHead,
   source_dirty: Boolean(run('git', ['status', '--porcelain'], root, true).trim()),
   app_id: 'com.bonghwajigi.app',
-  version_name: '0.2.0',
-  version_code: 2,
+  version_name: packageInfo[3],
+  version_code: Number(packageInfo[2]),
+  naver_map_configured: Boolean(env.EXPO_PUBLIC_NAVER_MAP_CLIENT_ID),
   architecture: 'arm64-v8a',
   minified: !args.includes('--no-minify'),
   debuggable: false,

@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-10-31T17:00:37+00:00",
+  "generated_at": "2026-10-31T18:07:28+00:00",
   "docs_paths": [
     "docs"
   ],
@@ -38,8 +38,8 @@
       "path": "docs/01-start-here.md",
       "source": "repository_docs",
       "document_type": "docs",
-      "updated_at": "2026-11-01T00:12:22+09:00",
-      "size_bytes": 4002
+      "updated_at": "2026-11-01T02:02:32+09:00",
+      "size_bytes": 4305
     },
     {
       "id": "docs/02-api-integration.md",
@@ -56,8 +56,8 @@
       "path": "docs/03-realtime-background.md",
       "source": "repository_docs",
       "document_type": "docs",
-      "updated_at": "2026-11-01T01:51:27+09:00",
-      "size_bytes": 7302
+      "updated_at": "2026-11-01T02:02:22+09:00",
+      "size_bytes": 7356
     },
     {
       "id": "docs/04-map-tts.md",
@@ -83,8 +83,8 @@
       "path": "docs/06-server-handoff.md",
       "source": "repository_docs",
       "document_type": "docs",
-      "updated_at": "2026-11-01T01:51:27+09:00",
-      "size_bytes": 6057
+      "updated_at": "2026-11-01T02:02:22+09:00",
+      "size_bytes": 6111
     },
     {
       "id": "docs/07-validation.md",
@@ -92,8 +92,8 @@
       "path": "docs/07-validation.md",
       "source": "repository_docs",
       "document_type": "docs",
-      "updated_at": "2026-11-01T00:12:22+09:00",
-      "size_bytes": 6443
+      "updated_at": "2026-11-01T02:47:48+09:00",
+      "size_bytes": 8065
     },
     {
       "id": "docs/08-live-integration-audit.md",
@@ -110,8 +110,17 @@
       "path": "docs/09-app-implementation.md",
       "source": "repository_docs",
       "document_type": "docs",
-      "updated_at": "2026-11-01T01:51:28+09:00",
-      "size_bytes": 5697
+      "updated_at": "2026-11-01T02:02:22+09:00",
+      "size_bytes": 5900
+    },
+    {
+      "id": "docs/10-android-delivery.md",
+      "title": "Android 내부 배포 및 실서버 검증",
+      "path": "docs/10-android-delivery.md",
+      "source": "repository_docs",
+      "document_type": "docs",
+      "updated_at": "2026-11-01T02:47:48+09:00",
+      "size_bytes": 9431
     },
     {
       "id": "docs/HeoNey/모바일_화면_API_매칭_리스트.md",
@@ -137,8 +146,8 @@
       "path": "docs/README.md",
       "source": "repository_docs",
       "document_type": "docs",
-      "updated_at": "2026-11-01T02:00:36+09:00",
-      "size_bytes": 2276
+      "updated_at": "2026-11-01T02:26:43+09:00",
+      "size_bytes": 2345
     },
     {
       "id": "docs/api/mvp-fixtures.json",
@@ -193,6 +202,24 @@
       "document_type": "docs",
       "updated_at": "2026-11-01T00:12:22+09:00",
       "size_bytes": 215282
+    },
+    {
+      "id": "docs/validation/android-build.json",
+      "title": "{",
+      "path": "docs/validation/android-build.json",
+      "source": "repository_docs",
+      "document_type": "docs",
+      "updated_at": "2026-11-01T02:37:26+09:00",
+      "size_bytes": 3375
+    },
+    {
+      "id": "docs/validation/android-native-verification.json",
+      "title": "{",
+      "path": "docs/validation/android-native-verification.json",
+      "source": "repository_docs",
+      "document_type": "docs",
+      "updated_at": "2026-11-01T02:47:48+09:00",
+      "size_bytes": 2069
     }
   ],
   "path": "/Users/hongyongjae/Desktop/helloworld/BONGHAWJIGI_APP/.loom/memory/docs-index.json"

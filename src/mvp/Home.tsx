@@ -5,15 +5,16 @@ import {mvpMock} from './api';
 import {freshUntil} from './core';
 import {Body, Button, Card, Icon, Page, s} from './ui';
 import MvpMap from './Map';
+import {currentMapLocation} from './mapGeometry';
 import {RequireSession} from './Onboarding';
 
 function HomeBody(){
   const value=useMvp(),home=value.home?.data;
-  const location=home?.location.status==='available'&&freshUntil(home.location.valid_until,value.now)&&(home.location.input_revision>=(value.required[`location:${value.session?.tokens.user_id}`]??0))?home.location.fix:null;
+  const location=currentMapLocation(home?.location,value.now,value.required[`location:${value.session?.tokens.user_id}`]??0);
   const preparationCurrent=home&&home.preparations.status==='available'&&home.preparations.profile_revision>=(value.profile?.data.revision??0)&&home.preparations.items.every(item=>freshUntil(item.valid_until,value.now));
   function open(responseId:string|null,alertId?:string,incidentId?:string){router.push({pathname:'/emergency',params:{...(responseId?{responseId}:{}),...(alertId?{alertId}:{} ),...(incidentId?{incidentId}:{})}});}
   return <Page home>
-    <View style={s.section}><MvpMap location={location}/><View style={s.row}><Icon name="pin" size={18}/><Body>{location?'현재 위치가 확인됐어요':'현재 위치 미확인'}</Body></View>{!location&&<Button secondary title="위치와 알림 설정" onPress={()=>router.push('/profile')}/>}</View>
+    <View style={s.section}><MvpMap location={location} simulation={value.home?.meta.mode==='simulation'}/><View style={s.row}><Icon name="pin" size={18}/><Body>{location?'현재 위치가 확인됐어요':'현재 위치 미확인'}</Body></View>{!location&&<Button secondary title="위치와 알림 설정" onPress={()=>router.push('/profile')}/>}</View>
     {!!value.error&&<Card><Body>{value.error}</Body><Button secondary title="다시 확인" onPress={()=>void value.refresh().catch(()=>undefined)}/></Card>}
     {!home&&<Card><Body>주변 정보를 확인하고 있어요. 연결이 끝나면 표시합니다.</Body><Button secondary title="다시 불러오기" onPress={()=>void value.refresh().catch(()=>undefined)}/></Card>}
     {!!home?.alerts.length&&<View style={s.section}>{home.alerts.map(alert=><Pressable key={alert.id} accessibilityRole="button" accessibilityLabel={`${alert.status==='active'?'공식 경보':'공식 경보 상태'} 원문 확인`} style={[s.card,{backgroundColor:alert.status==='active'?'#fff0db':'#f0f2f4'}]} onPress={()=>open(alert.response_id,alert.id,alert.incident_id)}><View style={s.row}><Icon name="warning"/><Text style={s.cardTitle}>{alert.status==='active'?'공식 경보 원문 확인':alert.status==='cancelled'?'공식 경보 해제':'공식 경보 유효성 확인'}</Text></View><Body>{alert.original_text}</Body><Body small muted>{alert.authority} · {alert.official_severity}</Body></Pressable>)}</View>}

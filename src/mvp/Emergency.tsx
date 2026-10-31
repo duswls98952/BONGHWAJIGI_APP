@@ -9,17 +9,12 @@ import {Body,Button,Card,Chip,Group,Icon,Page,s} from './ui';
 import {RequireSession} from './Onboarding';
 import {EmergencyActions} from './Support';
 import MvpMap from './Map';
+import {currentMapLocation,validBounds} from './mapGeometry';
 import {useTts} from '../platform/useTts';
 import {installationId} from '../platform/storage';
 
 type State=MvpSchema<'StatePatch'>;
 const emptyState=():State=>({helper_present:null,can_move:null,injured:null,observed_hazard:'unknown',location_type:'unknown',evacuation_status:'unknown',deescalation_confirmed:false});
-function region(value:unknown){
-  if(!value||typeof value!=='object')return null;
-  const box=value as Record<string,unknown>;
-  if(['west','east','south','north'].every(key=>typeof box[key]==='number'&&Number.isFinite(box[key])))return box as unknown as {west:number;east:number;south:number;north:number};
-  return null;
-}
 function Wave({speaking}:{speaking:boolean}){
   const amount=useRef(new Animated.Value(1)).current;
   useEffect(()=>{if(!speaking){amount.setValue(1);return;}const animation=Animated.loop(Animated.sequence([Animated.timing(amount,{toValue:.45,duration:450,useNativeDriver:true}),Animated.timing(amount,{toValue:1,duration:450,useNativeDriver:true})]));animation.start();return()=>animation.stop();},[speaking,amount]);
@@ -72,13 +67,13 @@ function EmergencyBody(){
     catch(problem){setMessage(userMessage(problem));}finally{setBusy(false);}
   }
   const locationState=runtime.home?.data.location;
-  const location=locationState?.status==='available'&&freshUntil(locationState.valid_until,runtime.now)?locationState.fix:null;
-  const bounds=content&&typeof content.incident.expires_at==='string'&&freshUntil(content.incident.expires_at,runtime.now)?region(content.incident.area):null;
+  const location=currentMapLocation(locationState,runtime.now,runtime.required[`location:${runtime.session?.tokens.user_id}`]??0);
+  const bounds=content&&typeof content.incident.expires_at==='string'&&freshUntil(content.incident.expires_at,runtime.now)?validBounds(content.incident.area):null;
   return <Page footer={<EmergencyActions responseId={responseId} alertId={alert?.id}/>}>
     <View accessibilityLiveRegion="polite" style={{marginHorizontal:-18,marginTop:-18,paddingHorizontal:18,paddingVertical:25,backgroundColor:color.background,alignItems:'center'}}><View style={s.row}><Icon name="warning" color={color.ink} size={26}/><Text style={{fontSize:24,fontWeight:'800',color:color.ink}}>{level==='information'?label:`${label} 산불 ${usable?'발생':''}`.trim()}</Text></View>{usable&&content?.personal_response.number&&<Text style={{fontSize:14,color:color.ink,marginTop:8}}>나의 대응 {content.personal_response.number}단계</Text>}</View>
     {alert&&<Card title={alert.status==='cancelled'?'공식 경보 해제':alert.status==='active'?'공식 경보 원문':'공식 경보 유효성 확인'}><Body>{alert.original_text}</Body><Body small muted>{alert.authority} · 기관 등급 {alert.official_severity}</Body><Body small muted>발령 {new Date(alert.issued_at).toLocaleString('ko-KR')}</Body>{alert.status==='cancelled'&&<Body small>개인 안내는 아래 최신 내용으로 확인해 주세요.</Body>}</Card>}
     {!alert&&<Card><Body>이 사건에 연결된 공식 경보를 확인하고 있어요.</Body></Card>}
-    <View style={s.section}><Text style={s.heading}>재난 영향 지역</Text><MvpMap location={location} bounds={bounds}/><Body small muted>{content?.relevance.status==='inside'?'입력된 관련 지역 안에 있어요.':content?.relevance.status==='outside'?'입력된 관련 지역 바깥에 있어요.':'내 위치와 재난 지역의 관련성을 확인하고 있어요.'}</Body></View>
+    <View style={s.section}><Text style={s.heading}>재난 영향 지역</Text><MvpMap location={location} bounds={bounds} simulation={runtime.home?.meta.mode==='simulation'}/><Body small muted>{usable&&location&&content?.relevance.status==='inside'?'입력된 관련 지역 안에 있어요.':usable&&location&&content?.relevance.status==='outside'?'입력된 관련 지역 바깥에 있어요.':'내 위치와 재난 지역의 관련성을 확인하고 있어요.'}</Body></View>
     <View style={s.section}><Text style={s.heading}>실시간 음성 안내</Text><Card tint="#f7f9fb"><Wave speaking={tts.speaking}/><View style={{backgroundColor:'#e8f2f6',borderRadius:16,padding:18}}><Text style={{fontSize:17,lineHeight:28,color:'#2c5569',fontWeight:'700'}}>{usable?(utterance?.text??'새로운 안내를 기다리고 있어요.'):'최신 안내를 확인하고 있어요. 공식 원문은 위에서 확인할 수 있어요.'}</Text></View><Button secondary title={tts.enabled?'음성 읽기 끄기':'이 안내 음성으로 읽기'} onPress={()=>tts.setEnabled(!tts.enabled)}/>{!!tts.error&&<Body small muted>{tts.error}</Body>}</Card></View>
     <View style={s.section}><Text style={s.heading}>내 현재 상태</Text><Card>
       <Body small muted>지금 직접 확인한 상태를 선택하고 저장해 주세요.</Body>

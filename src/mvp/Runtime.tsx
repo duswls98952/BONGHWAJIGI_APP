@@ -130,7 +130,7 @@ export function MvpProvider({children}:React.PropsWithChildren) {
       value=await sessions.save(tokens.data,false);
       setSession(value);actor.current=value;
     }
-    await mvpApi.device(await installationId(),{platform:Platform.OS==='android'?'android':Platform.OS==='ios'?'ios':'web',push_provider:'fcm',push_token:null,notification_permission:'not_determined',app_version:'0.2.0'});
+    await mvpApi.device(await installationId(),{platform:Platform.OS==='android'?'android':Platform.OS==='ios'?'ios':'web',push_provider:'fcm',push_token:null,notification_permission:'not_determined',app_version:'0.2.1'});
     const current=await mvpApi.profile();
     const saved=await mvpApi.saveProfile({base_revision:current.data.revision,profile:draft},newId());
     setProfile(saved);
