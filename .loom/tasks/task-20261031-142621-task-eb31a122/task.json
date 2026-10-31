@@ -1,0 +1,32 @@
+{
+  "id": "task-20261031-142621-task-eb31a122",
+  "job_id": "job-20261031-081911-png-html-28b089bf",
+  "title": "첫 설정 동의 체크박스와 항목 간격 축소",
+  "description": "첫 설정 화면의 전체 동의 체크박스와 감싸는 카드의 세로 높이를 줄이고, 두 필수·두 선택 항목 사이의 세로 간격을 좁힌다. 문구와 선택 동작은 유지한다.",
+  "status": "RUNNING",
+  "created_at": "2026-10-31T14:26:21+00:00",
+  "updated_at": "2026-10-31T14:26:23+00:00",
+  "order_index": 58,
+  "assigned_agent": "codex",
+  "depends_on": [],
+  "expected_output": "public/prototype/style.css 및 Loom 기록",
+  "done_condition": "전체 동의 체크박스와 카드가 기존보다 작아지고, 개별 동의 네 줄의 간격이 좁아진 화면을 모바일 너비에서 확인할 수 있다. 체크 및 상세 열기 동작은 유지된다.",
+  "in_scope": "public/prototype/style.css, Loom 기록",
+  "out_of_scope": "동의 문구, 프로필 입력, 저장 동작, 다른 화면",
+  "validation_hint": "Chrome 모바일 너비 화면 캡처와 동의 선택 확인, git diff --check, npm run check",
+  "required_docs": [],
+  "memory_refs": [],
+  "document_outputs": [],
+  "document_output_exceptions": [],
+  "run_attempts": 0,
+  "last_error": "",
+  "commit_refs": [
+    "84f927409fdf0e80118d36452ff82aa9c6383e08"
+  ],
+  "branch_name": "HeoNey_dev",
+  "git_dirty": true,
+  "git_snapshot_captured_at": "2026-10-31T14:26:23+00:00",
+  "artifacts": [],
+  "source_proposal_id": "",
+  "source_prompt": ""
+}
