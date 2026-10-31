@@ -2,3 +2,5 @@
 
 2026-11-01 KST: exact9s cut retained79.7s; user-controlled profile recording take01=60.831211s, take02=50.040478s, take03=41.989456s; user requested redo twice then confirmed take03 finished. All capture processes stopped.
 Validation: after9s=79.700s, selected=42.000s/1260 frames, full decode no errors/warnings. Original packet DTS strictly increasing; null timebase rounding caused16 warnings, original demux timebase decode0 warnings. AAC1955 packets payload+PTS identical. Selected SHA256 3fcaee544a1981f50ee32342e42d266a45670164222a25fec816b1fa9b25eb8f.
+[2026-10-31T23:32:09+00:00] agent=foreground task=task-20261031-232306-a-9-9cc91b8d 정확한9초 제외본과 사용자 확정3차 재촬영본을 검증·보관했다. 직접선택·저장완료와 녹화종료를 확인하고 문서화했다.
+Validation completed: npm run check:docs => exit 0 (20 docs PASS); loom validate --strict => exit 0 PASS (77 tasks); git diff --check => exit 0 PASS; ffmpeg whole-file decode after9s and selected => exit 0 PASS, 0 errors, 0 warnings.

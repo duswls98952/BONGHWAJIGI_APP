@@ -3,9 +3,9 @@
   "job_id": "job-20261031-152248-apk-cf438185",
   "title": "A 프로필 첫 9초 교체와 직접 선택 촬영 준비",
   "description": "사용자가 A 확인본 첫 9초를 잘라내고 이동과 의사소통 영역을 직접 스크롤·선택하는 새 녹화를 준비하라고 요청했다.",
-  "status": "RUNNING",
+  "status": "REVIEW_REQUIRED",
   "created_at": "2026-10-31T23:23:06+00:00",
-  "updated_at": "2026-10-31T23:23:22+00:00",
+  "updated_at": "2026-10-31T23:32:09+00:00",
   "order_index": 8,
   "assigned_agent": "foreground",
   "depends_on": [],
@@ -23,12 +23,25 @@
   "run_attempts": 0,
   "last_error": "",
   "commit_refs": [
-    "e1c486b10393960581a5fffb6c5c84cb55ea713e"
+    "e1c486b10393960581a5fffb6c5c84cb55ea713e",
+    "48baa9b0d13fe482f9ae54c918f9f7d35d4561ba"
   ],
   "branch_name": "develop",
   "git_dirty": true,
-  "git_snapshot_captured_at": "2026-10-31T23:23:22+00:00",
-  "artifacts": [],
+  "git_snapshot_captured_at": "2026-10-31T23:32:09+00:00",
+  "artifacts": [
+    ".loom/tasks/task-20261031-232306-a-9-9cc91b8d/agent-events.jsonl",
+    ".loom/tasks/task-20261031-232306-a-9-9cc91b8d/artifacts.json",
+    ".loom/tasks/task-20261031-232306-a-9-9cc91b8d/context.md",
+    ".loom/tasks/task-20261031-232306-a-9-9cc91b8d/decision.md",
+    ".loom/tasks/task-20261031-232306-a-9-9cc91b8d/git-snapshot.json",
+    ".loom/tasks/task-20261031-232306-a-9-9cc91b8d/logs.txt",
+    ".loom/tasks/task-20261031-232306-a-9-9cc91b8d/previous-results.md",
+    ".loom/tasks/task-20261031-232306-a-9-9cc91b8d/prompt.md",
+    ".loom/tasks/task-20261031-232306-a-9-9cc91b8d/result.md",
+    ".loom/tasks/task-20261031-232306-a-9-9cc91b8d/troubleshooting.md",
+    "docs/15-scenario-a-profile-retake.md"
+  ],
   "source_proposal_id": "",
   "source_prompt": ""
 }

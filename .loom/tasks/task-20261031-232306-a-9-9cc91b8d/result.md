@@ -9,3 +9,13 @@
 ## 산출물
 
 artifacts/recordings/2026-11-01-A/A-scenario-after-9s.mp4, A-profile-retake-03-raw.mp4, A-profile-retake-selected.mp4. after-9s-edit.json, retake-selected-edit.json. docs/15-scenario-a-profile-retake.md와 docs/validation/scenario-a-profile-retake.json에 인계했다. 영상은 로컬 Git제외.
+
+## 실행한 검증 결과
+
+- `npm run check:docs`: exit 0, 문서 20개 파일 링크 검사 통과.
+- `loom validate --strict`: exit 0, 77개 Task 메타데이터 정합성 검사 통과.
+- `git diff --check`: exit 0, 공백 오류 없음.
+- `ffmpeg -hide_banner -v error -xerror -i A-scenario-after-9s.mp4 -f null -`: exit 0, 전체 디코드 검증 통과. 길이 79.700초, 2391프레임, 첫 프레임은 원본9초와 대응한다.
+- `ffmpeg -hide_banner -v error -xerror -i A-profile-retake-selected.mp4 -f null -`: exit 0, 전체 디코드 오류·경고0개. 길이42.000초, 1260프레임, 원본AAC1955패킷 payload와PTS 일치.
+- 단말 연결 device 상태 및 사용자 세 번째 테이크 완료 응답을 확인했다. 프로세스 검사에서 남은 녹화가 없었다.
+- 자세한 실제 파일 해시·검증 명령·출력은 docs/validation/scenario-a-profile-retake.json에 보관했다. 모든 검증을 완료했다.
