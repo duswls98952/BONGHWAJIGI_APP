@@ -1,0 +1,32 @@
+{
+  "id": "task-20261031-132423-bold-794e09a6",
+  "job_id": "job-20261031-081911-png-html-28b089bf",
+  "title": "홈 로고에 정부상징서체 Bold 시안 적용",
+  "description": "PNG 기반 모바일 HTML 시안의 홈 로고 봉화 지기 글자를 정부상징서체 Bold로 미리보기 적용하고, 공식 서체 파일과 사용 조건을 확인해 표시 상태를 검증한다.",
+  "status": "RUNNING",
+  "created_at": "2026-10-31T13:24:23+00:00",
+  "updated_at": "2026-10-31T13:24:25+00:00",
+  "order_index": 42,
+  "assigned_agent": "codex",
+  "depends_on": [],
+  "expected_output": "public/prototype 홈 로고 글꼴 적용, 필요한 로컬 서체 자산과 Loom 결과",
+  "done_condition": "정부상징서체의 실제 Bold가 홈 봉화 지기 글자에 표시되고 나머지 화면 글꼴은 유지되며 브라우저에서 확인한다.",
+  "in_scope": "public/prototype/index.html, public/prototype/style.css, 필요한 서체 자산, 관련 시안 문서, Loom 기록",
+  "out_of_scope": "Expo 앱 서체, 로고 이름·레이아웃, 다른 화면 글꼴, 상업 배포 승인",
+  "validation_hint": "공식 배포 파일·이용 조건 확인, 브라우저 렌더 확인, git diff --check, Loom validate",
+  "required_docs": [],
+  "memory_refs": [],
+  "document_outputs": [],
+  "document_output_exceptions": [],
+  "run_attempts": 0,
+  "last_error": "",
+  "commit_refs": [
+    "55724e2ef0c8ea509608b25e1953161c7bb5fe0e"
+  ],
+  "branch_name": "HeoNey_dev",
+  "git_dirty": true,
+  "git_snapshot_captured_at": "2026-10-31T13:24:25+00:00",
+  "artifacts": [],
+  "source_proposal_id": "",
+  "source_prompt": ""
+}

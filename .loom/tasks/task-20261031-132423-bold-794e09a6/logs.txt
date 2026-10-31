@@ -1,0 +1,4 @@
+[2026-10-31T13:24:25+00:00] agent=codex task=task-20261031-132423-bold-794e09a6 Foreground task session started.
+2026-10-31 정부상징서체 공식 배포 페이지와 공공누리 제4유형 조건 확인.
+2026-10-31 ROKG_R.ttf 내부 이름 ROKG R, 굵기 400 및 필요한 글리프 확인.
+2026-10-31 npm run check:docs 통과, git diff --check 통과, Chrome 헤드리스 홈 스크린샷 확인.
