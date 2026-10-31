@@ -3,11 +3,11 @@
   "job_id": "job-20261031-081911-png-html-28b089bf",
   "title": "홈 지도 아래 위치 표시 배치",
   "description": "HTML 홈 화면에서 위치 아이콘과 서울특별시 구로구 구로동 문구를 우리 동네는 지금? 지도 아래로 옮기고 주변 소식 조회 반경 설정과 GPS 문구를 제거한다.",
-  "status": "RUNNING",
+  "status": "DONE",
   "created_at": "2026-10-31T08:44:32+00:00",
-  "updated_at": "2026-10-31T08:44:33+00:00",
+  "updated_at": "2026-10-31T08:45:10+00:00",
   "order_index": 7,
-  "assigned_agent": "codex",
+  "assigned_agent": "foreground",
   "depends_on": [],
   "expected_output": "지도 아래 주소 행이 있는 홈 화면",
   "done_condition": "위치 아이콘과 주소 행이 지도 뒤에 표시되고 조회 반경 버튼 및 GPS 문구가 홈 화면에서 보이지 않는다.",
@@ -21,12 +21,24 @@
   "run_attempts": 0,
   "last_error": "",
   "commit_refs": [
-    "4031528e4d1e8f7814887da73ed4e858f054e592"
+    "4031528e4d1e8f7814887da73ed4e858f054e592",
+    "ca0203fe1e30ef0e734839933c097a96054be8e7"
   ],
   "branch_name": "HeoNey_dev",
   "git_dirty": true,
-  "git_snapshot_captured_at": "2026-10-31T08:44:33+00:00",
-  "artifacts": [],
+  "git_snapshot_captured_at": "2026-10-31T08:45:10+00:00",
+  "artifacts": [
+    ".loom/tasks/task-20261031-084432-task-4a91855a/agent-events.jsonl",
+    ".loom/tasks/task-20261031-084432-task-4a91855a/artifacts.json",
+    ".loom/tasks/task-20261031-084432-task-4a91855a/context.md",
+    ".loom/tasks/task-20261031-084432-task-4a91855a/decision.md",
+    ".loom/tasks/task-20261031-084432-task-4a91855a/git-snapshot.json",
+    ".loom/tasks/task-20261031-084432-task-4a91855a/logs.txt",
+    ".loom/tasks/task-20261031-084432-task-4a91855a/previous-results.md",
+    ".loom/tasks/task-20261031-084432-task-4a91855a/prompt.md",
+    ".loom/tasks/task-20261031-084432-task-4a91855a/result.md",
+    ".loom/tasks/task-20261031-084432-task-4a91855a/troubleshooting.md"
+  ],
   "source_proposal_id": "",
   "source_prompt": ""
 }
