@@ -1,0 +1,20 @@
+{
+  "id": "checkpoint-20261031-133837-task-completed-f9e8210e",
+  "created_at": "2026-10-31T13:38:37+00:00",
+  "reason": "Task completed: 정부청색·정부적색 로고와 원형 로딩 마크 적용",
+  "summary": "정부청색·정부적색 로고와 원형 로딩 마크 적용 -> DONE @ HeoNey_dev/d9c49e79fb49",
+  "job_id": "job-20261031-081911-png-html-28b089bf",
+  "task_id": "task-20261031-133640-task-def8aa5c",
+  "commit_sha": "d9c49e79fb49339091c4ad3a1d7edba4509191f1",
+  "branch_name": "HeoNey_dev",
+  "dirty": true,
+  "staged_files": [],
+  "modified_files": [
+    ".loom/job-runs/job-run-20261031-133642-job-20261031-081911-png-html-28b089bf-4b2ffbcd/job-run.json",
+    ".loom/task-definitions/task-def-20261031-133640-task-def-6a4b51ae/task-definition.json",
+    ".loom/tasks/task-20261031-120114-suite-bold-8ef87683/troubleshooting.md"
+  ],
+  "untracked_files": [],
+  "snapshot_captured_at": "2026-10-31T13:38:37+00:00",
+  "rollback_strategy": "revert-or-branch"
+}
