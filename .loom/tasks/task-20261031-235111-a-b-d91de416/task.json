@@ -3,9 +3,9 @@
   "job_id": "job-20261031-152248-apk-cf438185",
   "title": "실서버 A/B 검증 영상 좌우 합성 완성",
   "description": "실기기와 실제 서버 연동 검증 촬영을 인수 자료로 편집한다. 오프닝 없이 두 화면을 좌우에 배치하고 공통 단계 시간을 맞추며 A/B 음성 순차 재생과 대기 구간 제거를 적용한다.",
-  "status": "RUNNING",
+  "status": "DONE",
   "created_at": "2026-10-31T23:51:11+00:00",
-  "updated_at": "2026-10-31T23:51:33+00:00",
+  "updated_at": "2026-11-01T00:08:06+00:00",
   "order_index": 11,
   "assigned_agent": "foreground",
   "depends_on": [],
@@ -23,12 +23,25 @@
   "run_attempts": 0,
   "last_error": "",
   "commit_refs": [
-    "0598095bc044fee416137a59ebc63b3abdbf2914"
+    "0598095bc044fee416137a59ebc63b3abdbf2914",
+    "963b451f22a9c891d327a51510e1f5a0995d706d"
   ],
   "branch_name": "develop",
   "git_dirty": true,
-  "git_snapshot_captured_at": "2026-10-31T23:51:33+00:00",
-  "artifacts": [],
+  "git_snapshot_captured_at": "2026-11-01T00:08:06+00:00",
+  "artifacts": [
+    ".loom/tasks/task-20261031-235111-a-b-d91de416/agent-events.jsonl",
+    ".loom/tasks/task-20261031-235111-a-b-d91de416/artifacts.json",
+    ".loom/tasks/task-20261031-235111-a-b-d91de416/context.md",
+    ".loom/tasks/task-20261031-235111-a-b-d91de416/decision.md",
+    ".loom/tasks/task-20261031-235111-a-b-d91de416/git-snapshot.json",
+    ".loom/tasks/task-20261031-235111-a-b-d91de416/logs.txt",
+    ".loom/tasks/task-20261031-235111-a-b-d91de416/previous-results.md",
+    ".loom/tasks/task-20261031-235111-a-b-d91de416/prompt.md",
+    ".loom/tasks/task-20261031-235111-a-b-d91de416/result.md",
+    ".loom/tasks/task-20261031-235111-a-b-d91de416/troubleshooting.md",
+    "docs/18-scenario-ab-composite.md"
+  ],
   "source_proposal_id": "",
   "source_prompt": ""
 }
