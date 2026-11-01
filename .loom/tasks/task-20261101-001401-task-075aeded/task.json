@@ -3,9 +3,9 @@
   "job_id": "job-20261031-152248-apk-cf438185",
   "title": "휴대폰 실행 오프닝 촬영과 두 화면 전환 완성",
   "description": "휴대폰 홈에서 앱 메뉴를 열고 봉화지기를 실행하는 마지막 장면을 촬영해 기존 실서버 A/B 검증 영상 앞에 연결한다.",
-  "status": "RUNNING",
+  "status": "DONE",
   "created_at": "2026-11-01T00:14:01+00:00",
-  "updated_at": "2026-11-01T00:14:08+00:00",
+  "updated_at": "2026-11-01T00:26:50+00:00",
   "order_index": 12,
   "assigned_agent": "foreground",
   "depends_on": [],
@@ -23,12 +23,25 @@
   "run_attempts": 0,
   "last_error": "",
   "commit_refs": [
-    "c7322f3214db4857453460003028a46d51c7fc41"
+    "c7322f3214db4857453460003028a46d51c7fc41",
+    "084e18dddf2257a4039e848b063345dbfe33f058"
   ],
   "branch_name": "develop",
   "git_dirty": true,
-  "git_snapshot_captured_at": "2026-11-01T00:14:08+00:00",
-  "artifacts": [],
+  "git_snapshot_captured_at": "2026-11-01T00:26:50+00:00",
+  "artifacts": [
+    ".loom/tasks/task-20261101-001401-task-075aeded/agent-events.jsonl",
+    ".loom/tasks/task-20261101-001401-task-075aeded/artifacts.json",
+    ".loom/tasks/task-20261101-001401-task-075aeded/context.md",
+    ".loom/tasks/task-20261101-001401-task-075aeded/decision.md",
+    ".loom/tasks/task-20261101-001401-task-075aeded/git-snapshot.json",
+    ".loom/tasks/task-20261101-001401-task-075aeded/logs.txt",
+    ".loom/tasks/task-20261101-001401-task-075aeded/previous-results.md",
+    ".loom/tasks/task-20261101-001401-task-075aeded/prompt.md",
+    ".loom/tasks/task-20261101-001401-task-075aeded/result.md",
+    ".loom/tasks/task-20261101-001401-task-075aeded/troubleshooting.md",
+    "docs/19-scenario-opening-final.md"
+  ],
   "source_proposal_id": "",
   "source_prompt": ""
 }

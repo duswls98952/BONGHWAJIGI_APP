@@ -1,1 +1,2 @@
 {"id": "event-d46eae0a967d", "type": "foreground_session_started", "message": "Foreground task session started.", "created_at": "2026-11-01T00:14:08+00:00", "agent": "foreground", "task_id": "task-20261101-001401-task-075aeded"}
+{"id": "event-005487a56371", "type": "foreground_session_done", "message": "실제 오프닝9.6초와 기존A/B105초를 연결한114.6초 4K/1080p 완성. 전체디코드·본편패킷보존·독립시각/음성·24문서·81Task검증 통과. 원본보존·모든녹화종료.", "created_at": "2026-11-01T00:26:50+00:00", "agent": "foreground", "task_id": "task-20261101-001401-task-075aeded"}
