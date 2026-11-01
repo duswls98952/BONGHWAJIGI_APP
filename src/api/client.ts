@@ -1,5 +1,7 @@
 import type { Transport } from './http';
 import type { Schema } from './types';
+import type {VersionedTransport} from './http';
+import type {MvpSchema, MvpConfig, MvpUpdates} from './mvp-types';
 const id = encodeURIComponent;
 export function createApi(request: Transport) {
   return {
@@ -26,3 +28,36 @@ export function createApi(request: Transport) {
   };
 }
 export type AppApi = ReturnType<typeof createApi>;
+
+// 현재 실행 계약. 0.1 화면 초안은 이력·기존 검사와 구분하여 보존한다.
+export function createMvpApi(request: VersionedTransport<MvpSchema<'Meta'>>) {
+  return {
+    registrationConfig: () => request<{registration_enabled: boolean; consent_version: 'internal-demo-v1'; kind: string; notice: string}>('/v1/auth/config', {public:true}),
+    register: (body: MvpSchema<'InstallationRegistration'>) => request<MvpSchema<'SessionTokens'>>('/v1/auth/installations', {method:'POST',body,public:true}),
+    refresh: (refreshToken: string) => request<MvpSchema<'SessionTokens'>>('/v1/auth/refresh', {method:'POST',body:{refresh_token:refreshToken},public:true}),
+    config: (signal?: AbortSignal) => request<MvpConfig>('/v1/app-config', {signal}),
+    home: (signal?: AbortSignal) => request<MvpSchema<'HomeData'>>('/v1/home', {signal}),
+    profile: () => request<MvpSchema<'ProfileData'>>('/v1/me/profile'),
+    saveProfile: (body: MvpSchema<'ProfileWrite'>, key: string) => request<MvpSchema<'ProfileData'>>('/v1/me/profile', {method:'PUT',body,idempotencyKey:key}),
+    deleteProfile: () => request<MvpSchema<'ProfileData'>>('/v1/me/profile', {method:'DELETE'}),
+    preferences: () => request<{revision: number; preferences: MvpSchema<'Preferences'>}>('/v1/me/preferences'),
+    savePreferences: (body: MvpSchema<'PreferencesWrite'>) => request<{revision: number; preferences: MvpSchema<'Preferences'>}>('/v1/me/preferences', {method:'PUT',body}),
+    location: () => request<MvpSchema<'LocationData'>>('/v1/me/location'),
+    sendLocation: (body: MvpSchema<'LocationWrite'>) => request<MvpSchema<'LocationData'>>('/v1/me/location', {method:'PUT',body}),
+    deleteLocation: () => request<MvpSchema<'LocationData'>>('/v1/me/location', {method:'DELETE'}),
+    device: (installation: string, body: MvpSchema<'DeviceWrite'>) => request<{installation_id:string;revision:number;push_status:string}>(`/v1/me/devices/${id(installation)}`, {method:'PUT',body}),
+    deleteDevice: (installation: string) => request<unknown>(`/v1/me/devices/${id(installation)}`, {method:'DELETE'}),
+    alert: (alertId: string, signal?: AbortSignal) => request<MvpSchema<'AlertData'>>(`/v1/me/alerts/${id(alertId)}`, {signal}),
+    snapshot: (responseId: string, signal?: AbortSignal) => request<MvpSchema<'SnapshotData'>>(`/v1/me/responses/${id(responseId)}`, {signal}),
+    context: (responseId: string, body: MvpSchema<'ContextWrite'>) => request<{context_revision:number;response_id:string;expires_at:string;reevaluation:string}>(`/v1/me/responses/${id(responseId)}/context`, {method:'PUT',body}),
+    updates: (cursor?: string, signal?: AbortSignal, wait=25) => request<MvpUpdates>(`/v1/me/updates?wait_seconds=${wait}${cursor ? `&cursor=${id(cursor)}` : ''}`, {signal}),
+    rules: () => request<MvpSchema<'RulesData'>>('/v1/safety-rules/wildfire'),
+    preparations: () => request<MvpSchema<'PreparationsData'>>('/v1/me/preparations'),
+    receipt: (alertId: string, body: MvpSchema<'ReceiptWrite'>, key: string) => request<{receipt_id:string;recorded_at:string;meaning:string}>(`/v1/me/alerts/${id(alertId)}/receipts`, {method:'POST',body,idempotencyKey:key}),
+    logout: () => request<{status:string}>('/v1/me/logout', {method:'POST'}),
+    textTurn: (responseId: string, body: MvpSchema<'TextTurnWrite'>, signal?: AbortSignal) => request<MvpSchema<'TextTurnData'>>(`/v1/me/responses/${id(responseId)}/text-turns`, {method:'POST',body,signal}),
+    textTurnResult: (responseId: string, turnId: string, signal?: AbortSignal) => request<MvpSchema<'TextTurnData'>>(`/v1/me/responses/${id(responseId)}/text-turns/${id(turnId)}`, {signal}),
+    route: (responseId: string, signal?: AbortSignal) => request<MvpSchema<'RouteData'>>(`/v1/me/responses/${id(responseId)}/route`, {signal}),
+  };
+}
+export type MvpApi = ReturnType<typeof createMvpApi>;

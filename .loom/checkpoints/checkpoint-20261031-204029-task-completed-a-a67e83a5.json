@@ -1,0 +1,19 @@
+{
+  "id": "checkpoint-20261031-204029-task-completed-a-a67e83a5",
+  "created_at": "2026-10-31T20:40:29+00:00",
+  "reason": "Task completed: A 시나리오 실기기 영상 녹화",
+  "summary": "A 시나리오 실기기 영상 녹화 -> DONE @ develop/fc40631d0b59",
+  "job_id": "job-20261031-152248-apk-cf438185",
+  "task_id": "task-20261031-202001-a-5f3e9a39",
+  "commit_sha": "fc40631d0b593b4babef1d2bc017bd5c30c18674",
+  "branch_name": "develop",
+  "dirty": true,
+  "staged_files": [],
+  "modified_files": [
+    ".loom/job-runs/job-run-20261031-202013-job-20261031-152248-apk-cf438185-0cccc4a6/job-run.json",
+    ".loom/task-definitions/task-def-20261031-202001-a-f206c6aa/task-definition.json"
+  ],
+  "untracked_files": [],
+  "snapshot_captured_at": "2026-10-31T20:40:29+00:00",
+  "rollback_strategy": "revert-or-branch"
+}

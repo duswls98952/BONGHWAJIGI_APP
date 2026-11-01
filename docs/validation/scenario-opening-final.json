@@ -1,0 +1,364 @@
+{
+  "task_id": "task-20261101-001401-task-075aeded",
+  "result": "통과",
+  "summary": "실제 휴대폰 실행 오프닝 8.4초와 분할 전환 1.2초를 기존 105초 A/B 본편에 연결했다.",
+  "timeline": {
+    "task": "task-20261101-001401-task-075aeded",
+    "fps": 30,
+    "opening_live_frames": 252,
+    "transition_frames": 36,
+    "opening_total_frames": 288,
+    "body_frames": 3150,
+    "final_frames": 3438,
+    "opening_seconds": 9.6,
+    "body_seconds": 105,
+    "final_seconds": 114.6,
+    "source_clips": [
+      {
+        "source_start_s": 6.4,
+        "source_end_s": 8.2,
+        "frames": 54,
+        "purpose": "실제휴대폰홈→앱메뉴"
+      },
+      {
+        "source_start_s": 10.1,
+        "source_end_s": 15.7,
+        "frames": 168,
+        "purpose": "실제봉화지기아이콘선택→앱실행→홈"
+      },
+      {
+        "source_start_s": 20.4,
+        "source_end_s": 21.4,
+        "frames": 30,
+        "purpose": "실제내정보진입을짧게보존"
+      }
+    ],
+    "source_time_handling": "원본VFR의절대PTS를30fps로정규화한후PTS에대응하는프레임경계를자름. 원본219프레임을30fps로재해석하지않음.",
+    "transition": {
+      "duration_s": 1.2,
+      "frames": 36,
+      "actual_still_source_s": 21.366667,
+      "pane_size": [
+        864,
+        1920
+      ],
+      "center": [
+        1488,
+        120
+      ],
+      "A_final": [
+        528,
+        120
+      ],
+      "B_final": [
+        2448,
+        120
+      ],
+      "motion": "u=n/35, smoothstep=3u^2-2u^3, xA=1488-960*s, xB=1488+960*s",
+      "phone_crossfade_s": [
+        0.6,
+        1.15
+      ],
+      "background_fade_s": [
+        0.45,
+        1.1
+      ],
+      "center_title_fade_out_s": [
+        0,
+        0.35
+      ],
+      "root_preview_checked_frames": [
+        0,
+        18,
+        35
+      ],
+      "source_ui_pixels": "실제마지막앱화면과기존본편첫프레임만이동·교차페이드. 앱문구·선택상태를그려넣지않음."
+    },
+    "audio": {
+      "opening": "무음",
+      "body_audio_copy": true,
+      "offset_seconds": 9.6,
+      "offset_samples_48000": 460800,
+      "aac_frames_offset_1024": 450,
+      "new_sounds": false
+    }
+  },
+  "outputs": {
+    "4k": {
+      "path": "AB-scenario-final-4k.mp4",
+      "sha256": "e9bc312a071b54281eedc5c0841f53b9384898c9899b3733edea4c62c93da3c1",
+      "metadata": {
+        "programs": [],
+        "stream_groups": [],
+        "streams": [
+          {
+            "index": 0,
+            "codec_name": "h264",
+            "profile": "High",
+            "codec_type": "video",
+            "width": 3840,
+            "height": 2160,
+            "pix_fmt": "yuv420p",
+            "r_frame_rate": "30/1",
+            "avg_frame_rate": "30/1",
+            "time_base": "1/90000",
+            "start_time": "0.000000",
+            "duration": "114.600000",
+            "nb_frames": "3438"
+          },
+          {
+            "index": 1,
+            "codec_name": "aac",
+            "codec_type": "audio",
+            "sample_rate": "48000",
+            "channels": 2,
+            "r_frame_rate": "0/0",
+            "avg_frame_rate": "0/0",
+            "time_base": "1/48000",
+            "start_time": "9.578667",
+            "duration": "105.021333",
+            "nb_frames": "4923"
+          }
+        ],
+        "format": {
+          "duration": "114.600000",
+          "size": "9969415"
+        }
+      },
+      "full_decode": {
+        "exit_code": 0,
+        "stderr_lines": 0,
+        "elapsed_seconds": 10.458
+      },
+      "faststart": true,
+      "mp4_atoms": [
+        {
+          "type": "ftyp",
+          "offset": 0,
+          "size": 32
+        },
+        {
+          "type": "moov",
+          "offset": 32,
+          "size": 119889
+        },
+        {
+          "type": "free",
+          "offset": 119921,
+          "size": 8
+        },
+        {
+          "type": "mdat",
+          "offset": 119929,
+          "size": 9849486
+        }
+      ]
+    },
+    "1080p": {
+      "path": "AB-scenario-final-1080p.mp4",
+      "sha256": "e2b259925611b9a10fa4292414e16763c520e25f793bdb8767f7833d2609ec6c",
+      "metadata": {
+        "programs": [],
+        "stream_groups": [],
+        "streams": [
+          {
+            "index": 0,
+            "codec_name": "h264",
+            "profile": "High",
+            "codec_type": "video",
+            "width": 1920,
+            "height": 1080,
+            "pix_fmt": "yuv420p",
+            "r_frame_rate": "30/1",
+            "avg_frame_rate": "30/1",
+            "time_base": "1/90000",
+            "start_time": "0.000000",
+            "duration": "114.600000",
+            "nb_frames": "3438"
+          },
+          {
+            "index": 1,
+            "codec_name": "aac",
+            "codec_type": "audio",
+            "sample_rate": "48000",
+            "channels": 2,
+            "r_frame_rate": "0/0",
+            "avg_frame_rate": "0/0",
+            "time_base": "1/48000",
+            "start_time": "9.578667",
+            "duration": "105.021333",
+            "nb_frames": "4923"
+          }
+        ],
+        "format": {
+          "duration": "114.600000",
+          "size": "4780606"
+        }
+      },
+      "full_decode": {
+        "exit_code": 0,
+        "stderr_lines": 0,
+        "elapsed_seconds": 3.354
+      },
+      "faststart": true,
+      "mp4_atoms": [
+        {
+          "type": "ftyp",
+          "offset": 0,
+          "size": 32
+        },
+        {
+          "type": "moov",
+          "offset": 32,
+          "size": 120022
+        },
+        {
+          "type": "free",
+          "offset": 120054,
+          "size": 8
+        },
+        {
+          "type": "mdat",
+          "offset": 120062,
+          "size": 4660544
+        }
+      ]
+    }
+  },
+  "body_preservation": {
+    "source_body_video_packets": 3150,
+    "final_video_packets": 3438,
+    "opening_video_frames": 288,
+    "source_body_audio_packets": 4923,
+    "final_audio_packets": 4923,
+    "body_video_copy_exact_payload_and_offset": true,
+    "body_video_pts_dts_offset_ticks": 864000,
+    "video_time_base": "1/90000",
+    "body_audio_copy_exact_payload_and_offset": true,
+    "audio_pts_dts_offset_samples": 460800,
+    "audio_time_base": "1/48000",
+    "final_4k_1080p_aac_packet_payload_pts_dts_duration_identical": true,
+    "unexpected_video_packet_differences": [],
+    "unexpected_audio_packet_differences": [],
+    "audio_preroll_note": "원본첫AAC프리롤PTS-1024를+460800해최종첫패킷9.578667초. 본편0초는9.6초에대응하며프리롤은원본무음. 가청5이벤트는모두9.6초뒤로동일이동."
+  },
+  "sources_unchanged": {
+    "opening_raw": true,
+    "body_4k": true,
+    "body_1080p": true
+  },
+  "visual_qa": {
+    "result": "통과",
+    "unresolved_findings": [],
+    "evidence": "artifacts/recordings/2026-11-01-opening/independent-qa/final-opening-qa.json",
+    "root_review": "전환 0/18/35프레임과 최종 오프닝 contact sheet 확인"
+  },
+  "audio_qa": {
+    "result": "통과",
+    "evidence": "artifacts/recordings/2026-11-01-opening/independent-audio-qa/final-audio-validation.json",
+    "packet_checks": [
+      {
+        "path": "artifacts/recordings/2026-11-01-final/AB-scenario-final-4k.mp4",
+        "packet_count": 4923,
+        "same_count": true,
+        "payloads_and_durations_identical": true,
+        "pts_dts_offset_460800_ticks": true
+      },
+      {
+        "path": "artifacts/recordings/2026-11-01-final/AB-scenario-final-1080p.mp4",
+        "packet_count": 4923,
+        "same_count": true,
+        "payloads_and_durations_identical": true,
+        "pts_dts_offset_460800_ticks": true
+      }
+    ],
+    "events": [
+      {
+        "id": "actual-alert-pickup",
+        "expected_audible_window_s": [
+          34.989,
+          36.499
+        ],
+        "guard_window_s": [
+          34.94,
+          36.89
+        ],
+        "waveform_best_lag_ms": 0.0,
+        "waveform_correlation": 1.0,
+        "waveform_zero_lag_correlation": 1.0,
+        "decoded_event_samples_identical_to_body": true
+      },
+      {
+        "id": "a-question-tts",
+        "expected_audible_window_s": [
+          41.822,
+          43.701
+        ],
+        "guard_window_s": [
+          41.65,
+          43.9
+        ],
+        "waveform_best_lag_ms": 0.0,
+        "waveform_correlation": 1.0,
+        "waveform_zero_lag_correlation": 1.0,
+        "decoded_event_samples_identical_to_body": true
+      },
+      {
+        "id": "a-proposal-tts",
+        "expected_audible_window_s": [
+          53.73,
+          59.99
+        ],
+        "guard_window_s": [
+          53.55,
+          60.2
+        ],
+        "waveform_best_lag_ms": 0.0,
+        "waveform_correlation": 1.0,
+        "waveform_zero_lag_correlation": 1.0,
+        "decoded_event_samples_identical_to_body": true
+      },
+      {
+        "id": "b-question-tts",
+        "expected_audible_window_s": [
+          69.881083,
+          72.62175
+        ],
+        "guard_window_s": [
+          69.7,
+          72.8
+        ],
+        "waveform_best_lag_ms": 0.0,
+        "waveform_correlation": 1.0,
+        "waveform_zero_lag_correlation": 1.0,
+        "decoded_event_samples_identical_to_body": true
+      },
+      {
+        "id": "b-proposal-tts",
+        "expected_audible_window_s": [
+          82.994646,
+          91.408625
+        ],
+        "guard_window_s": [
+          82.8,
+          91.7
+        ],
+        "waveform_best_lag_ms": 0.0,
+        "waveform_correlation": 1.0,
+        "waveform_zero_lag_correlation": 1.0,
+        "decoded_event_samples_identical_to_body": true
+      }
+    ],
+    "opening_peak_amplitude": 0.0,
+    "peak_dbfs": -3.051669,
+    "clipped_samples": 0,
+    "outputs_identical": true
+  },
+  "recording_stopped": true,
+  "raw_capture": {
+    "path": "artifacts/recordings/2026-11-01-opening/opening-01-raw.mp4",
+    "sha256": "a48d491f4485c2a81dae71b22792cd32646a5b599e41f0b48d494b68906e2ffc",
+    "duration_s": 30.080896
+  },
+  "limitations": "영상은 로컬에 보관한다. 원본 사용자 발화는 없어 기존 실제 STT 문장과 상태 확인 화면으로 전달한다."
+}

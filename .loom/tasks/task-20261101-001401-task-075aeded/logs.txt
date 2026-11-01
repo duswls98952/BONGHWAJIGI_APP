@@ -1,0 +1,11 @@
+[2026-11-01T00:14:08+00:00] agent=foreground task=task-20261101-001401-task-075aeded Foreground task session started.
+2026-11-01: scrcpy 5.0.1 오프닝 녹화 시작. 사용자 직접 홈→메뉴→봉화지기→앱 홈→내정보 진행. 완료 응답에 따라 SIGINT로 종료, exit 0.
+2026-11-01: ffprobe 원본 1080x2400 H264/AAC 48kHz stereo, 30.080896초, 6811357bytes 확인. SHA256 a48d491f4485c2a81dae71b22792cd32646a5b599e41f0b48d494b68906e2ffc.
+2026-11-01: ffmpeg -hide_banner -v warning -xerror -i opening-01-raw.mp4 -fps_mode passthrough -enc_time_base:v demux -f null - 실행 exit 0, 오류/경고 0개 통과.
+2026-11-01: ps -axo pid,command | rg '[s]crcpy.*--record' 검색 결과 없음. 모든 녹화 종료 확인.
+2026-11-01: 8.4초 실제 실행 컷 + 1.2초 분할 + 105초 본편 = 114.6초/3438프레임 렌더 완료.
+2026-11-01: 최종 4K/1080p ffmpeg 전체 디코드 exit 0, 경고/오류 0개 통과. ffprobe CFR30/H264/AAC48kHz stereo/faststart 통과.
+2026-11-01: 본편 영상3150패킷 및 AAC4923패킷 내용 동일, 시각만 정확히+9.6초 검증 통과. 독립 음성 5구간 샘플 동일·오프닝 무음·중첩/클리핑 없음·두 해상도 음성 동일 통과.
+2026-11-01: 독립 시각 QA 양쪽해상도 전환/접합/경보/최종프레임 통과. root 전환 0/18/35 및 최종 프레임모음 확인. 미해결 항목 없음.
+2026-11-01: npm run check:docs exit 0(문서24개), loom validate --strict exit 0(81Task), git diff --check exit 0 통과. 문서/검증결과와 Task 기록 커밋 후 finish 예정.
+[2026-11-01T00:26:50+00:00] agent=foreground task=task-20261101-001401-task-075aeded 실제 오프닝9.6초와 기존A/B105초를 연결한114.6초 4K/1080p 완성. 전체디코드·본편패킷보존·독립시각/음성·24문서·81Task검증 통과. 원본보존·모든녹화종료.

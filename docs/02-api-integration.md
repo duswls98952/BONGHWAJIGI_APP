@@ -1,72 +1,105 @@
-# API 연결과 주의사항
+# 현재 MVP API 연결
 
-## 기준과 경계
+2026-11-01 KST 기준 앱 **0.3.1**은 **0.2.0-mvp** 서버 계약을 사용한다. 배포 서버 `4144822`에서 텍스트 대화·상태 제안 확인·합성 경로가 추가됐으며 schema_version은 유지된다. [현재 OpenAPI](api/mvp-openapi.json), [원본 커밋·SHA256](api/mvp-provenance.json), [합성 정책 응답](api/mvp-fixtures.json), [대화·경로 fixture](api/mvp-interaction-fixtures.json)가 기준이다. 이전 `upstream-openapi.yaml`, `generated.ts`, `createApi`와 구형 테스트는 이력으로 남아 있으며 현재 화면의 계약이 아니다. 합성 경로선·목적지 마커는 Android에서 사용자와 CUA가 확인했다. 0.3.1에서 마이크 권한 반복 요청 문제를 수정했고, 한국어 인식·상태 제안 화면과 사용자의 상태 반영 성공을 확인했다.
 
-[OpenAPI 사본](api/upstream-openapi.yaml)이 경로·필드·필수값의 기준입니다. 타입은 이 사본에서 생성합니다. [provenance](api/provenance.json)에 원본 커밋과 SHA256을 기록했습니다. 예제는 모의 자료이며 배포된 서버 주소는 아직 없습니다.
+현재 호출 경로는 `app/*` → `src/mvp/*` → `src/api/client.ts`의 `createMvpApi`다. `src/mvp/api.ts`가 mock/live와 인증을 연결한다. LIVE 오류를 mock 응답으로 자동 대체하지 않는다. `live`는 실제 서버에 HTTP 요청한다는 앱 설정이며, 현재 서버 응답의 `meta.mode`와 정책의 `content.mode`는 계속 `simulation`이다.
 
-API는 `src/api/client.ts`를 통해 호출합니다. 화면마다 fetch·Authorization·오류 처리를 새로 만들지 않습니다. `src/api/index.ts`가 mock/live 전환을 담당합니다. LIVE 오류가 나도 모의 성공 응답으로 자동 대체하지 않습니다.
+## 경로와 화면 연결
 
-| 앱 동작 | 기존 API | 주요 데이터 |
+| 기능 | 현재 API | 주요 사용처·상태 |
 | --- | --- | --- |
-| 시작·기능 확인 | GET `/v1/app-config` | 기능 사용 여부·위치 최신성 기준 |
-| 홈 | GET `/v1/home` | 오늘 수칙·주변 목록·활성 ID·sync_cursor |
-| 공식 정보 먼저 표시 | GET `/v1/me/alerts/{alert_id}` | 공식 원문·기관 등급·발령/해제 상태 |
-| 개인 안내 | GET `/v1/me/responses/{response_id}` | personal_response·assistant_utterance·actions·지도 |
-| 실시간 변경 통지 | GET `/v1/me/updates?after={cursor}&wait_seconds=20` | 변경 종류·리소스 ID·revision·다음 cursor |
-| 사전 프로필 | GET/PUT `/v1/me/profile` | profile, revision, base_revision |
-| 실제 위치 전송 | PUT `/v1/me/location` | 위도·경도·정확도·측정시각·설치 ID |
-| 현재 상태 확인 | PUT `/v1/me/responses/{response_id}/context` | 확인된 상태, base_revision |
-| 서버 대화 요청 | POST `/v1/me/responses/{response_id}/voice-turns` | transcript(텍스트), client_turn_id, response_revision |
-| 서버 대화 결과 | GET/DELETE `/v1/me/responses/{response_id}/voice-turns/{turn_id}` | 서버 발화·처리/취소 상태 |
-| 경로 | GET `/v1/me/responses/{response_id}/route?response_revision={revision}` | 경로 좌표·안내·검증/만료 시각 |
-| 기본 수칙 | GET `/v1/safety-rules/{disaster_type}?locale=ko-KR` | 수칙·출처·버전 |
-| 푸시 등록/해제 | PUT/DELETE `/v1/me/devices/{installation_id}` | FCM/APNs 토큰·권한 상태 |
-| 알림 수신·표시·열기 기록 | POST `/v1/me/alerts/{alert_id}/receipts` | 실제 발생한 단계별 영수증 |
-| 신고 초안 | POST `/v1/me/responses/{response_id}/support-drafts` | 사용자 확인용 초안. 전송 완료가 아님 |
+| 설치 등록 가능 여부 | GET `/v1/auth/config` | 공개 조회 함수 제공; 설치 시연 활성 여부·동의 버전 |
+| 설치 계정 발급 | POST `/v1/auth/installations` | 온보딩에서 설치 ID와 필수 동의 제출 |
+| 세션 갱신 | POST `/v1/auth/refresh` | 인증 실패 시 refresh token을 교체하고 원 요청을 한 번 재시도 |
+| 기능 설정 | GET `/v1/app-config` | **사용자 인증 필요**; 기능·알림 제공자 확인 |
+| 홈 | GET `/v1/home` | `nearby_disasters`, `basic_rules`, `location`, `features`, `preparations`, `alerts` |
+| 공식 원문 | GET `/v1/me/alerts/{alert_id}` | 소유권이 확인된 경보·기관 등급·수정/해제 상태 |
+| 개인 안내 | GET `/v1/me/responses/{response_id}` | `id`, `revision`, `pending_update`, `content`, `user_context` |
+| 변경 통지 | GET `/v1/me/updates?wait_seconds=25&cursor={cursor}` | 최초에는 cursor 없이 `wait_seconds=0`; 이후 반환된 `next_cursor` 사용 |
+| 사전 정보 | GET/PUT/DELETE `/v1/me/profile` | 프로필 폼·저장·삭제; `revision`, `input_revision` |
+| 사전준비 카드 | GET `/v1/me/preparations` | 서버 선정 카드 최대2개. 홈에도 동일 구조 포함 |
+| 위치 | GET/PUT/DELETE `/v1/me/location` | 측정 좌표·정확도·측정시각·설치 ID; 현재 위치 공유와 삭제 |
+| 확인한 현재 상태 | PUT `/v1/me/responses/{response_id}/context` | 사용자 확인과 기준 revision 제출; 대화 제안 확인에는 `proposal_turn_id`도 제출; 202 이후 새 정책 대기 |
+| 텍스트 대화 | POST `/v1/me/responses/{response_id}/text-turns` | 최종 STT 또는 직접 입력 텍스트, 기준 response/context revision; 서버 Qwen 답변과 확인할 상태 제안 |
+| 대화 결과 재조회 | GET `/v1/me/responses/{response_id}/text-turns/{turn_id}` | POST 응답 유실·진행 중일 때 같은 client turn ID로 조회 |
+| 알림 선호 | GET/PUT `/v1/me/preferences` | 호출 함수 제공. 현재 UI의 알림 권한 등록은 devices API 사용 |
+| 단말 등록·해제 | PUT/DELETE `/v1/me/devices/{installation_id}` | 설치 정보·OS 알림 권한·준비된 경우 native FCM 토큰 |
+| 경보 표시·열기 기록 | POST `/v1/me/alerts/{alert_id}/receipts` | 전경 긴급 화면에서 실제 표시/열기 기록; 중복키 사용 |
+| 로그아웃 | POST `/v1/me/logout` | 서버 세션 해제 요청과 기기 세션 삭제 |
+| 산불 수칙 | GET `/v1/safety-rules/wildfire` | 검토된 `items`, `avoid`, 출처·버전 |
+| 대피 경로 | GET `/v1/me/responses/{response_id}/route` | 허용된 합성 시나리오·현재 위치에서 `status=simulation`; 그 외 `unavailable/route=null`. 유효한 합성 선·목적지를 지도에 표시 |
 
-25개 전체 API 중 앱 틀에서 사용하는 연결 함수를 우선 작성했습니다. 페이지 이동, 계정 탈퇴, 전체 로그인/갱신, 영수증 실제 전송, 119 전화·문자 연결은 후속 구현입니다. 화면 목록 배열의 alert_id와 response_id를 같은 인덱스라고 가정하지 않습니다. Alert의 response_id로 관계를 확인합니다.
+음성은 단말에서 글로 변환해 `text-turns`로 보내며 서버 오디오 입력·`voice-turns`·서버 `support-drafts`는 사용하지 않는다. 서버 기능값은 `text_turns=true`, `simulation_route=true`, `voice_turns=false`, `server_audio=false`, `route_geometry=false`다. 119 초안은 기기에서 사용자가 확인·수정하고 전화/문자 앱으로 넘긴다. [지도·음성](04-map-tts.md), [남은 서버·단말 연결](06-server-handoff.md)을 함께 참고한다.
 
-## 응답을 읽는 방법
+## 텍스트 대화·제안 확인
 
-성공은 `{ meta, data }`, 오류는 RFC 9457 기반 문제 객체입니다. 204는 JSON 파싱하지 않습니다.
+대화 요청은 `client_turn_id`, `text`(최대 1,000자), `base_response_revision`, `base_context_revision`을 보낸다. 서버는 현재 정책의 행동과 상태, 같은 세션·응답·revision에 속한 최근 대화를 바탕으로 Qwen을 호출한다. 모델은 현재 정책에 있는 행동 ID를 고르고 직접 발언한 상태만 제안한다. 서버가 검토된 행동과 정해진 질문으로 최종 문장을 구성하므로 모델의 자유 생성 지시문이 그대로 표시되지 않는다. 생성 실패나 잘못된 출력은 `assistant.source=reviewed_policy_fallback`으로 구분한다.
+
+`TextTurnData`는 `turn_id`, `response_id`, `status`(`processing/complete`), `response_revision`, `context_revision`, `valid_until`, `assistant`, `proposal`, `reason_code`를 포함한다. 제안의 `evidence`는 변경 필드·값·현재 발언의 인용 근거를 제공한다. 유효기간은 정책 만료와 2분 중 짧은 값이다.
+
+앱은 유효한 완료 응답만 보여 준다. 사용자 **상태 반영** 선택 후 `proposal_turn_id=turn_id`, `confirmation=user_confirmed`, 제안의 `base_revision/state/overrides`, 현재 `observed_at`을 context API에 제출한다. 서버가 동일 사용자·세션·정책/context revision·유효기간·제안 내용 일치를 다시 검사한다. 제안 생성이나 TTS 재생만으로 현재 상태를 저장하지 않는다. 직접 상태 선택은 기존처럼 `proposal_turn_id` 없이 사용할 수 있다.
+
+같은 turn ID와 본문은 유효한 결과를 재사용한다. POST 응답 유실 또는 `TURN_IN_PROGRESS`이면 GET으로 같은 ID를 조회한다. 앱의 진행 상태 조회는 1초 간격 최대 8회이며 무한 요청하지 않는다. `REVISION_CONFLICT`, `RESPONSE_REFRESH_REQUIRED`, `TURN_SUPERSEDED`, `TURN_EXPIRED`에서는 이전 제안을 버리고 최신 정책을 다시 확인한다. 서버는 같은 ID의 다른 본문·변조된 제안·다른 세션의 접근을 거부하고 사용자당 10분 내 20턴으로 제한한다.
+
+서버는 대화 행을 최대 10분 보관 대상으로 두고 다음 대화 요청에서 만료 행을 정리한다. 만료 즉시 물리 삭제하는 스케줄러라는 뜻은 아니다. 이전 대화 중 모델 문맥에 포함되는 것은 현재 조건에 맞는 최근 3턴, 각 발언/답변 최대 300자다. 앱은 현재 화면의 최근 8개를 메모리에 보관하며 계정·사건 변경 시 비운다.
+
+## 합성 경로 계약
+
+경로 표시에는 `status=simulation`, `route.origin=synthetic`, `route.operational_use=false`, 유효한 `valid_until`, 최신 사건·위치 `input_versions`가 필요하다. `geometry`는 GeoJSON `LineString`이며 `[경도, 위도]` 순서다. `start/destination/steps`도 서버가 제공한다. 정책 갱신 대기·이전 입력·만료·잘못된 좌표이면 선을 숨긴다.
+
+서버가 허용한 `mobile-demo/mobile-fire`와 합성 시작점 근처에서만 시연 선을 제공한다. 실제 자료·다른 위치·만료 위치에는 `unavailable`과 null을 반환한다. 화면에 **시연 경로 · 실제 이동용 아님**을 표시하며 실제 검증된 대피 경로 또는 지정 대피소로 설명하지 않는다. 상세 조건은 [지도·시연 경로](04-map-tts.md)를 따른다.
+
+## 응답과 대응 단계
+
+성공 응답은 `{meta,data}`다. HTTP 계층은 `meta.schema_version="0.2.0-mvp"`, mode, data 존재 여부를 검사하고 204는 JSON으로 파싱하지 않는다. 서버 오류의 `code` 또는 문자열 `detail`, 상태 코드, `Retry-After`를 `ApiError`로 전달한다. 화면별 런타임 검사는 OpenAPI 전체 JSON Schema 검증을 대신하지 않는다.
 
 ```ts
-const result = await api.response(responseId);
-const level = result.data.personal_response.level;
-const label = result.data.personal_response.label;
-const utterance = result.data.assistant_utterance?.text;
+const result = await mvpApi.snapshot(responseId);
+const content = result.data.content; // 재평가·미제공 시 null 가능
+const level = content?.personal_response.level;
+const label = content?.personal_response.label;
+const text = content?.assistant_utterance?.text;
 ```
 
-`meta.mode=simulation`이면 항상 시연 표시를 유지합니다. `data_status=stale/partial/unavailable`, null, 빈 배열을 ‘안전’ 또는 확률 0으로 바꾸지 않습니다. 확률·등급·경로를 앱에서 생성하지 않습니다.
-
-| 구분 | 필드 | 의미 |
+| 구분 | 현재 필드 | 의미 |
 | --- | --- | --- |
-| 공식 등급 | `official_alert.official_severity` | 기관이 발표한 원래 등급 |
-| 개인 대응 | `personal_response.level/label` | 서버 정책이 정한 개인별 행동 단계 |
-| 영향 확률 | `impact` | 검증 모델의 별도 평가. unavailable은 null |
-| 행동 목록 | `actions` | 정책과 근거에 따라 서버가 선택한 안내 |
+| 공식 기관 등급 | `AlertData.official_severity` | 발령기관 원래 등급; 개인 단계와 별도 표시 |
+| 개인1단계 | `prepare / 1 / 경고` | 서버가 확정한 준비·확인 안내 |
+| 개인2단계 | `act / 2 / 대피` | 서버가 확정한 대피 안내 |
+| 개인3단계 | `request_assistance / 3 / 위급` | 서버가 확정한 도움 요청 안내; 자동 신고 아님 |
+| 기타 상태 | `information` 또는 `unknown`, number=null | 단계 번호를 임의로 부여하지 않음; unknown은 안전이 아님 |
+| 예측 | `content.prediction` | 현재 unavailable, probability=null, used_for_response_level=false |
+| 행동·발화 | `content.actions`, `content.assistant_utterance` | 검토된 서버 행동과 reviewed_policy_text |
 
-`information / attention / prepare / act / request_assistance / unknown`은 UI 매핑 코드입니다. **순서 비교로 승급·하향을 계산하지 않습니다.** `request_assistance`를 단순히 최고 위험 단계로 해석하지 않습니다. `unknown`은 안전 단계가 아닙니다.
+색상은 서버 단계의 표시 수단이다. 앱이 확률·거리·사용자 프로필로 위험도를 계산하거나 단계 변경을 결정하지 않는다. 공식 경보 해제도 사용자가 안전하다는 뜻으로 바꾸지 않는다.
 
-## 인증·쓰기·갱신
+## 설치 세션과 개인정보
 
-- API 주소는 `.env`의 `EXPO_PUBLIC_API_BASE_URL`, 토큰은 SecureStore에서 읽습니다. `EXPO_PUBLIC_*`는 앱에 포함되는 공개 값입니다. 비밀번호·서버 키·토큰·지도 Secret을 넣지 않습니다.
-- 화면은 로그인 토큰을 로그에 출력하지 않습니다. 웹 미리보기의 저장소는 메모리 전용입니다. 실제 인증 연결은 미구현입니다.
-- PUT 프로필은 전체 교체입니다. 기존 항목과 사용자가 고친 항목을 합쳐 보내고 `base_revision`을 유지합니다.
-- 현재 상태는 사용자 확인 후 `confirmation=user_confirmed`로 저장합니다. 모델의 `proposed_context`를 확인 없이 저장하지 않습니다.
-- 변경 요청을 무조건 재시도하지 않습니다. POST 재시도는 같은 사용자 동작의 동일 `Idempotency-Key`를 유지해야 합니다.
-- revision은 같은 리소스에서만 비교합니다. 오래된 응답은 버립니다. `input_versions`와 현재 프로필·위치·상태가 맞아야 새 안내로 표시합니다.
-- 프로필·위치·상태 수정이 반영되는 동안 옛 행동·경로를 보류합니다. 화면 틀은 수정 후 stale로 표시하며, 서버의 새 revision과 수락된 쓰기 버전 이상인 input_versions를 기다립니다.
-- 원본 좌표는 GeoJSON `[경도, 위도]`; 지도 SDK에는 `{latitude, longitude}`로 변환합니다. API 시각은 UTC, 표시 시 지역 시간대로 바꿉니다.
+온보딩은 `internal-demo-v1` 필수 동의, 설치 계정 발급, 단말 등록, 프로필 저장을 완료한 뒤 홈으로 이동한다. 공개 시연 등록은 서버 설정으로 활성화해야 하며 일반 회원가입·휴대폰 본인 인증 기능이 아니다. 서버 토큰을 앱에 내장하지 않는다.
 
-| 오류 | 앱 처리 |
+- Android/iOS는 SecureStore에 origin과 세션 묶음을 저장한다. 웹 개발 화면은 메모리 저장이며 새로고침하면 연결 정보가 사라진다.
+- 401이면 동시에 실패한 요청들이 하나의 refresh 작업을 공유한다. 토큰 교체 중 로그아웃·다른 계정 연결이 발생하면 이전 결과를 폐기한다.
+- API 주소가 달라지면 저장된 다른 origin의 자격 정보를 사용하지 않는다. EXPO_PUBLIC 변수에는 공개 주소·기능 설정만 둔다.
+- 기본은 HTTPS다. USB 개발용 `EXPO_PUBLIC_ALLOW_LOOPBACK_HTTP=true`는 localhost, 127.0.0.1, ::1, Android emulator의 10.0.2.2에만 HTTP를 허용한다. 사설망 IP 전체를 HTTP로 허용하는 설정이 아니다.
+- 건강 메모는 선택 동의 후 입력한다. 동의 해제 시 앱 입력을 지우고 서버도 관련 저장·캐시 삭제 규칙을 적용한다. 프로필 삭제와 계정 탈퇴는 별개이며 계정 탈퇴 UI는 제공하지 않는다.
+- 로그아웃은 서버 해제 요청과 로컬 세션 삭제를 수행한다. 서버 해제가 확인되지 않으면 해당 한계를 알린다.
+
+## 쓰기·갱신 규칙
+
+프로필은 `base_revision`과 전체 profile을 PUT한다. 폼을 읽었던 revision을 유지하며 409가 나면 최신 자료를 다시 읽고 사용자가 변경을 확인한다. 최신 revision을 덧씌워 강제 저장하지 않는다.
+
+현재 상태는 `observed_at`, `confirmation:"user_confirmed"`, `base_revision`, `overrides`, `state`를 보낸다. 서버나 모델의 제안만으로 확인 상태를 자동 저장하지 않는다.
+
+프로필·위치의 표시용 `revision`과 정책 입력용 `input_revision`은 구분한다. 수락한 입력 버전 이상이 `content.input_versions`에 반영될 때까지 이전 개인 행동·음성 안내를 보류한다. 현재 상태 키는 `state:{incident_id}/{user_id}`이므로 다른 사건의 상태 변경이 현재 사건을 막지 않는다. 응답 ID 불일치, 낮은 revision, 동일 revision의 더 오래된 생성시각도 적용하지 않는다.
+
+| 오류·상태 | 처리 |
 | --- | --- |
-| 401 | 갱신 루프 중단, 인증 연결 필요 표시. 인증 완료 후 재시작 |
-| 404 | 없는/접근 불가 리소스. 다른 사용자 데이터로 우회하지 않음 |
-| 409 | 최신 revision 재조회·사용자 변경 재확인. 강제 덮어쓰기 금지 |
-| 410 | cursor 폐기, home과 활성 리소스 전체 재조회 |
-| 429 | Retry-After 준수 |
-| 5xx·통신 실패 | 지연 표시, 점진 재연결. 오래된 경로를 최신처럼 표시하지 않음 |
-| 501·기능 off | 미제공 기능 숨김/대체 안내. 존재하지 않는 API 생성 금지 |
+| 401 | 단일 갱신 후 한 번 재시도; 갱신 실패 시 연결 종료·온보딩 안내 |
+| 404 | 리소스 미존재·접근 불가 표시; 다른 사용자 데이터로 대체하지 않음 |
+| 409 | 최신 정보 불러오기·사용자 재확인 |
+| 400/410 cursor 오류 | cursor 초기화 후 전체 재조회 |
+| 429 | Retry-After 대기 |
+| 통신 실패·5xx | 지연 상태·재연결; LIVE 실패를 모의 성공으로 바꾸지 않음 |
+| pending/expired/unknown | 이전 개인 행동·TTS 보류; 공식 원문은 별도로 확인 가능 |
 
-실제 데이터 전체에 대한 JSON Schema 검사는 서버 통합 시험에서 수행합니다. 앱 틀의 런타임 검사는 주요 안전 관련 필드와 푸시 형식을 우선 확인하며 OpenAPI 전체 검증기를 대체하지 않습니다.
+현재 타입을 갱신할 때는 서버 OpenAPI 사본과 provenance를 함께 갱신한 뒤 `npm run api:generate:mvp`를 실행한다. `--default-non-nullable false`는 서버의 빈 초기 프로필처럼 기본값 필드가 실제 응답에서 생략될 수 있는 계약을 보존한다. 생성 타입을 직접 수정하지 않는다.

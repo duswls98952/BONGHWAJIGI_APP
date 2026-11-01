@@ -1,0 +1,28 @@
+{
+  "id": "task-def-20261031-234210-b-f73cd71f",
+  "job_definition_id": "job-20261031-152248-apk-cf438185",
+  "title": "B 시나리오 실기기 촬영",
+  "description": "A 완성본 전달 후 B 보조기구 사용 프로필과 대피2단계·실제음성답변·확인 후 맞춤안내를 촬영한다.",
+  "created_at": "2026-10-31T23:42:10+00:00",
+  "updated_at": "2026-10-31T23:50:58+00:00",
+  "order_index": 10,
+  "legacy_task_id": "task-20261031-234210-b-f53c14ff",
+  "depends_on": [],
+  "expected_output": "B 원본영상 및 검증·촬영 기록",
+  "done_condition": "사용자 직접 선택과 경보·대화·확인 흐름 촬영 또는 사용자 촬영종료에 따른 구체적 인계, 모든 녹화 종료",
+  "in_scope": "기존폰 B 합성자료 준비, 사용자 직접 조작 촬영, 실제 파이프라인 경보와 Qwen 제안 읽기검증, 영상 보관",
+  "out_of_scope": "앱소스변경, 실제GPS·119, 외부영상게시, 실모델학습변경",
+  "validation_hint": "ffprobe와 전체디코드, 사용자 응답·화면 및 서버상태 대조, 녹화 종료 확인",
+  "required_docs": [],
+  "memory_refs": [],
+  "document_outputs": [
+    "docs/17-scenario-b-recording.md"
+  ],
+  "document_output_exceptions": [],
+  "default_agent": "foreground",
+  "context_policy_id": "",
+  "executor_policy_id": "",
+  "review_policy": "",
+  "source_proposal_id": "",
+  "source_prompt": ""
+}

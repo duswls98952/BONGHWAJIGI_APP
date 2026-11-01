@@ -1,0 +1,47 @@
+{
+  "id": "task-20261031-233656-a-b-f3003e64",
+  "job_id": "job-20261031-152248-apk-cf438185",
+  "title": "A 완성 영상 편집 및 B 촬영 준비",
+  "description": "사용자가 선택한 세 번째 재촬영본의 7초부터 사용하여 A 본편을 완성하고 B 촬영을 준비한다.",
+  "status": "DONE",
+  "created_at": "2026-10-31T23:36:56+00:00",
+  "updated_at": "2026-10-31T23:41:58+00:00",
+  "order_index": 9,
+  "assigned_agent": "foreground",
+  "depends_on": [],
+  "expected_output": "A-scenario-final.mp4와 검증 기록, B 촬영 준비 상태",
+  "done_condition": "A 새 프로필 장면과 기존 홈·경보·대화 장면 연결 및 검증, B 촬영 준비 또는 구체적 대기 사유 기록",
+  "in_scope": "로컬 영상 편집, 알림음 보충 촬영본 활용, 코덱·화면·음성 검증, B 준비 점검 및 사용자 촬영 안내",
+  "out_of_scope": "A/B 합성 오프닝, 앱 기능 변경, 실제 GPS·119, 외부 영상 게시",
+  "validation_hint": "ffprobe·ffmpeg 전체 디코드, 연결 화면 및 음성 시점 확인, Loom strict 검증",
+  "required_docs": [],
+  "memory_refs": [],
+  "document_outputs": [
+    "docs/16-scenario-a-final-and-b-recording.md"
+  ],
+  "document_output_exceptions": [],
+  "run_attempts": 0,
+  "last_error": "",
+  "commit_refs": [
+    "49491d84b981ca8d874aadc68ba0bde71cf5f050",
+    "f18d6633b0fdff89c22ef5b7861495c2cd781262"
+  ],
+  "branch_name": "develop",
+  "git_dirty": true,
+  "git_snapshot_captured_at": "2026-10-31T23:41:58+00:00",
+  "artifacts": [
+    ".loom/tasks/task-20261031-233656-a-b-f3003e64/agent-events.jsonl",
+    ".loom/tasks/task-20261031-233656-a-b-f3003e64/artifacts.json",
+    ".loom/tasks/task-20261031-233656-a-b-f3003e64/context.md",
+    ".loom/tasks/task-20261031-233656-a-b-f3003e64/decision.md",
+    ".loom/tasks/task-20261031-233656-a-b-f3003e64/git-snapshot.json",
+    ".loom/tasks/task-20261031-233656-a-b-f3003e64/logs.txt",
+    ".loom/tasks/task-20261031-233656-a-b-f3003e64/previous-results.md",
+    ".loom/tasks/task-20261031-233656-a-b-f3003e64/prompt.md",
+    ".loom/tasks/task-20261031-233656-a-b-f3003e64/result.md",
+    ".loom/tasks/task-20261031-233656-a-b-f3003e64/troubleshooting.md",
+    "docs/16-scenario-a-final-and-b-recording.md"
+  ],
+  "source_proposal_id": "",
+  "source_prompt": ""
+}

@@ -1,0 +1,45 @@
+{
+  "before": {
+    "available": true,
+    "branch_name": "develop",
+    "commit_sha": "f54cae1c753054de0a8f2eb76166807019db8db4",
+    "dirty": true,
+    "staged_files": [],
+    "modified_files": [
+      ".loom/events.jsonl",
+      ".loom/jobs/job-20261031-152248-apk-cf438185/job.json"
+    ],
+    "untracked_files": [
+      ".loom/job-runs/job-run-20261031-193014-job-20261031-152248-apk-cf438185-5d88d505/",
+      ".loom/task-definitions/task-def-20261031-193008-task-def-09518467/",
+      ".loom/task-runs/task-run-20261031-193014-task-def-20261031-193008-task-def-09518467-48beaf4f/",
+      ".loom/tasks/task-20261031-193008-task-33cb114d/"
+    ],
+    "captured_at": "2026-10-31T19:30:14+00:00"
+  },
+  "after": {
+    "available": true,
+    "branch_name": "develop",
+    "commit_sha": "74b4b65b95e2a59c2bc91518c2f677b11ce47b2c",
+    "dirty": true,
+    "staged_files": [],
+    "modified_files": [
+      ".loom/events.jsonl",
+      ".loom/jobs/job-20261031-152248-apk-cf438185/job.json",
+      ".loom/jobs/job-20261031-152248-apk-cf438185/notes.md",
+      "docs/13-location-guidance-scenarios.md"
+    ],
+    "untracked_files": [
+      ".loom/job-runs/job-run-20261031-193014-job-20261031-152248-apk-cf438185-5d88d505/",
+      ".loom/task-definitions/task-def-20261031-193008-task-def-09518467/",
+      ".loom/task-runs/task-run-20261031-193014-task-def-20261031-193008-task-def-09518467-48beaf4f/",
+      ".loom/tasks/task-20261031-193008-task-33cb114d/",
+      "docs/validation/android-filming-alert.png",
+      "docs/validation/android-filming-build.json",
+      "docs/validation/android-filming-home.png",
+      "docs/validation/android-filming-verification.json",
+      "docs/validation/web-filming-home-b.png"
+    ],
+    "captured_at": "2026-10-31T20:12:10+00:00"
+  }
+}

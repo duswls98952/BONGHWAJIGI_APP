@@ -1,0 +1,149 @@
+{
+  "provenance": {
+    "origin": "synthetic",
+    "captured_at": "2026-10-31T12:00:00+00:00",
+    "description": "로컬 PostgreSQL 격리 API 테스트에서 캡처한 계단 상태 제안과 서버 시연 경로 fixture. Qwen 추출은 고정 테스트 응답이며 실모델 검증과 구분한다.",
+    "generator": "stubbed semantic extraction; server validation and rendering executed",
+    "operational_use": false,
+    "route_fixture": "mvp-filming-fixtures.json roles.B.route"
+  },
+  "textTurn": {
+    "meta": {
+      "schema_version": "0.2.0-mvp",
+      "mode": "simulation",
+      "request_id": "fixture-turn-request",
+      "generated_at": "2026-10-31T12:00:00+00:00",
+      "data_status": "current"
+    },
+    "data": {
+      "turn_id": "fixture-stairs-1",
+      "response_id": "fixture-response",
+      "status": "complete",
+      "response_revision": 1,
+      "context_revision": 0,
+      "valid_until": "2026-10-31T12:02:00Z",
+      "assistant": {
+        "text": "말씀하신 상태를 반영하려면 아래 제안을 확인해 주세요.\n공식 대피 안내와 재난문자를 확인하고 대피할 장소를 확인하세요.\n즉시 이동할 수 있도록 비상용품과 가방을 준비하세요.\n지금 곁에서 이동을 도와줄 사람이 있나요?",
+        "source": "qwen_grounded",
+        "action_ids": [
+          "mvp-prepare-follow",
+          "mvp-prepare-bag"
+        ]
+      },
+      "proposal": {
+        "requires_confirmation": true,
+        "base_revision": 0,
+        "state": {
+          "helper_present": null,
+          "can_move": null,
+          "injured": null,
+          "observed_hazard": "unknown",
+          "location_type": "unknown",
+          "evacuation_status": "unknown",
+          "deescalation_confirmed": false
+        },
+        "overrides": {
+          "mobility": null,
+          "stairs": "difficult",
+          "alone_now": "unknown"
+        },
+        "evidence": [
+          {
+            "field": "overrides.stairs",
+            "value": "difficult",
+            "quote": "계단 이용이 어려워요"
+          }
+        ]
+      },
+      "reason_code": null
+    }
+  },
+  "route": {
+    "meta": {
+      "schema_version": "0.2.0-mvp",
+      "mode": "simulation",
+      "request_id": "4f6fa6a1-c092-472c-b67f-c76df10dcce5",
+      "generated_at": "2026-10-31T19:44:15.656756Z",
+      "data_status": "current"
+    },
+    "data": {
+      "status": "simulation",
+      "route": {
+        "id": "mobile-demo-route-v1",
+        "origin": "synthetic",
+        "operational_use": false,
+        "label": "참고 경로 · 실제 통행 여부 확인 필요",
+        "geometry": {
+          "type": "LineString",
+          "coordinates": [
+            [
+              129.35,
+              36.4
+            ],
+            [
+              129.351,
+              36.401
+            ],
+            [
+              129.3525,
+              36.4015
+            ],
+            [
+              129.354,
+              36.403
+            ]
+          ]
+        },
+        "start": {
+          "latitude": 36.4,
+          "longitude": 129.35,
+          "name": "안내 시작 위치"
+        },
+        "destination": {
+          "latitude": 36.403,
+          "longitude": 129.354,
+          "name": "참고 목적지 · 지정 대피소 아님"
+        },
+        "steps": [
+          {
+            "sequence": 1,
+            "text": "실제 이동 전 공식 통행 안내를 확인하세요.",
+            "point": {
+              "latitude": 36.4,
+              "longitude": 129.35
+            }
+          },
+          {
+            "sequence": 2,
+            "text": "실제 이동 전 공식 통행 안내를 확인하세요.",
+            "point": {
+              "latitude": 36.4015,
+              "longitude": 129.3525
+            }
+          },
+          {
+            "sequence": 3,
+            "text": "실제 이동 전 공식 통행 안내를 확인하세요.",
+            "point": {
+              "latitude": 36.403,
+              "longitude": 129.354
+            }
+          }
+        ],
+        "bounds": {
+          "west": 129.349,
+          "south": 36.399,
+          "east": 129.355,
+          "north": 36.404
+        },
+        "valid_until": "2026-10-31T19:49:14.954322Z",
+        "input_versions": {
+          "incident:fire": 2,
+          "location:b": 2,
+          "route:fire/b": 1
+        }
+      },
+      "reason": "REFERENCE_ROUTE_NOT_VERIFIED_SAFE"
+    }
+  }
+}

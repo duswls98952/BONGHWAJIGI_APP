@@ -12,7 +12,7 @@ npm run start:go
 
 `cp`는 최초 1회만 합니다. 기존 `.env`를 덮어쓰지 않습니다. 화면만 확인하려면 `npm run web`도 가능합니다. 같은 Wi-Fi의 기기에서 Expo Go QR로 열거나 웹 주소를 엽니다. UI 확인용 Expo Go는 실제 앱의 권한·푸시 검증을 대신하지 않습니다.
 
-홈의 ‘현재 재난 안내 확인’을 누릅니다. 긴급 화면 하단의 **모의 서버 이벤트**에서 대응 단계를 바꾸면 서버 모의 이벤트 → 다시 조회 → 단계·문장·색상 갱신을 확인할 수 있습니다. 시연 모드는 실제 안내·신고에 사용하지 않습니다. 모바일 지도 키가 없으면 ‘실제 도로가 아닌 도식’이 나옵니다.
+첫 실행에서 시연 안내와 합성 프로필을 저장하고 홈의 산불이나 공식 경보를 누릅니다. 긴급 화면 하단의 **모의 시연 제어**에서 대응 단계를 바꾸면 서버 모의 이벤트 → 다시 조회 → 단계·문장·색상 갱신을 확인할 수 있습니다. 시연 모드는 실제 안내·신고에 사용하지 않습니다. 모바일 지도 키가 없으면 ‘실제 도로가 아닌 도식’이 나옵니다.
 
 ## 실제 앱 빌드
 
@@ -39,14 +39,15 @@ EAS 사용 시 계정·프로젝트·서명 설정 후 `npx eas-cli build --prof
 | `app/emergency.tsx` | S2 공식 경보·개인 단계·대화·상태·2D 지도·행동요령 |
 | `app/profile.tsx` | S4 사전 프로필·위치·알림 설정 |
 | `app/rules.tsx` | S5 기본 수칙 |
-| `src/components/ui.tsx` | 공통 카드·버튼·글자·색상 |
-| `src/components/DisasterMap.native.tsx` | 네이버 2D 지도 연결 |
+| `src/mvp/ui.tsx` | 공통 카드·버튼·글자·색상 |
+| `src/mvp/Map.native.tsx`, `mapGeometry.ts` | Android 네이버 2D 지도, 공유 위치·관련 범위·만료 검사 |
+| `src/mvp/Map.tsx`, `MapDiagram.tsx` | 웹·Expo Go·키 없는 빌드의 명시된 도식 |
 | `src/api/client.ts` | API 경로·요청 형식. 화면에서 URL을 다시 작성하지 않음 |
-| `src/api/mock.ts` | 앱 개발용 모의 서버. 실제 판단 엔진이 아님 |
+| `src/mvp/mock.ts` | 앱 개발용 모의 서버. 실제 판단 엔진이 아님 |
 | `src/runtime/Runtime.tsx` | 단일 갱신 루프·캐시·앱 복귀 처리 |
 | `src/platform/` | 위치·푸시·토큰·TTS 같은 단말 기능 |
 
-S3 3D 화면과 버튼은 없습니다. 2D 경로는 S2 지도에 겹쳐 표시합니다. 화면 번호는 하단 탭 개수가 아닙니다.
+S3 3D 화면과 버튼은 없습니다. 현재 서버의 검증된 경로는 unavailable이므로 지도에 임의 경로선을 그리지 않습니다. 화면 번호는 하단 탭 개수가 아닙니다. Android 지도 키 주입과 최신 APK는 [네이버 지도 연결](11-naver-map-integration.md)을 따릅니다.
 
 ## 개발 순서
 
@@ -72,3 +73,5 @@ npm run api:generate
 ```
 
 현재 OpenAPI 생성기의 TypeScript 5 peer 요구와 앱의 TypeScript 6을 분리하기 위해 `tools/api-generator`에 별도 잠금 파일을 두었습니다. `--force`나 `--legacy-peer-deps`로 충돌을 숨기지 않습니다.
+
+현재 실제0.2 계약과 인증은 [API 연결](02-api-integration.md), 구현 상세는 [Expo 구현](09-app-implementation.md)를 확인합니다. 로컬 내부 릴리즈 APK는 `node scripts/build-apk.mjs --help`로 재현 옵션을 확인합니다.

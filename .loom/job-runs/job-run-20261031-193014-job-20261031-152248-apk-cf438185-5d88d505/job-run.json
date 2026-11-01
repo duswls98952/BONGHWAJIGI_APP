@@ -1,0 +1,14 @@
+{
+  "id": "job-run-20261031-193014-job-20261031-152248-apk-cf438185-5d88d505",
+  "job_definition_id": "job-20261031-152248-apk-cf438185",
+  "status": "DONE",
+  "created_at": "2026-10-31T19:30:14+00:00",
+  "updated_at": "2026-10-31T20:12:10+00:00",
+  "legacy_job_id": "job-20261031-152248-apk-cf438185",
+  "started_at": "2026-10-31T19:30:14+00:00",
+  "completed_at": "2026-10-31T20:12:10+00:00",
+  "trigger_mode": "manual",
+  "trigger_ref": "",
+  "worker_pool": "",
+  "last_error": ""
+}

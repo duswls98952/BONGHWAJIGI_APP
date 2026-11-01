@@ -1,0 +1,66 @@
+{
+  "verified_date_kst": "2026-11-01",
+  "device": {
+    "model": "Samsung SM-G996N",
+    "android_version": "15",
+    "app_version": "0.2.1",
+    "version_code": 3
+  },
+  "apk_sha256": "5d4b2cb00adead0d2f6e2e1f51c76c32819c6b7b5095189549dd8fc0079aee25",
+  "source_head": "66c4d734287549d6403c429ca42e6fdb44d38d2b",
+  "install": "adb install -r succeeded, existing signing certificate and session retained",
+  "checks": [
+    {
+      "name": "national_map_tiles_labels_and_attribution",
+      "method": "CUA read-only device mirror",
+      "result": "passed",
+      "evidence": "android-naver-overview.png"
+    },
+    {
+      "name": "synthetic_location_marker_and_camera_update",
+      "method": "user taps synthetic location button; CUA read-only device mirror",
+      "result": "passed",
+      "evidence": "android-naver-location.png"
+    },
+    {
+      "name": "incident_bounds_and_marker",
+      "method": "user opened official alert and reported both red area and shared-location marker visible",
+      "result": "passed",
+      "screenshot": null
+    },
+    {
+      "name": "server_location_and_incident",
+      "method": "read-only same-device server data inspection",
+      "result": "passed",
+      "location_revision": 2,
+      "location_valid_for_seconds": 300,
+      "synthetic_coordinates_match": true,
+      "incident_bounds_current": true,
+      "policy_requested_revision": 14,
+      "policy_applied_revision": 14,
+      "error_code": null
+    }
+  ],
+  "automated": {
+    "typescript": "passed",
+    "tests_passed": 45,
+    "document_files_checked": 16,
+    "web_export": "passed",
+    "native_release": "passed"
+  },
+  "not_tested": [
+    "real GPS permission or collection",
+    "401/429 fault injection",
+    "airplane mode or offline cache recovery",
+    "Firebase remote push",
+    "iOS",
+    "validated evacuation route",
+    "119 calls or SMS"
+  ],
+  "notes": [
+    "Home shows location; official alert details also show incident bounds.",
+    "Initial missing marker was the no-current-location national overview.",
+    "Native onInitialized is not evidence of tile or authentication success; actual map pixels were observed.",
+    "Client Secret not used or saved."
+  ]
+}

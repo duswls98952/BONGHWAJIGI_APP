@@ -1,6 +1,6 @@
 # 앱팀 문서 안내
 
-화면을 이해하려면 현재 [모바일 HTML 시안](../public/prototype/index.html)을 먼저 보고, 아래 UI 문서에서 화면별 목적과 표시 규칙을 확인합니다. HTML 시안은 정적 예시이고 Expo 앱은 별도의 구현 단계에 있습니다.
+화면을 이해하려면 현재 [모바일 HTML 시안](../public/prototype/index.html)을 먼저 보고, 아래 UI 문서에서 화면별 목적과 표시 규칙을 확인합니다. HTML 시안은 디자인 기준이고 현재 Expo 구현과 실서버 연결은 [구현 문서](09-app-implementation.md)를 확인합니다.
 
 ## UI 문서
 
@@ -24,4 +24,13 @@
 | 6 | [서버 인계](06-server-handoff.md) | 서버·앱 공동 담당 |
 | 7 | [검증 범위](07-validation.md) | 시연·인수 담당 |
 
-[OpenAPI 사본](api/upstream-openapi.yaml), [예제](api/upstream-examples.json), [원본 커밋·해시](api/provenance.json)는 서버 계약을 확인할 때 사용합니다. 화면 시안이 바뀌어도 API 경로·필드는 서버와 합의하기 전까지 임의로 바꾸지 않습니다.
+[현재 OpenAPI 사본](api/mvp-openapi.json), [합성 응답 예제](api/mvp-fixtures.json), [원본 커밋·해시](api/mvp-provenance.json)는 서버 계약을 확인할 때 사용합니다. 화면 시안이 바뀌어도 API 경로·필드는 서버와 합의하기 전까지 임의로 바꾸지 않습니다.
+
+- [목업과 API 차이 검토](08-live-integration-audit.md)
+- [Expo 구현](09-app-implementation.md)
+
+- [Android 내부 배포·실기기 검증](10-android-delivery.md)
+
+- [네이버 지도 연결·Android 배포](11-naver-map-integration.md)
+
+- [0.4.0 지역 안내·A/B 촬영 흐름](13-location-guidance-scenarios.md)

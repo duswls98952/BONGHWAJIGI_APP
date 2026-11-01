@@ -1,0 +1,550 @@
+{
+  "checked_at": "2026-10-31T23:31:54.558053+00:00",
+  "files": [
+    {
+      "path": "artifacts/recordings/2026-11-01-A/A-scenario-after-9s.mp4",
+      "sha256": "01b67b3b1ba4b16c65afe7203a021dacb7eb5e83ab934b0b4913e81cc806f4ff",
+      "media": {
+        "programs": [],
+        "stream_groups": [],
+        "streams": [
+          {
+            "codec_name": "h264",
+            "codec_type": "video",
+            "width": 1080,
+            "height": 2400,
+            "avg_frame_rate": "30/1"
+          },
+          {
+            "codec_name": "aac",
+            "codec_type": "audio",
+            "sample_rate": "48000",
+            "channels": 2,
+            "avg_frame_rate": "0/0"
+          }
+        ],
+        "format": {
+          "duration": "79.700000",
+          "size": "3894060"
+        }
+      }
+    },
+    {
+      "path": "artifacts/recordings/2026-11-01-A/A-profile-retake-01-raw.mp4",
+      "sha256": "feed383eec9cbfc6a3abc882ae2feed7c5b91d0520369d56576368fbed97efc7",
+      "media": {
+        "programs": [],
+        "stream_groups": [],
+        "streams": [
+          {
+            "codec_name": "h264",
+            "codec_type": "video",
+            "width": 1080,
+            "height": 2400,
+            "avg_frame_rate": "50040000/5474809"
+          },
+          {
+            "codec_name": "aac",
+            "codec_type": "audio",
+            "sample_rate": "48000",
+            "channels": 2,
+            "avg_frame_rate": "0/0"
+          }
+        ],
+        "format": {
+          "duration": "60.831211",
+          "size": "9079567"
+        }
+      }
+    },
+    {
+      "path": "artifacts/recordings/2026-11-01-A/A-profile-retake-02-raw.mp4",
+      "sha256": "601bbc60dc57342edf77feca953a0bf5f5763b396859d011163891f7ba91c76c",
+      "media": {
+        "programs": [],
+        "stream_groups": [],
+        "streams": [
+          {
+            "codec_name": "h264",
+            "codec_type": "video",
+            "width": 1080,
+            "height": 2400,
+            "avg_frame_rate": "74880000/4503643"
+          },
+          {
+            "codec_name": "aac",
+            "codec_type": "audio",
+            "sample_rate": "48000",
+            "channels": 2,
+            "avg_frame_rate": "0/0"
+          }
+        ],
+        "format": {
+          "duration": "50.040478",
+          "size": "15643722"
+        }
+      }
+    },
+    {
+      "path": "artifacts/recordings/2026-11-01-A/A-profile-retake-03-raw.mp4",
+      "sha256": "9df9b2f7d3caca60a13d1fb7797becf5dc48f78bf9e7079a03ee66f78a8751d2",
+      "media": {
+        "programs": [],
+        "stream_groups": [],
+        "streams": [
+          {
+            "codec_name": "h264",
+            "codec_type": "video",
+            "width": 1080,
+            "height": 2400,
+            "avg_frame_rate": "270000/19183"
+          },
+          {
+            "codec_name": "aac",
+            "codec_type": "audio",
+            "sample_rate": "48000",
+            "channels": 2,
+            "avg_frame_rate": "0/0"
+          }
+        ],
+        "format": {
+          "duration": "41.989456",
+          "size": "6232989"
+        }
+      }
+    },
+    {
+      "path": "artifacts/recordings/2026-11-01-A/A-profile-retake-selected.mp4",
+      "sha256": "3fcaee544a1981f50ee32342e42d266a45670164222a25fec816b1fa9b25eb8f",
+      "media": {
+        "programs": [],
+        "stream_groups": [],
+        "streams": [
+          {
+            "codec_name": "h264",
+            "codec_type": "video",
+            "width": 1080,
+            "height": 2400,
+            "avg_frame_rate": "30/1"
+          },
+          {
+            "codec_name": "aac",
+            "codec_type": "audio",
+            "sample_rate": "48000",
+            "channels": 2,
+            "avg_frame_rate": "0/0"
+          }
+        ],
+        "format": {
+          "duration": "42.000000",
+          "size": "2298663"
+        }
+      }
+    }
+  ],
+  "cut_range": {
+    "source": "A-scenario-review.mp4",
+    "start_inclusive": 9,
+    "end_exclusive": 88.7,
+    "duration": 79.7,
+    "previous_profile_seconds_remaining": 1
+  },
+  "selected_take": "A-profile-retake-03-raw.mp4",
+  "user_decisions": {
+    "take01": "재촬영",
+    "take02": "재촬영",
+    "take03": "촬영 완료·종료"
+  },
+  "observed": [
+    "사용자 직접 기본 정보 입력",
+    "이동과 의사소통 및 어린이 항목 선택·스크롤",
+    "저장했어요 완료 표시"
+  ],
+  "root_ui_actions": false,
+  "server_api_mutations": false,
+  "combined_with_previous_video": false,
+  "external_upload": false,
+  "all_recorders_stopped": true,
+  "cut_verification": {
+    "task_id": "task-20261031-232306-a-9-9cc91b8d",
+    "source_file": "A-scenario-review.mp4",
+    "source_sha256": "0323072030eff13f004ed03e6ce1298e130435ad8f00b8f592a62e947b772e8b",
+    "source_duration_seconds": 88.7,
+    "output_file": "A-scenario-after-9s.mp4",
+    "output_sha256": "01b67b3b1ba4b16c65afe7203a021dacb7eb5e83ab934b0b4913e81cc806f4ff",
+    "output_size_bytes": 3894060,
+    "edit": {
+      "source_start_seconds": 9.0,
+      "source_end_seconds_exclusive": 88.7,
+      "source_start_frame_zero_based": 270,
+      "source_end_frame_exclusive": 2661,
+      "output_start_seconds": 0,
+      "output_end_seconds_exclusive": 79.7,
+      "playback_speed": 1,
+      "remaining_profile_seconds": 1.0,
+      "note": "사용자 지정대로 정확히 9초를 제외했다. 기존 첫 프로필 장면이 10초까지이므로 새 영상 첫 1초는 프로필 장면이다."
+    },
+    "processing": {
+      "video_codec": "h264",
+      "video_encoder": "libx264",
+      "crf": 18,
+      "preset": "fast",
+      "width": 1080,
+      "height": 2400,
+      "frame_rate": "30/1",
+      "audio_codec": "aac",
+      "audio_sample_rate": 48000,
+      "audio_channels": 2,
+      "audio_bitrate": 192000,
+      "audio_processing": "9.000~88.700초의 원본 오디오만 영상과 동일하게 이동해 재인코딩. 음량·속도 조정이나 다른 음성·알림음 추가 없음.",
+      "faststart": true,
+      "effects": [],
+      "subtitles_added": false
+    },
+    "validation": {
+      "source_sha256_unchanged": true,
+      "ffprobe": {
+        "programs": [],
+        "stream_groups": [],
+        "streams": [
+          {
+            "index": 0,
+            "codec_name": "h264",
+            "codec_type": "video",
+            "width": 1080,
+            "height": 2400,
+            "r_frame_rate": "30/1",
+            "avg_frame_rate": "30/1",
+            "start_time": "0.000000",
+            "duration": "79.700000",
+            "nb_frames": "2391"
+          },
+          {
+            "index": 1,
+            "codec_name": "aac",
+            "codec_type": "audio",
+            "sample_rate": "48000",
+            "channels": 2,
+            "r_frame_rate": "0/0",
+            "avg_frame_rate": "0/0",
+            "start_time": "0.000000",
+            "duration": "79.700000",
+            "nb_frames": "3737"
+          }
+        ],
+        "format": {
+          "duration": "79.700000",
+          "size": "3894060"
+        }
+      },
+      "decode_exit_code": 0,
+      "decode_errors": [],
+      "encode_warnings": [],
+      "faststart_moov_before_mdat": true,
+      "mp4_top_level_atoms": [
+        {
+          "type": "ftyp",
+          "offset": 0,
+          "size": 32
+        },
+        {
+          "type": "moov",
+          "offset": 32,
+          "size": 88943
+        },
+        {
+          "type": "free",
+          "offset": 88975,
+          "size": 8
+        },
+        {
+          "type": "mdat",
+          "offset": 88983,
+          "size": 3805077
+        }
+      ],
+      "source_frame_270_output_frame_0_ssim": 0.999561,
+      "audio_alignment_checks": [
+        {
+          "label": "질문 TTS",
+          "source_start_seconds": 39.7,
+          "output_start_seconds": 30.7,
+          "duration_seconds": 1.9,
+          "normalized_waveform_similarity": 0.999996
+        },
+        {
+          "label": "제안 TTS",
+          "source_start_seconds": 53.9,
+          "output_start_seconds": 44.9,
+          "duration_seconds": 6.3,
+          "normalized_waveform_similarity": 0.999995
+        }
+      ],
+      "frame_checks": {
+        "source_seconds": [
+          9,
+          10
+        ],
+        "output_seconds": [
+          0,
+          1
+        ],
+        "location": "after-9s-frame-checks",
+        "visually_verified": true,
+        "result": "새 영상 0초는 기존 확인본 9초의 프로필 화면, 새 영상 1초는 기존 확인본 10초의 홈 화면과 일치함."
+      }
+    }
+  },
+  "retake_verification": {
+    "task_id": "task-20261031-232306-a-9-9cc91b8d",
+    "selected_take": "03",
+    "source_file": "A-profile-retake-03-raw.mp4",
+    "source_sha256": "9df9b2f7d3caca60a13d1fb7797becf5dc48f78bf9e7079a03ee66f78a8751d2",
+    "source_size_bytes": 6232989,
+    "source_probe": {
+      "programs": [],
+      "stream_groups": [],
+      "streams": [
+        {
+          "index": 0,
+          "codec_name": "h264",
+          "codec_type": "video",
+          "width": 1080,
+          "height": 2400,
+          "r_frame_rate": "50/1",
+          "avg_frame_rate": "270000/19183",
+          "time_base": "1/90000",
+          "start_time": "0.000000",
+          "duration": "41.989456",
+          "nb_frames": "591"
+        },
+        {
+          "index": 1,
+          "codec_name": "aac",
+          "codec_type": "audio",
+          "sample_rate": "48000",
+          "channels": 2,
+          "r_frame_rate": "0/0",
+          "avg_frame_rate": "0/0",
+          "time_base": "1/48000",
+          "start_time": "0.207812",
+          "duration": "41.712521",
+          "nb_frames": "1956"
+        }
+      ],
+      "format": {
+        "duration": "41.989456",
+        "size": "6232989"
+      }
+    },
+    "output_file": "A-profile-retake-selected.mp4",
+    "output_sha256": "3fcaee544a1981f50ee32342e42d266a45670164222a25fec816b1fa9b25eb8f",
+    "output_size_bytes": 2298663,
+    "output_probe": {
+      "programs": [],
+      "stream_groups": [],
+      "streams": [
+        {
+          "index": 0,
+          "codec_name": "h264",
+          "codec_type": "video",
+          "width": 1080,
+          "height": 2400,
+          "r_frame_rate": "30/1",
+          "avg_frame_rate": "30/1",
+          "time_base": "1/90000",
+          "start_time": "0.000000",
+          "duration": "42.000000",
+          "nb_frames": "1260"
+        },
+        {
+          "index": 1,
+          "codec_name": "aac",
+          "codec_type": "audio",
+          "sample_rate": "48000",
+          "channels": 2,
+          "r_frame_rate": "0/0",
+          "avg_frame_rate": "0/0",
+          "time_base": "1/48000",
+          "start_time": "0.207812",
+          "duration": "41.712521",
+          "nb_frames": "1955"
+        }
+      ],
+      "format": {
+        "duration": "42.000000",
+        "size": "2298663"
+      }
+    },
+    "edit": {
+      "source_range": "전체",
+      "source_start_seconds": 0,
+      "source_end_seconds": 41.989456,
+      "trimmed": false,
+      "concatenated_with_other_video": false,
+      "playback_speed": 1,
+      "output_duration_seconds": 42.0,
+      "duration_difference_seconds": 0.010544,
+      "duration_note": "CFR 30fps의 마지막 프레임 표시 길이에 맞춘 0.010544초 반올림 차이. 장면이나 음성을 잘라내지 않았다."
+    },
+    "processing": {
+      "video_codec": "h264",
+      "video_encoder": "libx264",
+      "crf": 18,
+      "preset": "fast",
+      "width": 1080,
+      "height": 2400,
+      "frame_rate": "30/1",
+      "audio_codec": "aac",
+      "audio_mode": "원본 AAC 패킷 무변환 복사",
+      "audio_sample_rate": 48000,
+      "audio_channels": 2,
+      "faststart": true,
+      "effects": [],
+      "subtitles_added": false,
+      "new_audio_added": false
+    },
+    "validation": {
+      "source_sha256_unchanged": true,
+      "raw_decode_checks": [
+        {
+          "label": "raw-default-null",
+          "command": [
+            "ffmpeg",
+            "-hide_banner",
+            "-v",
+            "warning",
+            "-i",
+            "artifacts/recordings/2026-11-01-A/A-profile-retake-03-raw.mp4",
+            "-f",
+            "null",
+            "-"
+          ],
+          "exit_code": 0,
+          "nonmonotonic_dts_warning_count": 16,
+          "stderr_lines": [
+            "[null @ 0x816c17700] Application provided invalid, non monotonically increasing dts to muxer in stream 0: 330 >= 330",
+            "[null @ 0x816c17700] Application provided invalid, non monotonically increasing dts to muxer in stream 0: 406 >= 406",
+            "[null @ 0x816c17700] Application provided invalid, non monotonically increasing dts to muxer in stream 0: 415 >= 415",
+            "[null @ 0x816c17700] Application provided invalid, non monotonically increasing dts to muxer in stream 0: 444 >= 444",
+            "[null @ 0x816c17700] Application provided invalid, non monotonically increasing dts to muxer in stream 0: 578 >= 578",
+            "[null @ 0x816c17700] Application provided invalid, non monotonically increasing dts to muxer in stream 0: 795 >= 795",
+            "[null @ 0x816c17700] Application provided invalid, non monotonically increasing dts to muxer in stream 0: 837 >= 837",
+            "[null @ 0x816c17700] Application provided invalid, non monotonically increasing dts to muxer in stream 0: 983 >= 983",
+            "[null @ 0x816c17700] Application provided invalid, non monotonically increasing dts to muxer in stream 0: 1023 >= 1023",
+            "[null @ 0x816c17700] Application provided invalid, non monotonically increasing dts to muxer in stream 0: 1143 >= 1143",
+            "[null @ 0x816c17700] Application provided invalid, non monotonically increasing dts to muxer in stream 0: 1183 >= 1183",
+            "[null @ 0x816c17700] Application provided invalid, non monotonically increasing dts to muxer in stream 0: 1258 >= 1258",
+            "[null @ 0x816c17700] Application provided invalid, non monotonically increasing dts to muxer in stream 0: 1308 >= 1308",
+            "[null @ 0x816c17700] Application provided invalid, non monotonically increasing dts to muxer in stream 0: 1533 >= 1533",
+            "[null @ 0x816c17700] Application provided invalid, non monotonically increasing dts to muxer in stream 0: 1558 >= 1558",
+            "[null @ 0x816c17700] Application provided invalid, non monotonically increasing dts to muxer in stream 0: 1659 >= 1659"
+          ]
+        },
+        {
+          "label": "raw-passthrough-null",
+          "command": [
+            "ffmpeg",
+            "-hide_banner",
+            "-v",
+            "warning",
+            "-i",
+            "artifacts/recordings/2026-11-01-A/A-profile-retake-03-raw.mp4",
+            "-fps_mode",
+            "passthrough",
+            "-f",
+            "null",
+            "-"
+          ],
+          "exit_code": 0,
+          "nonmonotonic_dts_warning_count": 16,
+          "stderr_lines": [
+            "[null @ 0x770c17700] Application provided invalid, non monotonically increasing dts to muxer in stream 0: 330 >= 330",
+            "[null @ 0x770c17700] Application provided invalid, non monotonically increasing dts to muxer in stream 0: 406 >= 406",
+            "[null @ 0x770c17700] Application provided invalid, non monotonically increasing dts to muxer in stream 0: 415 >= 415",
+            "[null @ 0x770c17700] Application provided invalid, non monotonically increasing dts to muxer in stream 0: 444 >= 444",
+            "[null @ 0x770c17700] Application provided invalid, non monotonically increasing dts to muxer in stream 0: 578 >= 578",
+            "[null @ 0x770c17700] Application provided invalid, non monotonically increasing dts to muxer in stream 0: 795 >= 795",
+            "[null @ 0x770c17700] Application provided invalid, non monotonically increasing dts to muxer in stream 0: 837 >= 837",
+            "[null @ 0x770c17700] Application provided invalid, non monotonically increasing dts to muxer in stream 0: 983 >= 983",
+            "[null @ 0x770c17700] Application provided invalid, non monotonically increasing dts to muxer in stream 0: 1023 >= 1023",
+            "[null @ 0x770c17700] Application provided invalid, non monotonically increasing dts to muxer in stream 0: 1143 >= 1143",
+            "[null @ 0x770c17700] Application provided invalid, non monotonically increasing dts to muxer in stream 0: 1183 >= 1183",
+            "[null @ 0x770c17700] Application provided invalid, non monotonically increasing dts to muxer in stream 0: 1258 >= 1258",
+            "[null @ 0x770c17700] Application provided invalid, non monotonically increasing dts to muxer in stream 0: 1308 >= 1308",
+            "[null @ 0x770c17700] Application provided invalid, non monotonically increasing dts to muxer in stream 0: 1533 >= 1533",
+            "[null @ 0x770c17700] Application provided invalid, non monotonically increasing dts to muxer in stream 0: 1558 >= 1558",
+            "[null @ 0x770c17700] Application provided invalid, non monotonically increasing dts to muxer in stream 0: 1659 >= 1659"
+          ]
+        },
+        {
+          "label": "raw-passthrough-demux-timebase",
+          "command": [
+            "ffmpeg",
+            "-hide_banner",
+            "-v",
+            "warning",
+            "-i",
+            "artifacts/recordings/2026-11-01-A/A-profile-retake-03-raw.mp4",
+            "-fps_mode",
+            "passthrough",
+            "-enc_time_base:v",
+            "demux",
+            "-f",
+            "null",
+            "-"
+          ],
+          "exit_code": 0,
+          "nonmonotonic_dts_warning_count": 0,
+          "stderr_lines": []
+        }
+      ],
+      "raw_video_packet_dts_strictly_increasing": true,
+      "warning_interpretation": "기본 null 출력과 fps_mode passthrough에서 16개 DTS 경고가 재현됐으나 원본 demux timebase까지 유지하면 0개이며 디코드가 정상 완료됐다. 원본 패킷 DTS는 엄격 증가하고 정규화본은 일반 null 검사에서도 경고가 없어, 기본 null 출력 시간 눈금 변환 경고로 확인했다.",
+      "normalized_full_decode_exit_code": 0,
+      "normalized_full_decode_warnings": [],
+      "encode_warnings": [],
+      "audio_packet_count": 1955,
+      "audio_packet_payload_hashes_identical": true,
+      "audio_packet_pts_identical": true,
+      "source_audio_start_seconds": "0.207812",
+      "output_audio_start_seconds": "0.207812",
+      "faststart_moov_before_mdat": true,
+      "mp4_top_level_atoms": [
+        {
+          "type": "ftyp",
+          "offset": 0,
+          "size": 32
+        },
+        {
+          "type": "moov",
+          "offset": 32,
+          "size": 58964
+        },
+        {
+          "type": "free",
+          "offset": 58996,
+          "size": 8
+        },
+        {
+          "type": "mdat",
+          "offset": 59004,
+          "size": 2239659
+        }
+      ],
+      "output_frame_checks_seconds": [
+        0,
+        15,
+        26,
+        40
+      ],
+      "visually_checked_output_frames_seconds": [
+        0,
+        26,
+        40
+      ],
+      "visual_result": "도입 홈, 직접 선택한 이동·의사소통 영역, 저장했어요 완료 화면을 확인했다."
+    },
+    "privacy": "사용자 직접 입력과 선택 장면이 포함된 로컬 전용 파일. 외부 업로드하지 않았다. 원본01·02·03 및 기존 확인본·9초 제외본을 변경하지 않았다."
+  }
+}

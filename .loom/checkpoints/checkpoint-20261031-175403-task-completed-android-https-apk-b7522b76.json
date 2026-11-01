@@ -1,0 +1,19 @@
+{
+  "id": "checkpoint-20261031-175403-task-completed-android-https-apk-b7522b76",
+  "created_at": "2026-10-31T17:54:03+00:00",
+  "reason": "Task completed: 실제 Android에서 사설 HTTPS 연동 검증과 서명 APK 배포",
+  "summary": "실제 Android에서 사설 HTTPS 연동 검증과 서명 APK 배포 -> DONE @ develop/35f725f9f868",
+  "job_id": "job-20261031-152248-apk-cf438185",
+  "task_id": "task-20261031-170037-android-https-apk-eab2688e",
+  "commit_sha": "35f725f9f8684c236ec04ac5fe4f1d13bf3dbe0a",
+  "branch_name": "develop",
+  "dirty": true,
+  "staged_files": [],
+  "modified_files": [
+    ".loom/job-runs/job-run-20261031-154056-job-20261031-152248-apk-cf438185-9713e815/job-run.json",
+    ".loom/task-definitions/task-def-20261031-170037-android-https-apk-c840c89a/task-definition.json"
+  ],
+  "untracked_files": [],
+  "snapshot_captured_at": "2026-10-31T17:54:03+00:00",
+  "rollback_strategy": "revert-or-branch"
+}

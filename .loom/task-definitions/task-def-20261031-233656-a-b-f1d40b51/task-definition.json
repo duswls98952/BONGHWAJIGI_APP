@@ -1,0 +1,28 @@
+{
+  "id": "task-def-20261031-233656-a-b-f1d40b51",
+  "job_definition_id": "job-20261031-152248-apk-cf438185",
+  "title": "A 완성 영상 편집 및 B 촬영 준비",
+  "description": "사용자가 선택한 세 번째 재촬영본의 7초부터 사용하여 A 본편을 완성하고 B 촬영을 준비한다.",
+  "created_at": "2026-10-31T23:36:56+00:00",
+  "updated_at": "2026-10-31T23:41:58+00:00",
+  "order_index": 9,
+  "legacy_task_id": "task-20261031-233656-a-b-f3003e64",
+  "depends_on": [],
+  "expected_output": "A-scenario-final.mp4와 검증 기록, B 촬영 준비 상태",
+  "done_condition": "A 새 프로필 장면과 기존 홈·경보·대화 장면 연결 및 검증, B 촬영 준비 또는 구체적 대기 사유 기록",
+  "in_scope": "로컬 영상 편집, 알림음 보충 촬영본 활용, 코덱·화면·음성 검증, B 준비 점검 및 사용자 촬영 안내",
+  "out_of_scope": "A/B 합성 오프닝, 앱 기능 변경, 실제 GPS·119, 외부 영상 게시",
+  "validation_hint": "ffprobe·ffmpeg 전체 디코드, 연결 화면 및 음성 시점 확인, Loom strict 검증",
+  "required_docs": [],
+  "memory_refs": [],
+  "document_outputs": [
+    "docs/16-scenario-a-final-and-b-recording.md"
+  ],
+  "document_output_exceptions": [],
+  "default_agent": "foreground",
+  "context_policy_id": "",
+  "executor_policy_id": "",
+  "review_policy": "",
+  "source_proposal_id": "",
+  "source_prompt": ""
+}

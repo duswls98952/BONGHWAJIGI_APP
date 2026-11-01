@@ -1,0 +1,1191 @@
+{
+  "task_id": "task-20261031-235111-a-b-d91de416",
+  "status": "4K와1080p 완성본 및 독립 시각·음성 검증 통과",
+  "expected_duration_seconds": 105,
+  "source_a": "artifacts/recordings/2026-11-01-A/A-scenario-final.mp4",
+  "source_b": "artifacts/recordings/2026-11-01-B/B-scenario-01-raw.mp4",
+  "layout_preview": "artifacts/recordings/2026-11-01-AB/AB-layout-preview-105s.png",
+  "layout_review": "root 직접 확인: A좌/B우, 한국어라벨·중앙선·footer, 비활성화면0.65음영, 폰전체화면가독성 확인",
+  "independent_audio_timeline_seconds": {
+    "alert": [
+      25.389,
+      26.899
+    ],
+    "a_question": [
+      32.222,
+      34.101
+    ],
+    "a_server_proposal": [
+      44.13,
+      50.39
+    ],
+    "b_question": [
+      60.281,
+      63.022
+    ],
+    "b_server_proposal": [
+      73.395,
+      81.809
+    ]
+  },
+  "independent_audio_overlap": false,
+  "notes": [
+    "오프닝 제외",
+    "실제 사용자 발화 원음 없음, STT화면으로 확인",
+    "모든 원본 보존",
+    "외부게시·실기기·서버변경 없음"
+  ],
+  "outputs": {
+    "4k": {
+      "metadata": {
+        "programs": [],
+        "stream_groups": [],
+        "streams": [
+          {
+            "index": 0,
+            "codec_name": "h264",
+            "profile": "High",
+            "codec_type": "video",
+            "width": 3840,
+            "height": 2160,
+            "pix_fmt": "yuv420p",
+            "r_frame_rate": "30/1",
+            "avg_frame_rate": "30/1",
+            "time_base": "1/90000",
+            "start_time": "0.000000",
+            "duration": "105.000000",
+            "nb_frames": "3150"
+          },
+          {
+            "index": 1,
+            "codec_name": "aac",
+            "profile": "LC",
+            "codec_type": "audio",
+            "sample_rate": "48000",
+            "channels": 2,
+            "r_frame_rate": "0/0",
+            "avg_frame_rate": "0/0",
+            "time_base": "1/48000",
+            "start_time": "0.000000",
+            "duration": "105.000000",
+            "nb_frames": "4923"
+          }
+        ],
+        "format": {
+          "duration": "105.000000",
+          "size": "7616240"
+        }
+      },
+      "sha256": "00e805076b164453695931fec7fdcea1671873fed730e4d736694377827c1e6e",
+      "full_decode": {
+        "exit_code": 0,
+        "stderr_lines": 0,
+        "elapsed_seconds": 27.564
+      },
+      "faststart": true,
+      "mp4_atoms": [
+        {
+          "type": "ftyp",
+          "offset": 0,
+          "size": 32
+        },
+        {
+          "type": "moov",
+          "offset": 32,
+          "size": 116617
+        },
+        {
+          "type": "free",
+          "offset": 116649,
+          "size": 8
+        },
+        {
+          "type": "mdat",
+          "offset": 116657,
+          "size": 7499583
+        }
+      ],
+      "sources_unchanged": {
+        "A": true,
+        "B": true
+      }
+    },
+    "1080p": {
+      "metadata": {
+        "programs": [],
+        "stream_groups": [],
+        "streams": [
+          {
+            "index": 0,
+            "codec_name": "h264",
+            "profile": "High",
+            "codec_type": "video",
+            "width": 1920,
+            "height": 1080,
+            "pix_fmt": "yuv420p",
+            "r_frame_rate": "30/1",
+            "avg_frame_rate": "30/1",
+            "time_base": "1/90000",
+            "start_time": "0.000000",
+            "duration": "105.000000",
+            "nb_frames": "3150"
+          },
+          {
+            "index": 1,
+            "codec_name": "aac",
+            "profile": "LC",
+            "codec_type": "audio",
+            "sample_rate": "48000",
+            "channels": 2,
+            "r_frame_rate": "0/0",
+            "avg_frame_rate": "0/0",
+            "time_base": "1/48000",
+            "start_time": "0.000000",
+            "duration": "105.000000",
+            "nb_frames": "4923"
+          }
+        ],
+        "format": {
+          "duration": "105.000000",
+          "size": "3864982"
+        }
+      },
+      "sha256": "6faf714bb62669ec1fc46d97429384a66962a5b94cdccd21eaa45ca8fd95be74",
+      "full_decode": {
+        "exit_code": 0,
+        "stderr_lines": 0,
+        "elapsed_seconds": 2.64
+      },
+      "faststart": true,
+      "mp4_atoms": [
+        {
+          "type": "ftyp",
+          "offset": 0,
+          "size": 32
+        },
+        {
+          "type": "moov",
+          "offset": 32,
+          "size": 116726
+        },
+        {
+          "type": "free",
+          "offset": 116758,
+          "size": 8
+        },
+        {
+          "type": "mdat",
+          "offset": 116766,
+          "size": 3748216
+        }
+      ],
+      "sources_unchanged": {
+        "A": true,
+        "B": true
+      }
+    }
+  },
+  "checks": {
+    "check_docs": "npm run check:docs exit0, 문서23개 링크검사 통과",
+    "loom": "loom validate --strict exit0, 80개Task 정합성 통과"
+  },
+  "audio_independent": {
+    "checked_at": "2026-11-01T00:03:22.039044+00:00",
+    "method": "Independent ffmpeg absolute-PTS source extraction, decoded float sample equality against WAV, normalized waveform correlation with +/-250ms lag search at 1ms resolution, silence and sample-peak measurement; no source or video edits.",
+    "passed": true,
+    "source_b_first_audio_pts": 8029,
+    "source_b_time_base": "1/48000",
+    "source_b_start_seconds": 0.16727083333333334,
+    "master_duration_s": 105.0,
+    "events_do_not_overlap": true,
+    "event_checks": [
+      {
+        "id": "actual-alert-pickup",
+        "source": "A",
+        "expected_audible_window_s": [
+          25.389,
+          26.899
+        ],
+        "guard_window_s": [
+          25.34,
+          27.29
+        ],
+        "source_absolute_pts_trim_matches_master_samples_exactly": true,
+        "extra_decoded_tail_samples_per_channel": 0,
+        "extra_tail_peak_dbfs": null,
+        "encoded_peak_correlation_lag_ms": 0.0,
+        "encoded_peak_correlation": 0.99993,
+        "encoded_zero_lag_correlation": 0.99993,
+        "wrong_minus_167ms_correlation": null,
+        "wrong_plus_167ms_correlation": null,
+        "master_peak_dbfs": -5.97903,
+        "encoded_peak_dbfs": -6.03562,
+        "master_audible_bounds_10ms_rms_minus40db_s": [
+          25.39,
+          26.55
+        ],
+        "encoded_audible_bounds_10ms_rms_minus40db_s": [
+          25.39,
+          26.54
+        ],
+        "encoded_edge_difference_max_ms": 10.0
+      },
+      {
+        "id": "a-question-tts",
+        "source": "A",
+        "expected_audible_window_s": [
+          32.222,
+          34.101
+        ],
+        "guard_window_s": [
+          32.05,
+          34.3
+        ],
+        "source_absolute_pts_trim_matches_master_samples_exactly": true,
+        "extra_decoded_tail_samples_per_channel": 0,
+        "extra_tail_peak_dbfs": null,
+        "encoded_peak_correlation_lag_ms": 0.0,
+        "encoded_peak_correlation": 0.99999436,
+        "encoded_zero_lag_correlation": 0.99999436,
+        "wrong_minus_167ms_correlation": null,
+        "wrong_plus_167ms_correlation": null,
+        "master_peak_dbfs": -3.34368,
+        "encoded_peak_dbfs": -3.36097,
+        "master_audible_bounds_10ms_rms_minus40db_s": [
+          32.22,
+          34.1
+        ],
+        "encoded_audible_bounds_10ms_rms_minus40db_s": [
+          32.22,
+          34.1
+        ],
+        "encoded_edge_difference_max_ms": 0.0
+      },
+      {
+        "id": "a-proposal-tts",
+        "source": "A",
+        "expected_audible_window_s": [
+          44.13,
+          50.39
+        ],
+        "guard_window_s": [
+          43.95,
+          50.6
+        ],
+        "source_absolute_pts_trim_matches_master_samples_exactly": true,
+        "extra_decoded_tail_samples_per_channel": 0,
+        "extra_tail_peak_dbfs": null,
+        "encoded_peak_correlation_lag_ms": 0.0,
+        "encoded_peak_correlation": 0.99999126,
+        "encoded_zero_lag_correlation": 0.99999126,
+        "wrong_minus_167ms_correlation": null,
+        "wrong_plus_167ms_correlation": null,
+        "master_peak_dbfs": -3.04035,
+        "encoded_peak_dbfs": -3.05167,
+        "master_audible_bounds_10ms_rms_minus40db_s": [
+          44.13,
+          50.39
+        ],
+        "encoded_audible_bounds_10ms_rms_minus40db_s": [
+          44.13,
+          50.39
+        ],
+        "encoded_edge_difference_max_ms": 0.0
+      },
+      {
+        "id": "b-question-tts",
+        "source": "B",
+        "expected_audible_window_s": [
+          60.281083,
+          63.02175
+        ],
+        "guard_window_s": [
+          60.1,
+          63.2
+        ],
+        "source_absolute_pts_trim_matches_master_samples_exactly": true,
+        "extra_decoded_tail_samples_per_channel": 0,
+        "extra_tail_peak_dbfs": null,
+        "encoded_peak_correlation_lag_ms": 0.0,
+        "encoded_peak_correlation": 0.99999588,
+        "encoded_zero_lag_correlation": 0.99999588,
+        "wrong_minus_167ms_correlation": 0.00953039,
+        "wrong_plus_167ms_correlation": 0.0038516,
+        "master_peak_dbfs": -3.15425,
+        "encoded_peak_dbfs": -3.15131,
+        "master_audible_bounds_10ms_rms_minus40db_s": [
+          60.29,
+          63.02
+        ],
+        "encoded_audible_bounds_10ms_rms_minus40db_s": [
+          60.29,
+          63.02
+        ],
+        "encoded_edge_difference_max_ms": 0.0
+      },
+      {
+        "id": "b-proposal-tts",
+        "source": "B",
+        "expected_audible_window_s": [
+          73.394646,
+          81.808625
+        ],
+        "guard_window_s": [
+          73.2,
+          82.1
+        ],
+        "source_absolute_pts_trim_matches_master_samples_exactly": true,
+        "extra_decoded_tail_samples_per_channel": 67,
+        "extra_tail_peak_dbfs": null,
+        "encoded_peak_correlation_lag_ms": 0.0,
+        "encoded_peak_correlation": 0.9999941,
+        "encoded_zero_lag_correlation": 0.9999941,
+        "wrong_minus_167ms_correlation": -0.01249873,
+        "wrong_plus_167ms_correlation": -0.02327222,
+        "master_peak_dbfs": -3.03908,
+        "encoded_peak_dbfs": -3.05426,
+        "master_audible_bounds_10ms_rms_minus40db_s": [
+          73.4,
+          81.8
+        ],
+        "encoded_audible_bounds_10ms_rms_minus40db_s": [
+          73.4,
+          81.8
+        ],
+        "encoded_edge_difference_max_ms": 0.0
+      }
+    ],
+    "master_outside_guards_peak_amplitude": 0.0,
+    "encoded_outside_guards_peak_dbfs": -88.02001,
+    "master_peak_dbfs": -3.03908,
+    "encoded_peak_dbfs": -3.05167,
+    "encoded_samples_at_or_above_full_scale": 0,
+    "decoded_audio_4k_1080p_identical": true,
+    "decoded_audio_sha256": "e32dec37092ff9a23777978afe166d3d1db3f79fec0374a990b34e215d9dc523",
+    "limits": "AAC is lossy; encoded waveform differs slightly in amplitude. Small AAC tail padding is included in the decoded silence check. Sample peaks are checked; this is not a subjective listening or intersample true-peak test."
+  },
+  "visual_independent": {
+    "scope": "Independent final-output frame and signal inspection; original media and repository source unchanged.",
+    "outputs": {
+      "4k": {
+        "path": "artifacts/recordings/2026-11-01-AB/AB-scenario-no-opening-4k.mp4",
+        "sha256": "00e805076b164453695931fec7fdcea1671873fed730e4d736694377827c1e6e",
+        "size_bytes": 7616240
+      },
+      "1080p": {
+        "path": "artifacts/recordings/2026-11-01-AB/AB-scenario-no-opening-1080p.mp4",
+        "sha256": "6faf714bb62669ec1fc46d97429384a66962a5b94cdccd21eaa45ca8fd95be74",
+        "size_bytes": 3864982
+      }
+    },
+    "duration_seconds": 105,
+    "frames": 3150,
+    "fps": 30,
+    "milestone_seconds": [
+      0,
+      14,
+      20,
+      25.4,
+      27.9,
+      33,
+      49,
+      56,
+      61,
+      80,
+      90,
+      97,
+      102
+    ],
+    "additional_confirmation_stt_seconds": [
+      40.2,
+      43,
+      50.45,
+      52,
+      67.5,
+      71.5,
+      84.2
+    ],
+    "checks": {
+      "composite_text_clipping": "No added role label/footer or required on-screen state text clipped by compositing. Ordinary source scrolling and fixed navigation remain. Final A paragraph extends below viewport but complete action list appears earlier.",
+      "roles": "A left child-care profile, B right assistive-equipment profile maintained.",
+      "preparations": "Common bag plus child supplies in A, assistive equipment check in B; 2025.03.26 source date visible.",
+      "alerts": "Both foreground banners and A critical level 3 / B evacuation level 2 readable.",
+      "focus": "B dimmed for A conversation/results; A dimmed for B conversation/results/route; final both undimmed.",
+      "confirmation": "Actual proposal and explicit state update preserved, followed by A child-present and B alone/can-move tags.",
+      "route": "B reference route and actual-passability caveat retained, destination says not a designated shelter.",
+      "stt_honesty": "Only actual on-screen recognition and input controls shown; no fabricated user voice or replacement transcript overlay. User speech intervals remain silent.",
+      "1080p_readability": "Role labels, cards, question/proposal/state text and route caveat readable in sampled shared copy frames.",
+      "decode": "Full 4K decode returned zero.",
+      "black_frame_detection": "No black segment detected (blackdetect d=0.03, pix_th=0.10 at 384x216).",
+      "audio_timing": "Signal non-silence matches one alarm and four sequential TTS clips; no overlap. Not a fresh semantic listening assessment."
+    },
+    "minor_observations": [
+      {
+        "severity": "optional_edit",
+        "output_second": 59.2,
+        "description": "End of A-result briefly returns toward critical header before switching to held A confirmed-state frame when B focus begins. No content or state loss. Root informed; could hold the confirmed-state frame through end of A-result to remove scroll-back.",
+        "status": "resolved_in_revision_2",
+        "resolution": "A-result now uses source 91–94 seconds followed by a four-second hold of source A94. Both output sizes inspected across the boundary; confirmed-state content remains fixed and only focus/dimming changes."
+      }
+    ],
+    "result": "PASS. No unresolved visual QA finding.",
+    "revision_1_outputs": {
+      "4k": {
+        "path": "artifacts/recordings/2026-11-01-AB/AB-scenario-no-opening-4k.mp4",
+        "sha256": "f92d485c4b232aa1d3e162ee718f7fc0eba8d3e0fcb61a116efb14923f65d6ea"
+      },
+      "1080p": {
+        "path": "artifacts/recordings/2026-11-01-AB/AB-scenario-no-opening-1080p.mp4",
+        "sha256": "441c41c23a3c1eb95605d745faf69a6e65467771872033bd33e84c46c4039175"
+      }
+    },
+    "revision_2_verification": {
+      "scope": "Changed boundary only, as directed; prior unchanged-segment checks retained.",
+      "checked_output_resolutions": [
+        "3840x2160",
+        "1920x1080"
+      ],
+      "frame_times_seconds": [
+        59.166666666666664,
+        59.2
+      ],
+      "extraction_seek_seconds": [
+        59.16,
+        59.2
+      ],
+      "note": "59.1667 seek can round up past frame 1775; 59.16 used to capture actual pre-boundary frame at 59.1666667.",
+      "result": "PASS",
+      "frames": [
+        "rev2-4k-59.1600.png",
+        "rev2-4k-59.2000.png",
+        "rev2-1080p-59.1600.png",
+        "rev2-1080p-59.2000.png"
+      ]
+    }
+  },
+  "audio_copy": {
+    "same_aac_packet_payload_and_pts_dts_duration": true,
+    "revision1_packet_count": 4923,
+    "4k_packet_count": 4923,
+    "1080p_packet_count": 4923
+  },
+  "revision2_change": {
+    "changed_scene": "06-a-result",
+    "source_revision1": "AB-scenario-no-opening-4k-revision1.mp4",
+    "output_revision2": "AB-scenario-no-opening-4k.mp4",
+    "edited_frame_interval": [
+      1566,
+      1776
+    ],
+    "all_other_video_packets_payload_pts_dts_duration_identical": true,
+    "unexpected_changed_frames": []
+  },
+  "edit_manifest": {
+    "schema_version": 1,
+    "task": "task-20261031-235111-a-b-d91de416",
+    "created_at": "2026-11-01T00:02:52.734900+00:00",
+    "title": "오프닝 없는 A/B 좌우 동시 시연 영상",
+    "scope": "기존 실기기·실서버 촬영을 편집한 로컬 인수 영상. 재촬영, 앱·서버 수정, 원본 덮어쓰기, 외부 업로드 없음.",
+    "outputs": {
+      "master_4k": {
+        "path": "AB-scenario-no-opening-4k.mp4",
+        "metadata": {
+          "programs": [],
+          "stream_groups": [],
+          "streams": [
+            {
+              "index": 0,
+              "codec_name": "h264",
+              "profile": "High",
+              "codec_type": "video",
+              "width": 3840,
+              "height": 2160,
+              "pix_fmt": "yuv420p",
+              "r_frame_rate": "30/1",
+              "avg_frame_rate": "30/1",
+              "time_base": "1/90000",
+              "start_time": "0.000000",
+              "duration": "105.000000",
+              "nb_frames": "3150"
+            },
+            {
+              "index": 1,
+              "codec_name": "aac",
+              "profile": "LC",
+              "codec_type": "audio",
+              "sample_rate": "48000",
+              "channels": 2,
+              "r_frame_rate": "0/0",
+              "avg_frame_rate": "0/0",
+              "time_base": "1/48000",
+              "start_time": "0.000000",
+              "duration": "105.000000",
+              "nb_frames": "4923"
+            }
+          ],
+          "format": {
+            "duration": "105.000000",
+            "size": "7616240"
+          }
+        },
+        "sha256": "00e805076b164453695931fec7fdcea1671873fed730e4d736694377827c1e6e",
+        "full_decode": {
+          "exit_code": 0,
+          "stderr_lines": 0,
+          "elapsed_seconds": 27.564
+        },
+        "faststart": true,
+        "mp4_atoms": [
+          {
+            "type": "ftyp",
+            "offset": 0,
+            "size": 32
+          },
+          {
+            "type": "moov",
+            "offset": 32,
+            "size": 116617
+          },
+          {
+            "type": "free",
+            "offset": 116649,
+            "size": 8
+          },
+          {
+            "type": "mdat",
+            "offset": 116657,
+            "size": 7499583
+          }
+        ],
+        "sources_unchanged": {
+          "A": true,
+          "B": true
+        }
+      },
+      "share_1080p": {
+        "path": "AB-scenario-no-opening-1080p.mp4",
+        "metadata": {
+          "programs": [],
+          "stream_groups": [],
+          "streams": [
+            {
+              "index": 0,
+              "codec_name": "h264",
+              "profile": "High",
+              "codec_type": "video",
+              "width": 1920,
+              "height": 1080,
+              "pix_fmt": "yuv420p",
+              "r_frame_rate": "30/1",
+              "avg_frame_rate": "30/1",
+              "time_base": "1/90000",
+              "start_time": "0.000000",
+              "duration": "105.000000",
+              "nb_frames": "3150"
+            },
+            {
+              "index": 1,
+              "codec_name": "aac",
+              "profile": "LC",
+              "codec_type": "audio",
+              "sample_rate": "48000",
+              "channels": 2,
+              "r_frame_rate": "0/0",
+              "avg_frame_rate": "0/0",
+              "time_base": "1/48000",
+              "start_time": "0.000000",
+              "duration": "105.000000",
+              "nb_frames": "4923"
+            }
+          ],
+          "format": {
+            "duration": "105.000000",
+            "size": "3864982"
+          }
+        },
+        "sha256": "6faf714bb62669ec1fc46d97429384a66962a5b94cdccd21eaa45ca8fd95be74",
+        "full_decode": {
+          "exit_code": 0,
+          "stderr_lines": 0,
+          "elapsed_seconds": 2.64
+        },
+        "faststart": true,
+        "mp4_atoms": [
+          {
+            "type": "ftyp",
+            "offset": 0,
+            "size": 32
+          },
+          {
+            "type": "moov",
+            "offset": 32,
+            "size": 116726
+          },
+          {
+            "type": "free",
+            "offset": 116758,
+            "size": 8
+          },
+          {
+            "type": "mdat",
+            "offset": 116766,
+            "size": 3748216
+          }
+        ],
+        "sources_unchanged": {
+          "A": true,
+          "B": true
+        }
+      }
+    },
+    "sources": {
+      "A": {
+        "path": "/Users/hongyongjae/Desktop/helloworld/BONGHAWJIGI_APP/artifacts/recordings/2026-11-01-A/A-scenario-final.mp4",
+        "size_bytes": 4797783,
+        "sha256": "b754d5d3019965d157c70790f7868f4bc8037f6c28e26330b3c49abab0f26ced"
+      },
+      "B": {
+        "path": "/Users/hongyongjae/Desktop/helloworld/BONGHAWJIGI_APP/artifacts/recordings/2026-11-01-B/B-scenario-01-raw.mp4",
+        "size_bytes": 57166283,
+        "sha256": "3b698222b1988ec9b6cbdcc8ed39ac071f009a155b7b6fc829d7430357b41d74"
+      }
+    },
+    "source_provenance": [
+      "../2026-11-01-A/final-edit.json",
+      "../2026-11-01-B/B-scenario-01-provenance.json"
+    ],
+    "timeline": {
+      "duration_seconds": 105,
+      "fps": 30,
+      "frames": 3150,
+      "stages": [
+        {
+          "id": "01-profile",
+          "frames": 450,
+          "footer": "사용자 프로필을 직접 선택하고 저장합니다",
+          "A": [
+            {
+              "kind": "video",
+              "side": "A",
+              "start_frame": 330,
+              "end_frame": 765,
+              "pad_frames": 15
+            }
+          ],
+          "B": [
+            {
+              "kind": "video",
+              "side": "B",
+              "start_frame": 1050,
+              "end_frame": 1404,
+              "pad_frames": 96
+            }
+          ],
+          "output_start_frame": 0,
+          "output_end_frame": 450
+        },
+        {
+          "id": "02-home",
+          "frames": 300,
+          "footer": "지역 정보와 개인 특성에 맞춰 미리 준비합니다",
+          "A": [
+            {
+              "kind": "video",
+              "side": "A",
+              "start_frame": 1050,
+              "end_frame": 1350,
+              "pad_frames": 0
+            }
+          ],
+          "B": [
+            {
+              "kind": "video",
+              "side": "B",
+              "start_frame": 2220,
+              "end_frame": 2520,
+              "pad_frames": 0
+            }
+          ],
+          "output_start_frame": 450,
+          "output_end_frame": 750
+        },
+        {
+          "id": "03-alert",
+          "frames": 180,
+          "footer": "같은 산불 경보에 서로 다른 대응 단계를 안내합니다",
+          "A": [
+            {
+              "kind": "video",
+              "side": "A",
+              "start_frame": 1548,
+              "end_frame": 1635,
+              "pad_frames": 0
+            },
+            {
+              "kind": "hold",
+              "side": "A",
+              "source_second": 61.5,
+              "frames": 93
+            }
+          ],
+          "B": [
+            {
+              "kind": "video",
+              "side": "B",
+              "start_frame": 3590,
+              "end_frame": 3639,
+              "pad_frames": 38
+            },
+            {
+              "kind": "hold",
+              "side": "B",
+              "source_second": 125.973,
+              "frames": 93
+            }
+          ],
+          "output_start_frame": 750,
+          "output_end_frame": 930
+        },
+        {
+          "id": "04-a-question",
+          "frames": 126,
+          "footer": "A에게 현재 아이와 함께 있는지 확인합니다",
+          "A": [
+            {
+              "kind": "video",
+              "side": "A",
+              "start_frame": 1905,
+              "end_frame": 2031,
+              "pad_frames": 0
+            }
+          ],
+          "B": [
+            {
+              "kind": "hold",
+              "side": "B",
+              "source_second": 128,
+              "frames": 126
+            }
+          ],
+          "dim": "B",
+          "output_start_frame": 930,
+          "output_end_frame": 1056
+        },
+        {
+          "id": "05-a-response",
+          "frames": 510,
+          "footer": "A의 답변을 확인하고 개인별 대응에 반영합니다",
+          "A": [
+            {
+              "kind": "video",
+              "side": "A",
+              "start_frame": 2100,
+              "end_frame": 2610,
+              "pad_frames": 0
+            }
+          ],
+          "B": [
+            {
+              "kind": "hold",
+              "side": "B",
+              "source_second": 128,
+              "frames": 510
+            }
+          ],
+          "dim": "B",
+          "output_start_frame": 1056,
+          "output_end_frame": 1566
+        },
+        {
+          "id": "06-a-result",
+          "frames": 210,
+          "footer": "A의 아이 동반 상태와 맞춤 행동요령을 확인합니다",
+          "A": [
+            {
+              "kind": "video",
+              "side": "A",
+              "start_frame": 2730,
+              "end_frame": 2820,
+              "pad_frames": 0
+            },
+            {
+              "kind": "hold",
+              "side": "A",
+              "source_second": 94,
+              "frames": 120
+            }
+          ],
+          "B": [
+            {
+              "kind": "hold",
+              "side": "B",
+              "source_second": 128,
+              "frames": 210
+            }
+          ],
+          "dim": "B",
+          "output_start_frame": 1566,
+          "output_end_frame": 1776
+        },
+        {
+          "id": "07-b-question",
+          "frames": 135,
+          "footer": "B에게 보조기구로 혼자 이동할 수 있는지 확인합니다",
+          "A": [
+            {
+              "kind": "hold",
+              "side": "A",
+              "source_second": 94,
+              "frames": 135
+            }
+          ],
+          "B": [
+            {
+              "kind": "video",
+              "side": "B",
+              "start_frame": 3885,
+              "end_frame": 4020,
+              "pad_frames": 0
+            }
+          ],
+          "dim": "A",
+          "output_start_frame": 1776,
+          "output_end_frame": 1911
+        },
+        {
+          "id": "08-b-response",
+          "frames": 690,
+          "footer": "B의 답변을 확인하고 개인별 대응에 반영합니다",
+          "A": [
+            {
+              "kind": "hold",
+              "side": "A",
+              "source_second": 94,
+              "frames": 690
+            }
+          ],
+          "B": [
+            {
+              "kind": "video",
+              "side": "B",
+              "start_frame": 4635,
+              "end_frame": 5325,
+              "pad_frames": 0
+            }
+          ],
+          "dim": "A",
+          "output_start_frame": 1911,
+          "output_end_frame": 2601
+        },
+        {
+          "id": "09-b-result",
+          "frames": 225,
+          "footer": "B의 이동 가능 상태와 보조기구 맞춤 안내를 확인합니다",
+          "A": [
+            {
+              "kind": "hold",
+              "side": "A",
+              "source_second": 94,
+              "frames": 225
+            }
+          ],
+          "B": [
+            {
+              "kind": "video",
+              "side": "B",
+              "start_frame": 5385,
+              "end_frame": 5610,
+              "pad_frames": 0
+            }
+          ],
+          "dim": "A",
+          "output_start_frame": 2601,
+          "output_end_frame": 2826
+        },
+        {
+          "id": "10-b-route",
+          "frames": 144,
+          "footer": "B의 참고 경로를 지도에서 확인합니다",
+          "A": [
+            {
+              "kind": "hold",
+              "side": "A",
+              "source_second": 94,
+              "frames": 144
+            }
+          ],
+          "B": [
+            {
+              "kind": "video",
+              "side": "B",
+              "start_frame": 6558,
+              "end_frame": 6702,
+              "pad_frames": 0
+            }
+          ],
+          "dim": "A",
+          "output_start_frame": 2826,
+          "output_end_frame": 2970
+        },
+        {
+          "id": "11-final",
+          "frames": 180,
+          "footer": "같은 산불에도 현재 상태에 맞춰 다르게 대응합니다",
+          "A": [
+            {
+              "kind": "video",
+              "side": "A",
+              "start_frame": 3120,
+              "end_frame": 3300,
+              "pad_frames": 0
+            }
+          ],
+          "B": [
+            {
+              "kind": "video",
+              "side": "B",
+              "start_frame": 6780,
+              "end_frame": 6960,
+              "pad_frames": 0
+            }
+          ],
+          "output_start_frame": 2970,
+          "output_end_frame": 3150
+        }
+      ]
+    },
+    "layout": {
+      "master_size": [
+        3840,
+        2160
+      ],
+      "share_size": [
+        1920,
+        1080
+      ],
+      "pane_size_4k": [
+        864,
+        1920
+      ],
+      "A_position": [
+        528,
+        120
+      ],
+      "B_position": [
+        2448,
+        120
+      ],
+      "labels": [
+        "A · 어린이 보호 대상",
+        "B · 보조기구 사용"
+      ],
+      "inactive_brightness": 0.65,
+      "inactive_method": "실제 정지 프레임에 35% 검정 음영, 라벨과 footer는 음영 제외",
+      "center_divider_x": 1920,
+      "footer_top": 2066,
+      "background": "밝은 회색",
+      "font": "macOS 설치 AppleSDGothicNeo-SemiBold를 PNG에 래스터화, 글꼴 파일 배포 없음",
+      "phone_capture": "1080×2400 전체 화면을 비율 유지로 축소, 앱 문구 수정·가림·재구성 없음"
+    },
+    "audio": {
+      "events": [
+        {
+          "id": "actual-alert-pickup",
+          "source": "A",
+          "kind": "실제 알림음 보충 녹음",
+          "source_guard_s": [
+            51.94,
+            53.89
+          ],
+          "output_guard_start_s": 25.34,
+          "source_audible_s": [
+            51.989,
+            53.499
+          ],
+          "output_guard_end_s": 27.29,
+          "delay_samples_48000": 1216320,
+          "output_audible_s": [
+            25.389,
+            26.899
+          ]
+        },
+        {
+          "id": "a-question-tts",
+          "source": "A",
+          "kind": "A 질문 TTS",
+          "source_guard_s": [
+            64.55,
+            66.8
+          ],
+          "output_guard_start_s": 32.05,
+          "source_audible_s": [
+            64.722,
+            66.601
+          ],
+          "output_guard_end_s": 34.3,
+          "delay_samples_48000": 1538400,
+          "output_audible_s": [
+            32.222,
+            34.101
+          ]
+        },
+        {
+          "id": "a-proposal-tts",
+          "source": "A",
+          "kind": "A 서버 제안 TTS",
+          "source_guard_s": [
+            78.75,
+            85.4
+          ],
+          "output_guard_start_s": 43.95,
+          "source_audible_s": [
+            78.93,
+            85.19
+          ],
+          "output_guard_end_s": 50.6,
+          "delay_samples_48000": 2109600,
+          "output_audible_s": [
+            44.13,
+            50.39
+          ]
+        },
+        {
+          "id": "b-question-tts",
+          "source": "B",
+          "kind": "B 질문 TTS",
+          "source_guard_s": [
+            130.4,
+            133.5
+          ],
+          "output_guard_start_s": 60.1,
+          "source_audible_s": [
+            130.581083,
+            133.32175
+          ],
+          "output_guard_end_s": 63.2,
+          "delay_samples_48000": 2884800,
+          "output_audible_s": [
+            60.281083,
+            63.02175
+          ]
+        },
+        {
+          "id": "b-proposal-tts",
+          "source": "B",
+          "kind": "B 서버 제안 TTS",
+          "source_guard_s": [
+            164.0,
+            172.9
+          ],
+          "output_guard_start_s": 73.2,
+          "source_audible_s": [
+            164.194646,
+            172.608625
+          ],
+          "output_guard_end_s": 82.1,
+          "delay_samples_48000": 3513600,
+          "output_audible_s": [
+            73.394646,
+            81.808625
+          ]
+        }
+      ],
+      "no_overlap": true,
+      "normalization": false,
+      "gain": 1.0,
+      "other_intervals": "무음",
+      "source_timestamp_handling": "B 원본 오디오 시작 PTS 0.167271초를 유지한 채 절대 PTS에서 atrim한 뒤에만 asetpts=PTS-STARTPTS 적용.",
+      "limits": "녹음된 사용자 발화 없음. 인식된 답변은 실제 STT 화면으로만 제시. 새 음성·새 효과음 생성 없음. 알림음 원본에 이미 존재하던 클리핑 한계는 보존됨."
+    },
+    "audio_copy_validation": {
+      "same_aac_packet_payload_and_pts_dts_duration": true,
+      "revision1_packet_count": 4923,
+      "4k_packet_count": 4923,
+      "1080p_packet_count": 4923
+    },
+    "synchronization": {
+      "first_alert_banner_output_seconds": 25.4,
+      "frame_before_banner": 761,
+      "first_banner_frame": 762,
+      "visual_evidence": "preview/alert-banner-boundary.jpg",
+      "banner_check": "전체25.366667초에는 양쪽 배너 없음,25.400000초에는 양쪽 배너 동시 출현 확인",
+      "b_alert_cfr_rounding": "119.675초 요청 지점은30fps의119.666667초 프레임으로 반올림. 첫영상49프레임+마지막배너정지38프레임=87프레임=2.9초. 이어 완성지도93프레임으로 총180프레임=6초.",
+      "question_and_proposal_playback_rate": 1.0,
+      "reference_route": "B 원본의 참고 경로와 지정 대피소 아님 안내를 그대로 보존. 실제 통행 안전이 검증된 경로라고 주장하지 않음."
+    },
+    "validation": {
+      "technical_status": "통과",
+      "independent_visual_qa": "통과, 수정 전후 동일한 상태 화면이 이어짐. 미해결 항목 없음.",
+      "independent_audio_qa": "통과,5개원본절대PTS→WAV샘플일치·AAC파형최대상관lag0ms·상관최소0.99993. B167ms밀림없음. 기존검증AAC와최종출력동일.",
+      "all_source_files_unchanged": true,
+      "full_decode_both_outputs": "exit0, 오류·경고0개",
+      "full_duration_seconds": 105,
+      "cfr": 30,
+      "frames_each": 3150,
+      "faststart_both": true,
+      "audio_packet_copy_identical": true,
+      "source_speech_limit": "사용자 실제 발화 원음은 원본에 없음. 화면의 실제 STT 전사·서버 제안·명시 확인을 보여주며 새로운 발화를 만들지 않음.",
+      "original_alert_recording_limit": "알림음은 실제 보충 촬영에서 가져온 기존 A 최종본의 한 번뿐인 구간. 원본의 기존 클리핑144샘플을 복원했다고 주장하지 않음.",
+      "encoding_notes": [
+        "최종revision2는검증된AAC를재인코딩없이복사함. 최종mux/encode로그경고없음. revision1의float WAV 채널추정경고는최종디코드문제가아니며이전메타데이터에보존."
+      ],
+      "independent_visual_report": "independent-qa/independent-qa-result.json",
+      "independent_audio_report": "audio-independent-validation.json",
+      "output_peak_dbfs": -3.05167,
+      "clipping_sample_count": 0,
+      "audio_master_outside_guards_peak": 0,
+      "encoded_audio_outside_guards_peak_dbfs": -88.02001,
+      "validation_retry_note": "1080p재인코딩이닫히기전검사를한차례시작해moov미완성오류가발생했다. 인코딩exit0확인후닫힌최종파일전체디코드를다시수행해오류·경고0을확정했다. 원본오류아님."
+    },
+    "reproduction_scripts": [
+      "render_ab.py",
+      "make_audio.py",
+      "assemble_outputs.py",
+      "make_backgrounds.swift",
+      "validate_outputs.py"
+    ],
+    "supporting_artifacts": [
+      "timeline.json",
+      "audio-events.json",
+      "4k-validation.json",
+      "1080p-validation.json",
+      "audio-copy-check.json",
+      "source-hashes-before.json",
+      "AB-layout-preview-105s.png",
+      "logs/4k-full-decode.log",
+      "logs/1080p-full-decode.log",
+      "logs/audio-filter.txt",
+      "audio-independent-validation.json",
+      "independent-qa/independent-qa-result.json",
+      "revision2-change-validation.json"
+    ],
+    "revision": 2,
+    "completed_at": "2026-11-01T00:07:27.966848+00:00",
+    "revision_history": [
+      {
+        "revision": 1,
+        "master": "AB-scenario-no-opening-4k-revision1.mp4",
+        "master_sha256": "f92d485c4b232aa1d3e162ee718f7fc0eba8d3e0fcb61a116efb14923f65d6ea",
+        "share": "AB-scenario-no-opening-1080p-revision1.mp4",
+        "share_sha256": "441c41c23a3c1eb95605d745faf69a6e65467771872033bd33e84c46c4039175",
+        "status": "원본 완성본을 보존한 이전 편집본"
+      },
+      {
+        "revision": 2,
+        "change": "A 결과7초를 원본91–94초3초+원본94초정지4초로 수정해 B대화 시작과 상태화면 연속성 유지. 총105초·음성·다른4K영상구간 불변.",
+        "video_change_validation": {
+          "changed_scene": "06-a-result",
+          "source_revision1": "AB-scenario-no-opening-4k-revision1.mp4",
+          "output_revision2": "AB-scenario-no-opening-4k.mp4",
+          "edited_frame_interval": [
+            1566,
+            1776
+          ],
+          "all_other_video_packets_payload_pts_dts_duration_identical": true,
+          "unexpected_changed_frames": []
+        },
+        "audio_preservation": "독립검증된revision1 AAC4,923패킷을 새4K와1080p에 완전복사. payload·PTS·DTS·duration 동일성으로 기존오디오검증을새출력에연결."
+      }
+    ]
+  }
+}

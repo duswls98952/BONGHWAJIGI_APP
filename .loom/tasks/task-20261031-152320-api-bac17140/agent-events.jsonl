@@ -1,0 +1,2 @@
+{"id": "event-b4276a3c9c5f", "type": "foreground_session_started", "message": "Foreground task session started.", "created_at": "2026-10-31T15:24:16+00:00", "agent": "foreground", "task_id": "task-20261031-152320-api-bac17140"}
+{"id": "event-c5a58144730e", "type": "foreground_session_done", "message": "목업 전 화면·긴급3단계 확인, API0.1/0.2 공백표·빌드 환경 점검과 삼성 휴대폰 연결 확인. 후속 구현으로 진행.", "created_at": "2026-10-31T15:33:44+00:00", "agent": "foreground", "task_id": "task-20261031-152320-api-bac17140"}

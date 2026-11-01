@@ -1,0 +1,33 @@
+{
+  "before": {
+    "available": true,
+    "branch_name": "develop",
+    "commit_sha": "0598095bc044fee416137a59ebc63b3abdbf2914",
+    "dirty": true,
+    "staged_files": [],
+    "modified_files": [
+      ".loom/events.jsonl",
+      ".loom/jobs/job-20261031-152248-apk-cf438185/job.json"
+    ],
+    "untracked_files": [
+      ".loom/job-runs/job-run-20261031-235133-job-20261031-152248-apk-cf438185-cd48c5e5/",
+      ".loom/task-definitions/task-def-20261031-235111-a-b-9f5367c4/",
+      ".loom/task-runs/task-run-20261031-235133-task-def-20261031-235111-a-b-9f5367c4-8fc3faea/",
+      ".loom/tasks/task-20261031-235111-a-b-d91de416/"
+    ],
+    "captured_at": "2026-10-31T23:51:33+00:00"
+  },
+  "after": {
+    "available": true,
+    "branch_name": "develop",
+    "commit_sha": "963b451f22a9c891d327a51510e1f5a0995d706d",
+    "dirty": true,
+    "staged_files": [],
+    "modified_files": [
+      ".loom/job-runs/job-run-20261031-235133-job-20261031-152248-apk-cf438185-cd48c5e5/job-run.json",
+      ".loom/task-definitions/task-def-20261031-235111-a-b-9f5367c4/task-definition.json"
+    ],
+    "untracked_files": [],
+    "captured_at": "2026-11-01T00:08:06+00:00"
+  }
+}

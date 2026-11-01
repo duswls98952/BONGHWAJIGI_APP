@@ -1,0 +1,69 @@
+{
+  "status": "DONE",
+  "agent": "foreground",
+  "mode": "foreground",
+  "execution_surface": "foreground",
+  "task_run_id": "task-run-20261031-193014-task-def-20261031-193008-task-def-09518467-48beaf4f",
+  "generated_at": "2026-10-31T20:12:10+00:00",
+  "artifacts": [
+    ".loom/tasks/task-20261031-193008-task-33cb114d/agent-events.jsonl",
+    ".loom/tasks/task-20261031-193008-task-33cb114d/artifacts.json",
+    ".loom/tasks/task-20261031-193008-task-33cb114d/context.md",
+    ".loom/tasks/task-20261031-193008-task-33cb114d/decision.md",
+    ".loom/tasks/task-20261031-193008-task-33cb114d/git-snapshot.json",
+    ".loom/tasks/task-20261031-193008-task-33cb114d/logs.txt",
+    ".loom/tasks/task-20261031-193008-task-33cb114d/previous-results.md",
+    ".loom/tasks/task-20261031-193008-task-33cb114d/prompt.md",
+    ".loom/tasks/task-20261031-193008-task-33cb114d/result.md",
+    ".loom/tasks/task-20261031-193008-task-33cb114d/troubleshooting.md",
+    "docs/13-location-guidance-scenarios.md"
+  ],
+  "artifact_groups": {
+    "user_outputs": [
+      ".loom/tasks/task-20261031-193008-task-33cb114d/decision.md",
+      ".loom/tasks/task-20261031-193008-task-33cb114d/result.md",
+      ".loom/tasks/task-20261031-193008-task-33cb114d/troubleshooting.md"
+    ],
+    "execution_inputs": [
+      ".loom/tasks/task-20261031-193008-task-33cb114d/context.md",
+      ".loom/tasks/task-20261031-193008-task-33cb114d/previous-results.md",
+      ".loom/tasks/task-20261031-193008-task-33cb114d/prompt.md"
+    ],
+    "execution_audit": [
+      ".loom/tasks/task-20261031-193008-task-33cb114d/agent-events.jsonl",
+      ".loom/tasks/task-20261031-193008-task-33cb114d/artifacts.json",
+      ".loom/tasks/task-20261031-193008-task-33cb114d/git-snapshot.json",
+      ".loom/tasks/task-20261031-193008-task-33cb114d/logs.txt"
+    ],
+    "work_products": [
+      "docs/13-location-guidance-scenarios.md"
+    ]
+  },
+  "contract_snapshot": {
+    "schema_version": 1,
+    "contract_ids": [
+      "task-execution",
+      "done-guardrail"
+    ],
+    "contracts": [
+      {
+        "id": "task-execution",
+        "title": "Task Execution Context Contract",
+        "source_paths": [
+          "loom/application/context_pack.py",
+          "loom/application/team_policy.py"
+        ]
+      },
+      {
+        "id": "done-guardrail",
+        "title": "Task Completion Guardrail Contract",
+        "source_paths": [
+          "loom/application/services.py"
+        ]
+      }
+    ]
+  },
+  "document_outputs": [
+    "docs/13-location-guidance-scenarios.md"
+  ]
+}

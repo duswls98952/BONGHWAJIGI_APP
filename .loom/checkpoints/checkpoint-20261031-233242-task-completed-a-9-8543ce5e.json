@@ -1,0 +1,19 @@
+{
+  "id": "checkpoint-20261031-233242-task-completed-a-9-8543ce5e",
+  "created_at": "2026-10-31T23:32:42+00:00",
+  "reason": "Task completed: A 프로필 첫 9초 교체와 직접 선택 촬영 준비",
+  "summary": "A 프로필 첫 9초 교체와 직접 선택 촬영 준비 -> DONE @ develop/7f7b15b917de",
+  "job_id": "job-20261031-152248-apk-cf438185",
+  "task_id": "task-20261031-232306-a-9-9cc91b8d",
+  "commit_sha": "7f7b15b917deb9e393ad3f65cb9302196fde74c6",
+  "branch_name": "develop",
+  "dirty": true,
+  "staged_files": [],
+  "modified_files": [
+    ".loom/job-runs/job-run-20261031-232321-job-20261031-152248-apk-cf438185-03ccefbf/job-run.json",
+    ".loom/task-definitions/task-def-20261031-232306-a-9-82ebc82c/task-definition.json"
+  ],
+  "untracked_files": [],
+  "snapshot_captured_at": "2026-10-31T23:32:42+00:00",
+  "rollback_strategy": "revert-or-branch"
+}

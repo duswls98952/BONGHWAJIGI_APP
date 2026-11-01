@@ -1,0 +1,52 @@
+{
+  "id": "task-20261031-170037-android-https-apk-eab2688e",
+  "job_id": "job-20261031-152248-apk-cf438185",
+  "title": "실제 Android에서 사설 HTTPS 연동 검증과 서명 APK 배포",
+  "description": "사용자가 연결한 Samsung 휴대폰에 내부 릴리즈 APK를 설치하고 합성 프로필·위치·긴급 경보·정책3단계·재실행을 실서버로 검증한다. 사용자가 승인한 Tailnet HTTPS와 두 기기443 접근을 사용한다. APK와 재현 가능한 배포 인수 문서를 제공하고 앱 원격 커밋을 서버 저장소 서브모듈로 고정한다.",
+  "status": "DONE",
+  "created_at": "2026-10-31T17:00:37+00:00",
+  "updated_at": "2026-10-31T17:54:03+00:00",
+  "order_index": 3,
+  "assigned_agent": "foreground",
+  "depends_on": [
+    "task-20261031-154046-expo-4e0177fb"
+  ],
+  "expected_output": "실제 Android 검증 증거와 서명 APK·해시·접속/시연 안내, 원격 앱 커밋과 서버 서브모듈",
+  "done_condition": "실제 기기 설치와 서버 요청·정책 갱신을 확인하고 검증한 기능과 미준비 기능을 구분해 기록한다. 서명·내장JS·non-debuggable APK와 원격 고정 서브모듈을 제공한다.",
+  "in_scope": "실서버/단말 검증; 발견한 통합 결함 수정; 서명 APK; Tailnet 승인 범위 연결; 서브모듈·원격 동기화; 문서·Loom",
+  "out_of_scope": "학습 작업 변경; 실제 예측 모델 연결; Firebase/지도 자격 생성; 실제119통화/문자; 다른 채팅 파일 덮어쓰기; 승인 범위 밖 접근 규칙 확대",
+  "validation_hint": "npm run check와 플랫폼 번들; 실제 기기 APK 설치/재실행·합성 정책3단계; HTTPS API·서명·해시; Git 원격/서브모듈 pin; Loom strict",
+  "required_docs": [
+    "docs/09-app-implementation.md",
+    "docs/02-api-integration.md"
+  ],
+  "memory_refs": [],
+  "document_outputs": [
+    "docs/10-android-delivery.md"
+  ],
+  "document_output_exceptions": [],
+  "run_attempts": 0,
+  "last_error": "",
+  "commit_refs": [
+    "8984d37ea5dd00597281affbd8232bf9bb1aec56",
+    "35f725f9f8684c236ec04ac5fe4f1d13bf3dbe0a"
+  ],
+  "branch_name": "develop",
+  "git_dirty": true,
+  "git_snapshot_captured_at": "2026-10-31T17:54:03+00:00",
+  "artifacts": [
+    ".loom/tasks/task-20261031-170037-android-https-apk-eab2688e/agent-events.jsonl",
+    ".loom/tasks/task-20261031-170037-android-https-apk-eab2688e/artifacts.json",
+    ".loom/tasks/task-20261031-170037-android-https-apk-eab2688e/context.md",
+    ".loom/tasks/task-20261031-170037-android-https-apk-eab2688e/decision.md",
+    ".loom/tasks/task-20261031-170037-android-https-apk-eab2688e/git-snapshot.json",
+    ".loom/tasks/task-20261031-170037-android-https-apk-eab2688e/logs.txt",
+    ".loom/tasks/task-20261031-170037-android-https-apk-eab2688e/previous-results.md",
+    ".loom/tasks/task-20261031-170037-android-https-apk-eab2688e/prompt.md",
+    ".loom/tasks/task-20261031-170037-android-https-apk-eab2688e/result.md",
+    ".loom/tasks/task-20261031-170037-android-https-apk-eab2688e/troubleshooting.md",
+    "docs/10-android-delivery.md"
+  ],
+  "source_proposal_id": "",
+  "source_prompt": ""
+}

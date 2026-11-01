@@ -1,0 +1,52 @@
+{
+  "id": "task-20261031-180728-android-apk-30aac06c",
+  "job_id": "job-20261031-152248-apk-cf438185",
+  "title": "네이버 지도 연결과 Android APK 실기기 검증",
+  "description": "사용자가 Maps Client ID를 제공하고 연결을 직접 지시했다. 현재 MVP 2D 도식을 네이버 지도에 연결하고 유효한 위치와 서버 관련 영역을 표시한다. 실패·위치 없음·만료를 구분하고 동일 내부 서명 APK를 업데이트하여 휴대폰에서 검증한다.",
+  "status": "DONE",
+  "created_at": "2026-10-31T18:07:28+00:00",
+  "updated_at": "2026-10-31T18:30:38+00:00",
+  "order_index": 4,
+  "assigned_agent": "foreground",
+  "depends_on": [],
+  "expected_output": "네이버 지도 MVP 컴포넌트, 키 없는 웹 도식 유지, 서명 APK와 단말 검증 문서, 원격 앱 및 메인 서브모듈 갱신",
+  "done_condition": "등록된 Client ID로 Android 실제 도로 지도가 표시되고 최신 위치/관련 영역 및 오류/미입력 상태가 정확하다. 앱 검사와 단말 검증을 통과하고 APK·Loom·원격 고정을 기록한다.",
+  "in_scope": "현재 MVP 지도 연결; 개인 Client ID 로컬 보관과 네이티브 주입; 합성 위치/관련 범위; 인증/로딩 실패; Android 재빌드/설치/검증; 테스트/문서/Loom; 원격/서브모듈 갱신",
+  "out_of_scope": "Client Secret 사용/복사; 지도 계정 설정 변경; 실제 대피 경로 계산; 실제 예측/학습 변경; Firebase; 3D; 사용자 동의 없는 실제 GPS 전송",
+  "validation_hint": "npm run check, Android/Web export, APK 서명·manifest, 실제 Android 지도 표시/좌표/오류·만료, 원격/submodule pin, Loom strict",
+  "required_docs": [
+    "docs/04-map-tts.md",
+    "docs/10-android-delivery.md",
+    "docs/02-api-integration.md"
+  ],
+  "memory_refs": [],
+  "document_outputs": [
+    "docs/11-naver-map-integration.md"
+  ],
+  "document_output_exceptions": [],
+  "run_attempts": 0,
+  "last_error": "",
+  "commit_refs": [
+    "45feba9b282e1257b53fd53f2ee641def75b554e",
+    "8bc3e641eee17174d64cc96684f02572f6086abf",
+    "9c214b17260f773ab315cf4fbe480874d0b1221f"
+  ],
+  "branch_name": "develop",
+  "git_dirty": true,
+  "git_snapshot_captured_at": "2026-10-31T18:30:38+00:00",
+  "artifacts": [
+    ".loom/tasks/task-20261031-180728-android-apk-30aac06c/agent-events.jsonl",
+    ".loom/tasks/task-20261031-180728-android-apk-30aac06c/artifacts.json",
+    ".loom/tasks/task-20261031-180728-android-apk-30aac06c/context.md",
+    ".loom/tasks/task-20261031-180728-android-apk-30aac06c/decision.md",
+    ".loom/tasks/task-20261031-180728-android-apk-30aac06c/git-snapshot.json",
+    ".loom/tasks/task-20261031-180728-android-apk-30aac06c/logs.txt",
+    ".loom/tasks/task-20261031-180728-android-apk-30aac06c/previous-results.md",
+    ".loom/tasks/task-20261031-180728-android-apk-30aac06c/prompt.md",
+    ".loom/tasks/task-20261031-180728-android-apk-30aac06c/result.md",
+    ".loom/tasks/task-20261031-180728-android-apk-30aac06c/troubleshooting.md",
+    "docs/11-naver-map-integration.md"
+  ],
+  "source_proposal_id": "",
+  "source_prompt": ""
+}

@@ -1,0 +1,8 @@
+[2026-10-31T17:08:32+00:00] agent=foreground task=task-20261031-170037-android-https-apk-eab2688e Foreground task session started.
+
+2026-11-01 KST: HTTPS 서명 APK 설치·온보딩·재실행 성공. 미러링 창 오류와 예상치 않은 화면 전환이 반복되어 단말 직접 터치 결과를 서버 DB와 대조했다. 사용자가 단계 갱신 문제 및 위치 버튼 무반응을 보고했고, 서버 location 미저장을 확인하여 완료 보류. 위치 버튼 바로 아래 처리 결과와 개인정보 없는 동작 로그를 추가하여 재검증 중.
+
+2026-11-01 KST: 서버959ab56 배포 및104개 테스트 통과. 실제 단말 정책 r2/r3/r4 경고→대피→위급을 서버 DB와 사용자 화면으로 대조. 사용자는 무음 해제 뒤 음성 정상 청취를 최종 확인. APK source0716c49/SHA fe689259… 검증 증거와 배포 문서 갱신. 앱 QA 커밋 전송 후 메인 서브모듈 검증을 마감한다.
+
+2026-11-01 KST: 메인 eaeef8756cd066518fb50bc634ff2a701c78a9f5 원격 push와 신규 recursive clone 검증 성공. 앱 ed91b1ce78554e339e9a95bbc49a4028cc957178 gitlink 자동 초기화, main/app clean, OpenAPI/lockfile hash 검사 통과. 앱 실행 소스0716c49 이후 변경은 검증 문서와 Loom 기록이다. Task 경계 검증 및 Loom strict 정상.
+[2026-10-31T17:54:03+00:00] agent=foreground task=task-20261031-170037-android-https-apk-eab2688e 실제 Android 설치·합성위치·정책3단계·TTS 사용자 청취와 서버DB 대조 완료. npm run check 40 tests, 서버104 tests, APK 서명·해시, 원격 recursive clone·서브모듈 ed91b1c 검증 통과.

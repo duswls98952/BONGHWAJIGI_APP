@@ -1,0 +1,19 @@
+{
+  "id": "checkpoint-20261031-183038-task-completed-android-apk-39c4c34d",
+  "created_at": "2026-10-31T18:30:38+00:00",
+  "reason": "Task completed: 네이버 지도 연결과 Android APK 실기기 검증",
+  "summary": "네이버 지도 연결과 Android APK 실기기 검증 -> DONE @ develop/9c214b17260f",
+  "job_id": "job-20261031-152248-apk-cf438185",
+  "task_id": "task-20261031-180728-android-apk-30aac06c",
+  "commit_sha": "9c214b17260f773ab315cf4fbe480874d0b1221f",
+  "branch_name": "develop",
+  "dirty": true,
+  "staged_files": [],
+  "modified_files": [
+    ".loom/job-runs/job-run-20261031-180732-job-20261031-152248-apk-cf438185-8afbf3a9/job-run.json",
+    ".loom/task-definitions/task-def-20261031-180728-android-apk-50467dba/task-definition.json"
+  ],
+  "untracked_files": [],
+  "snapshot_captured_at": "2026-10-31T18:30:38+00:00",
+  "rollback_strategy": "revert-or-branch"
+}
