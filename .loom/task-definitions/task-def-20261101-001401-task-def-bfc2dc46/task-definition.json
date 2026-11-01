@@ -1,0 +1,28 @@
+{
+  "id": "task-def-20261101-001401-task-def-bfc2dc46",
+  "job_definition_id": "job-20261031-152248-apk-cf438185",
+  "title": "휴대폰 실행 오프닝 촬영과 두 화면 전환 완성",
+  "description": "휴대폰 홈에서 앱 메뉴를 열고 봉화지기를 실행하는 마지막 장면을 촬영해 기존 실서버 A/B 검증 영상 앞에 연결한다.",
+  "created_at": "2026-11-01T00:14:01+00:00",
+  "updated_at": "2026-11-01T00:14:08+00:00",
+  "order_index": 12,
+  "legacy_task_id": "task-20261101-001401-task-075aeded",
+  "depends_on": [],
+  "expected_output": "홈·앱메뉴·봉화지기 실행 원본과 자연스러운 좌우분할 전환을 포함한 최종 4K/1080p 영상",
+  "done_condition": "사용자 직접 실행 장면 촬영, 한화면에서 두화면으로 전환, 기존 A/B 흐름과 음성동기 유지, 전체재생검증 및 녹화종료 확인",
+  "in_scope": "실기기 화면 녹화, 새 오프닝 편집·분할전환, 기존 영상 연결과 검증·Loom 기록",
+  "out_of_scope": "앱·서버 기능 변경, 실제 GPS·119, 외부게시, 새 사용자 음성 생성",
+  "validation_hint": "ffprobe·전체디코드·전환프레임시각검사·본편음성시점/패킷 또는파형 보존, 녹화프로세스 종료",
+  "required_docs": [],
+  "memory_refs": [],
+  "document_outputs": [
+    "docs/19-scenario-opening-final.md"
+  ],
+  "document_output_exceptions": [],
+  "default_agent": "",
+  "context_policy_id": "",
+  "executor_policy_id": "",
+  "review_policy": "",
+  "source_proposal_id": "",
+  "source_prompt": ""
+}

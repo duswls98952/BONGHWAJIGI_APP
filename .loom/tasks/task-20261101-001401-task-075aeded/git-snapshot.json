@@ -1,0 +1,21 @@
+{
+  "before": {
+    "available": true,
+    "branch_name": "develop",
+    "commit_sha": "c7322f3214db4857453460003028a46d51c7fc41",
+    "dirty": true,
+    "staged_files": [],
+    "modified_files": [
+      ".loom/events.jsonl",
+      ".loom/jobs/job-20261031-152248-apk-cf438185/job.json"
+    ],
+    "untracked_files": [
+      ".loom/job-runs/job-run-20261101-001408-job-20261031-152248-apk-cf438185-aa2f4888/",
+      ".loom/task-definitions/task-def-20261101-001401-task-def-bfc2dc46/",
+      ".loom/task-runs/task-run-20261101-001408-task-def-20261101-001401-task-def-bfc2dc46-5ff1282b/",
+      ".loom/tasks/task-20261101-001401-task-075aeded/"
+    ],
+    "captured_at": "2026-11-01T00:14:08+00:00"
+  },
+  "after": null
+}
