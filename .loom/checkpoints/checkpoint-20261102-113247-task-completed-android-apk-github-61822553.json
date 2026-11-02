@@ -1,0 +1,19 @@
+{
+  "id": "checkpoint-20261102-113247-task-completed-android-apk-github-61822553",
+  "created_at": "2026-11-02T11:32:47+00:00",
+  "reason": "Task completed: 검증된 Android APK를 GitHub 릴리스로 배포",
+  "summary": "검증된 Android APK를 GitHub 릴리스로 배포 -> DONE @ develop/6c730561f1a4",
+  "job_id": "job-20261031-152248-apk-cf438185",
+  "task_id": "task-20261102-112550-android-apk-github-338dbb44",
+  "commit_sha": "6c730561f1a480ad8572420dcd01f63122431f22",
+  "branch_name": "develop",
+  "dirty": true,
+  "staged_files": [],
+  "modified_files": [
+    ".loom/job-runs/job-run-20261102-112608-job-20261031-152248-apk-cf438185-6adb97b4/job-run.json",
+    ".loom/task-definitions/task-def-20261102-112550-android-apk-github-32b3b2e8/task-definition.json"
+  ],
+  "untracked_files": [],
+  "snapshot_captured_at": "2026-11-02T11:32:47+00:00",
+  "rollback_strategy": "revert-or-branch"
+}

@@ -3,9 +3,9 @@
   "job_id": "job-20261031-152248-apk-cf438185",
   "title": "검증된 Android APK를 GitHub 릴리스로 배포",
   "description": "사용자가 요청한 최신 봉화지기 APK를 앱 저장소 GitHub Release에 게시하고 다운로드 무결성과 사용 조건을 확인한다.",
-  "status": "RUNNING",
+  "status": "DONE",
   "created_at": "2026-11-02T11:25:50+00:00",
-  "updated_at": "2026-11-02T11:26:08+00:00",
+  "updated_at": "2026-11-02T11:32:47+00:00",
   "order_index": 13,
   "assigned_agent": "foreground",
   "depends_on": [],
@@ -23,12 +23,25 @@
   "run_attempts": 0,
   "last_error": "",
   "commit_refs": [
-    "1afa31b7e56f71d8f6d86bc9bc3f4fd8780ce0f7"
+    "1afa31b7e56f71d8f6d86bc9bc3f4fd8780ce0f7",
+    "6c730561f1a480ad8572420dcd01f63122431f22"
   ],
   "branch_name": "develop",
   "git_dirty": true,
-  "git_snapshot_captured_at": "2026-11-02T11:26:08+00:00",
-  "artifacts": [],
+  "git_snapshot_captured_at": "2026-11-02T11:32:47+00:00",
+  "artifacts": [
+    ".loom/tasks/task-20261102-112550-android-apk-github-338dbb44/agent-events.jsonl",
+    ".loom/tasks/task-20261102-112550-android-apk-github-338dbb44/artifacts.json",
+    ".loom/tasks/task-20261102-112550-android-apk-github-338dbb44/context.md",
+    ".loom/tasks/task-20261102-112550-android-apk-github-338dbb44/decision.md",
+    ".loom/tasks/task-20261102-112550-android-apk-github-338dbb44/git-snapshot.json",
+    ".loom/tasks/task-20261102-112550-android-apk-github-338dbb44/logs.txt",
+    ".loom/tasks/task-20261102-112550-android-apk-github-338dbb44/previous-results.md",
+    ".loom/tasks/task-20261102-112550-android-apk-github-338dbb44/prompt.md",
+    ".loom/tasks/task-20261102-112550-android-apk-github-338dbb44/result.md",
+    ".loom/tasks/task-20261102-112550-android-apk-github-338dbb44/troubleshooting.md",
+    "docs/20-github-apk-release.md"
+  ],
   "source_proposal_id": "",
   "source_prompt": ""
 }

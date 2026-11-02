@@ -6,3 +6,4 @@
 2026-11-02 KST: gh release create v0.4.0-mvp exit0. APK+SHA256SUMS.txt 게시. gh release view와태그조회 exit0, prerelease=true/draft=false/source74b4b65일치.
 2026-11-02 KST: gh release download exit0. 내려받은 APK SHA256·크기와체크섬파일이원본과동일함을assert검증 exit0 통과.
 2026-11-02 KST: npm run check:docs exit0(25문서), loom validate --strict exit0(82Task), git diff --check exit0 통과.
+[2026-11-02T11:32:47+00:00] agent=foreground task=task-20261102-112550-android-apk-github-338dbb44 0.4.0 APK GitHub prerelease 게시와 실제 다운로드해시·서명·태그·문서검증 완료. 사용자지시대로서버접속없이앱만배포.
