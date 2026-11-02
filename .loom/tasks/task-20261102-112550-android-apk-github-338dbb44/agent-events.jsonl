@@ -1,0 +1,2 @@
+{"id": "event-f8b68f9b72db", "type": "foreground_session_started", "message": "Foreground task session started.", "created_at": "2026-11-02T11:26:08+00:00", "agent": "foreground", "task_id": "task-20261102-112550-android-apk-github-338dbb44"}
+{"id": "event-654fe11b0211", "type": "foreground_session_done", "message": "0.4.0 APK GitHub prerelease 게시와 실제 다운로드해시·서명·태그·문서검증 완료. 사용자지시대로서버접속없이앱만배포.", "created_at": "2026-11-02T11:32:47+00:00", "agent": "foreground", "task_id": "task-20261102-112550-android-apk-github-338dbb44"}

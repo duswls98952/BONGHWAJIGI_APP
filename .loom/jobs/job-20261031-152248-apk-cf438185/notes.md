@@ -72,3 +72,9 @@ B 실폰 원본262.891초 촬영완료, 모든녹화종료. 사용자직접보�
 
 - Task: `task-20261101-001401-task-075aeded`
 - Tags: `recording`, `opening`, `final`, `validation`
+## 2026-11-02T11:32:42+00:00
+
+기존0.4.0 APK와SHA256SUMS를앱GitHub v0.4.0-mvp prerelease에게시. 태그source74b4b65확인,서명/정렬/정적점검과실제다운로드해시일치검증통과. 사용자지시대로서버접속/재시작없이앱만배포. docs/20-github-apk-release.md.
+
+- Task: `task-20261102-112550-android-apk-github-338dbb44`
+- Tags: `release`, `apk`, `validation`

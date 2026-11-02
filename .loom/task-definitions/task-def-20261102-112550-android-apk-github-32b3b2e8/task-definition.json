@@ -1,0 +1,28 @@
+{
+  "id": "task-def-20261102-112550-android-apk-github-32b3b2e8",
+  "job_definition_id": "job-20261031-152248-apk-cf438185",
+  "title": "검증된 Android APK를 GitHub 릴리스로 배포",
+  "description": "사용자가 요청한 최신 봉화지기 APK를 앱 저장소 GitHub Release에 게시하고 다운로드 무결성과 사용 조건을 확인한다.",
+  "created_at": "2026-11-02T11:25:50+00:00",
+  "updated_at": "2026-11-02T11:32:47+00:00",
+  "order_index": 13,
+  "legacy_task_id": "task-20261102-112550-android-apk-github-338dbb44",
+  "depends_on": [],
+  "expected_output": "APK와 SHA256 파일이 첨부된 GitHub 릴리스 URL 및 설치 다운로드 링크",
+  "done_condition": "APK 버전·서명·해시와 빌드 커밋 확인, 릴리스 게시, 업로드 에셋 재다운로드 해시 일치, 사용 조건과 Loom 기록 완료",
+  "in_scope": "기존 APK 점검, 릴리스 노트와 체크섬 작성, 앱 저장소 태그·릴리스·에셋 게시, 다운로드 검증 및 문서화",
+  "out_of_scope": "앱·서버 기능 변경, 재빌드, 공개 서버 전환, 저장소 가시성 변경, 서명키·토큰 게시",
+  "validation_hint": "apksigner·APK 메타데이터·SHA256, GitHub 릴리스 조회와 에셋 다운로드 해시 비교, 문서 검사·Loom strict",
+  "required_docs": [],
+  "memory_refs": [],
+  "document_outputs": [
+    "docs/20-github-apk-release.md"
+  ],
+  "document_output_exceptions": [],
+  "default_agent": "foreground",
+  "context_policy_id": "",
+  "executor_policy_id": "",
+  "review_policy": "",
+  "source_proposal_id": "",
+  "source_prompt": ""
+}

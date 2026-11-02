@@ -1,0 +1,9 @@
+[2026-11-02T11:26:08+00:00] agent=foreground task=task-20261102-112550-android-apk-github-338dbb44 Foreground task session started.
+2026-11-02 KST: 기존0.4.0 APK 크기66104750 및 SHA256 7b7f44d5f39de3c540e14bae65ea17f1cea907fcde39aa3336ec747376a4fec7가 빌드 보고서와 일치한다.
+2026-11-02 KST: gh repo/API 조회 exit0. 공개 앱 저장소 duswls98952/BONGHWAJIGI_APP, push 권한 있음, 기존 릴리스/태그 없음. 빌드커밋74b4b65b95e2a59c2bc91518c2f677b11ce47b2c 원격 존재 확인.
+2026-11-02 KST: 사용자 추가 지시로 서버 상태 점검·접속·재시작 없이 APK 게시 범위를 유지한다. 릴리스 설명과 체크섬 준비.
+2026-11-02 KST: apksigner verify exit0, v2서명/16KB정렬/non-debuggable/cleartext=false 확인. 비밀정보 정적 검사 미발견.
+2026-11-02 KST: gh release create v0.4.0-mvp exit0. APK+SHA256SUMS.txt 게시. gh release view와태그조회 exit0, prerelease=true/draft=false/source74b4b65일치.
+2026-11-02 KST: gh release download exit0. 내려받은 APK SHA256·크기와체크섬파일이원본과동일함을assert검증 exit0 통과.
+2026-11-02 KST: npm run check:docs exit0(25문서), loom validate --strict exit0(82Task), git diff --check exit0 통과.
+[2026-11-02T11:32:47+00:00] agent=foreground task=task-20261102-112550-android-apk-github-338dbb44 0.4.0 APK GitHub prerelease 게시와 실제 다운로드해시·서명·태그·문서검증 완료. 사용자지시대로서버접속없이앱만배포.
